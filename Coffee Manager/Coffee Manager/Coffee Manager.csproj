@@ -70,6 +70,12 @@
     <Compile Include="AIUserControl\UC_Welcome.Designer.cs">
       <DependentUpon>UC_Welcome.cs</DependentUpon>
     </Compile>
+    <Compile Include="AIUserControl\UC_UpdateItems.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AIUserControl\UC_UpdateItems.Designer.cs">
+      <DependentUpon>UC_UpdateItems.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainUI\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +98,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AIUserControl\UC_Welcome.resx">
       <DependentUpon>UC_Welcome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AIUserControl\UC_UpdateItems.resx">
+      <DependentUpon>UC_UpdateItems.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainUI\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>

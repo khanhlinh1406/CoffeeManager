@@ -47,6 +47,8 @@ namespace Coffee_Manager
             this.guna2Elipse3 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse4 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse5 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.guna2Elipse6 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.uC_UpdateItems1 = new Coffee_Manager.AIUserControl.UC_UpdateItems();
             this.uC_PlaceOrder1 = new Coffee_Manager.AIUserControl.UC_PlaceOrder();
             this.uC_AddItems1 = new Coffee_Manager.AIUserControl.UC_AddItems();
             this.uC_Welcome1 = new Coffee_Manager.AIUserControl.UC_Welcome();
@@ -257,6 +259,7 @@ namespace Coffee_Manager
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.uC_UpdateItems1);
             this.panel2.Controls.Add(this.uC_PlaceOrder1);
             this.panel2.Controls.Add(this.uC_AddItems1);
             this.panel2.Controls.Add(this.uC_Welcome1);
@@ -287,6 +290,19 @@ namespace Coffee_Manager
             // guna2Elipse5
             // 
             this.guna2Elipse5.TargetControl = this.panel2;
+            // 
+            // guna2Elipse6
+            // 
+            this.guna2Elipse6.TargetControl = this.panel2;
+            // 
+            // uC_UpdateItems1
+            // 
+            this.uC_UpdateItems1.BackColor = System.Drawing.Color.White;
+            this.uC_UpdateItems1.Location = new System.Drawing.Point(-12, -2);
+            this.uC_UpdateItems1.Name = "uC_UpdateItems1";
+            this.uC_UpdateItems1.Size = new System.Drawing.Size(795, 571);
+            this.uC_UpdateItems1.TabIndex = 5;
+            this.uC_UpdateItems1.Visible = false;
             // 
             // uC_PlaceOrder1
             // 
@@ -356,5 +372,7 @@ namespace Coffee_Manager
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse5;
         private AIUserControl.UC_PlaceOrder uC_PlaceOrder1;
         private AIUserControl.UC_AddItems uC_AddItems1;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse6;
+        private AIUserControl.UC_UpdateItems uC_UpdateItems1;
     }
 }

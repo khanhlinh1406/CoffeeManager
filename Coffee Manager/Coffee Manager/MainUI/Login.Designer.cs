@@ -36,6 +36,7 @@ namespace Coffee_Manager
             this.btnLogin = new Guna.UI2.WinForms.Guna2Button();
             this.btnGuest = new System.Windows.Forms.LinkLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnExit = new Guna.UI2.WinForms.Guna2GradientCircleButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -127,7 +128,7 @@ namespace Coffee_Manager
             this.btnLogin.ForeColor = System.Drawing.Color.White;
             this.btnLogin.HoverState.Parent = this.btnLogin;
             this.btnLogin.Location = new System.Drawing.Point(102, 384);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(2);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.ShadowDecoration.Parent = this.btnLogin;
             this.btnLogin.Size = new System.Drawing.Size(131, 34);
@@ -160,12 +161,30 @@ namespace Coffee_Manager
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // btnExit
+            // 
+            this.btnExit.CheckedState.Parent = this.btnExit;
+            this.btnExit.CustomImages.Parent = this.btnExit;
+            this.btnExit.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.ForeColor = System.Drawing.Color.White;
+            this.btnExit.HoverState.Parent = this.btnExit;
+            this.btnExit.Location = new System.Drawing.Point(296, 11);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(2);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.btnExit.ShadowDecoration.Parent = this.btnExit;
+            this.btnExit.Size = new System.Drawing.Size(26, 28);
+            this.btnExit.TabIndex = 5;
+            this.btnExit.Text = "X";
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(333, 516);
+            this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnGuest);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtPassword);
@@ -175,7 +194,7 @@ namespace Coffee_Manager
             this.Controls.Add(this.pictureBox1);
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
@@ -193,6 +212,7 @@ namespace Coffee_Manager
         private Guna.UI2.WinForms.Guna2Button btnLogin;
         private System.Windows.Forms.LinkLabel btnGuest;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private Guna.UI2.WinForms.Guna2GradientCircleButton btnExit;
     }
 }
 

@@ -27,3 +27,18 @@ D:\Coffee Manager\Coffee Manager\obj\Debug\Coffee Manager.pdb
 D:\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.AIUserControl.UC_AddItems.resources
 D:\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.AIUserControl.UC_PlaceOrder.resources
 D:\Coffee Manager\Coffee Manager\obj\Debug\Coffee Manager.csprojAssemblyReference.cache
+D:\QLQuanCaPhe\Coffee Manager\Coffee Manager\bin\Debug\Coffee Manager.exe.config
+D:\QLQuanCaPhe\Coffee Manager\Coffee Manager\bin\Debug\Coffee Manager.exe
+D:\QLQuanCaPhe\Coffee Manager\Coffee Manager\bin\Debug\Coffee Manager.pdb
+D:\QLQuanCaPhe\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.AIUserControl.UC_AddItems.resources
+D:\QLQuanCaPhe\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.AIUserControl.UC_PlaceOrder.resources
+D:\QLQuanCaPhe\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.AIUserControl.UC_Welcome.resources
+D:\QLQuanCaPhe\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.AIUserControl.UC_UpdateItems.resources
+D:\QLQuanCaPhe\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.Dashboard.resources
+D:\QLQuanCaPhe\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.Login.resources
+D:\QLQuanCaPhe\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.Properties.Resources.resources
+D:\QLQuanCaPhe\Coffee Manager\Coffee Manager\obj\Debug\Coffee Manager.csproj.GenerateResource.cache
+D:\QLQuanCaPhe\Coffee Manager\Coffee Manager\obj\Debug\Coffee Manager.csproj.CoreCompileInputs.cache
+D:\QLQuanCaPhe\Coffee Manager\Coffee Manager\obj\Debug\Coffee Manager.csproj.CopyComplete
+D:\QLQuanCaPhe\Coffee Manager\Coffee Manager\obj\Debug\Coffee Manager.exe
+D:\QLQuanCaPhe\Coffee Manager\Coffee Manager\obj\Debug\Coffee Manager.pdb
