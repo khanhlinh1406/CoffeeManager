@@ -48,6 +48,8 @@ namespace Coffee_Manager
             this.guna2Elipse4 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse5 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse6 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.guna2Elipse7 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.uC_RemoveItem1 = new Coffee_Manager.AIUserControl.UC_RemoveItem();
             this.uC_UpdateItems1 = new Coffee_Manager.AIUserControl.UC_UpdateItems();
             this.uC_PlaceOrder1 = new Coffee_Manager.AIUserControl.UC_PlaceOrder();
             this.uC_AddItems1 = new Coffee_Manager.AIUserControl.UC_AddItems();
@@ -69,10 +71,10 @@ namespace Coffee_Manager
             this.panel1.Controls.Add(this.guna2Button2);
             this.panel1.Controls.Add(this.btnPlaceOrder);
             this.panel1.Controls.Add(this.guna2Button1);
-            this.panel1.Location = new System.Drawing.Point(9, 12);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Location = new System.Drawing.Point(12, 15);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(150, 550);
+            this.panel1.Size = new System.Drawing.Size(200, 677);
             this.panel1.TabIndex = 0;
             // 
             // btnLogOut
@@ -81,10 +83,9 @@ namespace Coffee_Manager
             this.btnLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogOut.ForeColor = System.Drawing.Color.White;
             this.btnLogOut.LinkColor = System.Drawing.Color.White;
-            this.btnLogOut.Location = new System.Drawing.Point(43, 375);
-            this.btnLogOut.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.btnLogOut.Location = new System.Drawing.Point(57, 462);
             this.btnLogOut.Name = "btnLogOut";
-            this.btnLogOut.Size = new System.Drawing.Size(57, 18);
+            this.btnLogOut.Size = new System.Drawing.Size(72, 24);
             this.btnLogOut.TabIndex = 2;
             this.btnLogOut.TabStop = true;
             this.btnLogOut.Text = "LogOut";
@@ -97,12 +98,12 @@ namespace Coffee_Manager
             this.btnExit.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.ForeColor = System.Drawing.Color.White;
             this.btnExit.HoverState.Parent = this.btnExit;
-            this.btnExit.Location = new System.Drawing.Point(2, 2);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(2);
+            this.btnExit.Location = new System.Drawing.Point(3, 2);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnExit.Name = "btnExit";
             this.btnExit.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btnExit.ShadowDecoration.Parent = this.btnExit;
-            this.btnExit.Size = new System.Drawing.Size(26, 28);
+            this.btnExit.Size = new System.Drawing.Size(35, 34);
             this.btnExit.TabIndex = 1;
             this.btnExit.Text = "X";
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
@@ -119,13 +120,14 @@ namespace Coffee_Manager
             this.btnRemoveItem.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRemoveItem.ForeColor = System.Drawing.Color.White;
             this.btnRemoveItem.HoverState.Parent = this.btnRemoveItem;
-            this.btnRemoveItem.Location = new System.Drawing.Point(14, 222);
-            this.btnRemoveItem.Margin = new System.Windows.Forms.Padding(2);
+            this.btnRemoveItem.Location = new System.Drawing.Point(19, 273);
+            this.btnRemoveItem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRemoveItem.Name = "btnRemoveItem";
             this.btnRemoveItem.ShadowDecoration.Parent = this.btnRemoveItem;
-            this.btnRemoveItem.Size = new System.Drawing.Size(152, 33);
+            this.btnRemoveItem.Size = new System.Drawing.Size(203, 41);
             this.btnRemoveItem.TabIndex = 0;
             this.btnRemoveItem.Text = "Remove Item";
+            this.btnRemoveItem.Click += new System.EventHandler(this.btnRemoveItem_Click);
             // 
             // guna2Button3
             // 
@@ -136,11 +138,11 @@ namespace Coffee_Manager
             this.guna2Button3.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button3.ForeColor = System.Drawing.Color.White;
             this.guna2Button3.HoverState.Parent = this.guna2Button3;
-            this.guna2Button3.Location = new System.Drawing.Point(14, 222);
-            this.guna2Button3.Margin = new System.Windows.Forms.Padding(2);
+            this.guna2Button3.Location = new System.Drawing.Point(19, 273);
+            this.guna2Button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2Button3.Name = "guna2Button3";
             this.guna2Button3.ShadowDecoration.Parent = this.guna2Button3;
-            this.guna2Button3.Size = new System.Drawing.Size(152, 33);
+            this.guna2Button3.Size = new System.Drawing.Size(203, 41);
             this.guna2Button3.TabIndex = 0;
             this.guna2Button3.Text = "Remove Item";
             // 
@@ -156,13 +158,14 @@ namespace Coffee_Manager
             this.btnUpdateItem.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdateItem.ForeColor = System.Drawing.Color.White;
             this.btnUpdateItem.HoverState.Parent = this.btnUpdateItem;
-            this.btnUpdateItem.Location = new System.Drawing.Point(14, 162);
-            this.btnUpdateItem.Margin = new System.Windows.Forms.Padding(2);
+            this.btnUpdateItem.Location = new System.Drawing.Point(19, 199);
+            this.btnUpdateItem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUpdateItem.Name = "btnUpdateItem";
             this.btnUpdateItem.ShadowDecoration.Parent = this.btnUpdateItem;
-            this.btnUpdateItem.Size = new System.Drawing.Size(152, 33);
+            this.btnUpdateItem.Size = new System.Drawing.Size(203, 41);
             this.btnUpdateItem.TabIndex = 0;
             this.btnUpdateItem.Text = "Update Item";
+            this.btnUpdateItem.Click += new System.EventHandler(this.btnUpdateItem_Click);
             // 
             // guna2Button4
             // 
@@ -173,11 +176,11 @@ namespace Coffee_Manager
             this.guna2Button4.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button4.ForeColor = System.Drawing.Color.White;
             this.guna2Button4.HoverState.Parent = this.guna2Button4;
-            this.guna2Button4.Location = new System.Drawing.Point(14, 162);
-            this.guna2Button4.Margin = new System.Windows.Forms.Padding(2);
+            this.guna2Button4.Location = new System.Drawing.Point(19, 199);
+            this.guna2Button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2Button4.Name = "guna2Button4";
             this.guna2Button4.ShadowDecoration.Parent = this.guna2Button4;
-            this.guna2Button4.Size = new System.Drawing.Size(152, 33);
+            this.guna2Button4.Size = new System.Drawing.Size(203, 41);
             this.guna2Button4.TabIndex = 0;
             this.guna2Button4.Text = "Update Item";
             // 
@@ -193,11 +196,11 @@ namespace Coffee_Manager
             this.btnAddItem.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddItem.ForeColor = System.Drawing.Color.White;
             this.btnAddItem.HoverState.Parent = this.btnAddItem;
-            this.btnAddItem.Location = new System.Drawing.Point(14, 103);
-            this.btnAddItem.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAddItem.Location = new System.Drawing.Point(19, 127);
+            this.btnAddItem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAddItem.Name = "btnAddItem";
             this.btnAddItem.ShadowDecoration.Parent = this.btnAddItem;
-            this.btnAddItem.Size = new System.Drawing.Size(152, 33);
+            this.btnAddItem.Size = new System.Drawing.Size(203, 41);
             this.btnAddItem.TabIndex = 0;
             this.btnAddItem.Text = "Add Item";
             this.btnAddItem.Click += new System.EventHandler(this.btnAddItem_Click);
@@ -211,11 +214,11 @@ namespace Coffee_Manager
             this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button2.ForeColor = System.Drawing.Color.White;
             this.guna2Button2.HoverState.Parent = this.guna2Button2;
-            this.guna2Button2.Location = new System.Drawing.Point(14, 103);
-            this.guna2Button2.Margin = new System.Windows.Forms.Padding(2);
+            this.guna2Button2.Location = new System.Drawing.Point(19, 127);
+            this.guna2Button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.ShadowDecoration.Parent = this.guna2Button2;
-            this.guna2Button2.Size = new System.Drawing.Size(152, 33);
+            this.guna2Button2.Size = new System.Drawing.Size(203, 41);
             this.guna2Button2.TabIndex = 0;
             this.guna2Button2.Text = "Add Item";
             // 
@@ -231,13 +234,14 @@ namespace Coffee_Manager
             this.btnPlaceOrder.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPlaceOrder.ForeColor = System.Drawing.Color.White;
             this.btnPlaceOrder.HoverState.Parent = this.btnPlaceOrder;
-            this.btnPlaceOrder.Location = new System.Drawing.Point(14, 51);
-            this.btnPlaceOrder.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPlaceOrder.Location = new System.Drawing.Point(19, 63);
+            this.btnPlaceOrder.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPlaceOrder.Name = "btnPlaceOrder";
             this.btnPlaceOrder.ShadowDecoration.Parent = this.btnPlaceOrder;
-            this.btnPlaceOrder.Size = new System.Drawing.Size(152, 33);
+            this.btnPlaceOrder.Size = new System.Drawing.Size(203, 41);
             this.btnPlaceOrder.TabIndex = 0;
             this.btnPlaceOrder.Text = "Place Order";
+            this.btnPlaceOrder.Click += new System.EventHandler(this.btnPlaceOrder_Click);
             // 
             // guna2Button1
             // 
@@ -248,25 +252,26 @@ namespace Coffee_Manager
             this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
             this.guna2Button1.HoverState.Parent = this.guna2Button1;
-            this.guna2Button1.Location = new System.Drawing.Point(14, 51);
-            this.guna2Button1.Margin = new System.Windows.Forms.Padding(2);
+            this.guna2Button1.Location = new System.Drawing.Point(19, 63);
+            this.guna2Button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
-            this.guna2Button1.Size = new System.Drawing.Size(152, 33);
+            this.guna2Button1.Size = new System.Drawing.Size(203, 41);
             this.guna2Button1.TabIndex = 0;
             this.guna2Button1.Text = "Place Order";
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.uC_RemoveItem1);
             this.panel2.Controls.Add(this.uC_UpdateItems1);
             this.panel2.Controls.Add(this.uC_PlaceOrder1);
             this.panel2.Controls.Add(this.uC_AddItems1);
             this.panel2.Controls.Add(this.uC_Welcome1);
-            this.panel2.Location = new System.Drawing.Point(163, 14);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2);
+            this.panel2.Location = new System.Drawing.Point(217, 17);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(783, 548);
+            this.panel2.Size = new System.Drawing.Size(1044, 674);
             this.panel2.TabIndex = 1;
             // 
             // guna2Elipse1
@@ -295,12 +300,27 @@ namespace Coffee_Manager
             // 
             this.guna2Elipse6.TargetControl = this.panel2;
             // 
+            // guna2Elipse7
+            // 
+            this.guna2Elipse7.BorderRadius = 30;
+            this.guna2Elipse7.TargetControl = this.panel2;
+            // 
+            // uC_RemoveItem1
+            // 
+            this.uC_RemoveItem1.BackColor = System.Drawing.Color.White;
+            this.uC_RemoveItem1.Location = new System.Drawing.Point(3, 5);
+            this.uC_RemoveItem1.Name = "uC_RemoveItem1";
+            this.uC_RemoveItem1.Size = new System.Drawing.Size(1037, 668);
+            this.uC_RemoveItem1.TabIndex = 6;
+            this.uC_RemoveItem1.Load += new System.EventHandler(this.uC_RemoveItem1_Load);
+            // 
             // uC_UpdateItems1
             // 
             this.uC_UpdateItems1.BackColor = System.Drawing.Color.White;
-            this.uC_UpdateItems1.Location = new System.Drawing.Point(-12, -2);
+            this.uC_UpdateItems1.Location = new System.Drawing.Point(0, -2);
+            this.uC_UpdateItems1.Margin = new System.Windows.Forms.Padding(5);
             this.uC_UpdateItems1.Name = "uC_UpdateItems1";
-            this.uC_UpdateItems1.Size = new System.Drawing.Size(795, 571);
+            this.uC_UpdateItems1.Size = new System.Drawing.Size(1044, 679);
             this.uC_UpdateItems1.TabIndex = 5;
             this.uC_UpdateItems1.Visible = false;
             // 
@@ -308,37 +328,39 @@ namespace Coffee_Manager
             // 
             this.uC_PlaceOrder1.BackColor = System.Drawing.Color.White;
             this.uC_PlaceOrder1.Location = new System.Drawing.Point(0, 0);
+            this.uC_PlaceOrder1.Margin = new System.Windows.Forms.Padding(5);
             this.uC_PlaceOrder1.Name = "uC_PlaceOrder1";
-            this.uC_PlaceOrder1.Size = new System.Drawing.Size(781, 550);
+            this.uC_PlaceOrder1.Size = new System.Drawing.Size(1041, 677);
             this.uC_PlaceOrder1.TabIndex = 4;
             this.uC_PlaceOrder1.Visible = false;
             // 
             // uC_AddItems1
             // 
-            this.uC_AddItems1.Location = new System.Drawing.Point(0, -3);
+            this.uC_AddItems1.Location = new System.Drawing.Point(0, -4);
+            this.uC_AddItems1.Margin = new System.Windows.Forms.Padding(5);
             this.uC_AddItems1.Name = "uC_AddItems1";
-            this.uC_AddItems1.Size = new System.Drawing.Size(934, 550);
+            this.uC_AddItems1.Size = new System.Drawing.Size(1245, 677);
             this.uC_AddItems1.TabIndex = 3;
             // 
             // uC_Welcome1
             // 
             this.uC_Welcome1.BackColor = System.Drawing.Color.White;
-            this.uC_Welcome1.Location = new System.Drawing.Point(3, -3);
-            this.uC_Welcome1.Margin = new System.Windows.Forms.Padding(2);
+            this.uC_Welcome1.Location = new System.Drawing.Point(4, -4);
+            this.uC_Welcome1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.uC_Welcome1.Name = "uC_Welcome1";
-            this.uC_Welcome1.Size = new System.Drawing.Size(766, 498);
+            this.uC_Welcome1.Size = new System.Drawing.Size(1021, 613);
             this.uC_Welcome1.TabIndex = 0;
             // 
             // Dashboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(225)))));
-            this.ClientSize = new System.Drawing.Size(957, 573);
+            this.ClientSize = new System.Drawing.Size(1276, 705);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Dashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form2";
@@ -374,5 +396,7 @@ namespace Coffee_Manager
         private AIUserControl.UC_AddItems uC_AddItems1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse6;
         private AIUserControl.UC_UpdateItems uC_UpdateItems1;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse7;
+        private AIUserControl.UC_RemoveItem uC_RemoveItem1;
     }
 }

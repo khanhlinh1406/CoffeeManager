@@ -40,6 +40,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Management" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -63,6 +64,12 @@
     </Compile>
     <Compile Include="AIUserControl\UC_PlaceOrder.Designer.cs">
       <DependentUpon>UC_PlaceOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AIUserControl\UC_RemoveItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AIUserControl\UC_RemoveItem.Designer.cs">
+      <DependentUpon>UC_RemoveItem.cs</DependentUpon>
     </Compile>
     <Compile Include="AIUserControl\UC_Welcome.cs">
       <SubType>UserControl</SubType>
@@ -95,6 +102,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AIUserControl\UC_PlaceOrder.resx">
       <DependentUpon>UC_PlaceOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AIUserControl\UC_RemoveItem.resx">
+      <DependentUpon>UC_RemoveItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AIUserControl\UC_Welcome.resx">
       <DependentUpon>UC_Welcome.cs</DependentUpon>
