@@ -42,6 +42,7 @@
     <Reference Include="System.Design" />
     <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -53,17 +54,53 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AIUserControl\UC_CustomerManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AIUserControl\UC_CustomerManager.Designer.cs">
+      <DependentUpon>UC_CustomerManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AIUserControl\UC_StaffManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AIUserControl\UC_StaffManager.Designer.cs">
+      <DependentUpon>UC_StaffManager.cs</DependentUpon>
+    </Compile>
     <Compile Include="AIUserControl\UC_AddItems.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="AIUserControl\UC_AddItems.Designer.cs">
       <DependentUpon>UC_AddItems.cs</DependentUpon>
     </Compile>
+    <Compile Include="AIUserControl\UC_BeverageStatistics.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AIUserControl\UC_BeverageStatistics.Designer.cs">
+      <DependentUpon>UC_BeverageStatistics.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AIUserControl\UC_Material.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AIUserControl\UC_Material.Designer.cs">
+      <DependentUpon>UC_Material.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AIUserControl\UC_MonthlyStatistics.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AIUserControl\UC_MonthlyStatistics.Designer.cs">
+      <DependentUpon>UC_MonthlyStatistics.cs</DependentUpon>
+    </Compile>
     <Compile Include="AIUserControl\UC_PlaceOrder.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="AIUserControl\UC_PlaceOrder.Designer.cs">
       <DependentUpon>UC_PlaceOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AIUserControl\UC_ReceivedNote.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AIUserControl\UC_ReceivedNote.Designer.cs">
+      <DependentUpon>UC_ReceivedNote.cs</DependentUpon>
     </Compile>
     <Compile Include="AIUserControl\UC_RemoveItem.cs">
       <SubType>UserControl</SubType>
@@ -97,11 +134,29 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AIUserControl\UC_CustomerManager.resx">
+      <DependentUpon>UC_CustomerManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AIUserControl\UC_StaffManager.resx">
+      <DependentUpon>UC_StaffManager.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AIUserControl\UC_AddItems.resx">
       <DependentUpon>UC_AddItems.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AIUserControl\UC_BeverageStatistics.resx">
+      <DependentUpon>UC_BeverageStatistics.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AIUserControl\UC_Material.resx">
+      <DependentUpon>UC_Material.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AIUserControl\UC_MonthlyStatistics.resx">
+      <DependentUpon>UC_MonthlyStatistics.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AIUserControl\UC_PlaceOrder.resx">
       <DependentUpon>UC_PlaceOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AIUserControl\UC_ReceivedNote.resx">
+      <DependentUpon>UC_ReceivedNote.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AIUserControl\UC_RemoveItem.resx">
       <DependentUpon>UC_RemoveItem.cs</DependentUpon>
