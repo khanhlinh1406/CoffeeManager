@@ -51,6 +51,7 @@ namespace Coffee_Manager.AIUserControl
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.label5 = new System.Windows.Forms.Label();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.guna2Button6 = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridview)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,12 +63,12 @@ namespace Coffee_Manager.AIUserControl
             this.bAddItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bAddItem.ForeColor = System.Drawing.Color.White;
             this.bAddItem.HoverState.Parent = this.bAddItem;
-            this.bAddItem.Location = new System.Drawing.Point(61, 443);
+            this.bAddItem.Location = new System.Drawing.Point(20, 443);
             this.bAddItem.Name = "bAddItem";
             this.bAddItem.ShadowDecoration.Parent = this.bAddItem;
-            this.bAddItem.Size = new System.Drawing.Size(124, 37);
+            this.bAddItem.Size = new System.Drawing.Size(83, 37);
             this.bAddItem.TabIndex = 15;
-            this.bAddItem.Text = "Add ";
+            this.bAddItem.Text = "Thêm";
             // 
             // cbCalculationUnit
             // 
@@ -147,9 +148,9 @@ namespace Coffee_Manager.AIUserControl
             this.label4.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(26, 350);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(57, 27);
+            this.label4.Size = new System.Drawing.Size(41, 27);
             this.label4.TabIndex = 11;
-            this.label4.Text = "Price";
+            this.label4.Text = "Giá";
             // 
             // label3
             // 
@@ -157,9 +158,9 @@ namespace Coffee_Manager.AIUserControl
             this.label3.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(26, 263);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(112, 27);
+            this.label3.Size = new System.Drawing.Size(156, 27);
             this.label3.TabIndex = 10;
-            this.label3.Text = "Item name";
+            this.label3.Text = "Tên nguyên liệu";
             // 
             // label2
             // 
@@ -167,9 +168,9 @@ namespace Coffee_Manager.AIUserControl
             this.label2.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(15, 106);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(152, 27);
+            this.label2.Size = new System.Drawing.Size(113, 27);
             this.label2.TabIndex = 9;
-            this.label2.Text = "Calculation unit";
+            this.label2.Text = "Đơn vị tính";
             // 
             // guna2TextBox1
             // 
@@ -276,17 +277,17 @@ namespace Coffee_Manager.AIUserControl
             // 
             // Column2
             // 
-            this.Column2.HeaderText = "Name";
+            this.Column2.HeaderText = "Tên";
             this.Column2.Name = "Column2";
             // 
             // Column4
             // 
-            this.Column4.HeaderText = "Unit";
+            this.Column4.HeaderText = "Đơn vị tính";
             this.Column4.Name = "Column4";
             // 
             // Column3
             // 
-            this.Column3.HeaderText = "Price";
+            this.Column3.HeaderText = "Giá";
             this.Column3.Name = "Column3";
             // 
             // guna2Button1
@@ -297,12 +298,12 @@ namespace Coffee_Manager.AIUserControl
             this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
             this.guna2Button1.HoverState.Parent = this.guna2Button1;
-            this.guna2Button1.Location = new System.Drawing.Point(387, 443);
+            this.guna2Button1.Location = new System.Drawing.Point(133, 443);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
             this.guna2Button1.Size = new System.Drawing.Size(124, 37);
             this.guna2Button1.TabIndex = 20;
-            this.guna2Button1.Text = "Update";
+            this.guna2Button1.Text = "Cập nhật";
             // 
             // guna2Button2
             // 
@@ -312,12 +313,12 @@ namespace Coffee_Manager.AIUserControl
             this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button2.ForeColor = System.Drawing.Color.White;
             this.guna2Button2.HoverState.Parent = this.guna2Button2;
-            this.guna2Button2.Location = new System.Drawing.Point(561, 443);
+            this.guna2Button2.Location = new System.Drawing.Point(297, 443);
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.ShadowDecoration.Parent = this.guna2Button2;
-            this.guna2Button2.Size = new System.Drawing.Size(124, 37);
+            this.guna2Button2.Size = new System.Drawing.Size(102, 37);
             this.guna2Button2.TabIndex = 21;
-            this.guna2Button2.Text = "Delete";
+            this.guna2Button2.Text = "Xoá";
             // 
             // label5
             // 
@@ -325,19 +326,35 @@ namespace Coffee_Manager.AIUserControl
             this.label5.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(45, 28);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(126, 30);
+            this.label5.Size = new System.Drawing.Size(167, 30);
             this.label5.TabIndex = 22;
-            this.label5.Text = "MATERIAL";
+            this.label5.Text = "NGUYÊN LIỆU";
             // 
             // guna2Elipse1
             // 
             this.guna2Elipse1.TargetControl = this;
+            // 
+            // guna2Button6
+            // 
+            this.guna2Button6.BorderRadius = 26;
+            this.guna2Button6.CheckedState.Parent = this.guna2Button6;
+            this.guna2Button6.CustomImages.Parent = this.guna2Button6;
+            this.guna2Button6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button6.ForeColor = System.Drawing.Color.White;
+            this.guna2Button6.HoverState.Parent = this.guna2Button6;
+            this.guna2Button6.Location = new System.Drawing.Point(637, 444);
+            this.guna2Button6.Name = "guna2Button6";
+            this.guna2Button6.ShadowDecoration.Parent = this.guna2Button6;
+            this.guna2Button6.Size = new System.Drawing.Size(91, 36);
+            this.guna2Button6.TabIndex = 34;
+            this.guna2Button6.Text = "Lưu";
             // 
             // UC_Material
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.guna2Button6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.guna2Button2);
             this.Controls.Add(this.guna2Button1);
@@ -371,13 +388,14 @@ namespace Coffee_Manager.AIUserControl
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2DataGridView gridview;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
         private System.Windows.Forms.Label label5;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private Guna.UI2.WinForms.Guna2Button guna2Button6;
     }
 }

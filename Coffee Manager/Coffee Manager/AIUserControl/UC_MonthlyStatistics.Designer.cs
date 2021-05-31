@@ -62,9 +62,9 @@ namespace Coffee_Manager.AIUserControl
             this.label1.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(87, 37);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(138, 30);
+            this.label1.Size = new System.Drawing.Size(130, 30);
             this.label1.TabIndex = 1;
-            this.label1.Text = "STATISTIC";
+            this.label1.Text = "THỐNG KÊ";
             // 
             // cbOption
             // 

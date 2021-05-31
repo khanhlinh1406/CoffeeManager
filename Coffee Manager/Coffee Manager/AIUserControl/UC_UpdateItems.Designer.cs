@@ -56,12 +56,12 @@ namespace Coffee_Manager.AIUserControl
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Comic Sans MS", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(38, 41);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(164, 30);
+            this.label1.Size = new System.Drawing.Size(248, 38);
             this.label1.TabIndex = 1;
-            this.label1.Text = "UPDATE ITEM";
+            this.label1.Text = "CẬP NHẬT MÓN";
             // 
             // label4
             // 
@@ -69,9 +69,9 @@ namespace Coffee_Manager.AIUserControl
             this.label4.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(550, 26);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(95, 23);
+            this.label4.Size = new System.Drawing.Size(71, 23);
             this.label4.TabIndex = 12;
-            this.label4.Text = "Item Name";
+            this.label4.Text = "Tên món";
             // 
             // guna2TextBox2
             // 
@@ -91,7 +91,7 @@ namespace Coffee_Manager.AIUserControl
             this.guna2TextBox2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.guna2TextBox2.Name = "guna2TextBox2";
             this.guna2TextBox2.PasswordChar = '\0';
-            this.guna2TextBox2.PlaceholderText = "Start typing...";
+            this.guna2TextBox2.PlaceholderText = "Nhập...";
             this.guna2TextBox2.SelectedText = "";
             this.guna2TextBox2.ShadowDecoration.Parent = this.guna2TextBox2;
             this.guna2TextBox2.Size = new System.Drawing.Size(188, 36);
@@ -182,7 +182,7 @@ namespace Coffee_Manager.AIUserControl
             this.guna2TextBox3.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.guna2TextBox3.Name = "guna2TextBox3";
             this.guna2TextBox3.PasswordChar = '\0';
-            this.guna2TextBox3.PlaceholderText = "Item Name";
+            this.guna2TextBox3.PlaceholderText = "Tên món";
             this.guna2TextBox3.SelectedText = "";
             this.guna2TextBox3.ShadowDecoration.Parent = this.guna2TextBox3;
             this.guna2TextBox3.Size = new System.Drawing.Size(188, 36);
@@ -195,9 +195,9 @@ namespace Coffee_Manager.AIUserControl
             this.label5.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(430, 313);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(47, 23);
+            this.label5.Size = new System.Drawing.Size(33, 23);
             this.label5.TabIndex = 23;
-            this.label5.Text = "Price";
+            this.label5.Text = "Giá";
             // 
             // guna2Button1
             // 
@@ -212,7 +212,7 @@ namespace Coffee_Manager.AIUserControl
             this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
             this.guna2Button1.Size = new System.Drawing.Size(180, 45);
             this.guna2Button1.TabIndex = 25;
-            this.guna2Button1.Text = "Update";
+            this.guna2Button1.Text = "Cập nhật";
             // 
             // label2
             // 
@@ -220,9 +220,9 @@ namespace Coffee_Manager.AIUserControl
             this.label2.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(129, 313);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(125, 23);
+            this.label2.Size = new System.Drawing.Size(89, 23);
             this.label2.TabIndex = 19;
-            this.label2.Text = "Calculation Unit";
+            this.label2.Text = "Đơn vị tính";
             // 
             // cbCalculationUnit
             // 
@@ -262,7 +262,7 @@ namespace Coffee_Manager.AIUserControl
             this.guna2TextBox4.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.guna2TextBox4.Name = "guna2TextBox4";
             this.guna2TextBox4.PasswordChar = '\0';
-            this.guna2TextBox4.PlaceholderText = "Price";
+            this.guna2TextBox4.PlaceholderText = "Giá";
             this.guna2TextBox4.SelectedText = "";
             this.guna2TextBox4.ShadowDecoration.Parent = this.guna2TextBox4;
             this.guna2TextBox4.Size = new System.Drawing.Size(188, 36);
@@ -275,9 +275,9 @@ namespace Coffee_Manager.AIUserControl
             this.label6.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(135, 415);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(95, 23);
+            this.label6.Size = new System.Drawing.Size(71, 23);
             this.label6.TabIndex = 27;
-            this.label6.Text = "Item Name";
+            this.label6.Text = "Tên món";
             // 
             // UC_UpdateItems
             // 
