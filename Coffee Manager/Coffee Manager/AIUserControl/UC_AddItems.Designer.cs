@@ -1,5 +1,5 @@
 ﻿
-namespace Coffee_Manager.AIUserControl
+namespace Coffee_Manager
 {
     partial class UC_AddItems
     {
@@ -152,6 +152,7 @@ namespace Coffee_Manager.AIUserControl
             this.cbCalculationUnit.Size = new System.Drawing.Size(399, 36);
             this.cbCalculationUnit.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.cbCalculationUnit.TabIndex = 7;
+            this.cbCalculationUnit.SelectedIndexChanged += new System.EventHandler(this.cbCalculationUnit_SelectedIndexChanged);
             // 
             // bAddItem
             // 
@@ -167,6 +168,7 @@ namespace Coffee_Manager.AIUserControl
             this.bAddItem.Size = new System.Drawing.Size(180, 45);
             this.bAddItem.TabIndex = 8;
             this.bAddItem.Text = "Thêm món";
+            this.bAddItem.Click += new System.EventHandler(this.bAddItem_Click);
             // 
             // guna2Elipse1
             // 

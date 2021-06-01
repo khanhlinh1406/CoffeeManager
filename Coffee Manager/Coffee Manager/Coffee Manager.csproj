@@ -123,11 +123,11 @@
     <Compile Include="MainClass\ChucVu.cs" />
     <Compile Include="MainClass\DonViTinh.cs" />
     <Compile Include="MainClass\HoaDon.cs" />
+    <Compile Include="MainClass\KhachHang.cs" />
     <Compile Include="MainClass\Mon.cs" />
     <Compile Include="MainClass\NguyenLieu.cs" />
     <Compile Include="MainClass\NhanVien.cs" />
     <Compile Include="MainClass\PhieuNhap.cs" />
-    <Compile Include="MainClass\TinhTrang.cs" />
     <Compile Include="MainUI\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,6 +141,7 @@
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="OtherClass\Connect.cs" />
+    <Compile Include="OtherClass\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AIUserControl\UC_CustomerManager.resx">

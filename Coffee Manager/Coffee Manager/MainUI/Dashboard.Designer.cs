@@ -50,17 +50,17 @@ namespace Coffee_Manager
             this.btnUpdateItem = new Guna.UI2.WinForms.Guna2Button();
             this.btnAddItem = new Guna.UI2.WinForms.Guna2Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.uC_CustomerManager1 = new Coffee_Manager.AIUserControl.UC_CustomerManager();
-            this.uC_StaffManager1 = new Coffee_Manager.AIUserControl.UC_StaffManager();
-            this.uC_BeverageStatistics1 = new Coffee_Manager.AIUserControl.UC_BeverageStatistics();
-            this.uC_MonthlyStatistics1 = new Coffee_Manager.AIUserControl.UC_MonthlyStatistics();
-            this.uC_ReceivedNote1 = new Coffee_Manager.AIUserControl.UC_ReceivedNote();
-            this.uC_Material1 = new Coffee_Manager.AIUserControl.UC_Material();
-            this.uC_RemoveItem1 = new Coffee_Manager.AIUserControl.UC_RemoveItem();
-            this.uC_UpdateItems1 = new Coffee_Manager.AIUserControl.UC_UpdateItems();
-            this.uC_PlaceOrder1 = new Coffee_Manager.AIUserControl.UC_PlaceOrder();
-            this.uC_AddItems1 = new Coffee_Manager.AIUserControl.UC_AddItems();
-            this.uC_Welcome1 = new Coffee_Manager.AIUserControl.UC_Welcome();
+            this.uC_CustomerManager1 = new Coffee_Manager.UC_CustomerManager();
+            this.uC_StaffManager1 = new Coffee_Manager.UC_StaffManager();
+            this.uC_BeverageStatistics1 = new Coffee_Manager.UC_BeverageStatistics();
+            this.uC_MonthlyStatistics1 = new Coffee_Manager.UC_MonthlyStatistics();
+            this.uC_ReceivedNote1 = new Coffee_Manager.UC_ReceivedNote();
+            this.uC_Material1 = new Coffee_Manager.UC_Material();
+            this.uC_RemoveItem1 = new Coffee_Manager.UC_RemoveItem();
+            this.uC_UpdateItems1 = new Coffee_Manager.UC_UpdateItems();
+            this.uC_PlaceOrder1 = new Coffee_Manager.UC_PlaceOrder();
+            this.uC_AddItems1 = new Coffee_Manager.UC_AddItems();
+            this.uC_Welcome1 = new Coffee_Manager.UC_Welcome();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse3 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
@@ -517,6 +517,7 @@ namespace Coffee_Manager
             this.uC_AddItems1.Name = "uC_AddItems1";
             this.uC_AddItems1.Size = new System.Drawing.Size(934, 550);
             this.uC_AddItems1.TabIndex = 3;
+            this.uC_AddItems1.Visible = false;
             // 
             // uC_Welcome1
             // 
@@ -646,40 +647,40 @@ namespace Coffee_Manager
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse2;
         private System.Windows.Forms.LinkLabel btnLogOut;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse3;
-        private AIUserControl.UC_Welcome uC_Welcome1;
+        private UC_Welcome uC_Welcome1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse4;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse5;
-        private AIUserControl.UC_PlaceOrder uC_PlaceOrder1;
-        private AIUserControl.UC_AddItems uC_AddItems1;
+        private UC_PlaceOrder uC_PlaceOrder1;
+        private UC_AddItems uC_AddItems1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse6;
-        private AIUserControl.UC_UpdateItems uC_UpdateItems1;
+        private UC_UpdateItems uC_UpdateItems1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse7;
-        private AIUserControl.UC_RemoveItem uC_RemoveItem1;
+        private UC_RemoveItem uC_RemoveItem1;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel panelShop;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Button btnReceivedNote;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel panelReport;
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2Button btnMaterial;
-        private AIUserControl.UC_Material uC_Material1;
+        private UC_Material uC_Material1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse8;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse9;
-        private AIUserControl.UC_ReceivedNote uC_ReceivedNote1;
+        private UC_ReceivedNote uC_ReceivedNote1;
         private Guna.UI2.WinForms.Guna2Button btnMonthly;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel3;
         private System.Windows.Forms.Label label3;
         private Guna.UI2.WinForms.Guna2Button btnBeverage;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse10;
-        private AIUserControl.UC_MonthlyStatistics uC_MonthlyStatistics1;
+        private UC_MonthlyStatistics uC_MonthlyStatistics1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse11;
-        private AIUserControl.UC_BeverageStatistics uC_BeverageStatistics1;
+        private UC_BeverageStatistics uC_BeverageStatistics1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse12;
         private Guna.UI2.WinForms.Guna2Button btnCustomer;
         private Guna.UI2.WinForms.Guna2Button btnStaff;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel panelManager;
         private System.Windows.Forms.Label label5;
-        private AIUserControl.UC_StaffManager uC_StaffManager1;
+        private UC_StaffManager uC_StaffManager1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse13;
-        private AIUserControl.UC_CustomerManager uC_CustomerManager1;
+        private UC_CustomerManager uC_CustomerManager1;
     }
 }

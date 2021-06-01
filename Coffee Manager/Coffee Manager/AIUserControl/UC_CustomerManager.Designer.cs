@@ -1,5 +1,5 @@
 ﻿
-namespace Coffee_Manager.AIUserControl
+namespace Coffee_Manager
 {
     partial class UC_CustomerManager
     {

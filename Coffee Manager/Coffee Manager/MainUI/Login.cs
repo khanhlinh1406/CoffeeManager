@@ -12,27 +12,53 @@ namespace Coffee_Manager
 {
     public partial class Login : Form
     {
-        public Login()
+        User loginUser;
+        public Login() 
         {
+           
             InitializeComponent();
         }
 
-        private void btnGuest_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+       string CheckUserType()
         {
-            Dashboard ds = new Dashboard("Guest");
-            ds.Show();
-            this.Hide();
+            if (loginUser.IsStaff())
+                return "Staff";
+            return "Admin";
+        }
+
+        void SetLoginStatus(int number)
+        {
+            lbLoginStatus.Visible = true;
+            if (number == 0)
+                this.lbLoginStatus.Text = "Tài khoản không hợp lệ";
+            if (number == -1)
+                this.lbLoginStatus.Text = "Sai mật khẩu";
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (txtUsername.Text == "Minh Huynh" && txtPassword.Text == "111")
+            try
             {
-                Dashboard ds = new Dashboard("Admin");
-                ds.Show();
-                this.Hide();
-
+                loginUser = new User(this.txtUsername.Text, this.txtPassword.Text);
+                int check = loginUser.CheckLogin();
+                switch (check)
+                {
+                    case 1:
+                        Dashboard dashboard = new Dashboard(this.CheckUserType());
+                        dashboard.Show();
+                        this.Hide();
+                        break;
+                    case 0:
+                    case -1:
+                        SetLoginStatus(check);
+                        break;
+                }
             }
+            catch(Exception err)
+            {
+                MessageBox.Show(err.Message);
+            }
+
         }
 
         private void btnExit_Click(object sender, EventArgs e)

@@ -20,7 +20,7 @@ namespace Coffee_Manager
         {
             InitializeComponent();
 
-            if(user == "Guest")
+            if(user == "Staff")
             {
                 btnPlaceOrder.Show();
 
@@ -34,8 +34,8 @@ namespace Coffee_Manager
                 btnReceivedNote.Hide();
 
 
-                btnMonthly.Show();
-                btnBeverage.Hide();
+                btnMonthly.Hide();
+                btnBeverage.Show();
 
                 btnStaff.Hide();
                 btnCustomer.Show();
@@ -101,12 +101,14 @@ namespace Coffee_Manager
         {
             uC_UpdateItems1.Visible = true;
             uC_UpdateItems1.BringToFront();
+            uC_UpdateItems1.UC_UpdateItems_Load(sender, e);
         }
 
         private void btnRemoveItem_Click(object sender, EventArgs e)
         {
             uC_RemoveItem1.Visible = true;
             uC_RemoveItem1.BringToFront();
+            uC_RemoveItem1.UC_RemoveItem_Load(sender, e);
         }
 
         private void btnMaterial_Click(object sender, EventArgs e)

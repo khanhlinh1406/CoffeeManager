@@ -37,6 +37,7 @@ namespace Coffee_Manager
             this.btnGuest = new System.Windows.Forms.LinkLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnExit = new Guna.UI2.WinForms.Guna2GradientCircleButton();
+            this.lbLoginStatus = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -140,17 +141,10 @@ namespace Coffee_Manager
             // 
             // btnGuest
             // 
-            this.btnGuest.AutoSize = true;
-            this.btnGuest.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuest.LinkColor = System.Drawing.Color.LightGreen;
-            this.btnGuest.Location = new System.Drawing.Point(106, 438);
-            this.btnGuest.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.btnGuest.Location = new System.Drawing.Point(0, 0);
             this.btnGuest.Name = "btnGuest";
-            this.btnGuest.Size = new System.Drawing.Size(138, 20);
-            this.btnGuest.TabIndex = 4;
-            this.btnGuest.TabStop = true;
-            this.btnGuest.Text = "Continue as guest";
-            this.btnGuest.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.btnGuest_LinkClicked);
+            this.btnGuest.Size = new System.Drawing.Size(100, 23);
+            this.btnGuest.TabIndex = 6;
             // 
             // pictureBox1
             // 
@@ -180,12 +174,25 @@ namespace Coffee_Manager
             this.btnExit.Text = "X";
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
+            // lbLoginStatus
+            // 
+            this.lbLoginStatus.AutoSize = true;
+            this.lbLoginStatus.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbLoginStatus.ForeColor = System.Drawing.Color.Red;
+            this.lbLoginStatus.Location = new System.Drawing.Point(89, 441);
+            this.lbLoginStatus.Name = "lbLoginStatus";
+            this.lbLoginStatus.Size = new System.Drawing.Size(144, 17);
+            this.lbLoginStatus.TabIndex = 7;
+            this.lbLoginStatus.Text = "Trạng thái đăng nhập";
+            this.lbLoginStatus.Visible = false;
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(333, 516);
+            this.Controls.Add(this.lbLoginStatus);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnGuest);
             this.Controls.Add(this.btnLogin);
@@ -215,6 +222,7 @@ namespace Coffee_Manager
         private System.Windows.Forms.LinkLabel btnGuest;
         private System.Windows.Forms.PictureBox pictureBox1;
         private Guna.UI2.WinForms.Guna2GradientCircleButton btnExit;
+        private System.Windows.Forms.Label lbLoginStatus;
     }
 }
 

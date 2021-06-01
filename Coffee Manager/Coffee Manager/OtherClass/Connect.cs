@@ -7,18 +7,16 @@ using System.Configuration;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
-namespace Coffee_Manager.OtherClass
-{
-
-
-    class Connect
+namespace Coffee_Manager
+{     
+    public class Connect
     {
         SqlConnection Connection;
         public Connect()
         {
            // String connString = ConfigurationManager.ConnectionStrings["SQLServer"].ConnectionString;
-            //String connString = @"Server=LAPTOP-SJVI7FIS;Database=SSADATABASE;User Id=sa;Password=Dung2406";
-           // this.Connection = new SqlConnection(connString);
+           String connString = @"Server=KHANHLINH;Database=COFFEE_MANAGEMENT;User Id=sa;Password=Linh2001";
+           this.Connection = new SqlConnection(connString);
         }
         public void OpenConnection()
         {
@@ -29,10 +27,9 @@ namespace Coffee_Manager.OtherClass
             catch (Exception ex)
             {
                 MessageBox.Show("Đã xảy ra lỗi, vui lòng liên hệ đội ngũ phát triển!");
-                //ReportError rp = new ReportError(ex);
-                //rp.Show();
             }
         }
+
         public SqlCommand CreateSQLCmd(string args)
         {
             String sqlQuery = args;
@@ -48,8 +45,6 @@ namespace Coffee_Manager.OtherClass
             catch (Exception ex)
             {
                 MessageBox.Show("Đã xảy ra lỗi, vui lòng liên hệ đội ngũ phát triển!");
-                //ReportError rp = new ReportError(ex);
-                //rp.Show();
             }
         }
     }

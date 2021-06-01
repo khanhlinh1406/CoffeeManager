@@ -62,11 +62,6 @@ C:\GITHUB\QLQuanCaPhe\Coffee Manager\Coffee Manager\obj\Debug\Coffee Manager.csp
 D:\CoffeeManager\Coffee Manager\Coffee Manager\bin\Debug\Coffee Manager.exe.config
 D:\CoffeeManager\Coffee Manager\Coffee Manager\bin\Debug\Coffee Manager.exe
 D:\CoffeeManager\Coffee Manager\Coffee Manager\bin\Debug\Coffee Manager.pdb
-D:\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.AIUserControl.UC_AddItems.resources
-D:\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.AIUserControl.UC_PlaceOrder.resources
-D:\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.AIUserControl.UC_RemoveItem.resources
-D:\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.AIUserControl.UC_Welcome.resources
-D:\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.AIUserControl.UC_UpdateItems.resources
 D:\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.Dashboard.resources
 D:\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.Login.resources
 D:\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.Properties.Resources.resources
@@ -75,10 +70,15 @@ D:\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee Manager.csproj.C
 D:\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee Manager.csproj.CopyComplete
 D:\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee Manager.exe
 D:\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee Manager.pdb
-D:\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.AIUserControl.UC_Material.resources
-D:\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.AIUserControl.UC_ReceivedNote.resources
-D:\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.AIUserControl.UC_MonthlyStatistics.resources
-D:\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.AIUserControl.UC_BeverageStatistics.resources
-D:\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.AIUserControl.UC_StaffManager.resources
-D:\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.AIUserControl.UC_CustomerManager.resources
 D:\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee Manager.csprojAssemblyReference.cache
+D:\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.UC_AddItems.resources
+D:\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.UC_CustomerManager.resources
+D:\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.UC_StaffManager.resources
+D:\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.UC_BeverageStatistics.resources
+D:\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.UC_Material.resources
+D:\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.UC_MonthlyStatistics.resources
+D:\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.UC_PlaceOrder.resources
+D:\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.UC_ReceivedNote.resources
+D:\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.UC_RemoveItem.resources
+D:\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.UC_Welcome.resources
+D:\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.UC_UpdateItems.resources

@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Coffee_Manager.AIUserControl
+namespace Coffee_Manager
 {
     public partial class UC_MonthlyStatistics : UserControl
     {
