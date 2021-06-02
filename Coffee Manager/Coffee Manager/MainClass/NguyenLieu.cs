@@ -144,7 +144,7 @@ namespace Coffee_Manager
         {
             try
             {
-                string sql = "delete NGUYENLIEU where MaNL = '" + this.MaNL + "'";
+                string sql = "delete from NGUYENLIEU where MaNL = '"+this.MaNL+"'";
                 this.Connection.OpenConnection();
                 SqlCommand command = this.Connection.CreateSQLCmd(sql);
                 command.ExecuteNonQuery();
@@ -161,6 +161,35 @@ namespace Coffee_Manager
             }
         }
         
+        public string FindMaNL()
+        {
+            try
+            {
+                string sCheckLogin = "SELECT MaNL FROM NGUYENLIEU WHERE TenNL = '" + this.TenNL + "'";
+                this.Connection.OpenConnection();
+                SqlCommand command = this.Connection.CreateSQLCmd(sCheckLogin);
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.HasRows)
+                {
+
+                    if (reader.Read() == false) break;
+                    return reader.GetString(0);
+                    reader.Close();
+                    this.Connection.CloseConnection();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Đã xảy ra lỗi, vui lòng liên hệ đội ngũ phát triển!");
+
+            }
+            finally
+            {
+                this.Connection.CloseConnection();
+            }
+            return "";
+        }
 
     }
 }

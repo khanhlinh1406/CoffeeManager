@@ -107,7 +107,28 @@ namespace Coffee_Manager
             get { return this.MaPN; }
             set { this.MaPN = value; }
         }
-        //public void Add() { };
+
+        public void Add() 
+        {
+            try
+            {
+                string sql = "insert into PHIEUNHAP(MaPN, NgNhap,TriGia) values " +
+                    "('" + this.MaPN + "', '" + this.NgNhap + "', '" + this.TriGia + "') ";
+                this.Connection.OpenConnection();
+                SqlCommand command = this.Connection.CreateSQLCmd(sql);
+                command.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Đã xảy ra lỗi, vui lòng liên hệ đội ngũ phát triển!");
+
+            }
+            finally
+            {
+                this.Connection.CloseConnection();
+            }
+        }
         //public void Update() { };
         //public void Remove() { };
         //public void Save(){};

@@ -167,6 +167,36 @@ namespace Coffee_Manager
                 this.Connection.CloseConnection();
             }
         }
+
+        public string FindMaMon()
+        {
+            try
+            {
+                string sCheckLogin = "SELECT MaMon FROM NGUYENLIEU WHERE TenMon = '" + this.TenMon + "'";
+                this.Connection.OpenConnection();
+                SqlCommand command = this.Connection.CreateSQLCmd(sCheckLogin);
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.HasRows)
+                {
+
+                    if (reader.Read() == false) break;
+                    return reader.GetString(0);
+                    reader.Close();
+                    this.Connection.CloseConnection();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Đã xảy ra lỗi, vui lòng liên hệ đội ngũ phát triển!");
+
+            }
+            finally
+            {
+                this.Connection.CloseConnection();
+            }
+            return "";
+        }
     }
 
 }
