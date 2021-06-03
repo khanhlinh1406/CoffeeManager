@@ -12,7 +12,6 @@ namespace Coffee_Manager
     {
         string MaNL;
         string TenNL;
-        int TriGia;
         DonViTinh dvt;
 
 
@@ -21,31 +20,24 @@ namespace Coffee_Manager
         public NguyenLieu()
         {
             MaNL = TenNL = "";
-            TriGia = 0;
             dvt = new DonViTinh();
         }
 
-        public NguyenLieu(string TenNL, int TriGia, DonViTinh dvt)
+        public NguyenLieu(string TenNL, DonViTinh dvt)
         {
             CreateMaNL();
             this.TenNL = TenNL;
-            this.TriGia = TriGia;
             this.dvt = dvt;
         }
 
-        public NguyenLieu(string MaNL, string TenNL, int TriGia, DonViTinh dvt)
+        public NguyenLieu(string MaNL, string TenNL, DonViTinh dvt)
         {
             this.MaNL = MaNL;
             this.TenNL = TenNL;
-            this.TriGia = TriGia;
             this.dvt = dvt;
         }
 
-        public int TRI_GIA
-        {
-            get { return this.TriGia; }
-            set { this.TriGia = value; }
-        }
+      
         public string TEN_NL
         {
             get { return this.TenNL; }
@@ -104,8 +96,8 @@ namespace Coffee_Manager
         public void Add() {
             try
             {
-                string sql = "insert into NGUYENLIEU(MaNL, TenNL, MaDVT, TriGia) values " +
-                    "('" + this.MaNL + "', N'" + this.TenNL + "', '" + this.dvt.MA_DVT + "', '" + this.TriGia + "') ";
+                string sql = "insert into NGUYENLIEU(MaNL, TenNL, MaDVT) values " +
+                    "('" + this.MaNL + "', N'" + this.TenNL + "', '" + this.dvt.MA_DVT + "') ";
                 this.Connection.OpenConnection();
                 SqlCommand command = this.Connection.CreateSQLCmd(sql);
                 command.ExecuteNonQuery();
@@ -124,7 +116,7 @@ namespace Coffee_Manager
         public void Update() {
             try
             {
-                string sql = "update NGUYENLIEU set TenNL = N'" + this.TenNL + "', MaDVT = '" + this.dvt.MA_DVT + "', TriGia = '" + this.TriGia + "' where MaNL = '" + this.MaNL + "'";
+                string sql = "update NGUYENLIEU set TenNL = N'" + this.TenNL + "', MaDVT = '" + this.dvt.MA_DVT + "' where MaNL = '" + this.MaNL + "'";
                 this.Connection.OpenConnection();
                 SqlCommand command = this.Connection.CreateSQLCmd(sql);
                 command.ExecuteNonQuery();

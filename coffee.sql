@@ -1,5 +1,5 @@
 CREATE DATABASE COFFEE_MANAGEMENT
-
+use COFFEE_MANAGEMENT
 CREATE TABLE MON
 (
 	MaMon varchar(10) primary key,
@@ -54,6 +54,8 @@ CREATE TABLE CT_HOADON
 	PRIMARY KEY(MaHD, MaMon)
 )
 
+
+
 CREATE TABLE PHIEUNHAP
 (
 	MaPN varchar(10) primary key, 
@@ -65,8 +67,8 @@ CREATE TABLE CT_PHIEUNHAP
 (
 	MaPN varchar(10), 
 	MaNL varchar(10), 
+	DonGia int,
 	SoLuong int
-	PRIMARY KEY(MaPN, MaNL)
 )
 
 CREATE TABLE NGUYENLIEU
@@ -74,7 +76,6 @@ CREATE TABLE NGUYENLIEU
 	MaNL varchar(10) primary key, 
 	TenNL nvarchar(20), 
 	MaDVT varchar(10),
-	TriGia int
 )
 
 
@@ -90,6 +91,7 @@ create table KHACHHANG
 )
 
 
-
+SELECT NL.MaNL, NL.TenNL, CT.SoLuong, NL.MaDVT, DVT.TenDVT, CT.DonGia FROM NGUYENLIEU NL join CT_PHIEUNHAP CT 
+on CT.MaNL = NL.MaNL join DONVITINH DVT on NL.MaDVT = DVT.MaDVT where CT.MaPN = '574239363
 
 

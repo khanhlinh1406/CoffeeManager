@@ -33,7 +33,7 @@ namespace Coffee_Manager
         {
             try
             {
-                string find = "SELECT MaNL, TenNL, TenDVT, TriGia FROM NGUYENLIEU A JOIN DONVITINH B on A.MaDVT = B.MaDVT ";
+                string find = "SELECT MaNL, TenNL, TenDVT FROM NGUYENLIEU A JOIN DONVITINH B on A.MaDVT = B.MaDVT ";
                 this.Connection.OpenConnection();
                 SqlCommand command = this.Connection.CreateSQLCmd(find);
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
@@ -84,7 +84,7 @@ namespace Coffee_Manager
 
         private void bAddItem_Click(object sender, EventArgs e)
         {
-            NguyenLieu nguyenLieu = new NguyenLieu(tbItemName.Text, int.Parse(tbPrice.Text), listDVT[index]);
+            NguyenLieu nguyenLieu = new NguyenLieu(tbItemName.Text, listDVT[index]);
             nguyenLieu.Add();
             LoadData();
         }
@@ -99,7 +99,7 @@ namespace Coffee_Manager
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             NguyenLieu nguyenLieu = new NguyenLieu(gridview.SelectedRows[0].Cells[0].Value.ToString(),
-                tbItemName.Text, int.Parse(tbPrice.Text), listDVT[index]);
+                tbItemName.Text, listDVT[index]);
             nguyenLieu.Update();
             LoadData();
         }
@@ -107,14 +107,13 @@ namespace Coffee_Manager
         private void gridview_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             tbItemName.Text = gridview.SelectedRows[0].Cells[1].Value.ToString();
-            tbPrice.Text = gridview.SelectedRows[0].Cells[3].Value.ToString();
             cbCalculationUnit.Text = gridview.SelectedRows[0].Cells[2].Value.ToString();
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
             NguyenLieu nguyenLieu = new NguyenLieu(gridview.SelectedRows[0].Cells[0].Value.ToString(),
-                tbItemName.Text, int.Parse(tbPrice.Text), listDVT[index]);
+                tbItemName.Text, listDVT[index]);
             nguyenLieu.Remove();
             LoadData();
         }
