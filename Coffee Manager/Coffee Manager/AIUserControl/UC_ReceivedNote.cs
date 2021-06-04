@@ -22,6 +22,7 @@ namespace Coffee_Manager
             InitializeComponent();
             date.Value = DateTime.Now;
             btnSeen.Visible = false;
+            btnRemoveDetail.Enabled = btnUpdate.Enabled = false;
         }
 
         public void UC_ReceivedNote_Load(object sender, EventArgs e)
@@ -84,7 +85,7 @@ namespace Coffee_Manager
                     NguyenLieu tmp = new NguyenLieu(reader.GetString(0), reader.GetString(1), new DonViTinh(reader.GetString(3), reader.GetString(4)));
                     listNL.Add(tmp);
                     
-                    gridviewDetails.Rows.Add(tmp.TEN_NL, tmp.DVT.TEN_DVT, reader.GetInt32(2), reader.GetInt32(5), reader.GetInt32(5) * reader.GetInt32(2));
+                    gridviewDetails.Rows.Add(tmp.MA_NL, tmp.TEN_NL, tmp.DVT.TEN_DVT, reader.GetInt32(2), reader.GetInt32(5), reader.GetInt32(5) * reader.GetInt32(2));
                 }
                 reader.Close();
             }
@@ -136,7 +137,7 @@ namespace Coffee_Manager
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            gridviewDetails.Rows.Add(listNL[indexMaterial].TEN_NL, listNL[indexMaterial].DVT.TEN_DVT, numeric.Value, int.Parse(tbPrice.Text), numeric.Value * int.Parse(tbPrice.Text));
+            gridviewDetails.Rows.Add(listNL[indexMaterial].MA_NL,listNL[indexMaterial].TEN_NL, listNL[indexMaterial].DVT.TEN_DVT, numeric.Value, int.Parse(tbPrice.Text), numeric.Value * int.Parse(tbPrice.Text));
         }
 
 
@@ -149,11 +150,12 @@ namespace Coffee_Manager
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            gridviewDetails.SelectedRows[0].Cells[0].Value = listNL[indexMaterial].TEN_NL;
-            gridviewDetails.SelectedRows[0].Cells[1].Value = listNL[indexMaterial].DVT.TEN_DVT;
-            gridviewDetails.SelectedRows[0].Cells[2].Value = numeric.Value;
-            gridviewDetails.SelectedRows[0].Cells[3].Value = tbPrice.Text;
-            gridviewDetails.SelectedRows[0].Cells[4].Value = numeric.Value * int.Parse(tbPrice.Text);
+            gridviewDetails.SelectedRows[0].Cells[0].Value = listNL[indexMaterial].MA_NL;
+            gridviewDetails.SelectedRows[0].Cells[1].Value = listNL[indexMaterial].TEN_NL;
+            gridviewDetails.SelectedRows[0].Cells[2].Value = listNL[indexMaterial].DVT.TEN_DVT;
+            gridviewDetails.SelectedRows[0].Cells[3].Value = numeric.Value;
+            gridviewDetails.SelectedRows[0].Cells[4].Value = tbPrice.Text;
+            gridviewDetails.SelectedRows[0].Cells[5].Value = numeric.Value * int.Parse(tbPrice.Text);
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
@@ -176,15 +178,15 @@ namespace Coffee_Manager
 
         private void btnDone_Click(object sender, EventArgs e)
         {
-
+            int total = 0;
+            
+            for (int rows = 0; rows < gridviewDetails.Rows.Count; rows++)
+                total += int.Parse(gridviewDetails.Rows[rows].Cells[5].Value.ToString());
 
             if (isSeenDetail == false)
             {
-                int total = 0;
+               
                 //add new
-                for (int rows = 0; rows < gridviewDetails.Rows.Count; rows++)
-                    total += int.Parse(gridviewDetails.Rows[rows].Cells[4].Value.ToString());
-
                 List<NguyenLieu> listNguyenLieu = new List<NguyenLieu>();
                 List<int> SL = new List<int>();
 
@@ -200,13 +202,13 @@ namespace Coffee_Manager
                 for (int rows = 0; rows < gridviewDetails.Rows.Count ; rows++)
                 {
                     NguyenLieu tmp = new NguyenLieu();
-                    tmp.TEN_NL = gridviewDetails.Rows[rows].Cells[0].Value.ToString();
-                    tmp.MA_NL = tmp.FindMaNL();
+                    tmp.TEN_NL = gridviewDetails.Rows[rows].Cells[1].Value.ToString();
+                    tmp.MA_NL = gridviewDetails.Rows[rows].Cells[0].Value.ToString();
 
-                   try
+                    try
                     {
                         string sql = "insert into CT_PHIEUNHAP(MaPN, MaNL, SoLuong, DonGia) values " +
-                            "('" + phieuNhap.MA_PN + "', '" + tmp.MA_NL + "', '" + int.Parse(gridviewDetails.Rows[rows].Cells[2].Value.ToString()) + "', '"+int.Parse(tbPrice.Text)+"') ";
+                            "('" + phieuNhap.MA_PN + "', '" + tmp.MA_NL + "', '" + int.Parse(gridviewDetails.Rows[rows].Cells[3].Value.ToString()) + "', '"+int.Parse(tbPrice.Text)+"') ";
                         this.Connection.OpenConnection();
                         SqlCommand command = this.Connection.CreateSQLCmd(sql);
                         command.ExecuteNonQuery();
@@ -227,10 +229,7 @@ namespace Coffee_Manager
             else
             {
                 // update
-                int total = 0;
-                for (int rows = 0; rows < gridviewDetails.Rows.Count; rows++)
-                    total += int.Parse(gridviewDetails.Rows[rows].Cells[4].Value.ToString());
-
+               
                 List<NguyenLieu> listNguyenLieu = new List<NguyenLieu>();
                
                 PhieuNhap phieuNhap = new PhieuNhap();
@@ -251,19 +250,19 @@ namespace Coffee_Manager
                 for (int rows = 0; rows < gridviewDetails.Rows.Count; rows++)
                 {
                     NguyenLieu tmp = new NguyenLieu();
-                    tmp.TEN_NL = gridviewDetails.Rows[rows].Cells[0].Value.ToString();
-                    tmp.MA_NL = tmp.FindMaNL();
+                    tmp.TEN_NL = gridviewDetails.Rows[rows].Cells[1].Value.ToString();
+                    tmp.MA_NL = gridviewDetails.Rows[rows].Cells[0].Value.ToString();
 
                     try
                     {
                         string sql = "insert into CT_PHIEUNHAP(MaPN, MaNL, SoLuong, DonGia) values " +
-                             "('" + phieuNhap.MA_PN + "', '" + tmp.MA_NL + "', '" + int.Parse(gridviewDetails.Rows[rows].Cells[2].Value.ToString()) + "', '" + int.Parse(tbPrice.Text) + "') ";
+                             "('" + phieuNhap.MA_PN + "', '" + tmp.MA_NL + "', '" + int.Parse(gridviewDetails.Rows[rows].Cells[3].Value.ToString()) + "', '" + int.Parse(tbPrice.Text) + "') ";
                         this.Connection.OpenConnection();
                         SqlCommand command = this.Connection.CreateSQLCmd(sql);
                         command.ExecuteNonQuery();
                         Connection.CloseConnection();
 
-                        sql = "update PHIEUNHAP set TriGia = '"+total+"'";
+                        sql = "update PHIEUNHAP set TriGia = '"+total+"'where MaPN = '"+ phieuNhap.MA_PN+"'";
                         this.Connection.OpenConnection();
                         command = this.Connection.CreateSQLCmd(sql);
                         command.ExecuteNonQuery();
@@ -283,18 +282,23 @@ namespace Coffee_Manager
 
             btnSeen.Visible = false;
             isSeenDetail = false;
+
+            btnRemoveDetail.Enabled = btnUpdate.Enabled = false;
             cbMaterial.Text = tbPrice.Text =null;
             numeric.Value = 0;
+
             gridviewDetails.Rows.Clear();
+
             LoadDataGeneral();
         }
 
         int indexDetail;
         private void gridviewDetails_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            cbMaterial.Text = gridviewDetails.SelectedRows[0].Cells[0].Value.ToString() + " (" +
-                gridviewDetails.SelectedRows[0].Cells[1].Value.ToString() +")";
-            numeric.Value = int.Parse(gridviewDetails.SelectedRows[0].Cells[2].Value.ToString());
+            btnRemoveDetail.Enabled = btnUpdate.Enabled = true;
+            cbMaterial.Text = gridviewDetails.SelectedRows[0].Cells[1].Value.ToString() + " (" +
+                gridviewDetails.SelectedRows[0].Cells[2].Value.ToString() +")";
+            numeric.Value = int.Parse(gridviewDetails.SelectedRows[0].Cells[3].Value.ToString());
             tbPrice.Text = gridviewDetails.SelectedRows[0].Cells[4].Value.ToString();
             indexDetail = gridviewDetails.SelectedRows[0].Index;
         }
