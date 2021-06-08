@@ -15,7 +15,6 @@ namespace Coffee_Manager
         User loginUser;
         public Login() 
         {
-           
             InitializeComponent();
         }
 

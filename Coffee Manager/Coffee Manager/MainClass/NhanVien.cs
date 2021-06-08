@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Coffee_Manager
 {
@@ -17,6 +19,8 @@ namespace Coffee_Manager
         string MaCV;
         string MaTK;
 
+        Connect Connection = new Connect();
+
         public NhanVien()
         {
             MaNV = TenNV = SoDT = DiaChi = MaCV = MaTK = "";
@@ -27,6 +31,19 @@ namespace Coffee_Manager
             DateTime NgSinh, DateTime NgVaoLam)
         {
             this.MaNV = MaNV;
+            this.TenNV = TenNV;
+            this.SoDT = SoDT;
+            this.DiaChi = DiaChi;
+            this.MaCV = MaCV;
+            this.MaTK = MaTK;
+            this.NgSinh = NgSinh;
+            this.NgVaoLam = NgVaoLam;
+        }
+
+        public NhanVien(string TenNV, string SoDT, string DiaChi, string MaCV, string MaTK,
+            DateTime NgSinh, DateTime NgVaoLam)
+        {
+            CreateMaNV();
             this.TenNV = TenNV;
             this.SoDT = SoDT;
             this.DiaChi = DiaChi;
@@ -76,11 +93,109 @@ namespace Coffee_Manager
             get { return this.NgSinh; }
             set { this.NgSinh = value; }
         }
-        //public void Add() { };
-        //public void Update() { };
-        //public void Remove() { };
-        //public void Save(){};
 
+        public void CreateMaNV()
+        {
+            try
+            {
+                Random random = new Random();
+                string tmp = random.Next(0, 999999999).ToString();
 
+                string find = "SELECT MaKH FROM KHACHHANG where MaKH = '" + tmp + "'";
+
+                this.Connection.OpenConnection();
+                SqlCommand command = this.Connection.CreateSQLCmd(find);
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.HasRows)
+                {
+                    if (reader.Read() == false) break;
+                    while (reader.GetString(0) == tmp)
+                    {
+                        tmp = random.Next(0, 999999999).ToString();
+                    }
+
+                }
+                this.MaNV = tmp;
+                reader.Close();
+                this.Connection.CloseConnection();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Đã xảy ra lỗi, vui lòng liên hệ đội ngũ phát triển!");
+
+            }
+            finally
+            {
+                this.Connection.CloseConnection();
+            }
+
+        }
+
+        public void Add() {
+            try
+            {
+                string sql = "insert into KHACHHANG values " +
+                    "('" + this.MaNV + "', N'" + this.TenNV + "', '" + this.NgSinh + "', '" + this.SoDT + "', N'" + this.DiaChi + "', '" + this.NgVaoLam + "', '" + this.MaCV + "', '" + this.MaTK +  "') ";
+                this.Connection.OpenConnection();
+                SqlCommand command = this.Connection.CreateSQLCmd(sql);
+                command.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Đã xảy ra lỗi, vui lòng liên hệ đội ngũ phát triển!");
+
+            }
+            finally
+            {
+                this.Connection.CloseConnection();
+            }
+        }
+
+        public void Update()
+        {
+            try
+            {
+                string sql = "update KHACHHANG set TenNV = N'" + this.TenNV + "', NgSinh = '" + this.NgSinh + "', " +
+                    "SoDT = '" + this.SoDT + "' , DiaChi = N'" + this.DiaChi + "', NgVaoLam ='" + this.NgVaoLam + "', " +
+                    "MaCV = '" + this.MaCV + "' where MaNV = '" + this.MaNV + "'";
+
+                this.Connection.OpenConnection();
+                SqlCommand command = this.Connection.CreateSQLCmd(sql);
+                command.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Đã xảy ra lỗi, vui lòng liên hệ đội ngũ phát triển!");
+
+            }
+            finally
+            {
+                this.Connection.CloseConnection();
+            }
+        }
+
+        public void Remove()
+        {
+            try
+            {
+                string sql = "delete NHANVIEN where MaNV = '" + this.MaNV + "'";
+                this.Connection.OpenConnection();
+                SqlCommand command = this.Connection.CreateSQLCmd(sql);
+                command.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Đã xảy ra lỗi, vui lòng liên hệ đội ngũ phát triển!");
+
+            }
+            finally
+            {
+                this.Connection.CloseConnection();
+            }
+        }
     }
 }
