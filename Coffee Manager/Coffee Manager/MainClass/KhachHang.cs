@@ -84,6 +84,7 @@ namespace Coffee_Manager
             get { return this.TenKH; }
             set { this.TenKH = value; }
         }
+
         public void CreateMaKH()
         {
             try
@@ -176,7 +177,6 @@ namespace Coffee_Manager
                 this.Connection.OpenConnection();
                 SqlCommand command = this.Connection.CreateSQLCmd(sql);
                 command.ExecuteNonQuery();
-
             }
             catch (Exception ex)
             {

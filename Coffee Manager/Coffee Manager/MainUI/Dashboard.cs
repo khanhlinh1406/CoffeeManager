@@ -12,15 +12,18 @@ namespace Coffee_Manager
 {
     public partial class Dashboard : Form
     {
+        public static string staffAccountId = "";
+
         public Dashboard()
         {
             InitializeComponent();
         }
-        public Dashboard(String user)
+        public Dashboard(String userType, string accountid)
         {
             InitializeComponent();
+            staffAccountId = accountid;
 
-            if(user == "Staff")
+            if(userType == "Staff")
             {
                 btnPlaceOrder.Show();
 
@@ -39,7 +42,7 @@ namespace Coffee_Manager
 
                 btnStaff.Hide();
                 btnCustomer.Show();
-            }else if(user == "Admin")
+            }else if(userType == "Admin")
             {
                 btnPlaceOrder.Hide();
 

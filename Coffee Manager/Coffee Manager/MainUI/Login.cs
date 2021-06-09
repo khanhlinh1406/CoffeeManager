@@ -43,7 +43,7 @@ namespace Coffee_Manager
                 switch (check)
                 {
                     case 1:
-                        Dashboard dashboard = new Dashboard(this.CheckUserType());
+                        Dashboard dashboard = new Dashboard(this.CheckUserType(), this.txtUsername.Text);
                         dashboard.Show();
                         this.Hide();
                         break;
