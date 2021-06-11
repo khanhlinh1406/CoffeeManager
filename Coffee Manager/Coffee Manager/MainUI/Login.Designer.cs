@@ -90,6 +90,7 @@ namespace Coffee_Manager
             this.txtUsername.Size = new System.Drawing.Size(182, 29);
             this.txtUsername.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.txtUsername.TabIndex = 2;
+            this.txtUsername.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtUsername_KeyDown);
             // 
             // txtPassword
             // 
@@ -116,6 +117,7 @@ namespace Coffee_Manager
             this.txtPassword.Size = new System.Drawing.Size(182, 29);
             this.txtPassword.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.txtPassword.TabIndex = 2;
+            this.txtPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPassword_KeyDown);
             // 
             // btnLogin
             // 

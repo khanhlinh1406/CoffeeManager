@@ -13,12 +13,12 @@ namespace Coffee_Manager
     public partial class Login : Form
     {
         User loginUser;
-        public Login() 
+        public Login()
         {
             InitializeComponent();
         }
 
-       string CheckUserType()
+        string CheckUserType()
         {
             if (loginUser.IsStaff())
                 return "Staff";
@@ -43,7 +43,7 @@ namespace Coffee_Manager
                 switch (check)
                 {
                     case 1:
-                        Dashboard dashboard = new Dashboard(this.CheckUserType());
+                        Dashboard dashboard = new Dashboard(this.CheckUserType(), this.txtUsername.Text);
                         dashboard.Show();
                         this.Hide();
                         break;
@@ -53,7 +53,7 @@ namespace Coffee_Manager
                         break;
                 }
             }
-            catch(Exception err)
+            catch (Exception err)
             {
                 MessageBox.Show(err.Message);
             }
@@ -63,6 +63,18 @@ namespace Coffee_Manager
         private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void txtUsername_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter || e.KeyCode  == Keys.Tab)
+                txtPassword.Focus();
+        }
+
+        private void txtPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                btnLogin_Click(sender, e);
         }
     }
 }

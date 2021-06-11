@@ -416,6 +416,7 @@ namespace Coffee_Manager
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.uC_PlaceOrder1);
             this.panel2.Controls.Add(this.uC_CustomerManager1);
             this.panel2.Controls.Add(this.uC_StaffManager1);
             this.panel2.Controls.Add(this.uC_BeverageStatistics1);
@@ -424,7 +425,6 @@ namespace Coffee_Manager
             this.panel2.Controls.Add(this.uC_Material1);
             this.panel2.Controls.Add(this.uC_RemoveItem1);
             this.panel2.Controls.Add(this.uC_UpdateItems1);
-            this.panel2.Controls.Add(this.uC_PlaceOrder1);
             this.panel2.Controls.Add(this.uC_AddItems1);
             this.panel2.Controls.Add(this.uC_Welcome1);
             this.panel2.Location = new System.Drawing.Point(163, 14);

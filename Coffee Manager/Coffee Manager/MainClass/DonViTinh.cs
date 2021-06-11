@@ -20,6 +20,12 @@ namespace Coffee_Manager
             MaDVT = TenDVT = "";
         }
 
+        public DonViTinh(string ma)
+        {
+            this.MaDVT = ma;
+            this.TenDVT = "null";
+        }
+
         public DonViTinh(string MaDVT, string TenDVT)
         {
             this.MaDVT = MaDVT;
@@ -45,7 +51,7 @@ namespace Coffee_Manager
         {
             try
             {
-                string sCheckLogin = "SELECT MaDVT FROM NGUYENLIEU WHERE TenDVT = '" + this.TenDVT + "'";
+                string sCheckLogin = "SELECT MaDVT FROM DONVITINH WHERE TenDVT = '" + this.TenDVT + "'";
                 this.Connection.OpenConnection();
                 SqlCommand command = this.Connection.CreateSQLCmd(sCheckLogin);
                 SqlDataReader reader = command.ExecuteReader();
@@ -69,6 +75,35 @@ namespace Coffee_Manager
                 this.Connection.CloseConnection();
             }
             return "";
+        }
+
+        public string FindTenDVT()
+        {
+            try
+            {
+                string sCheckLogin = "SELECT TenDVT FROM DONVITINH WHERE MaDVT = '" + this.MaDVT + "'";
+                this.Connection.OpenConnection();
+                SqlCommand command = this.Connection.CreateSQLCmd(sCheckLogin);
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.HasRows)
+                {
+                    if (reader.Read() == false) break;
+                    this.TenDVT = reader.GetString(0);
+                    reader.Close();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Đã xảy ra lỗi, vui lòng liên hệ đội ngũ phát triển!");
+
+            }
+            finally
+            {
+                this.Connection.CloseConnection();
+            }
+
+            return this.TenDVT;
         }
     }
 }
