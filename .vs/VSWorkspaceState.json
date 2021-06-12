@@ -1,8 +1,11 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Coffee Manager"
+    "\\Coffee Manager",
+    "\\Coffee Manager\\Coffee Manager",
+    "\\Coffee Manager\\Coffee Manager\\MainUI",
+    "\\Coffee Manager\\Coffee Manager\\OtherClass"
   ],
-  "SelectedNode": "\\Coffee Manager\\Coffee Manager.sln",
+  "SelectedNode": "\\Coffee Manager\\Coffee Manager\\OtherClass\\Connect.cs",
   "PreviewInSolutionExplorer": false
 }
