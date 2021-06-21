@@ -19,14 +19,12 @@ namespace Coffee_Manager
         public UC_Material()
         {
             InitializeComponent();
-
         }
 
         public void UC_Material_Load(object sender, EventArgs e)
         {
             LoadData();
             LoadListDVT();
-           
         }
 
         void LoadData()
@@ -51,8 +49,10 @@ namespace Coffee_Manager
                 this.Connection.CloseConnection();
             }
         }    
+
         void LoadListDVT()
         {
+            cbCalculationUnit.Items.Clear();
             try
             {
                 string find = "SELECT MaDVT, TenDVT FROM DONVITINH";
@@ -61,7 +61,6 @@ namespace Coffee_Manager
                 SqlDataReader reader = command.ExecuteReader();
                 while (reader.HasRows)
                 {
-
                     if (reader.Read() == false) break;
                     DonViTinh tmp = new DonViTinh(reader.GetString(0), reader.GetString(1));
                     listDVT.Add(tmp);
@@ -73,13 +72,11 @@ namespace Coffee_Manager
             catch (Exception ex)
             {
                 MessageBox.Show("Đã xảy ra lỗi, vui lòng liên hệ đội ngũ phát triển!");
-
             }
             finally
             {
                 this.Connection.CloseConnection();
             }
-
         }
 
         private void bAddItem_Click(object sender, EventArgs e)
