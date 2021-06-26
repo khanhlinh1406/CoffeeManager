@@ -145,7 +145,7 @@ namespace Coffee_Manager
             try
             {
                 string sql = "update NHANVIEN set TenNV = N'" + this.TenNV + "', NgSinh = '" + this.NgSinh + "', " +
-                    "SDT = '" + this.SoDT  + "', NgVaoLam ='" + this.NgVaoLam + "', " +
+                    "SDT = '" + this.SoDT  + "', NgVaoLam ='" + this.NgVaoLam + "', MaCV ='" + this.MaCV + 
                     "' where MaNV = '" + this.MaNV + "'";
 
                 this.Connection.OpenConnection();
@@ -168,7 +168,7 @@ namespace Coffee_Manager
         {
             try
             {
-                string sql = "delete  NHANVIEN where MaNV = '" + this.MaNV + "'";
+                string sql = "delete NHANVIEN where MaNV = '" + this.MaNV + "'";
                 this.Connection.OpenConnection();
                 SqlCommand command = this.Connection.CreateSQLCmd(sql);
                 command.ExecuteNonQuery();

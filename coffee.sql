@@ -25,6 +25,7 @@ CREATE TABLE NHANVIEN
 	MaCV varchar(10),
 	MaTK varchar(10)
 )
+alter table NHanvien drop column Diachi
 
 CREATE TABLE CHUCVU
 (
@@ -90,8 +91,5 @@ create table KHACHHANG
   Diem int
 )
 
-
-SELECT NL.MaNL, NL.TenNL, CT.SoLuong, NL.MaDVT, DVT.TenDVT, CT.DonGia FROM NGUYENLIEU NL join CT_PHIEUNHAP CT 
-on CT.MaNL = NL.MaNL join DONVITINH DVT on NL.MaDVT = DVT.MaDVT where CT.MaPN = '574239363
-
-
+SELECT A.MaNV, A.TenNV, A.NgSinh, A.SDT, A.NgVaoLam, C.TenCV, A.MaTK, B.MatKhau 
+FROM TAIKHOAN B join NHANVIEN A on B.MaTK = A.MaTK join CHUCVU C on A.MaCV = C.MaCV
