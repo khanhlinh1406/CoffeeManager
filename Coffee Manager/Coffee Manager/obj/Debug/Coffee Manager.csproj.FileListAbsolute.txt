@@ -1,0 +1,27 @@
+D:\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee Manager.csprojAssemblyReference.cache
+D:\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.UC_CustomerManager.resources
+D:\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.UC_StaffManager.resources
+D:\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.UC_AddItems.resources
+D:\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.UC_BeverageStatistics.resources
+D:\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.UC_Material.resources
+D:\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.UC_MonthlyStatistics.resources
+D:\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.UC_PlaceOrder.resources
+D:\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.UC_ReceivedNote.resources
+D:\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.UC_RemoveItem.resources
+D:\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.UC_Welcome.resources
+D:\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.UC_UpdateItems.resources
+D:\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.Dashboard.resources
+D:\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.Login.resources
+D:\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.Properties.Resources.resources
+D:\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee Manager.csproj.GenerateResource.cache
+D:\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee Manager.csproj.CoreCompileInputs.cache
+D:\CoffeeManager\Coffee Manager\Coffee Manager\bin\Debug\Coffee Manager.exe.config
+D:\CoffeeManager\Coffee Manager\Coffee Manager\bin\Debug\Coffee Manager.exe
+D:\CoffeeManager\Coffee Manager\Coffee Manager\bin\Debug\Coffee Manager.pdb
+D:\CoffeeManager\Coffee Manager\Coffee Manager\bin\Debug\BouncyCastle.Crypto.dll
+D:\CoffeeManager\Coffee Manager\Coffee Manager\bin\Debug\Guna.UI2.dll
+D:\CoffeeManager\Coffee Manager\Coffee Manager\bin\Debug\itextsharp.dll
+D:\CoffeeManager\Coffee Manager\Coffee Manager\bin\Debug\itextsharp.xml
+D:\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee Manager.csproj.CopyComplete
+D:\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee Manager.exe
+D:\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee Manager.pdb
