@@ -184,6 +184,33 @@ namespace Coffee_Manager
                 this.Connection.CloseConnection();
             }
         }
+
+        public void FindNhanVienFromAccountId()
+        {
+            try
+            {
+                string sql = "select * from NHANVIEN where MaTK = '" + this.MA_TK + "'";
+                this.Connection.OpenConnection();
+                SqlCommand command = this.Connection.CreateSQLCmd(sql);
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.HasRows)
+                {
+                    if (reader.Read() == false) break;
+                    this.MaNV = reader.GetString(0);
+                    this.TenNV = reader.GetString(1);
+                    this.SoDT = reader.GetString(3);
+                }
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Đã xảy ra lỗi, vui lòng liên hệ đội ngũ phát triển!");
+            }
+            finally
+            {
+                this.Connection.CloseConnection();
+            }
+        }
         //public void Save(){};
 
 
