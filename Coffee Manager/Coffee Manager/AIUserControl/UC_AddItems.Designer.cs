@@ -44,45 +44,47 @@ namespace Coffee_Manager
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(296, 68);
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(264, 68);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(222, 32);
+            this.label1.Size = new System.Drawing.Size(250, 32);
             this.label1.TabIndex = 0;
             this.label1.Text = "THÊM MÓN MỚI";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(176, 127);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(121, 24);
+            this.label2.Size = new System.Drawing.Size(108, 24);
             this.label2.TabIndex = 1;
             this.label2.Text = "Đơn vị tính";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(176, 207);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(99, 24);
+            this.label3.Size = new System.Drawing.Size(88, 24);
             this.label3.TabIndex = 2;
             this.label3.Text = "Tên món";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(176, 294);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(43, 24);
+            this.label4.Size = new System.Drawing.Size(42, 24);
             this.label4.TabIndex = 3;
             this.label4.Text = "Giá";
             // 
             // tbItemName
             // 
+            this.tbItemName.BorderRadius = 20;
             this.tbItemName.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.tbItemName.DefaultText = "";
             this.tbItemName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -92,12 +94,12 @@ namespace Coffee_Manager
             this.tbItemName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.tbItemName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbItemName.FocusedState.Parent = this.tbItemName;
-            this.tbItemName.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbItemName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbItemName.ForeColor = System.Drawing.Color.Black;
             this.tbItemName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbItemName.HoverState.Parent = this.tbItemName;
             this.tbItemName.Location = new System.Drawing.Point(181, 237);
-            this.tbItemName.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.tbItemName.Margin = new System.Windows.Forms.Padding(5);
             this.tbItemName.Name = "tbItemName";
             this.tbItemName.PasswordChar = '\0';
             this.tbItemName.PlaceholderText = "";
@@ -109,6 +111,9 @@ namespace Coffee_Manager
             // 
             // tbPrice
             // 
+            this.tbPrice.BorderColor = System.Drawing.Color.Transparent;
+            this.tbPrice.BorderRadius = 20;
+            this.tbPrice.BorderThickness = 0;
             this.tbPrice.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.tbPrice.DefaultText = "";
             this.tbPrice.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -118,12 +123,12 @@ namespace Coffee_Manager
             this.tbPrice.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.tbPrice.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbPrice.FocusedState.Parent = this.tbPrice;
-            this.tbPrice.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbPrice.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbPrice.ForeColor = System.Drawing.Color.Black;
             this.tbPrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbPrice.HoverState.Parent = this.tbPrice;
             this.tbPrice.Location = new System.Drawing.Point(181, 324);
-            this.tbPrice.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.tbPrice.Margin = new System.Windows.Forms.Padding(5);
             this.tbPrice.Name = "tbPrice";
             this.tbPrice.PasswordChar = '\0';
             this.tbPrice.PlaceholderText = "";
@@ -132,6 +137,7 @@ namespace Coffee_Manager
             this.tbPrice.Size = new System.Drawing.Size(399, 36);
             this.tbPrice.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.tbPrice.TabIndex = 6;
+            this.tbPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbPrice_KeyPress);
             // 
             // cbCalculationUnit
             // 
@@ -141,7 +147,7 @@ namespace Coffee_Manager
             this.cbCalculationUnit.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbCalculationUnit.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbCalculationUnit.FocusedState.Parent = this.cbCalculationUnit;
-            this.cbCalculationUnit.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbCalculationUnit.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbCalculationUnit.ForeColor = System.Drawing.Color.Black;
             this.cbCalculationUnit.HoverState.Parent = this.cbCalculationUnit;
             this.cbCalculationUnit.ItemHeight = 30;
@@ -156,10 +162,12 @@ namespace Coffee_Manager
             // 
             // bAddItem
             // 
-            this.bAddItem.BorderRadius = 26;
+            this.bAddItem.BorderColor = System.Drawing.Color.Transparent;
+            this.bAddItem.BorderRadius = 20;
+            this.bAddItem.BorderThickness = 10;
             this.bAddItem.CheckedState.Parent = this.bAddItem;
             this.bAddItem.CustomImages.Parent = this.bAddItem;
-            this.bAddItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bAddItem.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bAddItem.ForeColor = System.Drawing.Color.White;
             this.bAddItem.HoverState.Parent = this.bAddItem;
             this.bAddItem.Location = new System.Drawing.Point(290, 390);

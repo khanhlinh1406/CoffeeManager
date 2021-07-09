@@ -30,10 +30,10 @@ namespace Coffee_Manager
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.monthlyStatistic = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
@@ -50,21 +50,21 @@ namespace Coffee_Manager
             // 
             // monthlyStatistic
             // 
-            chartArea2.Name = "ChartArea1";
-            this.monthlyStatistic.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.monthlyStatistic.Legends.Add(legend2);
+            chartArea1.Name = "ChartArea1";
+            this.monthlyStatistic.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.monthlyStatistic.Legends.Add(legend1);
             this.monthlyStatistic.Location = new System.Drawing.Point(0, 90);
             this.monthlyStatistic.Name = "monthlyStatistic";
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Tổng giá trị các hóa đơn (VNĐ)";
-            series3.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
-            series4.ChartArea = "ChartArea1";
-            series4.Legend = "Legend1";
-            series4.Name = "Số lượng hóa đơn";
-            this.monthlyStatistic.Series.Add(series3);
-            this.monthlyStatistic.Series.Add(series4);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Tổng giá trị các hóa đơn (VNĐ)";
+            series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Số lượng hóa đơn";
+            this.monthlyStatistic.Series.Add(series1);
+            this.monthlyStatistic.Series.Add(series2);
             this.monthlyStatistic.Size = new System.Drawing.Size(778, 369);
             this.monthlyStatistic.TabIndex = 0;
             this.monthlyStatistic.Text = "chart1";
@@ -72,10 +72,10 @@ namespace Coffee_Manager
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(19, 18);
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(61, 31);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(130, 30);
+            this.label1.Size = new System.Drawing.Size(141, 26);
             this.label1.TabIndex = 1;
             this.label1.Text = "THỐNG KÊ";
             // 
@@ -86,10 +86,10 @@ namespace Coffee_Manager
             // lb_Total_Status
             // 
             this.lb_Total_Status.AutoSize = true;
-            this.lb_Total_Status.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Total_Status.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_Total_Status.Location = new System.Drawing.Point(465, 462);
             this.lb_Total_Status.Name = "lb_Total_Status";
-            this.lb_Total_Status.Size = new System.Drawing.Size(228, 27);
+            this.lb_Total_Status.Size = new System.Drawing.Size(216, 23);
             this.lb_Total_Status.TabIndex = 6;
             this.lb_Total_Status.Text = "TỔNG DOANH THU: 0";
             // 
@@ -119,6 +119,7 @@ namespace Coffee_Manager
             // 
             // picker2
             // 
+            this.picker2.BorderRadius = 15;
             this.picker2.CheckedState.Parent = this.picker2;
             this.picker2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.picker2.Format = System.Windows.Forms.DateTimePickerFormat.Long;
@@ -135,6 +136,7 @@ namespace Coffee_Manager
             // 
             // picker1
             // 
+            this.picker1.BorderRadius = 15;
             this.picker1.CheckedState.Parent = this.picker1;
             this.picker1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.picker1.Format = System.Windows.Forms.DateTimePickerFormat.Long;
@@ -153,7 +155,7 @@ namespace Coffee_Manager
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(532, 69);
+            this.label2.Location = new System.Drawing.Point(532, 72);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(32, 18);
             this.label2.TabIndex = 35;
@@ -162,10 +164,10 @@ namespace Coffee_Manager
             // lb_Count_Status
             // 
             this.lb_Count_Status.AutoSize = true;
-            this.lb_Count_Status.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Count_Status.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_Count_Status.Location = new System.Drawing.Point(465, 505);
             this.lb_Count_Status.Name = "lb_Count_Status";
-            this.lb_Count_Status.Size = new System.Drawing.Size(215, 27);
+            this.lb_Count_Status.Size = new System.Drawing.Size(204, 23);
             this.lb_Count_Status.TabIndex = 36;
             this.lb_Count_Status.Text = "TỔNG ĐƠN HÀNG: 0";
             // 
@@ -173,7 +175,7 @@ namespace Coffee_Manager
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(532, 30);
+            this.label3.Location = new System.Drawing.Point(532, 24);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(25, 18);
             this.label3.TabIndex = 37;
