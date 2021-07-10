@@ -5,16 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using Coffee_Manager.MainClass;
 
 namespace Coffee_Manager
 {
-    public class KhachHang
+    public class KhachHang : Nguoi
     {
         string MaKH;
-        string TenKH;
-        DateTime NgSinh;
-        string SoDT;
-        string DiaChi;
         DateTime NgDK;
         int Diem;
 
@@ -22,7 +19,7 @@ namespace Coffee_Manager
 
         public KhachHang()
         {
-            MaKH = TenKH= SoDT = DiaChi = "";
+            MaKH = HoTen = SoDT = DiaChi = "";
             NgDK = NgSinh = DateTime.Now;
             Diem = 0;
         }
@@ -35,13 +32,13 @@ namespace Coffee_Manager
             this.DiaChi = DiaChi;
             this.NgDK = NgDK;
             this.Diem = Diem;
-            this.TenKH = TenKH;
+            this.HoTen = TenKH;
         }
 
         public KhachHang( string TenKH, DateTime NgSinh, string SoDT, string DiaChi, DateTime NgDK, int Diem)
         {
             CreateMaKH();
-            this.TenKH = TenKH;
+            this.HoTen = TenKH;
             this.NgSinh = NgSinh;
             this.SoDT = SoDT;
             this.DiaChi = DiaChi;
@@ -54,36 +51,19 @@ namespace Coffee_Manager
             get { return this.Diem; }
             set { this.Diem = value; }
         }
-        public string DIA_CHI
-        {
-            get { return this.DiaChi; }
-            set { this.DiaChi = value; }
-        }
-        public string SO_DT
-        {
-            get { return this.SoDT; }
-            set { this.SoDT = value; }
-        }
+        
         public DateTime NG_DK
         {
             get { return this.NgDK; }
             set { this.NgDK = value; }
         }
-        public DateTime NG_SINH
-        {
-            get { return this.NgSinh; }
-            set { this.NgSinh = value; }
-        }
+
         public string MA_KH
         {
             get { return this.MaKH; }
             set { this.MaKH = value; }
         }
-        public string TEN_KH
-        {
-            get { return this.TenKH; }
-            set { this.TenKH = value; }
-        }
+       
         public void CreateMaKH()
         {
             try
@@ -127,7 +107,7 @@ namespace Coffee_Manager
             try
             {
                 string sql = "insert into KHACHHANG values " +
-                    "('" + this.MaKH + "', N'" + this.TenKH + "', '" + this.NgSinh + "', '" + this.SoDT + "', N'"+this.DiaChi+"', '"+this.NgDK+"', '"+this.Diem+"') ";
+                    "('" + this.MaKH + "', N'" + this.HoTen + "', '" + this.NgSinh + "', '" + this.SoDT + "', N'"+this.DiaChi+"', '"+this.NgDK+"', '"+this.Diem+"') ";
                 this.Connection.OpenConnection();
                 SqlCommand command = this.Connection.CreateSQLCmd(sql);
                 command.ExecuteNonQuery();
@@ -148,7 +128,7 @@ namespace Coffee_Manager
         {
             try
             {
-                string sql = "update KHACHHANG set TenKH = N'" + this.TenKH + "', NgSinh = '" + this.NgSinh + "', " +
+                string sql = "update KHACHHANG set TenKH = N'" + this.HoTen + "', NgSinh = '" + this.NgSinh + "', " +
                     "SoDT = '" + this.SoDT + "' , DiaChi = N'" + this.DiaChi + "', NgDK ='" + this.NgDK + "', " +
                     "Diem = '" + this.Diem + "' where MaKH = '" + this.MaKH + "'";
                

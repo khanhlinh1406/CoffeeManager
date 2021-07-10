@@ -13,6 +13,7 @@ namespace Coffee_Manager
         string MaNL;
         string TenNL;
         DonViTinh dvt;
+        string MaNCC;
 
 
         Connect Connection = new Connect();
@@ -37,7 +38,6 @@ namespace Coffee_Manager
             this.dvt = dvt;
         }
 
-      
         public string TEN_NL
         {
             get { return this.TenNL; }
@@ -47,6 +47,12 @@ namespace Coffee_Manager
         {
             get { return this.MaNL; }
             set { this.MaNL = value; }
+        }
+
+        public string MA_NCC 
+        {
+            get { return this.MaNCC; }
+            set { this.MaNCC = value; }
         }
 
         public DonViTinh DVT
