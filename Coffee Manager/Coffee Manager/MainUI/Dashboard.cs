@@ -42,39 +42,47 @@ namespace Coffee_Manager
 
             if(userType == "Staff")
             {
-                btnPlaceOrder.Show();
+                panelStaffFunction.BringToFront();
+                panelStaffFunction.Show();
+                panel1.Hide();
 
-                panelShop.Hide();
-                btnAddItem.Hide();
-                btnUpdateItem.Hide();
-                btnRemoveItem.Hide();
+                //btnPlaceOrder.Show();
 
-                panelReport.Hide();
-                btnMaterial.Hide();
-                btnReceivedNote.Hide();
+                //panelShop.Hide();
+                //btnAddItem.Hide();
+                //btnUpdateItem.Hide();
+                //btnRemoveItem.Hide();
+
+                //panelReport.Hide();
+                //btnMaterial.Hide();
+                //btnReceivedNote.Hide();
 
 
-                btnMonthly.Hide();
-                btnBeverage.Show();
+                //btnMonthly.Hide();
+                //btnBeverage.Show();
 
-                btnStaff.Hide();
-                btnCustomer.Show();
-            }else if(userType == "Admin")
+                //btnStaff.Hide();
+                //btnCustomer.Show();
+            }
+            else if(userType == "Admin")
             {
-                btnPlaceOrder.Hide();
+                panel1.BringToFront();
+                panel1.Show();
+                panelStaffFunction.Hide();
+                //btnPlaceOrder.Hide();
 
-                btnAddItem.Show();
-                btnUpdateItem.Show();
-                btnRemoveItem.Show();
+                //btnAddItem.Show();
+                //btnUpdateItem.Show();
+                //btnRemoveItem.Show();
 
-                btnMaterial.Show();
-                btnReceivedNote.Show();
+                //btnMaterial.Show();
+                //btnReceivedNote.Show();
 
-                btnMonthly.Show();
-                btnBeverage.Show();
+                //btnMonthly.Show();
+                //btnBeverage.Show();
 
-                btnStaff.Show();
-                btnCustomer.Show();
+                //btnStaff.Show();
+                //btnCustomer.Show();
             }
         }
 
@@ -167,6 +175,30 @@ namespace Coffee_Manager
         {
             uC_CustomerManager1.Visible = true;
             uC_CustomerManager1.BringToFront();
+        }
+
+        private void btnBeverageStaff_Click(object sender, EventArgs e)
+        {
+            uC_BeverageStatistics1.Visible = true;
+            uC_BeverageStatistics1.BringToFront();
+        }
+
+        private void btnCustomerStaff_Click(object sender, EventArgs e)
+        {
+            uC_CustomerManager1.Visible = true;
+            uC_CustomerManager1.BringToFront();
+        }
+
+        private void btnExitStaff_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnLogOutStaff_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Login lg = new Login();
+            this.Hide();
+            lg.Show();
         }
     }
 }

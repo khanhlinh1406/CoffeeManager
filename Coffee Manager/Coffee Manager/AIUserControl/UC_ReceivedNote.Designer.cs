@@ -77,8 +77,8 @@ namespace Coffee_Manager
             this.gridviewDetails.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.gridviewDetails.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(225)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -94,7 +94,7 @@ namespace Coffee_Manager
             this.totalprice});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
@@ -102,12 +102,12 @@ namespace Coffee_Manager
             this.gridviewDetails.DefaultCellStyle = dataGridViewCellStyle3;
             this.gridviewDetails.EnableHeadersVisualStyles = false;
             this.gridviewDetails.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.gridviewDetails.Location = new System.Drawing.Point(13, 233);
+            this.gridviewDetails.Location = new System.Drawing.Point(13, 251);
             this.gridviewDetails.Name = "gridviewDetails";
             this.gridviewDetails.ReadOnly = true;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -115,7 +115,7 @@ namespace Coffee_Manager
             this.gridviewDetails.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.gridviewDetails.RowHeadersVisible = false;
             this.gridviewDetails.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridviewDetails.Size = new System.Drawing.Size(371, 218);
+            this.gridviewDetails.Size = new System.Drawing.Size(371, 235);
             this.gridviewDetails.TabIndex = 18;
             this.gridviewDetails.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.gridviewDetails.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -185,10 +185,10 @@ namespace Coffee_Manager
             this.btnRemoveDetail.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRemoveDetail.ForeColor = System.Drawing.Color.White;
             this.btnRemoveDetail.HoverState.Parent = this.btnRemoveDetail;
-            this.btnRemoveDetail.Location = new System.Drawing.Point(239, 457);
+            this.btnRemoveDetail.Location = new System.Drawing.Point(239, 492);
             this.btnRemoveDetail.Name = "btnRemoveDetail";
             this.btnRemoveDetail.ShadowDecoration.Parent = this.btnRemoveDetail;
-            this.btnRemoveDetail.Size = new System.Drawing.Size(79, 36);
+            this.btnRemoveDetail.Size = new System.Drawing.Size(79, 39);
             this.btnRemoveDetail.TabIndex = 20;
             this.btnRemoveDetail.Text = "Xoá";
             this.btnRemoveDetail.Click += new System.EventHandler(this.btnRemove_Click);
@@ -201,12 +201,12 @@ namespace Coffee_Manager
             this.cbMaterial.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbMaterial.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbMaterial.FocusedState.Parent = this.cbMaterial;
-            this.cbMaterial.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbMaterial.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbMaterial.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cbMaterial.HoverState.Parent = this.cbMaterial;
             this.cbMaterial.ItemHeight = 30;
             this.cbMaterial.ItemsAppearance.Parent = this.cbMaterial;
-            this.cbMaterial.Location = new System.Drawing.Point(25, 42);
+            this.cbMaterial.Location = new System.Drawing.Point(25, 45);
             this.cbMaterial.Name = "cbMaterial";
             this.cbMaterial.ShadowDecoration.Parent = this.cbMaterial;
             this.cbMaterial.Size = new System.Drawing.Size(241, 36);
@@ -222,10 +222,10 @@ namespace Coffee_Manager
             this.btnAdd.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.White;
             this.btnAdd.HoverState.Parent = this.btnAdd;
-            this.btnAdd.Location = new System.Drawing.Point(228, 122);
+            this.btnAdd.Location = new System.Drawing.Point(228, 131);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.ShadowDecoration.Parent = this.btnAdd;
-            this.btnAdd.Size = new System.Drawing.Size(156, 36);
+            this.btnAdd.Size = new System.Drawing.Size(156, 39);
             this.btnAdd.TabIndex = 26;
             this.btnAdd.Text = "Thêm vào phiếu nhập";
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -234,7 +234,7 @@ namespace Coffee_Manager
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(293, 16);
+            this.label3.Location = new System.Drawing.Point(293, 17);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(78, 21);
             this.label3.TabIndex = 21;
@@ -254,10 +254,10 @@ namespace Coffee_Manager
             this.numeric.FocusedState.Parent = this.numeric;
             this.numeric.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numeric.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.numeric.Location = new System.Drawing.Point(297, 42);
+            this.numeric.Location = new System.Drawing.Point(297, 45);
             this.numeric.Name = "numeric";
             this.numeric.ShadowDecoration.Parent = this.numeric;
-            this.numeric.Size = new System.Drawing.Size(87, 36);
+            this.numeric.Size = new System.Drawing.Size(87, 39);
             this.numeric.TabIndex = 25;
             this.numeric.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numeric_KeyPress);
             // 
@@ -265,7 +265,7 @@ namespace Coffee_Manager
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(24, 18);
+            this.label5.Location = new System.Drawing.Point(24, 19);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(97, 21);
             this.label5.TabIndex = 22;
@@ -275,7 +275,7 @@ namespace Coffee_Manager
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(81, 195);
+            this.label6.Location = new System.Drawing.Point(81, 210);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(90, 21);
             this.label6.TabIndex = 23;
@@ -289,10 +289,10 @@ namespace Coffee_Manager
             this.btnUpdate.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
             this.btnUpdate.HoverState.Parent = this.btnUpdate;
-            this.btnUpdate.Location = new System.Drawing.Point(153, 457);
+            this.btnUpdate.Location = new System.Drawing.Point(153, 492);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.ShadowDecoration.Parent = this.btnUpdate;
-            this.btnUpdate.Size = new System.Drawing.Size(80, 36);
+            this.btnUpdate.Size = new System.Drawing.Size(80, 39);
             this.btnUpdate.TabIndex = 28;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
@@ -309,8 +309,8 @@ namespace Coffee_Manager
             this.gridviewGeneral.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.gridviewGeneral.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(225)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -319,7 +319,7 @@ namespace Coffee_Manager
             this.gridviewGeneral.ColumnHeadersHeight = 15;
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
@@ -327,12 +327,12 @@ namespace Coffee_Manager
             this.gridviewGeneral.DefaultCellStyle = dataGridViewCellStyle7;
             this.gridviewGeneral.EnableHeadersVisualStyles = false;
             this.gridviewGeneral.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.gridviewGeneral.Location = new System.Drawing.Point(412, 29);
+            this.gridviewGeneral.Location = new System.Drawing.Point(412, 31);
             this.gridviewGeneral.Name = "gridviewGeneral";
             this.gridviewGeneral.ReadOnly = true;
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -340,7 +340,7 @@ namespace Coffee_Manager
             this.gridviewGeneral.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.gridviewGeneral.RowHeadersVisible = false;
             this.gridviewGeneral.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridviewGeneral.Size = new System.Drawing.Size(341, 413);
+            this.gridviewGeneral.Size = new System.Drawing.Size(341, 445);
             this.gridviewGeneral.TabIndex = 29;
             this.gridviewGeneral.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.gridviewGeneral.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -373,12 +373,12 @@ namespace Coffee_Manager
             this.date.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.date.Format = System.Windows.Forms.DateTimePickerFormat.Long;
             this.date.HoverState.Parent = this.date;
-            this.date.Location = new System.Drawing.Point(202, 182);
+            this.date.Location = new System.Drawing.Point(202, 196);
             this.date.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.date.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.date.Name = "date";
             this.date.ShadowDecoration.Parent = this.date;
-            this.date.Size = new System.Drawing.Size(182, 36);
+            this.date.Size = new System.Drawing.Size(182, 39);
             this.date.TabIndex = 30;
             this.date.Value = new System.DateTime(2021, 5, 30, 14, 32, 35, 975);
             // 
@@ -390,10 +390,10 @@ namespace Coffee_Manager
             this.btnRemoveGeneral.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRemoveGeneral.ForeColor = System.Drawing.Color.White;
             this.btnRemoveGeneral.HoverState.Parent = this.btnRemoveGeneral;
-            this.btnRemoveGeneral.Location = new System.Drawing.Point(643, 457);
+            this.btnRemoveGeneral.Location = new System.Drawing.Point(643, 492);
             this.btnRemoveGeneral.Name = "btnRemoveGeneral";
             this.btnRemoveGeneral.ShadowDecoration.Parent = this.btnRemoveGeneral;
-            this.btnRemoveGeneral.Size = new System.Drawing.Size(91, 36);
+            this.btnRemoveGeneral.Size = new System.Drawing.Size(91, 39);
             this.btnRemoveGeneral.TabIndex = 31;
             this.btnRemoveGeneral.Text = "Xoá";
             this.btnRemoveGeneral.Click += new System.EventHandler(this.btnRemoveGeneral_Click);
@@ -410,10 +410,10 @@ namespace Coffee_Manager
             this.btnDone.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDone.ForeColor = System.Drawing.Color.White;
             this.btnDone.HoverState.Parent = this.btnDone;
-            this.btnDone.Location = new System.Drawing.Point(65, 457);
+            this.btnDone.Location = new System.Drawing.Point(65, 492);
             this.btnDone.Name = "btnDone";
             this.btnDone.ShadowDecoration.Parent = this.btnDone;
-            this.btnDone.Size = new System.Drawing.Size(82, 36);
+            this.btnDone.Size = new System.Drawing.Size(82, 39);
             this.btnDone.TabIndex = 32;
             this.btnDone.Text = "Hoàn tất";
             this.btnDone.Click += new System.EventHandler(this.btnDone_Click);
@@ -426,10 +426,10 @@ namespace Coffee_Manager
             this.btnSeen.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSeen.ForeColor = System.Drawing.Color.White;
             this.btnSeen.HoverState.Parent = this.btnSeen;
-            this.btnSeen.Location = new System.Drawing.Point(555, 457);
+            this.btnSeen.Location = new System.Drawing.Point(555, 492);
             this.btnSeen.Name = "btnSeen";
             this.btnSeen.ShadowDecoration.Parent = this.btnSeen;
-            this.btnSeen.Size = new System.Drawing.Size(82, 36);
+            this.btnSeen.Size = new System.Drawing.Size(82, 39);
             this.btnSeen.TabIndex = 33;
             this.btnSeen.Text = "Xem xong";
             this.btnSeen.Click += new System.EventHandler(this.btnSeen_Click);
@@ -445,26 +445,27 @@ namespace Coffee_Manager
             this.tbPrice.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.tbPrice.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbPrice.FocusedState.Parent = this.tbPrice;
-            this.tbPrice.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbPrice.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbPrice.ForeColor = System.Drawing.Color.Black;
             this.tbPrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbPrice.HoverState.Parent = this.tbPrice;
-            this.tbPrice.Location = new System.Drawing.Point(28, 122);
+            this.tbPrice.Location = new System.Drawing.Point(28, 131);
             this.tbPrice.Margin = new System.Windows.Forms.Padding(5);
             this.tbPrice.Name = "tbPrice";
             this.tbPrice.PasswordChar = '\0';
             this.tbPrice.PlaceholderText = "";
             this.tbPrice.SelectedText = "";
             this.tbPrice.ShadowDecoration.Parent = this.tbPrice;
-            this.tbPrice.Size = new System.Drawing.Size(192, 36);
+            this.tbPrice.Size = new System.Drawing.Size(192, 39);
             this.tbPrice.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.tbPrice.TabIndex = 34;
+            this.tbPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbPrice_KeyPress);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(24, 94);
+            this.label4.Location = new System.Drawing.Point(24, 101);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(69, 21);
             this.label4.TabIndex = 35;
@@ -472,7 +473,7 @@ namespace Coffee_Manager
             // 
             // UC_ReceivedNote
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.label4);
@@ -491,8 +492,9 @@ namespace Coffee_Manager
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btnRemoveDetail);
             this.Controls.Add(this.gridviewDetails);
+            this.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "UC_ReceivedNote";
-            this.Size = new System.Drawing.Size(781, 514);
+            this.Size = new System.Drawing.Size(781, 554);
             this.Load += new System.EventHandler(this.UC_ReceivedNote_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridviewDetails)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numeric)).EndInit();

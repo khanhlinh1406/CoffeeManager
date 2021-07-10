@@ -33,7 +33,6 @@ namespace Coffee_Manager
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelShop = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnPlaceOrder = new Guna.UI2.WinForms.Guna2Button();
             this.btnExit = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnCustomer = new Guna.UI2.WinForms.Guna2Button();
             this.btnStaff = new Guna.UI2.WinForms.Guna2Button();
@@ -52,17 +51,6 @@ namespace Coffee_Manager
             this.btnUpdateItem = new Guna.UI2.WinForms.Guna2Button();
             this.btnAddItem = new Guna.UI2.WinForms.Guna2Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.uC_PlaceOrder1 = new Coffee_Manager.UC_PlaceOrder();
-            this.uC_CustomerManager1 = new Coffee_Manager.UC_CustomerManager();
-            this.uC_StaffManager1 = new Coffee_Manager.UC_StaffManager();
-            this.uC_BeverageStatistics1 = new Coffee_Manager.UC_BeverageStatistics();
-            this.uC_MonthlyStatistics1 = new Coffee_Manager.UC_MonthlyStatistics();
-            this.uC_ReceivedNote1 = new Coffee_Manager.UC_ReceivedNote();
-            this.uC_Material1 = new Coffee_Manager.UC_Material();
-            this.uC_RemoveItem1 = new Coffee_Manager.UC_RemoveItem();
-            this.uC_UpdateItems1 = new Coffee_Manager.UC_UpdateItems();
-            this.uC_AddItems1 = new Coffee_Manager.UC_AddItems();
-            this.uC_Welcome1 = new Coffee_Manager.UC_Welcome();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse3 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
@@ -76,19 +64,45 @@ namespace Coffee_Manager
             this.guna2Elipse11 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse12 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse13 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.panelStaffFunction = new System.Windows.Forms.Panel();
+            this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnPlaceOrder = new Guna.UI2.WinForms.Guna2Button();
+            this.btnExitStaff = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.btnCustomerStaff = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2CustomGradientPanel2 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.btnBeverageStaff = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2CustomGradientPanel4 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.btnLogOutStaff = new System.Windows.Forms.LinkLabel();
+            this.uC_PlaceOrder1 = new Coffee_Manager.UC_PlaceOrder();
+            this.uC_CustomerManager1 = new Coffee_Manager.UC_CustomerManager();
+            this.uC_StaffManager1 = new Coffee_Manager.UC_StaffManager();
+            this.uC_BeverageStatistics1 = new Coffee_Manager.UC_BeverageStatistics();
+            this.uC_MonthlyStatistics1 = new Coffee_Manager.UC_MonthlyStatistics();
+            this.uC_ReceivedNote1 = new Coffee_Manager.UC_ReceivedNote();
+            this.uC_Material1 = new Coffee_Manager.UC_Material();
+            this.uC_RemoveItem1 = new Coffee_Manager.UC_RemoveItem();
+            this.uC_UpdateItems1 = new Coffee_Manager.UC_UpdateItems();
+            this.uC_AddItems1 = new Coffee_Manager.UC_AddItems();
+            this.uC_Welcome1 = new Coffee_Manager.UC_Welcome();
             this.panel1.SuspendLayout();
             this.panelShop.SuspendLayout();
             this.panelManager.SuspendLayout();
             this.guna2CustomGradientPanel3.SuspendLayout();
             this.panelReport.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panelStaffFunction.SuspendLayout();
+            this.guna2CustomGradientPanel1.SuspendLayout();
+            this.guna2CustomGradientPanel2.SuspendLayout();
+            this.guna2CustomGradientPanel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(225)))));
             this.panel1.Controls.Add(this.panelShop);
-            this.panel1.Controls.Add(this.btnPlaceOrder);
             this.panel1.Controls.Add(this.btnExit);
             this.panel1.Controls.Add(this.btnCustomer);
             this.panel1.Controls.Add(this.btnStaff);
@@ -103,7 +117,7 @@ namespace Coffee_Manager
             this.panel1.Controls.Add(this.btnRemoveItem);
             this.panel1.Controls.Add(this.btnUpdateItem);
             this.panel1.Controls.Add(this.btnAddItem);
-            this.panel1.Location = new System.Drawing.Point(1, 4);
+            this.panel1.Location = new System.Drawing.Point(3, 2);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(161, 557);
@@ -131,27 +145,6 @@ namespace Coffee_Manager
             this.label1.TabIndex = 0;
             this.label1.Text = "Cửa hàng";
             // 
-            // btnPlaceOrder
-            // 
-            this.btnPlaceOrder.BorderRadius = 15;
-            this.btnPlaceOrder.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.btnPlaceOrder.CheckedState.FillColor = System.Drawing.Color.White;
-            this.btnPlaceOrder.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(225)))));
-            this.btnPlaceOrder.CheckedState.Parent = this.btnPlaceOrder;
-            this.btnPlaceOrder.CustomImages.Parent = this.btnPlaceOrder;
-            this.btnPlaceOrder.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(225)))));
-            this.btnPlaceOrder.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPlaceOrder.ForeColor = System.Drawing.Color.White;
-            this.btnPlaceOrder.HoverState.Parent = this.btnPlaceOrder;
-            this.btnPlaceOrder.Location = new System.Drawing.Point(5, 100);
-            this.btnPlaceOrder.Margin = new System.Windows.Forms.Padding(2);
-            this.btnPlaceOrder.Name = "btnPlaceOrder";
-            this.btnPlaceOrder.ShadowDecoration.Parent = this.btnPlaceOrder;
-            this.btnPlaceOrder.Size = new System.Drawing.Size(152, 33);
-            this.btnPlaceOrder.TabIndex = 0;
-            this.btnPlaceOrder.Text = "Đặt món";
-            this.btnPlaceOrder.Click += new System.EventHandler(this.btnPlaceOrder_Click);
-            // 
             // btnExit
             // 
             this.btnExit.BorderRadius = 10;
@@ -160,7 +153,7 @@ namespace Coffee_Manager
             this.btnExit.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.ForeColor = System.Drawing.Color.White;
             this.btnExit.HoverState.Parent = this.btnExit;
-            this.btnExit.Location = new System.Drawing.Point(11, -1);
+            this.btnExit.Location = new System.Drawing.Point(5, -1);
             this.btnExit.Name = "btnExit";
             this.btnExit.ShadowDecoration.Parent = this.btnExit;
             this.btnExit.Size = new System.Drawing.Size(43, 24);
@@ -407,7 +400,7 @@ namespace Coffee_Manager
             this.btnUpdateItem.CheckedState.Parent = this.btnUpdateItem;
             this.btnUpdateItem.CustomImages.Parent = this.btnUpdateItem;
             this.btnUpdateItem.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(225)))));
-            this.btnUpdateItem.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdateItem.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdateItem.ForeColor = System.Drawing.Color.White;
             this.btnUpdateItem.HoverState.Parent = this.btnUpdateItem;
             this.btnUpdateItem.Location = new System.Drawing.Point(5, 100);
@@ -459,6 +452,240 @@ namespace Coffee_Manager
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(783, 548);
             this.panel2.TabIndex = 1;
+            // 
+            // guna2Elipse1
+            // 
+            this.guna2Elipse1.BorderRadius = 30;
+            this.guna2Elipse1.TargetControl = this;
+            // 
+            // guna2Elipse2
+            // 
+            this.guna2Elipse2.BorderRadius = 30;
+            this.guna2Elipse2.TargetControl = this.panel2;
+            // 
+            // guna2Elipse3
+            // 
+            this.guna2Elipse3.BorderRadius = 30;
+            // 
+            // guna2Elipse4
+            // 
+            this.guna2Elipse4.TargetControl = this.panel2;
+            // 
+            // guna2Elipse5
+            // 
+            this.guna2Elipse5.TargetControl = this.panel2;
+            // 
+            // guna2Elipse6
+            // 
+            this.guna2Elipse6.TargetControl = this.panel2;
+            // 
+            // guna2Elipse7
+            // 
+            this.guna2Elipse7.BorderRadius = 30;
+            this.guna2Elipse7.TargetControl = this.panel2;
+            // 
+            // guna2Elipse8
+            // 
+            this.guna2Elipse8.TargetControl = this.panel2;
+            // 
+            // guna2Elipse9
+            // 
+            this.guna2Elipse9.TargetControl = this.panel2;
+            // 
+            // guna2Elipse10
+            // 
+            this.guna2Elipse10.TargetControl = this.panel2;
+            // 
+            // guna2Elipse11
+            // 
+            this.guna2Elipse11.TargetControl = this.panel2;
+            // 
+            // guna2Elipse12
+            // 
+            this.guna2Elipse12.TargetControl = this.panel2;
+            // 
+            // guna2Elipse13
+            // 
+            this.guna2Elipse13.TargetControl = this.panel2;
+            // 
+            // panelStaffFunction
+            // 
+            this.panelStaffFunction.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(225)))));
+            this.panelStaffFunction.Controls.Add(this.guna2CustomGradientPanel1);
+            this.panelStaffFunction.Controls.Add(this.btnPlaceOrder);
+            this.panelStaffFunction.Controls.Add(this.btnExitStaff);
+            this.panelStaffFunction.Controls.Add(this.btnCustomerStaff);
+            this.panelStaffFunction.Controls.Add(this.guna2CustomGradientPanel2);
+            this.panelStaffFunction.Controls.Add(this.btnBeverageStaff);
+            this.panelStaffFunction.Controls.Add(this.guna2CustomGradientPanel4);
+            this.panelStaffFunction.Controls.Add(this.btnLogOutStaff);
+            this.panelStaffFunction.Location = new System.Drawing.Point(3, 3);
+            this.panelStaffFunction.Margin = new System.Windows.Forms.Padding(2);
+            this.panelStaffFunction.Name = "panelStaffFunction";
+            this.panelStaffFunction.Size = new System.Drawing.Size(161, 557);
+            this.panelStaffFunction.TabIndex = 14;
+            // 
+            // guna2CustomGradientPanel1
+            // 
+            this.guna2CustomGradientPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2CustomGradientPanel1.BorderRadius = 15;
+            this.guna2CustomGradientPanel1.Controls.Add(this.label4);
+            this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(4, 148);
+            this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
+            this.guna2CustomGradientPanel1.ShadowDecoration.Parent = this.guna2CustomGradientPanel1;
+            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(152, 33);
+            this.guna2CustomGradientPanel1.TabIndex = 4;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.White;
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(30, 5);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(91, 23);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Cửa hàng";
+            // 
+            // btnPlaceOrder
+            // 
+            this.btnPlaceOrder.BorderRadius = 15;
+            this.btnPlaceOrder.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnPlaceOrder.CheckedState.FillColor = System.Drawing.Color.White;
+            this.btnPlaceOrder.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(225)))));
+            this.btnPlaceOrder.CheckedState.Parent = this.btnPlaceOrder;
+            this.btnPlaceOrder.CustomImages.Parent = this.btnPlaceOrder;
+            this.btnPlaceOrder.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(225)))));
+            this.btnPlaceOrder.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPlaceOrder.ForeColor = System.Drawing.Color.White;
+            this.btnPlaceOrder.HoverState.Parent = this.btnPlaceOrder;
+            this.btnPlaceOrder.Location = new System.Drawing.Point(3, 186);
+            this.btnPlaceOrder.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPlaceOrder.Name = "btnPlaceOrder";
+            this.btnPlaceOrder.ShadowDecoration.Parent = this.btnPlaceOrder;
+            this.btnPlaceOrder.Size = new System.Drawing.Size(152, 33);
+            this.btnPlaceOrder.TabIndex = 0;
+            this.btnPlaceOrder.Text = "Đặt món";
+            this.btnPlaceOrder.Click += new System.EventHandler(this.btnPlaceOrder_Click);
+            // 
+            // btnExitStaff
+            // 
+            this.btnExitStaff.BorderRadius = 10;
+            this.btnExitStaff.CheckedState.Parent = this.btnExitStaff;
+            this.btnExitStaff.CustomImages.Parent = this.btnExitStaff;
+            this.btnExitStaff.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExitStaff.ForeColor = System.Drawing.Color.White;
+            this.btnExitStaff.HoverState.Parent = this.btnExitStaff;
+            this.btnExitStaff.Location = new System.Drawing.Point(5, -1);
+            this.btnExitStaff.Name = "btnExitStaff";
+            this.btnExitStaff.ShadowDecoration.Parent = this.btnExitStaff;
+            this.btnExitStaff.Size = new System.Drawing.Size(43, 24);
+            this.btnExitStaff.TabIndex = 13;
+            this.btnExitStaff.Text = "X";
+            this.btnExitStaff.Click += new System.EventHandler(this.btnExitStaff_Click);
+            // 
+            // btnCustomerStaff
+            // 
+            this.btnCustomerStaff.BorderRadius = 15;
+            this.btnCustomerStaff.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnCustomerStaff.CheckedState.FillColor = System.Drawing.Color.White;
+            this.btnCustomerStaff.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(225)))));
+            this.btnCustomerStaff.CheckedState.Parent = this.btnCustomerStaff;
+            this.btnCustomerStaff.CustomImages.Parent = this.btnCustomerStaff;
+            this.btnCustomerStaff.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(225)))));
+            this.btnCustomerStaff.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCustomerStaff.ForeColor = System.Drawing.Color.White;
+            this.btnCustomerStaff.HoverState.Parent = this.btnCustomerStaff;
+            this.btnCustomerStaff.Location = new System.Drawing.Point(3, 338);
+            this.btnCustomerStaff.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCustomerStaff.Name = "btnCustomerStaff";
+            this.btnCustomerStaff.ShadowDecoration.Parent = this.btnCustomerStaff;
+            this.btnCustomerStaff.Size = new System.Drawing.Size(152, 33);
+            this.btnCustomerStaff.TabIndex = 12;
+            this.btnCustomerStaff.Text = "Khách hàng";
+            this.btnCustomerStaff.Click += new System.EventHandler(this.btnCustomerStaff_Click);
+            // 
+            // guna2CustomGradientPanel2
+            // 
+            this.guna2CustomGradientPanel2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2CustomGradientPanel2.BorderRadius = 15;
+            this.guna2CustomGradientPanel2.Controls.Add(this.label6);
+            this.guna2CustomGradientPanel2.Location = new System.Drawing.Point(4, 300);
+            this.guna2CustomGradientPanel2.Name = "guna2CustomGradientPanel2";
+            this.guna2CustomGradientPanel2.ShadowDecoration.Parent = this.guna2CustomGradientPanel2;
+            this.guna2CustomGradientPanel2.Size = new System.Drawing.Size(152, 33);
+            this.guna2CustomGradientPanel2.TabIndex = 7;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.White;
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(41, 6);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(72, 23);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Quản lí";
+            // 
+            // btnBeverageStaff
+            // 
+            this.btnBeverageStaff.BorderRadius = 15;
+            this.btnBeverageStaff.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnBeverageStaff.CheckedState.FillColor = System.Drawing.Color.White;
+            this.btnBeverageStaff.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(225)))));
+            this.btnBeverageStaff.CheckedState.Parent = this.btnBeverageStaff;
+            this.btnBeverageStaff.CustomImages.Parent = this.btnBeverageStaff;
+            this.btnBeverageStaff.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(225)))));
+            this.btnBeverageStaff.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBeverageStaff.ForeColor = System.Drawing.Color.White;
+            this.btnBeverageStaff.HoverState.Parent = this.btnBeverageStaff;
+            this.btnBeverageStaff.Location = new System.Drawing.Point(5, 262);
+            this.btnBeverageStaff.Margin = new System.Windows.Forms.Padding(2);
+            this.btnBeverageStaff.Name = "btnBeverageStaff";
+            this.btnBeverageStaff.ShadowDecoration.Parent = this.btnBeverageStaff;
+            this.btnBeverageStaff.Size = new System.Drawing.Size(152, 33);
+            this.btnBeverageStaff.TabIndex = 9;
+            this.btnBeverageStaff.Text = "Sản phẩm";
+            this.btnBeverageStaff.Click += new System.EventHandler(this.btnBeverageStaff_Click);
+            // 
+            // guna2CustomGradientPanel4
+            // 
+            this.guna2CustomGradientPanel4.BackColor = System.Drawing.Color.Transparent;
+            this.guna2CustomGradientPanel4.BorderRadius = 15;
+            this.guna2CustomGradientPanel4.Controls.Add(this.label7);
+            this.guna2CustomGradientPanel4.Location = new System.Drawing.Point(4, 224);
+            this.guna2CustomGradientPanel4.Name = "guna2CustomGradientPanel4";
+            this.guna2CustomGradientPanel4.ShadowDecoration.Parent = this.guna2CustomGradientPanel4;
+            this.guna2CustomGradientPanel4.Size = new System.Drawing.Size(152, 33);
+            this.guna2CustomGradientPanel4.TabIndex = 6;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.White;
+            this.label7.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(30, 6);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(88, 23);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "Thống kê";
+            // 
+            // btnLogOutStaff
+            // 
+            this.btnLogOutStaff.AutoSize = true;
+            this.btnLogOutStaff.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(225)))));
+            this.btnLogOutStaff.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogOutStaff.ForeColor = System.Drawing.Color.White;
+            this.btnLogOutStaff.LinkColor = System.Drawing.Color.White;
+            this.btnLogOutStaff.Location = new System.Drawing.Point(41, 531);
+            this.btnLogOutStaff.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.btnLogOutStaff.Name = "btnLogOutStaff";
+            this.btnLogOutStaff.Size = new System.Drawing.Size(80, 19);
+            this.btnLogOutStaff.TabIndex = 2;
+            this.btnLogOutStaff.TabStop = true;
+            this.btnLogOutStaff.Text = "Đăng Xuất";
+            this.btnLogOutStaff.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnLogOutStaff.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.btnLogOutStaff_LinkClicked);
             // 
             // uC_PlaceOrder1
             // 
@@ -555,61 +782,6 @@ namespace Coffee_Manager
             this.uC_Welcome1.Size = new System.Drawing.Size(766, 498);
             this.uC_Welcome1.TabIndex = 0;
             // 
-            // guna2Elipse1
-            // 
-            this.guna2Elipse1.BorderRadius = 30;
-            this.guna2Elipse1.TargetControl = this;
-            // 
-            // guna2Elipse2
-            // 
-            this.guna2Elipse2.BorderRadius = 30;
-            this.guna2Elipse2.TargetControl = this.panel2;
-            // 
-            // guna2Elipse3
-            // 
-            this.guna2Elipse3.BorderRadius = 30;
-            // 
-            // guna2Elipse4
-            // 
-            this.guna2Elipse4.TargetControl = this.panel2;
-            // 
-            // guna2Elipse5
-            // 
-            this.guna2Elipse5.TargetControl = this.panel2;
-            // 
-            // guna2Elipse6
-            // 
-            this.guna2Elipse6.TargetControl = this.panel2;
-            // 
-            // guna2Elipse7
-            // 
-            this.guna2Elipse7.BorderRadius = 30;
-            this.guna2Elipse7.TargetControl = this.panel2;
-            // 
-            // guna2Elipse8
-            // 
-            this.guna2Elipse8.TargetControl = this.panel2;
-            // 
-            // guna2Elipse9
-            // 
-            this.guna2Elipse9.TargetControl = this.panel2;
-            // 
-            // guna2Elipse10
-            // 
-            this.guna2Elipse10.TargetControl = this.panel2;
-            // 
-            // guna2Elipse11
-            // 
-            this.guna2Elipse11.TargetControl = this.panel2;
-            // 
-            // guna2Elipse12
-            // 
-            this.guna2Elipse12.TargetControl = this.panel2;
-            // 
-            // guna2Elipse13
-            // 
-            this.guna2Elipse13.TargetControl = this.panel2;
-            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -618,6 +790,7 @@ namespace Coffee_Manager
             this.ClientSize = new System.Drawing.Size(957, 571);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panelStaffFunction);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Dashboard";
@@ -636,6 +809,14 @@ namespace Coffee_Manager
             this.panelReport.ResumeLayout(false);
             this.panelReport.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.panelStaffFunction.ResumeLayout(false);
+            this.panelStaffFunction.PerformLayout();
+            this.guna2CustomGradientPanel1.ResumeLayout(false);
+            this.guna2CustomGradientPanel1.PerformLayout();
+            this.guna2CustomGradientPanel2.ResumeLayout(false);
+            this.guna2CustomGradientPanel2.PerformLayout();
+            this.guna2CustomGradientPanel4.ResumeLayout(false);
+            this.guna2CustomGradientPanel4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -647,7 +828,6 @@ namespace Coffee_Manager
         private Guna.UI2.WinForms.Guna2Button btnRemoveItem;
         private Guna.UI2.WinForms.Guna2Button btnUpdateItem;
         private Guna.UI2.WinForms.Guna2Button btnAddItem;
-        private Guna.UI2.WinForms.Guna2Button btnPlaceOrder;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse2;
         private System.Windows.Forms.LinkLabel btnLogOut;
@@ -688,5 +868,17 @@ namespace Coffee_Manager
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse13;
         private UC_CustomerManager uC_CustomerManager1;
         private Guna.UI2.WinForms.Guna2GradientButton btnExit;
+        private System.Windows.Forms.Panel panelStaffFunction;
+        private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel1;
+        private System.Windows.Forms.Label label4;
+        private Guna.UI2.WinForms.Guna2Button btnPlaceOrder;
+        private Guna.UI2.WinForms.Guna2GradientButton btnExitStaff;
+        private Guna.UI2.WinForms.Guna2Button btnCustomerStaff;
+        private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel2;
+        private System.Windows.Forms.Label label6;
+        private Guna.UI2.WinForms.Guna2Button btnBeverageStaff;
+        private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel4;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.LinkLabel btnLogOutStaff;
     }
 }
