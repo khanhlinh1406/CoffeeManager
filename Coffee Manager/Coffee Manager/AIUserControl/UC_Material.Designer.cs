@@ -131,6 +131,8 @@ namespace Coffee_Manager
             // 
             // gridview
             // 
+            this.gridview.AllowUserToAddRows = false;
+            this.gridview.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.gridview.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.gridview.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;

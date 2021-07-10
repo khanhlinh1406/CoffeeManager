@@ -15,7 +15,6 @@ namespace Coffee_Manager
         DateTime NgVaoLam;
         string MaCV;
         string MaTK;
-
         Connect Connection = new Connect();
 
         public NhanVien()
@@ -24,26 +23,22 @@ namespace Coffee_Manager
             NgSinh = NgVaoLam = DateTime.Now;
         }
 
-        public NhanVien(string MaNV, string TenNV, string SoDT, string DiaChi, string MaCV, string MaTK,
+        public NhanVien(string MaNV, string TenNV, string SoDT, string MaCV, string MaTK,
             DateTime NgSinh, DateTime NgVaoLam)
         {
             this.MaNV = MaNV;
             this.HoTen = TenNV;
             this.SoDT = SoDT;
-            this.DiaChi = DiaChi;
             this.MaCV = MaCV;
             this.MaTK = MaTK;
             this.NgSinh = NgSinh;
             this.NgVaoLam = NgVaoLam;
         }
-
-        public NhanVien(string TenNV, string SoDT, string DiaChi, string MaCV, string MaTK,
-            DateTime NgSinh, DateTime NgVaoLam)
+        public NhanVien( string TenNV, string SoDT, string MaCV, string MaTK, DateTime NgSinh, DateTime NgVaoLam)
         {
             CreateMaNV();
             this.HoTen = TenNV;
             this.SoDT = SoDT;
-            this.DiaChi = DiaChi;
             this.MaCV = MaCV;
             this.MaTK = MaTK;
             this.NgSinh = NgSinh;
@@ -55,7 +50,6 @@ namespace Coffee_Manager
             get { return this.MaNV; }
             set { this.MaNV = value; }
         }
-        
         public string MA_CV
         {
             get { return this.MaCV; }
@@ -71,7 +65,6 @@ namespace Coffee_Manager
             get { return this.NgVaoLam; }
             set { this.NgVaoLam = value; }
         }
-
         public void CreateMaNV()
         {
             try
@@ -79,7 +72,7 @@ namespace Coffee_Manager
                 Random random = new Random();
                 string tmp = random.Next(0, 999999999).ToString();
 
-                string find = "SELECT MaKH FROM KHACHHANG where MaKH = '" + tmp + "'";
+                string find = "SELECT MaNV FROM NHANVIEN where MaNV = '" + tmp + "'";
 
                 this.Connection.OpenConnection();
                 SqlCommand command = this.Connection.CreateSQLCmd(find);
@@ -107,13 +100,12 @@ namespace Coffee_Manager
             {
                 this.Connection.CloseConnection();
             }
-
         }
-
-        public void Add() {
+        public void Add()
+        {
             try
             {
-                string sql = "insert into KHACHHANG values " +
+                string sql = "insert into NHANVIEN values " +
                     "('" + this.MaNV + "', N'" + this.HoTen + "', '" + this.NgSinh + "', '" + this.SoDT + "', N'" + this.DiaChi + "', '" + this.NgVaoLam + "', '" + this.MaCV + "', '" + this.MaTK +  "') ";
                 this.Connection.OpenConnection();
                 SqlCommand command = this.Connection.CreateSQLCmd(sql);
@@ -135,7 +127,7 @@ namespace Coffee_Manager
         {
             try
             {
-                string sql = "update KHACHHANG set TenNV = N'" + this.HoTen + "', NgSinh = '" + this.NgSinh + "', " +
+                string sql = "update NHANVIEN set TenNV = N'" + this.HoTen + "', NgSinh = '" + this.NgSinh + "', " +
                     "SoDT = '" + this.SoDT + "' , DiaChi = N'" + this.DiaChi + "', NgVaoLam ='" + this.NgVaoLam + "', " +
                     "MaCV = '" + this.MaCV + "' where MaNV = '" + this.MaNV + "'";
 
@@ -175,5 +167,35 @@ namespace Coffee_Manager
                 this.Connection.CloseConnection();
             }
         }
+
+        public void FindNhanVienFromAccountId()
+        {
+            try
+            {
+                string sql = "select * from NHANVIEN where MaTK = '" + this.MA_TK + "'";
+                this.Connection.OpenConnection();
+                SqlCommand command = this.Connection.CreateSQLCmd(sql);
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.HasRows)
+                {
+                    if (reader.Read() == false) break;
+                    this.MaNV = reader.GetString(0);
+                    this.TenNV = reader.GetString(1);
+                    this.SoDT = reader.GetString(3);
+                }
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Đã xảy ra lỗi, vui lòng liên hệ đội ngũ phát triển!");
+            }
+            finally
+            {
+                this.Connection.CloseConnection();
+            }
+        }
+        //public void Save(){};
+
+
     }
 }

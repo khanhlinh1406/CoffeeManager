@@ -1,79 +1,7 @@
-D:\Lap trinh truc quan\Coffee Manager\Coffee Manager\bin\Debug\Coffee Manager.exe.config
-D:\Lap trinh truc quan\Coffee Manager\Coffee Manager\bin\Debug\Coffee Manager.exe
-D:\Lap trinh truc quan\Coffee Manager\Coffee Manager\bin\Debug\Coffee Manager.pdb
-D:\Lap trinh truc quan\Coffee Manager\Coffee Manager\bin\Debug\Guna.UI2.dll
-D:\Lap trinh truc quan\Coffee Manager\Coffee Manager\obj\Debug\Coffee Manager.csproj.AssemblyReference.cache
-D:\Lap trinh truc quan\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.Properties.Resources.resources
-D:\Lap trinh truc quan\Coffee Manager\Coffee Manager\obj\Debug\Coffee Manager.csproj.GenerateResource.cache
-D:\Lap trinh truc quan\Coffee Manager\Coffee Manager\obj\Debug\Coffee Manager.csproj.CoreCompileInputs.cache
-D:\Lap trinh truc quan\Coffee Manager\Coffee Manager\obj\Debug\Coffee Manager.csproj.CopyComplete
-D:\Lap trinh truc quan\Coffee Manager\Coffee Manager\obj\Debug\Coffee Manager.exe
-D:\Lap trinh truc quan\Coffee Manager\Coffee Manager\obj\Debug\Coffee Manager.pdb
-D:\Lap trinh truc quan\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.Dashboard.resources
-D:\Lap trinh truc quan\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.Login.resources
-D:\Lap trinh truc quan\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.AIUserControl.UC_Welcome.resources
-D:\Coffee Manager\Coffee Manager\bin\Debug\Coffee Manager.exe.config
-D:\Coffee Manager\Coffee Manager\bin\Debug\Coffee Manager.exe
-D:\Coffee Manager\Coffee Manager\bin\Debug\Coffee Manager.pdb
-D:\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.AIUserControl.UC_Welcome.resources
-D:\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.Dashboard.resources
-D:\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.Login.resources
-D:\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.Properties.Resources.resources
-D:\Coffee Manager\Coffee Manager\obj\Debug\Coffee Manager.csproj.GenerateResource.cache
-D:\Coffee Manager\Coffee Manager\obj\Debug\Coffee Manager.csproj.CoreCompileInputs.cache
-D:\Coffee Manager\Coffee Manager\obj\Debug\Coffee Manager.csproj.CopyComplete
-D:\Coffee Manager\Coffee Manager\obj\Debug\Coffee Manager.exe
-D:\Coffee Manager\Coffee Manager\obj\Debug\Coffee Manager.pdb
-D:\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.AIUserControl.UC_AddItems.resources
-D:\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.AIUserControl.UC_PlaceOrder.resources
-D:\Coffee Manager\Coffee Manager\obj\Debug\Coffee Manager.csprojAssemblyReference.cache
-D:\QLQuanCaPhe\Coffee Manager\Coffee Manager\bin\Debug\Coffee Manager.exe.config
-D:\QLQuanCaPhe\Coffee Manager\Coffee Manager\bin\Debug\Coffee Manager.exe
-D:\QLQuanCaPhe\Coffee Manager\Coffee Manager\bin\Debug\Coffee Manager.pdb
-D:\QLQuanCaPhe\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.AIUserControl.UC_AddItems.resources
-D:\QLQuanCaPhe\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.AIUserControl.UC_PlaceOrder.resources
-D:\QLQuanCaPhe\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.AIUserControl.UC_Welcome.resources
-D:\QLQuanCaPhe\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.AIUserControl.UC_UpdateItems.resources
-D:\QLQuanCaPhe\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.Dashboard.resources
-D:\QLQuanCaPhe\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.Login.resources
-D:\QLQuanCaPhe\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.Properties.Resources.resources
-D:\QLQuanCaPhe\Coffee Manager\Coffee Manager\obj\Debug\Coffee Manager.csproj.GenerateResource.cache
-D:\QLQuanCaPhe\Coffee Manager\Coffee Manager\obj\Debug\Coffee Manager.csproj.CoreCompileInputs.cache
-D:\QLQuanCaPhe\Coffee Manager\Coffee Manager\obj\Debug\Coffee Manager.csproj.CopyComplete
-D:\QLQuanCaPhe\Coffee Manager\Coffee Manager\obj\Debug\Coffee Manager.exe
-D:\QLQuanCaPhe\Coffee Manager\Coffee Manager\obj\Debug\Coffee Manager.pdb
-C:\GITHUB\QLQuanCaPhe\Coffee Manager\Coffee Manager\bin\Debug\Coffee Manager.exe.config
-C:\GITHUB\QLQuanCaPhe\Coffee Manager\Coffee Manager\bin\Debug\Coffee Manager.exe
-C:\GITHUB\QLQuanCaPhe\Coffee Manager\Coffee Manager\bin\Debug\Coffee Manager.pdb
-C:\GITHUB\QLQuanCaPhe\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.AIUserControl.UC_AddItems.resources
-C:\GITHUB\QLQuanCaPhe\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.AIUserControl.UC_PlaceOrder.resources
-C:\GITHUB\QLQuanCaPhe\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.AIUserControl.UC_Welcome.resources
-C:\GITHUB\QLQuanCaPhe\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.AIUserControl.UC_UpdateItems.resources
-C:\GITHUB\QLQuanCaPhe\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.Dashboard.resources
-C:\GITHUB\QLQuanCaPhe\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.Login.resources
-C:\GITHUB\QLQuanCaPhe\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.Properties.Resources.resources
-C:\GITHUB\QLQuanCaPhe\Coffee Manager\Coffee Manager\obj\Debug\Coffee Manager.csproj.GenerateResource.cache
-C:\GITHUB\QLQuanCaPhe\Coffee Manager\Coffee Manager\obj\Debug\Coffee Manager.csproj.CoreCompileInputs.cache
-C:\GITHUB\QLQuanCaPhe\Coffee Manager\Coffee Manager\obj\Debug\Coffee Manager.csproj.CopyComplete
-C:\GITHUB\QLQuanCaPhe\Coffee Manager\Coffee Manager\obj\Debug\Coffee Manager.exe
-C:\GITHUB\QLQuanCaPhe\Coffee Manager\Coffee Manager\obj\Debug\Coffee Manager.pdb
-C:\GITHUB\QLQuanCaPhe\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.AIUserControl.UC_RemoveItem.resources
-C:\GITHUB\QLQuanCaPhe\Coffee Manager\Coffee Manager\obj\Debug\Coffee Manager.csproj.AssemblyReference.cache
-D:\CoffeeManager\Coffee Manager\Coffee Manager\bin\Debug\Coffee Manager.exe.config
-D:\CoffeeManager\Coffee Manager\Coffee Manager\bin\Debug\Coffee Manager.exe
-D:\CoffeeManager\Coffee Manager\Coffee Manager\bin\Debug\Coffee Manager.pdb
-D:\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.Dashboard.resources
-D:\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.Login.resources
-D:\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.Properties.Resources.resources
-D:\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee Manager.csproj.GenerateResource.cache
-D:\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee Manager.csproj.CoreCompileInputs.cache
-D:\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee Manager.csproj.CopyComplete
-D:\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee Manager.exe
-D:\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee Manager.pdb
 D:\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee Manager.csprojAssemblyReference.cache
-D:\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.UC_AddItems.resources
 D:\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.UC_CustomerManager.resources
 D:\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.UC_StaffManager.resources
+D:\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.UC_AddItems.resources
 D:\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.UC_BeverageStatistics.resources
 D:\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.UC_Material.resources
 D:\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.UC_MonthlyStatistics.resources
@@ -82,3 +10,18 @@ D:\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.UC_Recei
 D:\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.UC_RemoveItem.resources
 D:\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.UC_Welcome.resources
 D:\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.UC_UpdateItems.resources
+D:\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.Dashboard.resources
+D:\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.Login.resources
+D:\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.Properties.Resources.resources
+D:\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee Manager.csproj.GenerateResource.cache
+D:\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee Manager.csproj.CoreCompileInputs.cache
+D:\CoffeeManager\Coffee Manager\Coffee Manager\bin\Debug\Coffee Manager.exe.config
+D:\CoffeeManager\Coffee Manager\Coffee Manager\bin\Debug\Coffee Manager.exe
+D:\CoffeeManager\Coffee Manager\Coffee Manager\bin\Debug\Coffee Manager.pdb
+D:\CoffeeManager\Coffee Manager\Coffee Manager\bin\Debug\BouncyCastle.Crypto.dll
+D:\CoffeeManager\Coffee Manager\Coffee Manager\bin\Debug\Guna.UI2.dll
+D:\CoffeeManager\Coffee Manager\Coffee Manager\bin\Debug\itextsharp.dll
+D:\CoffeeManager\Coffee Manager\Coffee Manager\bin\Debug\itextsharp.xml
+D:\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee Manager.csproj.CopyComplete
+D:\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee Manager.exe
+D:\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee Manager.pdb
