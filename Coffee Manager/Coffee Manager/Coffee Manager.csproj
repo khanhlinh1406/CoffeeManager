@@ -134,10 +134,15 @@
     <Compile Include="MainClass\DonViTinh.cs" />
     <Compile Include="MainClass\HoaDon.cs" />
     <Compile Include="MainClass\KhachHang.cs" />
+    <Compile Include="MainClass\LoaiKH.cs" />
     <Compile Include="MainClass\Mon.cs" />
+    <Compile Include="MainClass\Nguoi.cs" />
     <Compile Include="MainClass\NguyenLieu.cs" />
+    <Compile Include="MainClass\NhaCungCap.cs" />
     <Compile Include="MainClass\NhanVien.cs" />
     <Compile Include="MainClass\PhieuNhap.cs" />
+    <Compile Include="MainClass\TaiKhoan.cs" />
+    <Compile Include="MainClass\ThuNgan.cs" />
     <Compile Include="MainUI\Login.cs">
       <SubType>Form</SubType>
     </Compile>
