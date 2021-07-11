@@ -180,7 +180,7 @@ namespace Coffee_Manager
                 {
                     if (reader.Read() == false) break;
                     this.MaNV = reader.GetString(0);
-                    this.TenNV = reader.GetString(1);
+                    this.HoTen = reader.GetString(1);
                     this.SoDT = reader.GetString(3);
                 }
                 reader.Close();

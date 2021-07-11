@@ -101,22 +101,22 @@ namespace Coffee_Manager
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            KhachHang add = new KhachHang(txtName.Text, dob.Value, txtPhone.Text, txtAddress.Text, dor.Value, 0);
-            add.Add();
+            //KhachHang add = new KhachHang(txtName.Text, dob.Value, txtPhone.Text, txtAddress.Text, dor.Value, 0);
+            //add.Add();
             LoadData();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            KhachHang update = new KhachHang(gridview.SelectedRows[0].Cells[0].Value.ToString(),txtName.Text, dob.Value, txtPhone.Text, txtAddress.Text, dor.Value, int.Parse(point.Text));
-            update.Update();
+            //KhachHang update = new KhachHang(gridview.SelectedRows[0].Cells[0].Value.ToString(),txtName.Text, dob.Value, txtPhone.Text, txtAddress.Text, dor.Value, int.Parse(point.Text));
+            //update.Update();
             LoadData();
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
-            KhachHang remove = new KhachHang(gridview.SelectedRows[0].Cells[0].Value.ToString(),txtName.Text, dob.Value, txtPhone.Text, txtAddress.Text, dor.Value, int.Parse(point.Text));
-            remove.Remove();
+            //KhachHang remove = new KhachHang(gridview.SelectedRows[0].Cells[0].Value.ToString(),txtName.Text, dob.Value, txtPhone.Text, txtAddress.Text, dor.Value, int.Parse(point.Text));
+            //remove.Remove();
             LoadData();
         }
 

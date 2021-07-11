@@ -116,9 +116,9 @@ namespace Coffee_Manager
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            Mon update = new Mon(tbName.Text, int.Parse(tbPrice.Text), listDVT[index]);
-            update.MA_MON = gridview.SelectedRows[0].Cells[0].Value.ToString();
-            update.Update();
+            //Mon update = new Mon(tbName.Text, int.Parse(tbPrice.Text), listDVT[index]);
+            //update.MA_MON = gridview.SelectedRows[0].Cells[0].Value.ToString();
+            //update.Update();
             LoadData();
         }
 

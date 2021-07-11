@@ -54,8 +54,8 @@ namespace Coffee_Manager
 
         private void bAddItem_Click(object sender, EventArgs e)
         {
-            Mon add = new Mon(tbItemName.Text, int.Parse(tbPrice.Text), listDVT[index]);
-            add.Add();
+            //Mon add = new Mon(tbItemName.Text, int.Parse(tbPrice.Text), listDVT[index]);
+            //add.Add();
         }
 
         int index;

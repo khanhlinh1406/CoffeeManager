@@ -14,6 +14,7 @@ namespace Coffee_Manager
         string MaKH;
         DateTime NgDK;
         int Diem;
+        LoaiKhachHang LoaiKh;
 
         Connect Connection = new Connect();
 
@@ -24,7 +25,7 @@ namespace Coffee_Manager
             Diem = 0;
         }
 
-        public KhachHang(string MaKH,string TenKH, DateTime NgSinh, string SoDT, string DiaChi, DateTime NgDK, int Diem)
+        public KhachHang(string MaKH,string TenKH, DateTime NgSinh, string SoDT, string DiaChi, DateTime NgDK, int Diem, LoaiKhachHang Loai)
         {
             this.MaKH = MaKH;
             this.NgSinh = NgSinh;
@@ -33,9 +34,10 @@ namespace Coffee_Manager
             this.NgDK = NgDK;
             this.Diem = Diem;
             this.HoTen = TenKH;
+            this.LoaiKh = Loai;
         }
 
-        public KhachHang( string TenKH, DateTime NgSinh, string SoDT, string DiaChi, DateTime NgDK, int Diem)
+        public KhachHang( string TenKH, DateTime NgSinh, string SoDT, string DiaChi, DateTime NgDK, int Diem, LoaiKhachHang Loai)
         {
             CreateMaKH();
             this.HoTen = TenKH;
@@ -44,6 +46,7 @@ namespace Coffee_Manager
             this.DiaChi = DiaChi;
             this.NgDK = NgDK;
             this.Diem = Diem;
+            this.LoaiKh = Loai;
         }
 
         public int DIEM
@@ -63,6 +66,13 @@ namespace Coffee_Manager
             get { return this.MaKH; }
             set { this.MaKH = value; }
         }
+
+        public LoaiKhachHang LOAI_KH
+        {
+            get { return this.LoaiKh; }
+            set { this.LoaiKh = value; }
+        }
+
         public void CreateMaKH()
         {
             try
