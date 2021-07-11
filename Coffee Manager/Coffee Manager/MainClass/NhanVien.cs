@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Coffee_Manager.MainClass;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -8,12 +9,9 @@ using System.Windows.Forms;
 
 namespace Coffee_Manager
 {
-    public class NhanVien
+    public class NhanVien : Nguoi
     {
         string MaNV;
-        string TenNV;
-        DateTime NgSinh;
-        string SoDT;
         DateTime NgVaoLam;
         string MaCV;
         string MaTK;
@@ -21,7 +19,7 @@ namespace Coffee_Manager
 
         public NhanVien()
         {
-            MaNV = TenNV = SoDT  = MaCV = MaTK = "";
+            MaNV = HoTen = SoDT = DiaChi = MaCV = MaTK = "";
             NgSinh = NgVaoLam = DateTime.Now;
         }
 
@@ -29,7 +27,7 @@ namespace Coffee_Manager
             DateTime NgSinh, DateTime NgVaoLam)
         {
             this.MaNV = MaNV;
-            this.TenNV = TenNV;
+            this.HoTen = TenNV;
             this.SoDT = SoDT;
             this.MaCV = MaCV;
             this.MaTK = MaTK;
@@ -39,7 +37,7 @@ namespace Coffee_Manager
         public NhanVien( string TenNV, string SoDT, string MaCV, string MaTK, DateTime NgSinh, DateTime NgVaoLam)
         {
             CreateMaNV();
-            this.TenNV = TenNV;
+            this.HoTen = TenNV;
             this.SoDT = SoDT;
             this.MaCV = MaCV;
             this.MaTK = MaTK;
@@ -51,16 +49,6 @@ namespace Coffee_Manager
         {
             get { return this.MaNV; }
             set { this.MaNV = value; }
-        }
-        public string TEN_NV
-        {
-            get { return this.TenNV; }
-            set { this.TenNV = value; }
-        }
-        public string SO_DT
-        {
-            get { return this.SoDT; }
-            set { this.SoDT = value; }
         }
         public string MA_CV
         {
@@ -76,11 +64,6 @@ namespace Coffee_Manager
         {
             get { return this.NgVaoLam; }
             set { this.NgVaoLam = value; }
-        }
-        public DateTime NG_SINH
-        {
-            get { return this.NgSinh; }
-            set { this.NgSinh = value; }
         }
         public void CreateMaNV()
         {
@@ -123,7 +106,7 @@ namespace Coffee_Manager
             try
             {
                 string sql = "insert into NHANVIEN values " +
-                    "('" + this.MaNV + "', N'" + this.TenNV + "', '" + this.NgSinh + "', '" + this.SoDT  + "', '" + this.NgVaoLam + "', '" + this.MaCV + "', '" + this.MaTK +"') ";
+                    "('" + this.MaNV + "', N'" + this.HoTen + "', '" + this.NgSinh + "', '" + this.SoDT + "', N'" + this.DiaChi + "', '" + this.NgVaoLam + "', '" + this.MaCV + "', '" + this.MaTK +  "') ";
                 this.Connection.OpenConnection();
                 SqlCommand command = this.Connection.CreateSQLCmd(sql);
                 command.ExecuteNonQuery();
@@ -144,9 +127,9 @@ namespace Coffee_Manager
         {
             try
             {
-                string sql = "update NHANVIEN set TenNV = N'" + this.TenNV + "', NgSinh = '" + this.NgSinh + "', " +
-                    "SDT = '" + this.SoDT  + "', NgVaoLam ='" + this.NgVaoLam + "', MaCV ='" + this.MaCV + 
-                    "' where MaNV = '" + this.MaNV + "'";
+                string sql = "update NHANVIEN set TenNV = N'" + this.HoTen + "', NgSinh = '" + this.NgSinh + "', " +
+                    "SoDT = '" + this.SoDT + "' , DiaChi = N'" + this.DiaChi + "', NgVaoLam ='" + this.NgVaoLam + "', " +
+                    "MaCV = '" + this.MaCV + "' where MaNV = '" + this.MaNV + "'";
 
                 this.Connection.OpenConnection();
                 SqlCommand command = this.Connection.CreateSQLCmd(sql);
