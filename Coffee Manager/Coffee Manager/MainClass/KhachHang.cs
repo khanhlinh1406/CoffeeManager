@@ -14,6 +14,7 @@ namespace Coffee_Manager
         string MaKH;
         DateTime NgDK;
         int Diem;
+        LoaiKhachHang loaiKH;
 
         Connect Connection = new Connect();
 
@@ -22,9 +23,22 @@ namespace Coffee_Manager
             MaKH = HoTen = SoDT = DiaChi = "";
             NgDK = NgSinh = DateTime.Now;
             Diem = 0;
+            loaiKH = new LoaiKhachHang();
         }
 
-        public KhachHang(string MaKH,string TenKH, DateTime NgSinh, string SoDT, string DiaChi, DateTime NgDK, int Diem)
+        public KhachHang(string MaKH,string TenKH, DateTime NgSinh, string SoDT, string DiaChi, DateTime NgDK, int Diem, LoaiKhachHang loaiKH)
+        {
+            this.MaKH = MaKH;
+            this.NgSinh = NgSinh;
+            this.SoDT = SoDT;
+            this.DiaChi = DiaChi;
+            this.NgDK = NgDK;
+            this.Diem = Diem;
+            this.HoTen = TenKH;
+            this.loaiKH = loaiKH;
+        }
+
+        public KhachHang(string MaKH, string TenKH, DateTime NgSinh, string SoDT, string DiaChi, DateTime NgDK, int Diem)
         {
             this.MaKH = MaKH;
             this.NgSinh = NgSinh;
@@ -35,7 +49,7 @@ namespace Coffee_Manager
             this.HoTen = TenKH;
         }
 
-        public KhachHang( string TenKH, DateTime NgSinh, string SoDT, string DiaChi, DateTime NgDK, int Diem)
+        public KhachHang( string TenKH, DateTime NgSinh, string SoDT, string DiaChi, DateTime NgDK, int Diem, LoaiKhachHang loaiKH)
         {
             CreateMaKH();
             this.HoTen = TenKH;
@@ -44,6 +58,7 @@ namespace Coffee_Manager
             this.DiaChi = DiaChi;
             this.NgDK = NgDK;
             this.Diem = Diem;
+            this.loaiKH = loaiKH;
         }
 
         public int DIEM
@@ -62,6 +77,12 @@ namespace Coffee_Manager
         {
             get { return this.MaKH; }
             set { this.MaKH = value; }
+        }
+
+        public LoaiKhachHang LOAI_KH
+        {
+            get { return this.loaiKH; }
+            set { this.loaiKH = value; }
         }
         public void CreateMaKH()
         {
@@ -106,7 +127,7 @@ namespace Coffee_Manager
             try
             {
                 string sql = "insert into KHACHHANG values " +
-                    "('" + this.MaKH + "', N'" + this.HoTen + "', '" + this.NgSinh + "', '" + this.SoDT + "', N'"+this.DiaChi+"', '"+this.NgDK+"', '"+this.Diem+"') ";
+                    "('" + this.MaKH + "', N'" + this.HoTen + "', '" + this.NgSinh + "', '" + this.SoDT + "', N'"+this.DiaChi+"', '"+this.NgDK+"', '"+this.Diem+"', '"+this.loaiKH.Ma_LKH+"') ";
                 this.Connection.OpenConnection();
                 SqlCommand command = this.Connection.CreateSQLCmd(sql);
                 command.ExecuteNonQuery();

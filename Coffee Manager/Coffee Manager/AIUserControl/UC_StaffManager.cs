@@ -27,8 +27,8 @@ namespace Coffee_Manager
 
         private void UC_StaffManager_Load(object sender, EventArgs e)
         {
-            LoadData();
-            LoadCBChucVu();
+           // LoadData();
+           // LoadCBChucVu();
         }
 
         private void LoadData()

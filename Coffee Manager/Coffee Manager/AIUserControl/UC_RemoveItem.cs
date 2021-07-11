@@ -40,8 +40,7 @@ namespace Coffee_Manager
         {
             try
             {
-
-                string find = "SELECT MaMon, TenMon, TenDVT, Gia FROM MON A JOIN DONVITINH B on A.MaDVT = B.MaDVT ";
+                string find = "SELECT MaMon, TenMon, TenDVTM, Gia, TenTT FROM DVT_MON B join MON A on A.MaDVTM = B.MaDVTM join TINHTRANGMON C on A.MaTT = C.MaTT";
                 this.Connection.OpenConnection();
                 SqlCommand command = this.Connection.CreateSQLCmd(find);
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
@@ -64,7 +63,7 @@ namespace Coffee_Manager
         {
             try
             {
-                string find = "SELECT MaMon, TenMon, TenDVT, Gia FROM MON A JOIN DONVITINH B on A.MaDVT = B.MaDVT " +
+                string find = "SELECT MaMon, TenMon, TenDVTM, Gia FROM MON A JOIN DVT_MON B on A.MaDVTM = B.MaDVTM " +
                     "where A.TenMon LIKE '" + tbSearch.Text + "%'";
                 this.Connection.OpenConnection();
                 SqlCommand command = this.Connection.CreateSQLCmd(find);
@@ -91,10 +90,15 @@ namespace Coffee_Manager
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            Mon update = new Mon();
-            update.MA_MON = gridview.SelectedRows[0].Cells[0].Value.ToString();
-            update.Remove();
-            LoadData();
+            var result = MessageBox.Show("Bạn có muốn xoá món này ra khỏi menu?", "Xoá món", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (result == DialogResult.Yes)
+            {
+                Mon update = new Mon();
+                update.MA_MON = gridview.SelectedRows[0].Cells[0].Value.ToString();
+                update.Remove();
+                LoadData();
+            }
         }
     }
 }

@@ -15,6 +15,7 @@ namespace Coffee_Manager
         List<int> DSSoLuong = new List<int>();
         DateTime NgNhap;
         int TriGia;
+        NhaCungCap nhaCungCap;
 
         Connect Connection = new Connect();
 
@@ -23,25 +24,28 @@ namespace Coffee_Manager
             MaPN = "";
             TriGia = 0;
             NgNhap = DateTime.Now;
+            nhaCungCap = new NhaCungCap();
         }
         public PhieuNhap(string MaPN, List<NguyenLieu> DSNguyenLieu, List<int>DSSoLuong,
-            DateTime NgNhap, int TriGia)
+            DateTime NgNhap, int TriGiam, NhaCungCap nhaCungCap)
         {
             this.MaPN = MaPN;
             this.DSNguyenLieu = DSNguyenLieu;
             this.DSSoLuong = DSSoLuong;
             this.NgNhap = NgNhap;
             this.TriGia = TriGia;
+            this.nhaCungCap = nhaCungCap;
         }
 
         public PhieuNhap(List<NguyenLieu> DSNguyenLieu, List<int> DSSoLuong,
-             DateTime NgNhap, int TriGia)
+             DateTime NgNhap, int TriGia, NhaCungCap nhaCungCap)
         {
             CreateMaPN();
             this.DSNguyenLieu = DSNguyenLieu;
             this.DSSoLuong = DSSoLuong;
             this.NgNhap = NgNhap;
             this.TriGia = TriGia;
+            this.nhaCungCap = nhaCungCap;
         }
 
         public void CreateMaPN()
@@ -107,12 +111,18 @@ namespace Coffee_Manager
             set { this.MaPN = value; }
         }
 
+        public NhaCungCap NHA_CC
+        {
+            get { return this.nhaCungCap; }
+            set { this.nhaCungCap = value; }
+        }
+
         public void Add() 
         {
             try
             {
-                string sql = "insert into PHIEUNHAP(MaPN, NgNhap,TriGia) values " +
-                    "('" + this.MaPN + "', '" + this.NgNhap + "', '" + this.TriGia + "') ";
+                string sql = "insert into PHIEUNHAP(MaPN, NgNhap,TriGia, MaNCC) values " +
+                    "('" + this.MaPN + "', '" + this.NgNhap + "', '" + this.TriGia + "', '"+ this.NHA_CC.MA_NCC+"') ";
                 this.Connection.OpenConnection();
                 SqlCommand command = this.Connection.CreateSQLCmd(sql);
                 command.ExecuteNonQuery();
@@ -128,8 +138,56 @@ namespace Coffee_Manager
                 this.Connection.CloseConnection();
             }
         }
-        //public void Update() { };
-        //public void Remove() { };
+        public void Update() 
+        {
+            try
+            {
+                string sql = "update PHIEUNHAP set TriGia = '" + this.TriGia + "', NgNhap = '" + this.NgNhap + "', MaNCC = '" + this.nhaCungCap.MA_NCC + "' where MaPN = '" + this.MaPN + "'";
+                this.Connection.OpenConnection();
+                SqlCommand command = this.Connection.CreateSQLCmd(sql);
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Đã xảy ra lỗi, vui lòng liên hệ đội ngũ phát triển!");
+
+            }
+            finally
+            {
+                this.Connection.CloseConnection();
+            }
+        }
+        
+        public void Remove()
+        {
+            try
+            {
+                // delete data in CT_PHIEUNHAP
+                string sql = "delete from CT_PHIEUNHAP where MaPN = '" + this.MaPN + "'";
+                this.Connection.OpenConnection();
+                SqlCommand command = this.Connection.CreateSQLCmd(sql);
+                command.ExecuteNonQuery();
+                Connection.CloseConnection();
+
+                // delete data in PHIEUNHAP
+                sql = "delete from PHIEUNHAP where MaPN = '" + this.MaPN + "'";
+                this.Connection.OpenConnection();
+                command = this.Connection.CreateSQLCmd(sql);
+                command.ExecuteNonQuery();
+                Connection.CloseConnection();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Đã xảy ra lỗi, vui lòng liên hệ đội ngũ phát triển!");
+
+            }
+            finally
+            {
+                this.Connection.CloseConnection();
+               
+            }
+        }
         //public void Save(){};
 
 

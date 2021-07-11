@@ -12,7 +12,7 @@ namespace Coffee_Manager.MainClass
         protected DateTime NgSinh;
         protected string SoDT;
         protected string DiaChi;
-        public string TEN_KH
+        public string HO_TEN
         {
             get { return this.HoTen; }
             set { this.HoTen = value; }

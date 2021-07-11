@@ -34,7 +34,7 @@ namespace Coffee_Manager
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.bAddItem = new Guna.UI2.WinForms.Guna2Button();
+            this.btnAddItem = new Guna.UI2.WinForms.Guna2Button();
             this.cbCalculationUnit = new Guna.UI2.WinForms.Guna2ComboBox();
             this.tbItemName = new Guna.UI2.WinForms.Guna2TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -44,24 +44,25 @@ namespace Coffee_Manager
             this.btnRemove = new Guna.UI2.WinForms.Guna2Button();
             this.label5 = new System.Windows.Forms.Label();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.btnExit = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridview)).BeginInit();
             this.SuspendLayout();
             // 
-            // bAddItem
+            // btnAddItem
             // 
-            this.bAddItem.BorderRadius = 15;
-            this.bAddItem.CheckedState.Parent = this.bAddItem;
-            this.bAddItem.CustomImages.Parent = this.bAddItem;
-            this.bAddItem.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bAddItem.ForeColor = System.Drawing.Color.White;
-            this.bAddItem.HoverState.Parent = this.bAddItem;
-            this.bAddItem.Location = new System.Drawing.Point(80, 325);
-            this.bAddItem.Name = "bAddItem";
-            this.bAddItem.ShadowDecoration.Parent = this.bAddItem;
-            this.bAddItem.Size = new System.Drawing.Size(124, 40);
-            this.bAddItem.TabIndex = 15;
-            this.bAddItem.Text = "Thêm";
-            this.bAddItem.Click += new System.EventHandler(this.bAddItem_Click);
+            this.btnAddItem.BorderRadius = 15;
+            this.btnAddItem.CheckedState.Parent = this.btnAddItem;
+            this.btnAddItem.CustomImages.Parent = this.btnAddItem;
+            this.btnAddItem.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddItem.ForeColor = System.Drawing.Color.White;
+            this.btnAddItem.HoverState.Parent = this.btnAddItem;
+            this.btnAddItem.Location = new System.Drawing.Point(82, 322);
+            this.btnAddItem.Name = "btnAddItem";
+            this.btnAddItem.ShadowDecoration.Parent = this.btnAddItem;
+            this.btnAddItem.Size = new System.Drawing.Size(124, 40);
+            this.btnAddItem.TabIndex = 15;
+            this.btnAddItem.Text = "Thêm";
+            this.btnAddItem.Click += new System.EventHandler(this.bAddItem_Click);
             // 
             // cbCalculationUnit
             // 
@@ -76,13 +77,12 @@ namespace Coffee_Manager
             this.cbCalculationUnit.HoverState.Parent = this.cbCalculationUnit;
             this.cbCalculationUnit.ItemHeight = 30;
             this.cbCalculationUnit.ItemsAppearance.Parent = this.cbCalculationUnit;
-            this.cbCalculationUnit.Location = new System.Drawing.Point(31, 146);
+            this.cbCalculationUnit.Location = new System.Drawing.Point(34, 174);
             this.cbCalculationUnit.Name = "cbCalculationUnit";
             this.cbCalculationUnit.ShadowDecoration.Parent = this.cbCalculationUnit;
             this.cbCalculationUnit.Size = new System.Drawing.Size(226, 36);
             this.cbCalculationUnit.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.cbCalculationUnit.TabIndex = 14;
-            this.cbCalculationUnit.SelectedIndexChanged += new System.EventHandler(this.cbCalculationUnit_SelectedIndexChanged);
             // 
             // tbItemName
             // 
@@ -99,7 +99,7 @@ namespace Coffee_Manager
             this.tbItemName.ForeColor = System.Drawing.Color.Black;
             this.tbItemName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbItemName.HoverState.Parent = this.tbItemName;
-            this.tbItemName.Location = new System.Drawing.Point(31, 226);
+            this.tbItemName.Location = new System.Drawing.Point(34, 254);
             this.tbItemName.Margin = new System.Windows.Forms.Padding(5);
             this.tbItemName.Name = "tbItemName";
             this.tbItemName.PasswordChar = '\0';
@@ -114,7 +114,7 @@ namespace Coffee_Manager
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(26, 194);
+            this.label3.Location = new System.Drawing.Point(29, 222);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(141, 23);
             this.label3.TabIndex = 10;
@@ -124,7 +124,7 @@ namespace Coffee_Manager
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(26, 114);
+            this.label2.Location = new System.Drawing.Point(29, 142);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(103, 23);
             this.label2.TabIndex = 9;
@@ -173,7 +173,7 @@ namespace Coffee_Manager
             this.gridview.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.gridview.RowHeadersVisible = false;
             this.gridview.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridview.Size = new System.Drawing.Size(468, 425);
+            this.gridview.Size = new System.Drawing.Size(468, 478);
             this.gridview.TabIndex = 19;
             this.gridview.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.gridview.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -207,7 +207,7 @@ namespace Coffee_Manager
             this.btnUpdate.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
             this.btnUpdate.HoverState.Parent = this.btnUpdate;
-            this.btnUpdate.Location = new System.Drawing.Point(80, 384);
+            this.btnUpdate.Location = new System.Drawing.Point(82, 430);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.ShadowDecoration.Parent = this.btnUpdate;
             this.btnUpdate.Size = new System.Drawing.Size(124, 40);
@@ -223,10 +223,10 @@ namespace Coffee_Manager
             this.btnRemove.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRemove.ForeColor = System.Drawing.Color.White;
             this.btnRemove.HoverState.Parent = this.btnRemove;
-            this.btnRemove.Location = new System.Drawing.Point(642, 475);
+            this.btnRemove.Location = new System.Drawing.Point(82, 368);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.ShadowDecoration.Parent = this.btnRemove;
-            this.btnRemove.Size = new System.Drawing.Size(102, 40);
+            this.btnRemove.Size = new System.Drawing.Size(124, 40);
             this.btnRemove.TabIndex = 21;
             this.btnRemove.Text = "Xoá";
             this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
@@ -245,16 +245,37 @@ namespace Coffee_Manager
             // 
             this.guna2Elipse1.TargetControl = this;
             // 
+            // btnExit
+            // 
+            this.btnExit.BackColor = System.Drawing.Color.Transparent;
+            this.btnExit.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.btnExit.BorderRadius = 15;
+            this.btnExit.BorderThickness = 1;
+            this.btnExit.CheckedState.Parent = this.btnExit;
+            this.btnExit.CustomImages.Parent = this.btnExit;
+            this.btnExit.FillColor = System.Drawing.Color.White;
+            this.btnExit.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.btnExit.HoverState.Parent = this.btnExit;
+            this.btnExit.Location = new System.Drawing.Point(176, 81);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.ShadowDecoration.Parent = this.btnExit;
+            this.btnExit.Size = new System.Drawing.Size(84, 38);
+            this.btnExit.TabIndex = 23;
+            this.btnExit.Text = "Thoát";
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
             // UC_Material
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.btnExit);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.gridview);
-            this.Controls.Add(this.bAddItem);
+            this.Controls.Add(this.btnAddItem);
             this.Controls.Add(this.cbCalculationUnit);
             this.Controls.Add(this.tbItemName);
             this.Controls.Add(this.label3);
@@ -271,7 +292,7 @@ namespace Coffee_Manager
 
         #endregion
 
-        private Guna.UI2.WinForms.Guna2Button bAddItem;
+        private Guna.UI2.WinForms.Guna2Button btnAddItem;
         private Guna.UI2.WinForms.Guna2ComboBox cbCalculationUnit;
         private Guna.UI2.WinForms.Guna2TextBox tbItemName;
         private System.Windows.Forms.Label label3;
@@ -281,5 +302,6 @@ namespace Coffee_Manager
         private Guna.UI2.WinForms.Guna2Button btnRemove;
         private System.Windows.Forms.Label label5;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
+        private Guna.UI2.WinForms.Guna2Button btnExit;
     }
 }

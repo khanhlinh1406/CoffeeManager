@@ -19,6 +19,7 @@ namespace Coffee_Manager
         public UC_Material()
         {
             InitializeComponent();
+            btnExit.Visible = btnUpdate.Visible = btnRemove.Visible = false;
         }
 
         public void UC_Material_Load(object sender, EventArgs e)
@@ -31,7 +32,7 @@ namespace Coffee_Manager
         {
             try
             {
-                string find = "SELECT MaNL, TenNL, TenDVT FROM NGUYENLIEU A JOIN DONVITINH B on A.MaDVT = B.MaDVT ";
+                string find = "SELECT MaNL, TenNL, TenDVTNL FROM NGUYENLIEU A JOIN DVT_NGUYENLIEU B on A.MaDVTNL = B.MaDVTNL ";
                 this.Connection.OpenConnection();
                 SqlCommand command = this.Connection.CreateSQLCmd(find);
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
@@ -48,71 +49,95 @@ namespace Coffee_Manager
             {
                 this.Connection.CloseConnection();
             }
-        }    
+        }
 
         void LoadListDVT()
         {
-            cbCalculationUnit.Items.Clear();
             try
             {
-                string find = "SELECT MaDVT, TenDVT FROM DONVITINH";
                 this.Connection.OpenConnection();
+                string find = "SELECT MaDVTNL, TenDVTNL from DVT_NGUYENLIEU";
                 SqlCommand command = this.Connection.CreateSQLCmd(find);
-                SqlDataReader reader = command.ExecuteReader();
-                while (reader.HasRows)
-                {
-                    if (reader.Read() == false) break;
-                    DonViTinh tmp = new DonViTinh(reader.GetString(0), reader.GetString(1));
-                    listDVT.Add(tmp);
-                    cbCalculationUnit.Items.Add(tmp.TEN_DVT);
-                }
-                reader.Close();
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                DataSet data = new DataSet();
+                adapter.Fill(data);
+                cbCalculationUnit.DataSource = data.Tables[0];
+                cbCalculationUnit.DisplayMember = "TenDVTNL";
+                cbCalculationUnit.ValueMember = "MaDVTNL";
                 this.Connection.CloseConnection();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Đã xảy ra lỗi, vui lòng liên hệ đội ngũ phát triển!");
+
             }
             finally
             {
                 this.Connection.CloseConnection();
             }
+
         }
 
         private void bAddItem_Click(object sender, EventArgs e)
         {
-            NguyenLieu nguyenLieu = new NguyenLieu(tbItemName.Text, listDVT[index]);
-            nguyenLieu.Add();
-            LoadData();
+            if (IsValidData())
+            {
+                NguyenLieu nguyenLieu = new NguyenLieu(tbItemName.Text, new DonViTinh(cbCalculationUnit.SelectedValue.ToString(), cbCalculationUnit.Text.ToString()));
+                nguyenLieu.Add();
+                LoadData();
+            }
         }
 
-        int index;
-
-        private void cbCalculationUnit_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            index = cbCalculationUnit.SelectedIndex;
-        }
+       
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            NguyenLieu nguyenLieu = new NguyenLieu(gridview.SelectedRows[0].Cells[0].Value.ToString(),
-                tbItemName.Text, listDVT[index]);
-            nguyenLieu.Update();
-            LoadData();
+            if (IsValidData())
+            {
+                NguyenLieu nguyenLieu = new NguyenLieu(gridview.SelectedRows[0].Cells[0].Value.ToString(),
+                    tbItemName.Text, new DonViTinh(cbCalculationUnit.SelectedValue.ToString(), cbCalculationUnit.Text.ToString()));
+                nguyenLieu.Update();
+                LoadData();
+            }
         }
 
         private void gridview_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             tbItemName.Text = gridview.SelectedRows[0].Cells[1].Value.ToString();
             cbCalculationUnit.Text = gridview.SelectedRows[0].Cells[2].Value.ToString();
+
+            btnAddItem.Visible = false;
+            btnExit.Visible = btnUpdate.Visible = btnRemove.Visible = true;
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
-            NguyenLieu nguyenLieu = new NguyenLieu(gridview.SelectedRows[0].Cells[0].Value.ToString(),
-                tbItemName.Text, listDVT[index]);
-            nguyenLieu.Remove();
-            LoadData();
+            var result = MessageBox.Show("Bạn có muốn nguyên liệu món này?", "Xoá nguyên liệu", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (result == DialogResult.Yes)
+            {
+                NguyenLieu nguyenLieu = new NguyenLieu(gridview.SelectedRows[0].Cells[0].Value.ToString(),
+                    tbItemName.Text, new DonViTinh(cbCalculationUnit.SelectedValue.ToString(), cbCalculationUnit.Text.ToString()));
+                nguyenLieu.Remove();
+                LoadData();
+            }
+        }
+
+        private bool IsValidData()
+        {
+            if (tbItemName.Text != "" && cbCalculationUnit.Text != "")
+                return true;
+
+            MessageBox.Show("Dữ liệu không hợp lệ, trường dữ liệu bị trống", "Sai dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return false;
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            btnExit.Visible = btnUpdate.Visible = btnRemove.Visible = false;
+            btnAddItem.Visible = true;
+
+            tbItemName.Text = cbCalculationUnit.Text = "";
         }
     }
 }
