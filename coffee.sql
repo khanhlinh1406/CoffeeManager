@@ -1,17 +1,33 @@
 CREATE DATABASE COFFEE_MANAGEMENT
+
 use COFFEE_MANAGEMENT
+
 CREATE TABLE MON
 (
 	MaMon varchar(10) primary key,
 	TenMon nvarchar(20),
-	MaDVT varchar(10),
-	Gia int
+	MaDVTM varchar(10),
+	Gia int,
+	MaTinhTrang varchar(15)
 )
 
-CREATE TABLE DONVITINH
+CREATE TABLE TINHTRANGMON
 (
-	MaDVT varchar(10) primary key,
-	TenDVT nvarchar(20)
+	MaTT varchar(10) primary key,
+	TenTT nvarchar(20)
+)
+
+CREATE TABLE DVT_MON
+(
+	MaDVTM varchar(10) primary key,
+	TenDVTM nvarchar(20)
+)
+
+CREATE TABLE NHACUNGCAP
+(
+	MaNCC varchar(10) primary key,
+	TenNCC varchar(30),
+	SDT varchar(10)
 )
 
 CREATE TABLE NHANVIEN
@@ -25,7 +41,6 @@ CREATE TABLE NHANVIEN
 	MaCV varchar(10),
 	MaTK varchar(10)
 )
-alter table NHanvien drop column Diachi
 
 CREATE TABLE CHUCVU
 (
@@ -43,8 +58,10 @@ CREATE TABLE HOADON
 (
 	MaHD varchar(10) primary key,
 	MaNV_Lap varchar(10),
+	MaKH varchar(10),
 	NgLap smalldatetime,
-	TriGia int,
+	KhMai int,
+	TriGia int
 )
 
 CREATE TABLE CT_HOADON
@@ -55,18 +72,17 @@ CREATE TABLE CT_HOADON
 	PRIMARY KEY(MaHD, MaMon)
 )
 
-
-
 CREATE TABLE PHIEUNHAP
 (
 	MaPN varchar(10) primary key, 
 	NgNhap smalldatetime, 
-	TriGia int
+	TriGia int,
+	MaNCC varchar(10)
 )
 
 CREATE TABLE CT_PHIEUNHAP
 (
-	MaPN varchar(10), 
+	MaPN varchar(10) primary key, 
 	MaNL varchar(10), 
 	DonGia int,
 	SoLuong int
@@ -76,20 +92,37 @@ CREATE TABLE NGUYENLIEU
 (
 	MaNL varchar(10) primary key, 
 	TenNL nvarchar(20), 
-	MaDVT varchar(10),
+	MaDVTNL varchar(10),
 )
 
+CREATE TABLE DVT_NGUYENLIEU
+(
+	MaDVTNL varchar(10) primary key,
+	TenDVTNL nvarchar(20)
+)
 
 create table KHACHHANG
 (
-  MaKH varchar(10),
+  MaKH varchar(10) primary key,
   TenKH nvarchar(30),
   NgSinh smalldatetime,
   SoDT varchar(10),
   DiaChi nvarchar(100),
   NgDK smalldatetime,
-  Diem int
+  Diem int,
+  MaLKH varchar(10)
 )
 
-SELECT A.MaNV, A.TenNV, A.NgSinh, A.SDT, A.NgVaoLam, C.TenCV, A.MaTK, B.MatKhau 
-FROM TAIKHOAN B join NHANVIEN A on B.MaTK = A.MaTK join CHUCVU C on A.MaCV = C.MaCV
+CREATE TABLE LOAIKHACHHANG
+(
+	MaLKH varchar(10) primary key,
+	LoaiKH nvarchar(20),
+	PTramHD float,
+	PTgiam float,
+	DiemLH int
+)
+
+insert into TAIKHOAN values ('nv', '1234')
+insert into TAIKHOAN values ('ql', '1234')
+
+insert into NHANVIEN values ('1', 'Nhan Vien 1', '2001-01-13 00:00:00', '0918551999', 'Binh Duong', '2021-01-22 00:00:00', 'NV', 'NV')
