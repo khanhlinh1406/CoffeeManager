@@ -119,5 +119,25 @@ namespace Coffee_Manager
             remove.Remove();
             LoadData();
         }
+
+        private void txtName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            {
+                if (!char.IsControl(e.KeyChar) && char.IsDigit(e.KeyChar))
+                {
+                    e.Handled = true;
+                }
+            }
+        }
+
+        private void txtPhone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            {
+                if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+                {
+                    e.Handled = true;
+                }
+            }
+        }
     }
 }

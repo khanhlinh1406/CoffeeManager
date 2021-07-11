@@ -8,6 +8,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -161,7 +162,7 @@ namespace Coffee_Manager
                     {
                         row.Cells[2].Value = (int.Parse(tbxOrderItemQuantity.Value.ToString())
                             + int.Parse(row.Cells[2].Value.ToString())).ToString();
-                        row.Cells[3].Value = (int.Parse(tbxOrderItemCost.Text)
+                        row.Cells[3].Value = (int.Parse((int.Parse(tbxOrderItemPrice.Text) * int.Parse(tbxOrderItemQuantity.Value.ToString())).ToString())
                             + int.Parse(row.Cells[3].Value.ToString())).ToString();
                         isDuplicated = true;
                         break;
@@ -305,17 +306,23 @@ namespace Coffee_Manager
                         var writer = PdfWriter.GetInstance(document, stream);
                         document.Open();
 
-                        iTextSharp.text.Font titleFont = FontFactory.GetFont("Arial", 18, iTextSharp.text.Font.BOLD, new iTextSharp.text.BaseColor(0, 0, 0));
-                        iTextSharp.text.Font subTitleFont = FontFactory.GetFont("Arial", 14, iTextSharp.text.Font.BOLD, new iTextSharp.text.BaseColor(0, 0, 0));
-                        iTextSharp.text.Font boldTableFont = FontFactory.GetFont("Arial", 12, iTextSharp.text.Font.BOLD, new iTextSharp.text.BaseColor(0, 0, 0));
-                        iTextSharp.text.Font endingMessageFont = FontFactory.GetFont("Arial", 10, iTextSharp.text.Font.ITALIC, new iTextSharp.text.BaseColor(0, 0, 0));
-                        iTextSharp.text.Font bodyFont = FontFactory.GetFont("Arial", 10, iTextSharp.text.Font.NORMAL, new iTextSharp.text.BaseColor(0, 0, 0));
+                        string ARIALUNI_TFF = Path.Combine(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location), "BaiJamjuree-Regular.TTF");
+                        iTextSharp.text.pdf.BaseFont bfR = iTextSharp.text.pdf.BaseFont.CreateFont(ARIALUNI_TFF,
+                          iTextSharp.text.pdf.BaseFont.IDENTITY_H,
+                          iTextSharp.text.pdf.BaseFont.EMBEDDED);
+
+                        iTextSharp.text.Font titleFont = new iTextSharp.text.Font(bfR, 18, iTextSharp.text.Font.BOLD, new iTextSharp.text.BaseColor(0, 0, 0));
+                        iTextSharp.text.Font subTitleFont = new iTextSharp.text.Font(bfR, 14, iTextSharp.text.Font.BOLD, new iTextSharp.text.BaseColor(0, 0, 0));
+                        iTextSharp.text.Font boldTableFont = new iTextSharp.text.Font(bfR, 12, iTextSharp.text.Font.BOLD, new iTextSharp.text.BaseColor(0, 0, 0));
+                        iTextSharp.text.Font endingMessageFont = new iTextSharp.text.Font(bfR, 10, iTextSharp.text.Font.ITALIC, new iTextSharp.text.BaseColor(0, 0, 0));
+                        iTextSharp.text.Font endingMessageFontBold = new iTextSharp.text.Font(bfR, 10, iTextSharp.text.Font.BOLD, new iTextSharp.text.BaseColor(0, 0, 0));
+                        iTextSharp.text.Font bodyFont = new iTextSharp.text.Font(bfR, 10, iTextSharp.text.Font.NORMAL, new iTextSharp.text.BaseColor(0, 0, 0));
                         var header = new PdfPTable(1);
                         header.HorizontalAlignment = Element.ALIGN_CENTER;
                         header.SpacingBefore = 10;
                         header.SpacingAfter = 10;
                         header.DefaultCell.Border = 0;
-                        PdfPCell cell = new PdfPCell(new Paragraph("HOA DON", titleFont));
+                        PdfPCell cell = new PdfPCell(new Paragraph("HOÁ ĐƠN", titleFont));
                         cell.HorizontalAlignment = Element.ALIGN_CENTER;
                         cell.Border = 0;
                         header.AddCell(cell);
@@ -323,7 +330,7 @@ namespace Coffee_Manager
                         cell.HorizontalAlignment = Element.ALIGN_CENTER;
                         cell.Border = 0;
                         header.AddCell(cell);
-                        header.AddCell(new Paragraph("\n", titleFont));
+                        header.AddCell(new Paragraph("\n", boldTableFont));
                         document.Add(header);
 
                         var people = new PdfPTable(1);
@@ -336,12 +343,12 @@ namespace Coffee_Manager
                         people.SetWidths(widths);
 
                         people.AddCell(new Phrase(DateTime.Now.ToString(), bodyFont));
-                        people.AddCell(new Phrase("Khach hang: " + cbxCustomer.Text, bodyFont));
-                        people.AddCell(new Phrase("Nhan vien: " + nhanVien.TEN_NV, bodyFont));
+                        people.AddCell(new Phrase("Khách hàng: " + cbxCustomer.Text, bodyFont));
+                        people.AddCell(new Phrase("Nhân viên: " + nhanVien.TEN_NV, bodyFont));
                         document.Add(people);
                         document.Add(new Paragraph("\n", boldTableFont));
 
-                        document.Add(new Paragraph("Thong Tin Hoa Don", subTitleFont));
+                        document.Add(new Paragraph("Thông Tin Hoá Đơn", boldTableFont));
                         var orderInfoTable = new PdfPTable(2);
                         orderInfoTable.HorizontalAlignment = Element.ALIGN_JUSTIFIED;
                         orderInfoTable.SpacingBefore = 10;
@@ -351,14 +358,14 @@ namespace Coffee_Manager
                         widths = new float[] { document.PageSize.Width/2, document.PageSize.Width/2};
                         orderInfoTable.SetWidths(widths);
 
-                        orderInfoTable.AddCell(new Phrase("Ma Hoa Don:", boldTableFont));
-                        orderInfoTable.AddCell(MaHD);
-                        orderInfoTable.AddCell(new Phrase("Tong Tien:", boldTableFont));
-                        orderInfoTable.AddCell(totalCost.ToString() + " vnd");
+                        orderInfoTable.AddCell(new Phrase("Mã Hoá Đơn:", endingMessageFontBold));
+                        orderInfoTable.AddCell(new Phrase(MaHD, bodyFont));
+                        orderInfoTable.AddCell(new Phrase("Tổng Tiền:", endingMessageFontBold));
+                        orderInfoTable.AddCell(new Phrase(totalCost.ToString() + " vnd", bodyFont));
                         document.Add(orderInfoTable);
-                        document.Add(new Paragraph("\n", subTitleFont));
+                        document.Add(new Paragraph("\n", boldTableFont));
 
-                        document.Add(new Paragraph("Chi Tiet", subTitleFont));
+                        document.Add(new Paragraph("Chi Tiết", boldTableFont));
                         var orderDetailTable = new PdfPTable(3);
                         orderDetailTable.HorizontalAlignment = Element.ALIGN_LEFT;
                         orderDetailTable.SpacingBefore = 10;
@@ -368,15 +375,15 @@ namespace Coffee_Manager
                         orderDetailTable.SetTotalWidth(widths);
                         orderDetailTable.LockedWidth = true;
 
-                        cell = new PdfPCell(new Phrase("Ten Mon", boldTableFont));
+                        cell = new PdfPCell(new Phrase("Tên Món", endingMessageFontBold));
                         cell.HorizontalAlignment = Element.ALIGN_LEFT;
                         cell.Border = 0;
                         orderDetailTable.AddCell(cell);
-                        cell = new PdfPCell(new Phrase("So Luong", boldTableFont));
+                        cell = new PdfPCell(new Phrase("Số Lượng", endingMessageFontBold));
                         cell.HorizontalAlignment = Element.ALIGN_CENTER;
                         cell.Border = 0;
                         orderDetailTable.AddCell(cell);
-                        cell = new PdfPCell(new Phrase("Thanh Tien", boldTableFont));
+                        cell = new PdfPCell(new Phrase("Thành Tiền", endingMessageFontBold));
                         cell.HorizontalAlignment = Element.ALIGN_RIGHT;
                         cell.Border = 0;
                         orderDetailTable.AddCell(cell);
@@ -402,6 +409,16 @@ namespace Coffee_Manager
                         stream.Close();
                     }
                     MessageBox.Show("Xuất hóa đơn thành công!", "Xuất hóa đơn");
+                }
+            }
+        }
+
+        private void tbxOrderItemQuantity_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            {
+                if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+                {
+                    e.Handled = true;
                 }
             }
         }

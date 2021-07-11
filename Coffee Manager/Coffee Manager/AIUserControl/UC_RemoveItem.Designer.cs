@@ -33,13 +33,14 @@ namespace Coffee_Manager
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.gridview = new Guna.UI2.WinForms.Guna2DataGridView();
             this.btnDelete = new Guna.UI2.WinForms.Guna2Button();
             this.tbSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.gridview = new Guna.UI2.WinForms.Guna2DataGridView();
             this.guna2GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridview)).BeginInit();
             this.SuspendLayout();
@@ -51,88 +52,22 @@ namespace Coffee_Manager
             // 
             // guna2GroupBox1
             // 
-            this.guna2GroupBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(225)))));
-            this.guna2GroupBox1.BorderRadius = 30;
+            this.guna2GroupBox1.BorderColor = System.Drawing.Color.Transparent;
             this.guna2GroupBox1.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dash;
             this.guna2GroupBox1.Controls.Add(this.gridview);
             this.guna2GroupBox1.Controls.Add(this.btnDelete);
             this.guna2GroupBox1.Controls.Add(this.tbSearch);
             this.guna2GroupBox1.Controls.Add(this.label2);
             this.guna2GroupBox1.Controls.Add(this.label1);
+            this.guna2GroupBox1.CustomBorderColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2GroupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(225)))));
-            this.guna2GroupBox1.Location = new System.Drawing.Point(10, 12);
+            this.guna2GroupBox1.Location = new System.Drawing.Point(10, 13);
             this.guna2GroupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
             this.guna2GroupBox1.ShadowDecoration.Parent = this.guna2GroupBox1;
-            this.guna2GroupBox1.Size = new System.Drawing.Size(752, 489);
+            this.guna2GroupBox1.Size = new System.Drawing.Size(752, 527);
             this.guna2GroupBox1.TabIndex = 0;
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.BorderRadius = 26;
-            this.btnDelete.CheckedState.Parent = this.btnDelete;
-            this.btnDelete.CustomImages.Parent = this.btnDelete;
-            this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.HoverState.Parent = this.btnDelete;
-            this.btnDelete.Location = new System.Drawing.Point(304, 427);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.ShadowDecoration.Parent = this.btnDelete;
-            this.btnDelete.Size = new System.Drawing.Size(147, 33);
-            this.btnDelete.TabIndex = 26;
-            this.btnDelete.Text = "Xoá";
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // tbSearch
-            // 
-            this.tbSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbSearch.DefaultText = "";
-            this.tbSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.tbSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.tbSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbSearch.DisabledState.Parent = this.tbSearch;
-            this.tbSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbSearch.FocusedState.Parent = this.tbSearch;
-            this.tbSearch.Font = new System.Drawing.Font("Segoe UI", 10.8F);
-            this.tbSearch.ForeColor = System.Drawing.Color.Black;
-            this.tbSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbSearch.HoverState.Parent = this.tbSearch;
-            this.tbSearch.Location = new System.Drawing.Point(322, 89);
-            this.tbSearch.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tbSearch.Name = "tbSearch";
-            this.tbSearch.PasswordChar = '\0';
-            this.tbSearch.PlaceholderText = "Nhập...";
-            this.tbSearch.SelectedText = "";
-            this.tbSearch.ShadowDecoration.Parent = this.tbSearch;
-            this.tbSearch.Size = new System.Drawing.Size(202, 26);
-            this.tbSearch.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.tbSearch.TabIndex = 7;
-            this.tbSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(213, 89);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(90, 22);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Tên món:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(8, 6);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(127, 29);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "XOÁ MÓN";
             // 
             // gridview
             // 
@@ -145,7 +80,7 @@ namespace Coffee_Manager
             this.gridview.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.gridview.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.gridview.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
@@ -154,10 +89,10 @@ namespace Coffee_Manager
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.gridview.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.gridview.ColumnHeadersHeight = 15;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(225)))));
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
@@ -165,12 +100,20 @@ namespace Coffee_Manager
             this.gridview.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnF2;
             this.gridview.EnableHeadersVisualStyles = false;
             this.gridview.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.gridview.Location = new System.Drawing.Point(27, 140);
+            this.gridview.Location = new System.Drawing.Point(27, 151);
             this.gridview.Name = "gridview";
             this.gridview.ReadOnly = true;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridview.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.gridview.RowHeadersVisible = false;
             this.gridview.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridview.Size = new System.Drawing.Size(699, 260);
+            this.gridview.Size = new System.Drawing.Size(699, 280);
             this.gridview.TabIndex = 27;
             this.gridview.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.gridview.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -190,20 +133,87 @@ namespace Coffee_Manager
             this.gridview.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.gridview.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.gridview.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gridview.ThemeStyle.RowsStyle.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.gridview.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(225)))));
             this.gridview.ThemeStyle.RowsStyle.Height = 22;
             this.gridview.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.gridview.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
+            // btnDelete
+            // 
+            this.btnDelete.BorderRadius = 15;
+            this.btnDelete.CheckedState.Parent = this.btnDelete;
+            this.btnDelete.CustomImages.Parent = this.btnDelete;
+            this.btnDelete.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.ForeColor = System.Drawing.Color.White;
+            this.btnDelete.HoverState.Parent = this.btnDelete;
+            this.btnDelete.Location = new System.Drawing.Point(304, 451);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.ShadowDecoration.Parent = this.btnDelete;
+            this.btnDelete.Size = new System.Drawing.Size(147, 44);
+            this.btnDelete.TabIndex = 26;
+            this.btnDelete.Text = "Xoá";
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // tbSearch
+            // 
+            this.tbSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbSearch.DefaultText = "";
+            this.tbSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbSearch.DisabledState.Parent = this.tbSearch;
+            this.tbSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbSearch.FocusedState.Parent = this.tbSearch;
+            this.tbSearch.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbSearch.ForeColor = System.Drawing.Color.Black;
+            this.tbSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbSearch.HoverState.Parent = this.tbSearch;
+            this.tbSearch.Location = new System.Drawing.Point(322, 96);
+            this.tbSearch.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tbSearch.Name = "tbSearch";
+            this.tbSearch.PasswordChar = '\0';
+            this.tbSearch.PlaceholderText = "Nhập...";
+            this.tbSearch.SelectedText = "";
+            this.tbSearch.ShadowDecoration.Parent = this.tbSearch;
+            this.tbSearch.Size = new System.Drawing.Size(236, 28);
+            this.tbSearch.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.tbSearch.TabIndex = 7;
+            this.tbSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(212, 101);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(81, 21);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Tên món:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(8, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(129, 26);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "XOÁ MÓN";
+            // 
             // UC_RemoveItem
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.guna2GroupBox1);
+            this.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UC_RemoveItem";
-            this.Size = new System.Drawing.Size(781, 514);
+            this.Size = new System.Drawing.Size(781, 554);
             this.Load += new System.EventHandler(this.UC_RemoveItem_Load);
             this.guna2GroupBox1.ResumeLayout(false);
             this.guna2GroupBox1.PerformLayout();

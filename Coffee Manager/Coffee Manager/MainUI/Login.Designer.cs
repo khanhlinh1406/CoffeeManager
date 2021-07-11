@@ -36,37 +36,39 @@ namespace Coffee_Manager
             this.btnLogin = new Guna.UI2.WinForms.Guna2Button();
             this.btnGuest = new System.Windows.Forms.LinkLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnExit = new Guna.UI2.WinForms.Guna2GradientCircleButton();
             this.lbLoginStatus = new System.Windows.Forms.Label();
+            this.btnExit = new Guna.UI2.WinForms.Guna2GradientButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(73, 223);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 23);
+            this.label1.Size = new System.Drawing.Size(70, 19);
             this.label1.TabIndex = 1;
             this.label1.Text = "Username";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(73, 303);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(80, 23);
+            this.label2.Size = new System.Drawing.Size(67, 19);
             this.label2.TabIndex = 1;
             this.label2.Text = "Mật khẩu";
             // 
             // txtUsername
             // 
+            this.txtUsername.BackColor = System.Drawing.Color.Black;
+            this.txtUsername.BorderRadius = 10;
             this.txtUsername.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtUsername.DefaultText = "";
             this.txtUsername.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -76,7 +78,7 @@ namespace Coffee_Manager
             this.txtUsername.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtUsername.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtUsername.FocusedState.Parent = this.txtUsername;
-            this.txtUsername.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
+            this.txtUsername.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsername.ForeColor = System.Drawing.Color.Black;
             this.txtUsername.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtUsername.HoverState.Parent = this.txtUsername;
@@ -84,7 +86,8 @@ namespace Coffee_Manager
             this.txtUsername.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.PasswordChar = '\0';
-            this.txtUsername.PlaceholderText = "Enter username";
+            this.txtUsername.PlaceholderForeColor = System.Drawing.Color.Gray;
+            this.txtUsername.PlaceholderText = "Tên đăng nhập";
             this.txtUsername.SelectedText = "";
             this.txtUsername.ShadowDecoration.Parent = this.txtUsername;
             this.txtUsername.Size = new System.Drawing.Size(182, 29);
@@ -94,6 +97,7 @@ namespace Coffee_Manager
             // 
             // txtPassword
             // 
+            this.txtPassword.BackColor = System.Drawing.Color.Black;
             this.txtPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPassword.DefaultText = "";
             this.txtPassword.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -103,7 +107,7 @@ namespace Coffee_Manager
             this.txtPassword.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtPassword.FocusedState.Parent = this.txtPassword;
-            this.txtPassword.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
+            this.txtPassword.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.ForeColor = System.Drawing.Color.Black;
             this.txtPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtPassword.HoverState.Parent = this.txtPassword;
@@ -111,7 +115,8 @@ namespace Coffee_Manager
             this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.PlaceholderText = "Enter your password";
+            this.txtPassword.PlaceholderForeColor = System.Drawing.Color.Gray;
+            this.txtPassword.PlaceholderText = "Mật khẩu";
             this.txtPassword.SelectedText = "";
             this.txtPassword.ShadowDecoration.Parent = this.txtPassword;
             this.txtPassword.Size = new System.Drawing.Size(182, 29);
@@ -121,7 +126,7 @@ namespace Coffee_Manager
             // 
             // btnLogin
             // 
-            this.btnLogin.BorderRadius = 26;
+            this.btnLogin.BorderRadius = 15;
             this.btnLogin.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dash;
             this.btnLogin.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.ToogleButton;
             this.btnLogin.CheckedState.FillColor = System.Drawing.Color.White;
@@ -129,7 +134,7 @@ namespace Coffee_Manager
             this.btnLogin.CheckedState.Parent = this.btnLogin;
             this.btnLogin.CustomImages.Parent = this.btnLogin;
             this.btnLogin.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(221)))));
-            this.btnLogin.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.Color.White;
             this.btnLogin.HoverState.Parent = this.btnLogin;
             this.btnLogin.Location = new System.Drawing.Point(102, 384);
@@ -151,42 +156,41 @@ namespace Coffee_Manager
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Coffee_Manager.Properties.Resources.login;
-            this.pictureBox1.Location = new System.Drawing.Point(75, 48);
+            this.pictureBox1.Location = new System.Drawing.Point(78, 52);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(182, 145);
+            this.pictureBox1.Size = new System.Drawing.Size(172, 135);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // btnExit
-            // 
-            this.btnExit.CheckedState.Parent = this.btnExit;
-            this.btnExit.CustomImages.Parent = this.btnExit;
-            this.btnExit.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.ForeColor = System.Drawing.Color.White;
-            this.btnExit.HoverState.Parent = this.btnExit;
-            this.btnExit.Location = new System.Drawing.Point(296, 11);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(2);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.btnExit.ShadowDecoration.Parent = this.btnExit;
-            this.btnExit.Size = new System.Drawing.Size(26, 28);
-            this.btnExit.TabIndex = 5;
-            this.btnExit.Text = "X";
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
             // lbLoginStatus
             // 
             this.lbLoginStatus.AutoSize = true;
-            this.lbLoginStatus.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbLoginStatus.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbLoginStatus.ForeColor = System.Drawing.Color.Red;
-            this.lbLoginStatus.Location = new System.Drawing.Point(89, 441);
+            this.lbLoginStatus.Location = new System.Drawing.Point(100, 441);
             this.lbLoginStatus.Name = "lbLoginStatus";
-            this.lbLoginStatus.Size = new System.Drawing.Size(144, 17);
+            this.lbLoginStatus.Size = new System.Drawing.Size(132, 17);
             this.lbLoginStatus.TabIndex = 7;
             this.lbLoginStatus.Text = "Trạng thái đăng nhập";
             this.lbLoginStatus.Visible = false;
+            // 
+            // btnExit
+            // 
+            this.btnExit.BorderRadius = 10;
+            this.btnExit.CheckedState.Parent = this.btnExit;
+            this.btnExit.CustomImages.Parent = this.btnExit;
+            this.btnExit.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.ForeColor = System.Drawing.Color.White;
+            this.btnExit.HoverState.Parent = this.btnExit;
+            this.btnExit.Location = new System.Drawing.Point(283, 5);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.ShadowDecoration.Parent = this.btnExit;
+            this.btnExit.Size = new System.Drawing.Size(43, 24);
+            this.btnExit.TabIndex = 14;
+            this.btnExit.Text = "X";
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // Login
             // 
@@ -194,8 +198,8 @@ namespace Coffee_Manager
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(333, 516);
-            this.Controls.Add(this.lbLoginStatus);
             this.Controls.Add(this.btnExit);
+            this.Controls.Add(this.lbLoginStatus);
             this.Controls.Add(this.btnGuest);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtPassword);
@@ -209,6 +213,7 @@ namespace Coffee_Manager
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Login_MouseDown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -223,8 +228,8 @@ namespace Coffee_Manager
         private Guna.UI2.WinForms.Guna2Button btnLogin;
         private System.Windows.Forms.LinkLabel btnGuest;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private Guna.UI2.WinForms.Guna2GradientCircleButton btnExit;
         private System.Windows.Forms.Label lbLoginStatus;
+        private Guna.UI2.WinForms.Guna2GradientButton btnExit;
     }
 }
 
