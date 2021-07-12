@@ -47,7 +47,6 @@ namespace Coffee_Manager
             this.totalprice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnRemoveDetail = new Guna.UI2.WinForms.Guna2Button();
             this.cbMaterial = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
             this.label3 = new System.Windows.Forms.Label();
             this.numeric = new Guna.UI2.WinForms.Guna2NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
@@ -57,10 +56,13 @@ namespace Coffee_Manager
             this.date = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.btnRemoveGeneral = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.btnDone = new Guna.UI2.WinForms.Guna2Button();
-            this.btnSeen = new Guna.UI2.WinForms.Guna2Button();
             this.tbPrice = new Guna.UI2.WinForms.Guna2TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
+            this.cbNCC = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnDone = new Guna.UI2.WinForms.Guna2Button();
+            this.btnSeen = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridviewDetails)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numeric)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridviewGeneral)).BeginInit();
@@ -201,42 +203,26 @@ namespace Coffee_Manager
             this.cbMaterial.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbMaterial.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbMaterial.FocusedState.Parent = this.cbMaterial;
-            this.cbMaterial.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbMaterial.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbMaterial.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cbMaterial.HoverState.Parent = this.cbMaterial;
             this.cbMaterial.ItemHeight = 30;
             this.cbMaterial.ItemsAppearance.Parent = this.cbMaterial;
-            this.cbMaterial.Location = new System.Drawing.Point(25, 45);
+            this.cbMaterial.Location = new System.Drawing.Point(120, 101);
             this.cbMaterial.Name = "cbMaterial";
             this.cbMaterial.ShadowDecoration.Parent = this.cbMaterial;
-            this.cbMaterial.Size = new System.Drawing.Size(241, 36);
+            this.cbMaterial.Size = new System.Drawing.Size(251, 36);
             this.cbMaterial.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.cbMaterial.TabIndex = 27;
             this.cbMaterial.SelectedIndexChanged += new System.EventHandler(this.cbMaterial_SelectedIndexChanged);
             // 
-            // btnAdd
-            // 
-            this.btnAdd.BorderRadius = 15;
-            this.btnAdd.CheckedState.Parent = this.btnAdd;
-            this.btnAdd.CustomImages.Parent = this.btnAdd;
-            this.btnAdd.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.HoverState.Parent = this.btnAdd;
-            this.btnAdd.Location = new System.Drawing.Point(228, 131);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.ShadowDecoration.Parent = this.btnAdd;
-            this.btnAdd.Size = new System.Drawing.Size(156, 39);
-            this.btnAdd.TabIndex = 26;
-            this.btnAdd.Text = "Thêm vào phiếu nhập";
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(293, 17);
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(23, 209);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(78, 21);
+            this.label3.Size = new System.Drawing.Size(64, 19);
             this.label3.TabIndex = 21;
             this.label3.Text = "Số lượng";
             // 
@@ -254,7 +240,7 @@ namespace Coffee_Manager
             this.numeric.FocusedState.Parent = this.numeric;
             this.numeric.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numeric.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.numeric.Location = new System.Drawing.Point(297, 45);
+            this.numeric.Location = new System.Drawing.Point(120, 197);
             this.numeric.Name = "numeric";
             this.numeric.ShadowDecoration.Parent = this.numeric;
             this.numeric.Size = new System.Drawing.Size(87, 39);
@@ -264,20 +250,20 @@ namespace Coffee_Manager
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(24, 19);
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(21, 106);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(97, 21);
+            this.label5.Size = new System.Drawing.Size(80, 19);
             this.label5.TabIndex = 22;
             this.label5.Text = "Nguyên liệu";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(81, 210);
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(21, 13);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(90, 21);
+            this.label6.Size = new System.Drawing.Size(75, 19);
             this.label6.TabIndex = 23;
             this.label6.Text = "Ngày nhập";
             // 
@@ -340,7 +326,7 @@ namespace Coffee_Manager
             this.gridviewGeneral.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.gridviewGeneral.RowHeadersVisible = false;
             this.gridviewGeneral.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridviewGeneral.Size = new System.Drawing.Size(341, 445);
+            this.gridviewGeneral.Size = new System.Drawing.Size(341, 455);
             this.gridviewGeneral.TabIndex = 29;
             this.gridviewGeneral.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.gridviewGeneral.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -370,15 +356,15 @@ namespace Coffee_Manager
             // 
             this.date.BorderRadius = 15;
             this.date.CheckedState.Parent = this.date;
-            this.date.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.date.FillColor = System.Drawing.Color.White;
             this.date.Format = System.Windows.Forms.DateTimePickerFormat.Long;
             this.date.HoverState.Parent = this.date;
-            this.date.Location = new System.Drawing.Point(202, 196);
+            this.date.Location = new System.Drawing.Point(120, 5);
             this.date.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.date.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.date.Name = "date";
             this.date.ShadowDecoration.Parent = this.date;
-            this.date.Size = new System.Drawing.Size(182, 39);
+            this.date.Size = new System.Drawing.Size(251, 39);
             this.date.TabIndex = 30;
             this.date.Value = new System.DateTime(2021, 5, 30, 14, 32, 35, 975);
             // 
@@ -390,7 +376,7 @@ namespace Coffee_Manager
             this.btnRemoveGeneral.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRemoveGeneral.ForeColor = System.Drawing.Color.White;
             this.btnRemoveGeneral.HoverState.Parent = this.btnRemoveGeneral;
-            this.btnRemoveGeneral.Location = new System.Drawing.Point(643, 492);
+            this.btnRemoveGeneral.Location = new System.Drawing.Point(590, 501);
             this.btnRemoveGeneral.Name = "btnRemoveGeneral";
             this.btnRemoveGeneral.ShadowDecoration.Parent = this.btnRemoveGeneral;
             this.btnRemoveGeneral.Size = new System.Drawing.Size(91, 39);
@@ -401,38 +387,6 @@ namespace Coffee_Manager
             // guna2Elipse1
             // 
             this.guna2Elipse1.TargetControl = this;
-            // 
-            // btnDone
-            // 
-            this.btnDone.BorderRadius = 15;
-            this.btnDone.CheckedState.Parent = this.btnDone;
-            this.btnDone.CustomImages.Parent = this.btnDone;
-            this.btnDone.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDone.ForeColor = System.Drawing.Color.White;
-            this.btnDone.HoverState.Parent = this.btnDone;
-            this.btnDone.Location = new System.Drawing.Point(65, 492);
-            this.btnDone.Name = "btnDone";
-            this.btnDone.ShadowDecoration.Parent = this.btnDone;
-            this.btnDone.Size = new System.Drawing.Size(82, 39);
-            this.btnDone.TabIndex = 32;
-            this.btnDone.Text = "Hoàn tất";
-            this.btnDone.Click += new System.EventHandler(this.btnDone_Click);
-            // 
-            // btnSeen
-            // 
-            this.btnSeen.BorderRadius = 15;
-            this.btnSeen.CheckedState.Parent = this.btnSeen;
-            this.btnSeen.CustomImages.Parent = this.btnSeen;
-            this.btnSeen.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSeen.ForeColor = System.Drawing.Color.White;
-            this.btnSeen.HoverState.Parent = this.btnSeen;
-            this.btnSeen.Location = new System.Drawing.Point(555, 492);
-            this.btnSeen.Name = "btnSeen";
-            this.btnSeen.ShadowDecoration.Parent = this.btnSeen;
-            this.btnSeen.Size = new System.Drawing.Size(82, 39);
-            this.btnSeen.TabIndex = 33;
-            this.btnSeen.Text = "Xem xong";
-            this.btnSeen.Click += new System.EventHandler(this.btnSeen_Click);
             // 
             // tbPrice
             // 
@@ -445,18 +399,18 @@ namespace Coffee_Manager
             this.tbPrice.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.tbPrice.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbPrice.FocusedState.Parent = this.tbPrice;
-            this.tbPrice.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbPrice.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbPrice.ForeColor = System.Drawing.Color.Black;
             this.tbPrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbPrice.HoverState.Parent = this.tbPrice;
-            this.tbPrice.Location = new System.Drawing.Point(28, 131);
+            this.tbPrice.Location = new System.Drawing.Point(120, 145);
             this.tbPrice.Margin = new System.Windows.Forms.Padding(5);
             this.tbPrice.Name = "tbPrice";
             this.tbPrice.PasswordChar = '\0';
             this.tbPrice.PlaceholderText = "";
             this.tbPrice.SelectedText = "";
             this.tbPrice.ShadowDecoration.Parent = this.tbPrice;
-            this.tbPrice.Size = new System.Drawing.Size(192, 39);
+            this.tbPrice.Size = new System.Drawing.Size(251, 39);
             this.tbPrice.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.tbPrice.TabIndex = 34;
             this.tbPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbPrice_KeyPress);
@@ -464,28 +418,120 @@ namespace Coffee_Manager
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(24, 101);
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(24, 163);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(69, 21);
+            this.label4.Size = new System.Drawing.Size(56, 19);
             this.label4.TabIndex = 35;
             this.label4.Text = "Đơn giá";
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.BackColor = System.Drawing.Color.Transparent;
+            this.btnAdd.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.btnAdd.BorderRadius = 15;
+            this.btnAdd.BorderThickness = 1;
+            this.btnAdd.CheckedState.Parent = this.btnAdd;
+            this.btnAdd.CustomImages.Parent = this.btnAdd;
+            this.btnAdd.FillColor = System.Drawing.Color.White;
+            this.btnAdd.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.btnAdd.HoverState.Parent = this.btnAdd;
+            this.btnAdd.Location = new System.Drawing.Point(228, 195);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.ShadowDecoration.Parent = this.btnAdd;
+            this.btnAdd.Size = new System.Drawing.Size(156, 38);
+            this.btnAdd.TabIndex = 36;
+            this.btnAdd.Text = "Thêm vào phiếu nhập";
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // cbNCC
+            // 
+            this.cbNCC.BackColor = System.Drawing.Color.Transparent;
+            this.cbNCC.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbNCC.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbNCC.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbNCC.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbNCC.FocusedState.Parent = this.cbNCC;
+            this.cbNCC.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbNCC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbNCC.HoverState.Parent = this.cbNCC;
+            this.cbNCC.ItemHeight = 30;
+            this.cbNCC.ItemsAppearance.Parent = this.cbNCC;
+            this.cbNCC.Location = new System.Drawing.Point(120, 48);
+            this.cbNCC.Name = "cbNCC";
+            this.cbNCC.ShadowDecoration.Parent = this.cbNCC;
+            this.cbNCC.Size = new System.Drawing.Size(251, 36);
+            this.cbNCC.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.cbNCC.TabIndex = 38;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(21, 54);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(93, 19);
+            this.label1.TabIndex = 37;
+            this.label1.Text = "Nhà cung cấp";
+            // 
+            // btnDone
+            // 
+            this.btnDone.BackColor = System.Drawing.Color.Transparent;
+            this.btnDone.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.btnDone.BorderRadius = 15;
+            this.btnDone.BorderThickness = 1;
+            this.btnDone.CheckedState.Parent = this.btnDone;
+            this.btnDone.CustomImages.Parent = this.btnDone;
+            this.btnDone.FillColor = System.Drawing.Color.White;
+            this.btnDone.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.btnDone.HoverState.Parent = this.btnDone;
+            this.btnDone.Location = new System.Drawing.Point(56, 492);
+            this.btnDone.Name = "btnDone";
+            this.btnDone.ShadowDecoration.Parent = this.btnDone;
+            this.btnDone.Size = new System.Drawing.Size(81, 38);
+            this.btnDone.TabIndex = 39;
+            this.btnDone.Text = "Hoàn tất";
+            this.btnDone.Click += new System.EventHandler(this.btnDone_Click);
+            // 
+            // btnSeen
+            // 
+            this.btnSeen.BackColor = System.Drawing.Color.Transparent;
+            this.btnSeen.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.btnSeen.BorderRadius = 15;
+            this.btnSeen.BorderThickness = 1;
+            this.btnSeen.CheckedState.Parent = this.btnSeen;
+            this.btnSeen.CustomImages.Parent = this.btnSeen;
+            this.btnSeen.FillColor = System.Drawing.Color.White;
+            this.btnSeen.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSeen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.btnSeen.HoverState.Parent = this.btnSeen;
+            this.btnSeen.Location = new System.Drawing.Point(503, 501);
+            this.btnSeen.Name = "btnSeen";
+            this.btnSeen.ShadowDecoration.Parent = this.btnSeen;
+            this.btnSeen.Size = new System.Drawing.Size(81, 38);
+            this.btnSeen.TabIndex = 40;
+            this.btnSeen.Text = "Xem xong";
+            this.btnSeen.Click += new System.EventHandler(this.btnSeen_Click);
             // 
             // UC_ReceivedNote
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.tbPrice);
             this.Controls.Add(this.btnSeen);
             this.Controls.Add(this.btnDone);
+            this.Controls.Add(this.cbNCC);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.tbPrice);
             this.Controls.Add(this.btnRemoveGeneral);
             this.Controls.Add(this.date);
             this.Controls.Add(this.gridviewGeneral);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.cbMaterial);
-            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.numeric);
             this.Controls.Add(this.label5);
@@ -509,7 +555,6 @@ namespace Coffee_Manager
         private Guna.UI2.WinForms.Guna2DataGridView gridviewDetails;
         private Guna.UI2.WinForms.Guna2Button btnRemoveDetail;
         private Guna.UI2.WinForms.Guna2ComboBox cbMaterial;
-        private Guna.UI2.WinForms.Guna2Button btnAdd;
         private System.Windows.Forms.Label label3;
         private Guna.UI2.WinForms.Guna2NumericUpDown numeric;
         private System.Windows.Forms.Label label5;
@@ -519,8 +564,6 @@ namespace Coffee_Manager
         private Guna.UI2.WinForms.Guna2DateTimePicker date;
         private Guna.UI2.WinForms.Guna2Button btnRemoveGeneral;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
-        private Guna.UI2.WinForms.Guna2Button btnDone;
-        private Guna.UI2.WinForms.Guna2Button btnSeen;
         private System.Windows.Forms.Label label4;
         private Guna.UI2.WinForms.Guna2TextBox tbPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
@@ -529,5 +572,10 @@ namespace Coffee_Manager
         private System.Windows.Forms.DataGridViewTextBoxColumn sl;
         private System.Windows.Forms.DataGridViewTextBoxColumn price;
         private System.Windows.Forms.DataGridViewTextBoxColumn totalprice;
+        private Guna.UI2.WinForms.Guna2Button btnAdd;
+        private Guna.UI2.WinForms.Guna2Button btnSeen;
+        private Guna.UI2.WinForms.Guna2Button btnDone;
+        private Guna.UI2.WinForms.Guna2ComboBox cbNCC;
+        private System.Windows.Forms.Label label1;
     }
 }

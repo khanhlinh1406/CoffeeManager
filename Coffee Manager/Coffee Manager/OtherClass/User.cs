@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using System.Data;
 
 namespace Coffee_Manager
 {
@@ -150,7 +151,36 @@ namespace Coffee_Manager
             }
             return 0;
         }
-      
+
+        public void updatePass()
+        {
+            using (SqlConnection connection = new SqlConnection(this.Connection.connString))
+            {
+                using (SqlCommand command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandType = CommandType.Text;
+                    command.CommandText = "UPDATE TAIKHOAN SET  MatKhau = @pass WHERE MaTK = @acc ";
+
+                    command.Parameters.AddWithValue("@acc", this.MaTK);
+                    command.Parameters.AddWithValue("@pass", this.MatKhau);
+                    try
+                    {
+                        connection.Open();
+                        int recordsAffected = command.ExecuteNonQuery();
+                    }
+                    catch (SqlException)
+                    {
+                      
+                    }
+                    finally
+                    {
+                        connection.Close();
+                    }
+                }
+            }
+        }
+
         public void AddUserToDatabase()
         {
             try
@@ -164,34 +194,36 @@ namespace Coffee_Manager
             {
                 Form temp = new Form();
                 MessageBox.Show("Đã xảy ra lỗi, vui lòng liên hệ đội ngũ phát triển!");
-               
+
             }
             finally
             {
                 this.Connection.CloseConnection();
             }
+
+
         }
 
-      
+
         public void DeleteUser()
         {
+            string a = this.Connection.connString;
+            SqlConnection connection = new SqlConnection(a);
+            connection.Open();
+            string strQuery;
             try
             {
-                string Query = "delete from TAIKHOAN where MaTK = '" + this.MaTK + "'";
-
-
-                Connection.OpenConnection();
-                SqlCommand command = this.Connection.CreateSQLCmd(Query);
-                command.ExecuteNonQuery();
+                strQuery = $"DELETE TAIKHOAN WHERE MaTK = '{this.MaTK}'";
+                using (SqlCommand command = new SqlCommand(strQuery, connection))
+                    command.ExecuteNonQuery();
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-                MessageBox.Show("Đã xảy ra lỗi, vui lòng liên hệ đội ngũ phát triển!");
-               
+              
             }
             finally
             {
-                Connection.CloseConnection();
+                connection.Close();
             }
         }
     }

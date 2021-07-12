@@ -118,7 +118,8 @@ namespace Coffee_Manager
             try
             {
                 string sql = "insert into MON(MaMon, TenMon, MaDVTM, Gia, MaTT) values " +
-                    "('" + this.MaMon + "', N'" + this.TenMon + "', '" + this.dvt.MA_DVT + "', '" + this.Gia + "', '" + this.tinhTrang.MA_TT + "') ";
+                    "('" + this.MaMon + "', N'" + this.TenMon + "', '" + this.dvt.MA_DVT + "', '" + this.Gia + "', '"+ this.tinhTrang.MA_TT+"') ";
+
                 this.Connection.OpenConnection();
                 SqlCommand command = this.Connection.CreateSQLCmd(sql);
                 command.ExecuteNonQuery();
@@ -141,6 +142,7 @@ namespace Coffee_Manager
             try
             {
                 string sql = "update MON set TenMon = N'" + this.TenMon + "', MaDVTM = '" + this.dvt.MA_DVT + "', Gia = '" + this.Gia + "', MaTT = '" + this.TINH_TRANG.MA_TT + "' where MaMon = '" + this.MaMon + "'";
+
                 this.Connection.OpenConnection();
                 SqlCommand command = this.Connection.CreateSQLCmd(sql);
                 command.ExecuteNonQuery();
@@ -160,6 +162,32 @@ namespace Coffee_Manager
 
         public void Remove()
         {
+            try
+            {
+                string sql = "select * from CT_HOADON where MaMon = '" + this.MaMon + "'";
+                this.Connection.OpenConnection();
+                SqlCommand command = this.Connection.CreateSQLCmd(sql);
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.HasRows)
+                {
+                    if (reader.Read() == false) break;
+                    MessageBox.Show("Món này không thể xoá được vì đã tồn tại trong hoá đơn", "Xoá món", MessageBoxButtons.OK);
+                    return;
+
+                }
+                reader.Close();
+                this.Connection.CloseConnection();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Đã xảy ra lỗi, vui lòng liên hệ đội ngũ phát triển!");
+
+            }
+            finally
+            {
+                this.Connection.CloseConnection();
+            }
+
             try
             {
                 string sql = "delete MON where MaMon = '" + this.MaMon + "'";

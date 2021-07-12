@@ -14,7 +14,7 @@ namespace Coffee_Manager
         string MaKH;
         DateTime NgDK;
         int Diem;
-        LoaiKhachHang LoaiKh;
+        LoaiKhachHang loaiKH;
 
         Connect Connection = new Connect();
 
@@ -23,9 +23,10 @@ namespace Coffee_Manager
             MaKH = HoTen = SoDT = DiaChi = "";
             NgDK = NgSinh = DateTime.Now;
             Diem = 0;
+            loaiKH = new LoaiKhachHang();
         }
 
-        public KhachHang(string MaKH,string TenKH, DateTime NgSinh, string SoDT, string DiaChi, DateTime NgDK, int Diem, LoaiKhachHang Loai)
+        public KhachHang(string MaKH,string TenKH, DateTime NgSinh, string SoDT, string DiaChi, DateTime NgDK, int Diem, LoaiKhachHang loaiKH)
         {
             this.MaKH = MaKH;
             this.NgSinh = NgSinh;
@@ -34,10 +35,21 @@ namespace Coffee_Manager
             this.NgDK = NgDK;
             this.Diem = Diem;
             this.HoTen = TenKH;
-            this.LoaiKh = Loai;
+            this.loaiKH = loaiKH;
         }
 
-        public KhachHang( string TenKH, DateTime NgSinh, string SoDT, string DiaChi, DateTime NgDK, int Diem, LoaiKhachHang Loai)
+        public KhachHang(string MaKH, string TenKH, DateTime NgSinh, string SoDT, string DiaChi, DateTime NgDK, int Diem)
+        {
+            this.MaKH = MaKH;
+            this.NgSinh = NgSinh;
+            this.SoDT = SoDT;
+            this.DiaChi = DiaChi;
+            this.NgDK = NgDK;
+            this.Diem = Diem;
+            this.HoTen = TenKH;
+        }
+
+        public KhachHang( string TenKH, DateTime NgSinh, string SoDT, string DiaChi, DateTime NgDK, int Diem, LoaiKhachHang loaiKH)
         {
             CreateMaKH();
             this.HoTen = TenKH;
@@ -46,7 +58,7 @@ namespace Coffee_Manager
             this.DiaChi = DiaChi;
             this.NgDK = NgDK;
             this.Diem = Diem;
-            this.LoaiKh = Loai;
+            this.loaiKH = loaiKH;
         }
 
         public int DIEM
@@ -69,10 +81,9 @@ namespace Coffee_Manager
 
         public LoaiKhachHang LOAI_KH
         {
-            get { return this.LoaiKh; }
-            set { this.LoaiKh = value; }
+            get { return this.loaiKH; }
+            set { this.loaiKH = value; }
         }
-
         public void CreateMaKH()
         {
             try
@@ -116,7 +127,7 @@ namespace Coffee_Manager
             try
             {
                 string sql = "insert into KHACHHANG values " +
-                    "('" + this.MaKH + "', N'" + this.HoTen + "', '" + this.NgSinh + "', '" + this.SoDT + "', N'"+this.DiaChi+"', '"+this.NgDK+"', '"+this.Diem+"') ";
+                    "('" + this.MaKH + "', N'" + this.HoTen + "', '" + this.NgSinh + "', '" + this.SoDT + "', N'"+this.DiaChi+"', '"+this.NgDK+"', '"+this.Diem+"', '"+this.loaiKH.Ma_LKH+"') ";
                 this.Connection.OpenConnection();
                 SqlCommand command = this.Connection.CreateSQLCmd(sql);
                 command.ExecuteNonQuery();
@@ -159,6 +170,32 @@ namespace Coffee_Manager
 
         public void Remove()
         {
+            try
+            {
+                string sql = "select * from HOADON where MaKH = '" + this.MaKH + "'";
+                this.Connection.OpenConnection();
+                SqlCommand command = this.Connection.CreateSQLCmd(sql);
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.HasRows)
+                {
+                    if (reader.Read() == false) break;
+                    MessageBox.Show("Khách hàng này không thể xoá được vì đã tồn tại trong hoá đơn", "Xoá khách hàng", MessageBoxButtons.OK);
+                    return;
+
+                }
+                reader.Close();
+                this.Connection.CloseConnection();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Đã xảy ra lỗi, vui lòng liên hệ đội ngũ phát triển!");
+
+            }
+            finally
+            {
+                this.Connection.CloseConnection();
+            }
+
             try
             {
                 string sql = "delete KHACHHANG where MaKH = '" + this.MaKH + "'";

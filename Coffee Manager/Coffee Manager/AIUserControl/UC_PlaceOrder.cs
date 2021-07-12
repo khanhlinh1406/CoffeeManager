@@ -367,6 +367,7 @@ namespace Coffee_Manager
                         people.AddCell(new Phrase(DateTime.Now.ToString(), bodyFont));
                         people.AddCell(new Phrase("Khách hàng: " + cbxCustomer.Text + " " + khachHang.LOAI_KH.TEN_LKH, bodyFont));
                         people.AddCell(new Phrase("Nhân viên: " + nhanVien.TEN_KH, bodyFont));
+                        
                         document.Add(people);
                         document.Add(new Paragraph("\n", boldTableFont));
 

@@ -47,6 +47,8 @@ namespace Coffee_Manager
             this.cbCalculationUnit = new Guna.UI2.WinForms.Guna2ComboBox();
             this.tbPrice = new Guna.UI2.WinForms.Guna2TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.cbStatusMon = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gridview)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,9 +72,9 @@ namespace Coffee_Manager
             this.label4.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(550, 28);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(68, 19);
+            this.label4.Size = new System.Drawing.Size(95, 19);
             this.label4.TabIndex = 12;
-            this.label4.Text = "Tên món";
+            this.label4.Text = "Tìm tên món";
             // 
             // tbSearch
             // 
@@ -89,7 +91,7 @@ namespace Coffee_Manager
             this.tbSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbSearch.HoverState.Parent = this.tbSearch;
             this.tbSearch.Location = new System.Drawing.Point(554, 58);
-            this.tbSearch.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.tbSearch.Margin = new System.Windows.Forms.Padding(5);
             this.tbSearch.Name = "tbSearch";
             this.tbSearch.PasswordChar = '\0';
             this.tbSearch.PlaceholderText = "Nhập...";
@@ -174,7 +176,7 @@ namespace Coffee_Manager
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(129, 447);
+            this.label3.Location = new System.Drawing.Point(40, 337);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(0, 23);
             this.label3.TabIndex = 21;
@@ -193,14 +195,14 @@ namespace Coffee_Manager
             this.tbName.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbName.HoverState.Parent = this.tbName;
-            this.tbName.Location = new System.Drawing.Point(133, 477);
-            this.tbName.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.tbName.Location = new System.Drawing.Point(44, 367);
+            this.tbName.Margin = new System.Windows.Forms.Padding(5);
             this.tbName.Name = "tbName";
             this.tbName.PasswordChar = '\0';
             this.tbName.PlaceholderText = "Tên món";
             this.tbName.SelectedText = "";
             this.tbName.ShadowDecoration.Parent = this.tbName;
-            this.tbName.Size = new System.Drawing.Size(188, 39);
+            this.tbName.Size = new System.Drawing.Size(234, 39);
             this.tbName.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.tbName.TabIndex = 22;
             // 
@@ -208,7 +210,7 @@ namespace Coffee_Manager
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(430, 337);
+            this.label5.Location = new System.Drawing.Point(316, 334);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(36, 21);
             this.label5.TabIndex = 23;
@@ -222,7 +224,7 @@ namespace Coffee_Manager
             this.btnUpdate.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
             this.btnUpdate.HoverState.Parent = this.btnUpdate;
-            this.btnUpdate.Location = new System.Drawing.Point(434, 447);
+            this.btnUpdate.Location = new System.Drawing.Point(571, 385);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.ShadowDecoration.Parent = this.btnUpdate;
             this.btnUpdate.Size = new System.Drawing.Size(180, 48);
@@ -234,7 +236,7 @@ namespace Coffee_Manager
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(129, 337);
+            this.label2.Location = new System.Drawing.Point(46, 429);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(95, 21);
             this.label2.TabIndex = 19;
@@ -253,13 +255,12 @@ namespace Coffee_Manager
             this.cbCalculationUnit.HoverState.Parent = this.cbCalculationUnit;
             this.cbCalculationUnit.ItemHeight = 30;
             this.cbCalculationUnit.ItemsAppearance.Parent = this.cbCalculationUnit;
-            this.cbCalculationUnit.Location = new System.Drawing.Point(133, 367);
+            this.cbCalculationUnit.Location = new System.Drawing.Point(50, 459);
             this.cbCalculationUnit.Name = "cbCalculationUnit";
             this.cbCalculationUnit.ShadowDecoration.Parent = this.cbCalculationUnit;
             this.cbCalculationUnit.Size = new System.Drawing.Size(188, 36);
             this.cbCalculationUnit.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.cbCalculationUnit.TabIndex = 26;
-            this.cbCalculationUnit.SelectedIndexChanged += new System.EventHandler(this.cbCalculationUnit_SelectedIndexChanged);
             // 
             // tbPrice
             // 
@@ -275,8 +276,8 @@ namespace Coffee_Manager
             this.tbPrice.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbPrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbPrice.HoverState.Parent = this.tbPrice;
-            this.tbPrice.Location = new System.Drawing.Point(434, 367);
-            this.tbPrice.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.tbPrice.Location = new System.Drawing.Point(320, 364);
+            this.tbPrice.Margin = new System.Windows.Forms.Padding(5);
             this.tbPrice.Name = "tbPrice";
             this.tbPrice.PasswordChar = '\0';
             this.tbPrice.PlaceholderText = "Giá";
@@ -291,17 +292,49 @@ namespace Coffee_Manager
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(135, 447);
+            this.label6.Location = new System.Drawing.Point(46, 337);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(77, 21);
             this.label6.TabIndex = 27;
             this.label6.Text = "Tên món";
+            // 
+            // cbStatusMon
+            // 
+            this.cbStatusMon.BackColor = System.Drawing.Color.Transparent;
+            this.cbStatusMon.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbStatusMon.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbStatusMon.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbStatusMon.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbStatusMon.FocusedState.Parent = this.cbStatusMon;
+            this.cbStatusMon.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbStatusMon.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbStatusMon.HoverState.Parent = this.cbStatusMon;
+            this.cbStatusMon.ItemHeight = 30;
+            this.cbStatusMon.ItemsAppearance.Parent = this.cbStatusMon;
+            this.cbStatusMon.Location = new System.Drawing.Point(320, 459);
+            this.cbStatusMon.Name = "cbStatusMon";
+            this.cbStatusMon.ShadowDecoration.Parent = this.cbStatusMon;
+            this.cbStatusMon.Size = new System.Drawing.Size(188, 36);
+            this.cbStatusMon.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.cbStatusMon.TabIndex = 29;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(316, 429);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(126, 21);
+            this.label7.TabIndex = 28;
+            this.label7.Text = "Tình trạng món";
             // 
             // UC_UpdateItems
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.cbStatusMon);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.cbCalculationUnit);
             this.Controls.Add(this.btnUpdate);
@@ -339,5 +372,7 @@ namespace Coffee_Manager
         private System.Windows.Forms.Label label6;
         private Guna.UI2.WinForms.Guna2ComboBox cbCalculationUnit;
         private Guna.UI2.WinForms.Guna2TextBox tbPrice;
+        private Guna.UI2.WinForms.Guna2ComboBox cbStatusMon;
+        private System.Windows.Forms.Label label7;
     }
 }

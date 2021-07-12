@@ -22,11 +22,12 @@ namespace Coffee_Manager
             InitializeComponent();
             date.Value = DateTime.Now;
             btnSeen.Visible = false;
-            btnRemoveDetail.Enabled = btnUpdate.Enabled = false;
+            btnDone.Enabled = btnRemoveDetail.Enabled = btnUpdate.Enabled = false;
         }
 
         public void UC_ReceivedNote_Load(object sender, EventArgs e)
         {
+            LoadListNhaCC();
             LoadDataGeneral();
             LoadListNL();
         }
@@ -36,7 +37,7 @@ namespace Coffee_Manager
             try
             {
 
-                string find = "SELECT * FROM PHIEUNHAP";
+                string find = "SELECT MaPN, NgNhap, TriGia, B.TenNCC as NhaCungCap FROM PHIEUNHAP A join NHACUNGCAP B on A.MaNCC = B.MaNCC";
                 this.Connection.OpenConnection();
                 SqlCommand command = this.Connection.CreateSQLCmd(find);
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
@@ -57,9 +58,10 @@ namespace Coffee_Manager
 
         private void gridviewGeneral_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+            btnDone.Enabled = true;
             LoadDataDetail(gridviewGeneral.SelectedRows[0].Cells[0].Value.ToString());
             date.Value = DateTime.Parse(gridviewGeneral.SelectedRows[0].Cells[1].Value.ToString());
+            cbNCC.Text = gridviewGeneral.SelectedRows[0].Cells[3].Value.ToString();
             isSeenDetail = true;
             btnSeen.Visible = true;
         }
@@ -69,7 +71,7 @@ namespace Coffee_Manager
             try
             {
                 
-                string find = "SELECT NL.MaNL, NL.TenNL, CT.SoLuong, NL.MaDVT, DVT.TenDVT, CT.DonGia FROM NGUYENLIEU NL join CT_PHIEUNHAP CT on CT.MaNL = NL.MaNL join DONVITINH DVT on NL.MaDVT = DVT.MaDVT where CT.MaPN = '"+MaPN+"'";
+                string find = "SELECT NL.MaNL, NL.TenNL, CT.SoLuong, NL.MaDVTNL, DVT.TenDVTNL, CT.DonGia FROM NGUYENLIEU NL join CT_PHIEUNHAP CT on CT.MaNL = NL.MaNL join DVT_NGUYENLIEU DVT on NL.MaDVTNL = DVT.MaDVTNL where CT.MaPN = '"+MaPN+"'";
                 this.Connection.OpenConnection();
                 SqlCommand command = this.Connection.CreateSQLCmd(find);
 
@@ -100,13 +102,40 @@ namespace Coffee_Manager
             }
         }
 
-        void LoadListNL()
+        void LoadListNhaCC()
         {
-            cbMaterial.Items.Clear();
             try
             {
                 this.Connection.OpenConnection();
-                string find = "SELECT NL.MaNL, NL.TenNL, DVT.MaDVT, DVT.TenDVT FROM NGUYENLIEU NL left JOIN DONVITINH DVT ON NL.MaDVT = DVT.MaDVT";
+                string find = "SELECT MaNCC, TenNCC from NHACUNGCAP";
+                SqlCommand command = this.Connection.CreateSQLCmd(find);
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                DataSet data = new DataSet();
+                adapter.Fill(data);
+                cbNCC.DataSource = data.Tables[0];
+                cbNCC.DisplayMember = "TenNCC";
+                cbNCC.ValueMember = "MaNCC";
+                this.Connection.CloseConnection();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Đã xảy ra lỗi, vui lòng liên hệ đội ngũ phát triển!");
+
+            }
+            finally
+            {
+                this.Connection.CloseConnection();
+            }
+
+        }
+        void LoadListNL()
+        {
+            cbMaterial.Items.Clear();
+            listNL.Clear();
+            try
+            {
+                this.Connection.OpenConnection();
+                string find = "SELECT NL.MaNL, NL.TenNL, DVT.MaDVTNL, DVT.TenDVTNL FROM NGUYENLIEU NL left JOIN DVT_NGUYENLIEU DVT ON NL.MaDVTNL = DVT.MaDVTNL";
                 SqlCommand command = this.Connection.CreateSQLCmd(find);
                 SqlDataReader reader = command.ExecuteReader();
                 while (reader.HasRows)
@@ -137,7 +166,13 @@ namespace Coffee_Manager
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            gridviewDetails.Rows.Add(listNL[indexMaterial].MA_NL,listNL[indexMaterial].TEN_NL, listNL[indexMaterial].DVT.TEN_DVT, numeric.Value, int.Parse(tbPrice.Text), numeric.Value * int.Parse(tbPrice.Text));
+            if (numeric.Value == 0)
+                MessageBox.Show("Dữ liệu không hợp lệ, số lượng phải khác 0", "Sai dữ liệu", MessageBoxButtons.OK);
+            else if (IsValidData() && CheckValidNumber())
+            {
+                gridviewDetails.Rows.Add(listNL[indexMaterial].MA_NL, listNL[indexMaterial].TEN_NL, listNL[indexMaterial].DVT.TEN_DVT, numeric.Value, int.Parse(tbPrice.Text), numeric.Value * int.Parse(tbPrice.Text));
+                btnDone.Enabled = true;
+            }
         }
 
 
@@ -150,18 +185,31 @@ namespace Coffee_Manager
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            gridviewDetails.SelectedRows[0].Cells[0].Value = listNL[indexMaterial].MA_NL;
-            gridviewDetails.SelectedRows[0].Cells[1].Value = listNL[indexMaterial].TEN_NL;
-            gridviewDetails.SelectedRows[0].Cells[2].Value = listNL[indexMaterial].DVT.TEN_DVT;
-            gridviewDetails.SelectedRows[0].Cells[3].Value = numeric.Value;
-            gridviewDetails.SelectedRows[0].Cells[4].Value = tbPrice.Text;
-            gridviewDetails.SelectedRows[0].Cells[5].Value = numeric.Value * int.Parse(tbPrice.Text);
+            if (IsValidData() && CheckValidNumber())
+            {
+                gridviewDetails.SelectedRows[0].Cells[0].Value = listNL[indexMaterial].MA_NL;
+                gridviewDetails.SelectedRows[0].Cells[1].Value = listNL[indexMaterial].TEN_NL;
+                gridviewDetails.SelectedRows[0].Cells[2].Value = listNL[indexMaterial].DVT.TEN_DVT;
+                gridviewDetails.SelectedRows[0].Cells[3].Value = numeric.Value;
+                gridviewDetails.SelectedRows[0].Cells[4].Value = tbPrice.Text;
+                gridviewDetails.SelectedRows[0].Cells[5].Value = numeric.Value * int.Parse(tbPrice.Text);
+
+                btnUpdate.Enabled = btnRemoveDetail.Enabled = false;
+                btnDone.Enabled = true;
+            }
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
-            gridviewDetails.Rows.RemoveAt(indexDetail);
-            
+            var result = MessageBox.Show("Bạn có muốn xoá nguyên liệu này ra khỏi phiếu nhập?", "Xoá nguyên liệu", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (result == DialogResult.Yes)
+            {
+                gridviewDetails.Rows.RemoveAt(indexDetail);
+                btnUpdate.Enabled = btnRemoveDetail.Enabled = false;
+                btnDone.Enabled = true;
+            }
+
         }
 
       
@@ -176,6 +224,98 @@ namespace Coffee_Manager
             LoadDataGeneral();
         }
 
+        private void AddNewReceivedNote(int total)
+        {
+            List<NguyenLieu> listNguyenLieu = new List<NguyenLieu>();
+            List<int> SL = new List<int>();
+
+            PhieuNhap phieuNhap = new PhieuNhap();
+            phieuNhap.TRI_GIA = total;
+            phieuNhap.NG_NHAP = date.Value;
+            phieuNhap.CreateMaPN();
+            phieuNhap.NHA_CC = new NhaCungCap(cbNCC.SelectedValue.ToString(), cbNCC.Text.ToString(), "");
+
+            phieuNhap.Add();
+
+            for (int rows = 0; rows < gridviewDetails.Rows.Count; rows++)
+            {
+                NguyenLieu tmp = new NguyenLieu();
+                tmp.TEN_NL = gridviewDetails.Rows[rows].Cells[1].Value.ToString();
+                tmp.MA_NL = gridviewDetails.Rows[rows].Cells[0].Value.ToString();
+
+                try
+                {
+                    string sql = "insert into CT_PHIEUNHAP(MaPN, MaNL, SoLuong, DonGia) values " +
+                        "('" + phieuNhap.MA_PN + "', '" + tmp.MA_NL + "', '" + int.Parse(gridviewDetails.Rows[rows].Cells[3].Value.ToString()) + "', '" + int.Parse(tbPrice.Text) + "') ";
+                    this.Connection.OpenConnection();
+                    SqlCommand command = this.Connection.CreateSQLCmd(sql);
+                    command.ExecuteNonQuery();
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Đã xảy ra lỗi, vui lòng liên hệ đội ngũ phát triển!");
+
+                }
+                finally
+                {
+                    this.Connection.CloseConnection();
+                }
+            }
+        }
+        private void UpdateOldReceivedNote(int total)
+        {
+            List<NguyenLieu> listNguyenLieu = new List<NguyenLieu>();
+
+            PhieuNhap phieuNhap = new PhieuNhap();
+            phieuNhap.MA_PN = gridviewGeneral.SelectedRows[0].Cells[0].Value.ToString();
+            phieuNhap.NHA_CC = new NhaCungCap(cbNCC.SelectedValue.ToString(), cbNCC.Text.ToString(), "");
+
+            try
+            {
+                string sql = "delete from CT_PHIEUNHAP where MaPN = '" + phieuNhap.MA_PN + "'";
+                this.Connection.OpenConnection();
+                SqlCommand command = this.Connection.CreateSQLCmd(sql);
+                command.ExecuteNonQuery();
+                Connection.CloseConnection();
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+            }
+
+            for (int rows = 0; rows < gridviewDetails.Rows.Count; rows++)
+            {
+                NguyenLieu tmp = new NguyenLieu();
+                tmp.TEN_NL = gridviewDetails.Rows[rows].Cells[1].Value.ToString();
+                tmp.MA_NL = gridviewDetails.Rows[rows].Cells[0].Value.ToString();
+
+                try
+                {
+                    string sql = "insert into CT_PHIEUNHAP(MaPN, MaNL, SoLuong, DonGia) values " +
+                         "('" + phieuNhap.MA_PN + "', '" + tmp.MA_NL + "', '" + int.Parse(gridviewDetails.Rows[rows].Cells[3].Value.ToString()) + "', '" + int.Parse(gridviewDetails.Rows[rows].Cells[4].Value.ToString()) + "') ";
+                    this.Connection.OpenConnection();
+                    SqlCommand command = this.Connection.CreateSQLCmd(sql);
+                    command.ExecuteNonQuery();
+                    Connection.CloseConnection();
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Đã xảy ra lỗi, vui lòng liên hệ đội ngũ phát triển!");
+
+                }
+                finally
+                {
+                    this.Connection.CloseConnection();
+                }
+
+                phieuNhap.NG_NHAP = date.Value;
+                phieuNhap.TRI_GIA = total;
+                phieuNhap.Update();
+                
+            }
+        }
         private void btnDone_Click(object sender, EventArgs e)
         {
             int total = 0;
@@ -183,109 +323,33 @@ namespace Coffee_Manager
             for (int rows = 0; rows < gridviewDetails.Rows.Count; rows++)
                 total += int.Parse(gridviewDetails.Rows[rows].Cells[5].Value.ToString());
 
+            if (gridviewDetails.Rows.Count == 0 )
+            {
+                MessageBox.Show("Dữ liệu không hợp lệ, phiếu nhập phải có ít nhất 1 nguyên liệu", "Sai dữ liệu", MessageBoxButtons.OK);
+                return;
+            }
+
             if (isSeenDetail == false)
             {
-               
                 //add new
-                List<NguyenLieu> listNguyenLieu = new List<NguyenLieu>();
-                List<int> SL = new List<int>();
-
-
-
-                PhieuNhap phieuNhap = new PhieuNhap();
-                phieuNhap.TRI_GIA = total;
-                phieuNhap.NG_NHAP = date.Value;
-                phieuNhap.CreateMaPN();
-
-                phieuNhap.Add();
-
-                for (int rows = 0; rows < gridviewDetails.Rows.Count ; rows++)
-                {
-                    NguyenLieu tmp = new NguyenLieu();
-                    tmp.TEN_NL = gridviewDetails.Rows[rows].Cells[1].Value.ToString();
-                    tmp.MA_NL = gridviewDetails.Rows[rows].Cells[0].Value.ToString();
-
-                    try
-                    {
-                        string sql = "insert into CT_PHIEUNHAP(MaPN, MaNL, SoLuong, DonGia) values " +
-                            "('" + phieuNhap.MA_PN + "', '" + tmp.MA_NL + "', '" + int.Parse(gridviewDetails.Rows[rows].Cells[3].Value.ToString()) + "', '"+int.Parse(tbPrice.Text)+"') ";
-                        this.Connection.OpenConnection();
-                        SqlCommand command = this.Connection.CreateSQLCmd(sql);
-                        command.ExecuteNonQuery();
-
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Đã xảy ra lỗi, vui lòng liên hệ đội ngũ phát triển!");
-
-                    }
-                    finally
-                    {
-                        this.Connection.CloseConnection();
-                    }
-                }
+                
+                AddNewReceivedNote(total);
 
             }
             else
             {
                 // update
+                UpdateOldReceivedNote(total);
                
-                List<NguyenLieu> listNguyenLieu = new List<NguyenLieu>();
-               
-                PhieuNhap phieuNhap = new PhieuNhap();
-                phieuNhap.MA_PN = gridviewGeneral.SelectedRows[0].Cells[0].Value.ToString();
-
-                try
-                {
-                    string sql = "delete from CT_PHIEUNHAP where MaPN = '" + phieuNhap.MA_PN + "'";
-                    this.Connection.OpenConnection();
-                    SqlCommand command = this.Connection.CreateSQLCmd(sql);
-                    command.ExecuteNonQuery();
-                    Connection.CloseConnection();
-                }catch(Exception err)
-                {
-                    MessageBox.Show(err.Message);
-                }
-
-                for (int rows = 0; rows < gridviewDetails.Rows.Count; rows++)
-                {
-                    NguyenLieu tmp = new NguyenLieu();
-                    tmp.TEN_NL = gridviewDetails.Rows[rows].Cells[1].Value.ToString();
-                    tmp.MA_NL = gridviewDetails.Rows[rows].Cells[0].Value.ToString();
-
-                    try
-                    {
-                        string sql = "insert into CT_PHIEUNHAP(MaPN, MaNL, SoLuong, DonGia) values " +
-                             "('" + phieuNhap.MA_PN + "', '" + tmp.MA_NL + "', '" + int.Parse(gridviewDetails.Rows[rows].Cells[3].Value.ToString()) + "', '" + int.Parse(tbPrice.Text) + "') ";
-                        this.Connection.OpenConnection();
-                        SqlCommand command = this.Connection.CreateSQLCmd(sql);
-                        command.ExecuteNonQuery();
-                        Connection.CloseConnection();
-
-                        sql = "update PHIEUNHAP set TriGia = '"+total+"'where MaPN = '"+ phieuNhap.MA_PN+"'";
-                        this.Connection.OpenConnection();
-                        command = this.Connection.CreateSQLCmd(sql);
-                        command.ExecuteNonQuery();
-
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Đã xảy ra lỗi, vui lòng liên hệ đội ngũ phát triển!");
-
-                    }
-                    finally
-                    {
-                        this.Connection.CloseConnection();
-                    }
-                }
             }
 
             btnSeen.Visible = false;
             isSeenDetail = false;
 
-            btnRemoveDetail.Enabled = btnUpdate.Enabled = false;
+            btnRemoveDetail.Enabled = btnUpdate.Enabled = btnDone.Enabled = false;
             cbMaterial.Text = tbPrice.Text =null;
             numeric.Value = 0;
+            date.Value = DateTime.Now;
 
             gridviewDetails.Rows.Clear();
 
@@ -296,6 +360,8 @@ namespace Coffee_Manager
         private void gridviewDetails_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             btnRemoveDetail.Enabled = btnUpdate.Enabled = true;
+            btnDone.Enabled = false;
+
             cbMaterial.Text = gridviewDetails.SelectedRows[0].Cells[1].Value.ToString() + " (" +
                 gridviewDetails.SelectedRows[0].Cells[2].Value.ToString() +")";
             numeric.Value = int.Parse(gridviewDetails.SelectedRows[0].Cells[3].Value.ToString());
@@ -305,34 +371,14 @@ namespace Coffee_Manager
 
         private void btnRemoveGeneral_Click(object sender, EventArgs e)
         {
-            btnSeen.Visible = false;
-            PhieuNhap phieuNhap = new PhieuNhap();
-            phieuNhap.MA_PN = gridviewGeneral.SelectedRows[0].Cells[0].Value.ToString();
-            try
-            {
-                // delete data in CT_PHIEUNHAP
-                string sql = "delete from CT_PHIEUNHAP where MaPN = '" + phieuNhap.MA_PN + "'";
-                this.Connection.OpenConnection();
-                SqlCommand command = this.Connection.CreateSQLCmd(sql);
-                command.ExecuteNonQuery();
-                Connection.CloseConnection();
+            var result = MessageBox.Show("Bạn có muốn xoá phiếu nhập này?", "Xoá phiếu nhập", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
-                // delete data in PHIEUNHAP
-                sql = "delete from PHIEUNHAP where MaPN = '" + phieuNhap.MA_PN + "'";
-                this.Connection.OpenConnection();
-                command = this.Connection.CreateSQLCmd(sql);
-                command.ExecuteNonQuery();
-                Connection.CloseConnection();
-
-            }
-            catch (Exception ex)
+            if (result == DialogResult.Yes)
             {
-                MessageBox.Show("Đã xảy ra lỗi, vui lòng liên hệ đội ngũ phát triển!");
-
-            }
-            finally
-            {
-                this.Connection.CloseConnection();
+                btnSeen.Visible = false;
+                PhieuNhap phieuNhap = new PhieuNhap();
+                phieuNhap.MA_PN = gridviewGeneral.SelectedRows[0].Cells[0].Value.ToString();
+                phieuNhap.Remove();
                 LoadDataGeneral();
                 gridviewDetails.Rows.Clear();
             }
@@ -357,5 +403,38 @@ namespace Coffee_Manager
                 }
             }
         }
+
+        bool IsValidData()
+        {
+            if (cbNCC.Text != ""
+                && cbMaterial.Text != ""
+                && tbPrice.Text != ""
+                && numeric.Text != "")
+                return true;
+
+            MessageBox.Show("Dữ liệu không hợp lệ, trường dữ liệu bị trống", "Sai dữ liệu", MessageBoxButtons.OK);
+            return false;
+        }
+
+        bool CheckValidNumber()
+        {
+
+            if (int.TryParse(tbPrice.Text, out int n) && int.TryParse(numeric.Text, out int m))
+                return true;
+
+            if (int.TryParse(tbPrice.Text, out int a))
+                MessageBox.Show("Dữ liệu không hợp lệ, đơn giá phải là số", "Sai dữ liệu", MessageBoxButtons.OK);
+
+            if (int.TryParse(numeric.Text, out int b))
+                MessageBox.Show("Dữ liệu không hợp lệ, số lượng phải là số", "Sai dữ liệu", MessageBoxButtons.OK);
+
+            if (numeric.Value == 0)
+                MessageBox.Show("Dữ liệu không hợp lệ, số lượng phải khác 0", "Sai dữ liệu", MessageBoxButtons.OK);
+            return false;
+
+        }
+
+
+
     }
 }

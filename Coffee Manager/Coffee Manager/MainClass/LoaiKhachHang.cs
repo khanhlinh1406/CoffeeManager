@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Coffee_Manager.MainClass
+namespace Coffee_Manager
 {
     public class LoaiKhachHang
     {
@@ -25,7 +25,7 @@ namespace Coffee_Manager.MainClass
             LoadLoaiKHFromMaLKH();
         }
 
-        public LoaiKhachHang(string maLKH, string tenLoaiKh, float phTramHd, float phTramGiam, int diemLH)
+        public LoaiKhachHang(string maLKH, string tenLoaiKh, double phTramHd, double phTramGiam, int diemLH)
         {
             MaLKH = maLKH;
             TenLoaiKh = tenLoaiKh;

@@ -30,10 +30,10 @@ namespace Coffee_Manager
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label4 = new System.Windows.Forms.Label();
             this.txtName = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -45,15 +45,17 @@ namespace Coffee_Manager
             this.label7 = new System.Windows.Forms.Label();
             this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.guna2Button6 = new Guna.UI2.WinForms.Guna2Button();
+            this.update_savebtn = new Guna.UI2.WinForms.Guna2Button();
             this.ComboBoxChucVu = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.passtxt = new Guna.UI2.WinForms.Guna2TextBox();
             this.dob = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.startingDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.gridview = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.label8 = new System.Windows.Forms.Label();
+            this.diachi_txt = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btnExit = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridview)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,7 +65,7 @@ namespace Coffee_Manager
             this.label4.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(20, 16);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(60, 21);
+            this.label4.Size = new System.Drawing.Size(77, 27);
             this.label4.TabIndex = 12;
             this.label4.Text = "Họ tên";
             // 
@@ -82,7 +84,7 @@ namespace Coffee_Manager
             this.txtName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtName.HoverState.Parent = this.txtName;
             this.txtName.Location = new System.Drawing.Point(24, 42);
-            this.txtName.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtName.Margin = new System.Windows.Forms.Padding(5);
             this.txtName.Name = "txtName";
             this.txtName.PasswordChar = '\0';
             this.txtName.PlaceholderText = "";
@@ -96,9 +98,9 @@ namespace Coffee_Manager
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(19, 166);
+            this.label1.Location = new System.Drawing.Point(19, 154);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 21);
+            this.label1.Size = new System.Drawing.Size(55, 27);
             this.label1.TabIndex = 14;
             this.label1.Text = "SĐT";
             // 
@@ -116,8 +118,8 @@ namespace Coffee_Manager
             this.txtPhone.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPhone.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtPhone.HoverState.Parent = this.txtPhone;
-            this.txtPhone.Location = new System.Drawing.Point(70, 163);
-            this.txtPhone.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtPhone.Location = new System.Drawing.Point(70, 151);
+            this.txtPhone.Margin = new System.Windows.Forms.Padding(5);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.PasswordChar = '\0';
             this.txtPhone.PlaceholderText = "";
@@ -134,7 +136,7 @@ namespace Coffee_Manager
             this.label3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(19, 371);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(106, 21);
+            this.label3.Size = new System.Drawing.Size(139, 27);
             this.label3.TabIndex = 20;
             this.label3.Text = "Mã tài khoản";
             this.label3.UseMnemonic = false;
@@ -154,7 +156,7 @@ namespace Coffee_Manager
             this.matktxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.matktxt.HoverState.Parent = this.matktxt;
             this.matktxt.Location = new System.Drawing.Point(23, 400);
-            this.matktxt.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.matktxt.Margin = new System.Windows.Forms.Padding(5);
             this.matktxt.Name = "matktxt";
             this.matktxt.PasswordChar = '\0';
             this.matktxt.PlaceholderText = "";
@@ -168,9 +170,9 @@ namespace Coffee_Manager
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(19, 202);
+            this.label5.Location = new System.Drawing.Point(19, 224);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(49, 21);
+            this.label5.Size = new System.Drawing.Size(61, 27);
             this.label5.TabIndex = 18;
             this.label5.Text = "Vị trí";
             // 
@@ -178,9 +180,9 @@ namespace Coffee_Manager
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(19, 87);
+            this.label6.Location = new System.Drawing.Point(19, 79);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(84, 21);
+            this.label6.Size = new System.Drawing.Size(108, 27);
             this.label6.TabIndex = 31;
             this.label6.Text = "Ngày sinh";
             // 
@@ -190,7 +192,7 @@ namespace Coffee_Manager
             this.label7.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(18, 291);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(112, 21);
+            this.label7.Size = new System.Drawing.Size(145, 27);
             this.label7.TabIndex = 33;
             this.label7.Text = "Ngày vào làm";
             // 
@@ -202,7 +204,7 @@ namespace Coffee_Manager
             this.btnAdd.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.White;
             this.btnAdd.HoverState.Parent = this.btnAdd;
-            this.btnAdd.Location = new System.Drawing.Point(21, 526);
+            this.btnAdd.Location = new System.Drawing.Point(21, 503);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.ShadowDecoration.Parent = this.btnAdd;
             this.btnAdd.Size = new System.Drawing.Size(91, 39);
@@ -218,7 +220,7 @@ namespace Coffee_Manager
             this.guna2Button1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
             this.guna2Button1.HoverState.Parent = this.guna2Button1;
-            this.guna2Button1.Location = new System.Drawing.Point(236, 526);
+            this.guna2Button1.Location = new System.Drawing.Point(547, 504);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
             this.guna2Button1.Size = new System.Drawing.Size(91, 39);
@@ -226,40 +228,25 @@ namespace Coffee_Manager
             this.guna2Button1.Text = "Xoá";
             this.guna2Button1.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // guna2Button2
-            // 
-            this.guna2Button2.BorderRadius = 15;
-            this.guna2Button2.CheckedState.Parent = this.guna2Button2;
-            this.guna2Button2.CustomImages.Parent = this.guna2Button2;
-            this.guna2Button2.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.HoverState.Parent = this.guna2Button2;
-            this.guna2Button2.Location = new System.Drawing.Point(127, 526);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.ShadowDecoration.Parent = this.guna2Button2;
-            this.guna2Button2.Size = new System.Drawing.Size(91, 39);
-            this.guna2Button2.TabIndex = 38;
-            this.guna2Button2.Text = "Cập nhật";
-            this.guna2Button2.Click += new System.EventHandler(this.btnUpdate_Click);
-            // 
             // guna2Elipse1
             // 
             this.guna2Elipse1.TargetControl = this;
             // 
-            // guna2Button6
+            // update_savebtn
             // 
-            this.guna2Button6.BorderRadius = 15;
-            this.guna2Button6.CheckedState.Parent = this.guna2Button6;
-            this.guna2Button6.CustomImages.Parent = this.guna2Button6;
-            this.guna2Button6.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button6.ForeColor = System.Drawing.Color.White;
-            this.guna2Button6.HoverState.Parent = this.guna2Button6;
-            this.guna2Button6.Location = new System.Drawing.Point(663, 526);
-            this.guna2Button6.Name = "guna2Button6";
-            this.guna2Button6.ShadowDecoration.Parent = this.guna2Button6;
-            this.guna2Button6.Size = new System.Drawing.Size(91, 39);
-            this.guna2Button6.TabIndex = 39;
-            this.guna2Button6.Text = "Lưu";
+            this.update_savebtn.BorderRadius = 15;
+            this.update_savebtn.CheckedState.Parent = this.update_savebtn;
+            this.update_savebtn.CustomImages.Parent = this.update_savebtn;
+            this.update_savebtn.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.update_savebtn.ForeColor = System.Drawing.Color.White;
+            this.update_savebtn.HoverState.Parent = this.update_savebtn;
+            this.update_savebtn.Location = new System.Drawing.Point(663, 504);
+            this.update_savebtn.Name = "update_savebtn";
+            this.update_savebtn.ShadowDecoration.Parent = this.update_savebtn;
+            this.update_savebtn.Size = new System.Drawing.Size(91, 39);
+            this.update_savebtn.TabIndex = 39;
+            this.update_savebtn.Text = "Lưu";
+            this.update_savebtn.Click += new System.EventHandler(this.update_savebtn_Click);
             // 
             // ComboBoxChucVu
             // 
@@ -274,7 +261,7 @@ namespace Coffee_Manager
             this.ComboBoxChucVu.HoverState.Parent = this.ComboBoxChucVu;
             this.ComboBoxChucVu.ItemHeight = 30;
             this.ComboBoxChucVu.ItemsAppearance.Parent = this.ComboBoxChucVu;
-            this.ComboBoxChucVu.Location = new System.Drawing.Point(23, 230);
+            this.ComboBoxChucVu.Location = new System.Drawing.Point(23, 252);
             this.ComboBoxChucVu.Margin = new System.Windows.Forms.Padding(2);
             this.ComboBoxChucVu.Name = "ComboBoxChucVu";
             this.ComboBoxChucVu.ShadowDecoration.Parent = this.ComboBoxChucVu;
@@ -287,7 +274,7 @@ namespace Coffee_Manager
             this.label2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(20, 440);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(79, 21);
+            this.label2.Size = new System.Drawing.Size(104, 27);
             this.label2.TabIndex = 41;
             this.label2.Text = "Mật khẩu";
             this.label2.UseMnemonic = false;
@@ -307,7 +294,7 @@ namespace Coffee_Manager
             this.passtxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.passtxt.HoverState.Parent = this.passtxt;
             this.passtxt.Location = new System.Drawing.Point(19, 466);
-            this.passtxt.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.passtxt.Margin = new System.Windows.Forms.Padding(5);
             this.passtxt.Name = "passtxt";
             this.passtxt.PasswordChar = '\0';
             this.passtxt.PlaceholderText = "";
@@ -325,7 +312,7 @@ namespace Coffee_Manager
             this.dob.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dob.Format = System.Windows.Forms.DateTimePickerFormat.Long;
             this.dob.HoverState.Parent = this.dob;
-            this.dob.Location = new System.Drawing.Point(18, 115);
+            this.dob.Location = new System.Drawing.Point(18, 107);
             this.dob.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dob.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dob.Name = "dob";
@@ -354,44 +341,45 @@ namespace Coffee_Manager
             // gridview
             // 
             this.gridview.AllowUserToAddRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            this.gridview.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            this.gridview.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
             this.gridview.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gridview.BackgroundColor = System.Drawing.Color.White;
             this.gridview.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.gridview.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.gridview.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridview.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridview.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.gridview.ColumnHeadersHeight = 15;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gridview.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridview.DefaultCellStyle = dataGridViewCellStyle11;
             this.gridview.EnableHeadersVisualStyles = false;
             this.gridview.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.gridview.Location = new System.Drawing.Point(236, 24);
             this.gridview.Name = "gridview";
             this.gridview.ReadOnly = true;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridview.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridview.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.gridview.RowHeadersVisible = false;
+            this.gridview.RowHeadersWidth = 51;
             this.gridview.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridview.Size = new System.Drawing.Size(524, 479);
             this.gridview.TabIndex = 55;
@@ -419,19 +407,78 @@ namespace Coffee_Manager
             this.gridview.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.gridview.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridview_CellClick);
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(19, 189);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(86, 27);
+            this.label8.TabIndex = 56;
+            this.label8.Text = "Địa Chỉ";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
+            // 
+            // diachi_txt
+            // 
+            this.diachi_txt.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.diachi_txt.DefaultText = "";
+            this.diachi_txt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.diachi_txt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.diachi_txt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.diachi_txt.DisabledState.Parent = this.diachi_txt;
+            this.diachi_txt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.diachi_txt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.diachi_txt.FocusedState.Parent = this.diachi_txt;
+            this.diachi_txt.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.diachi_txt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.diachi_txt.HoverState.Parent = this.diachi_txt;
+            this.diachi_txt.Location = new System.Drawing.Point(102, 186);
+            this.diachi_txt.Margin = new System.Windows.Forms.Padding(5);
+            this.diachi_txt.Name = "diachi_txt";
+            this.diachi_txt.PasswordChar = '\0';
+            this.diachi_txt.PlaceholderText = "";
+            this.diachi_txt.SelectedText = "";
+            this.diachi_txt.ShadowDecoration.Parent = this.diachi_txt;
+            this.diachi_txt.Size = new System.Drawing.Size(108, 30);
+            this.diachi_txt.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.diachi_txt.TabIndex = 57;
+            this.diachi_txt.TextChanged += new System.EventHandler(this.guna2TextBox1_TextChanged);
+            // 
+            // btnExit
+            // 
+            this.btnExit.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.btnExit.BorderRadius = 15;
+            this.btnExit.BorderThickness = 1;
+            this.btnExit.CheckedState.Parent = this.btnExit;
+            this.btnExit.CustomImages.Parent = this.btnExit;
+            this.btnExit.FillColor = System.Drawing.Color.Transparent;
+            this.btnExit.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.btnExit.HoverState.Parent = this.btnExit;
+            this.btnExit.Location = new System.Drawing.Point(117, 503);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.ShadowDecoration.Parent = this.btnExit;
+            this.btnExit.Size = new System.Drawing.Size(91, 38);
+            this.btnExit.TabIndex = 60;
+            this.btnExit.Text = "Thoát";
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
             // UC_StaffManager
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.btnExit);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.diachi_txt);
             this.Controls.Add(this.gridview);
             this.Controls.Add(this.startingDate);
             this.Controls.Add(this.dob);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.passtxt);
             this.Controls.Add(this.ComboBoxChucVu);
-            this.Controls.Add(this.guna2Button6);
-            this.Controls.Add(this.guna2Button2);
+            this.Controls.Add(this.update_savebtn);
             this.Controls.Add(this.guna2Button1);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.label7);
@@ -466,14 +513,16 @@ namespace Coffee_Manager
         private System.Windows.Forms.Label label7;
         private Guna.UI2.WinForms.Guna2Button btnAdd;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button6;
+        private Guna.UI2.WinForms.Guna2Button update_savebtn;
         private Guna.UI2.WinForms.Guna2ComboBox ComboBoxChucVu;
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2TextBox passtxt;
         private Guna.UI2.WinForms.Guna2DateTimePicker startingDate;
         private Guna.UI2.WinForms.Guna2DateTimePicker dob;
         private Guna.UI2.WinForms.Guna2DataGridView gridview;
+        private System.Windows.Forms.Label label8;
+        private Guna.UI2.WinForms.Guna2TextBox diachi_txt;
+        private Guna.UI2.WinForms.Guna2Button btnExit;
     }
 }

@@ -102,7 +102,7 @@ namespace Coffee_Manager
         public void Add() {
             try
             {
-                string sql = "insert into NGUYENLIEU(MaNL, TenNL, MaDVT) values " +
+                string sql = "insert into NGUYENLIEU(MaNL, TenNL, MaDVTNL) values " +
                     "('" + this.MaNL + "', N'" + this.TenNL + "', '" + this.dvt.MA_DVT + "') ";
                 this.Connection.OpenConnection();
                 SqlCommand command = this.Connection.CreateSQLCmd(sql);
@@ -122,7 +122,7 @@ namespace Coffee_Manager
         public void Update() {
             try
             {
-                string sql = "update NGUYENLIEU set TenNL = N'" + this.TenNL + "', MaDVT = '" + this.dvt.MA_DVT + "' where MaNL = '" + this.MaNL + "'";
+                string sql = "update NGUYENLIEU set TenNL = N'" + this.TenNL + "', MaDVTNL = '" + this.dvt.MA_DVT + "' where MaNL = '" + this.MaNL + "'";
                 this.Connection.OpenConnection();
                 SqlCommand command = this.Connection.CreateSQLCmd(sql);
                 command.ExecuteNonQuery();
@@ -140,6 +140,32 @@ namespace Coffee_Manager
         }
         public void Remove() 
         {
+            try
+            {
+                string sql = "select * from CT_PHIEUNHAP where MaNL = '" + this.MaNL + "'";
+                this.Connection.OpenConnection();
+                SqlCommand command = this.Connection.CreateSQLCmd(sql);
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.HasRows)
+                {
+                    if (reader.Read() == false) break;
+                    MessageBox.Show("Nguyên liệu này không thể xoá được vì đã tồn tại trong phiếu nhập", "Xoá nguyên liệu", MessageBoxButtons.OK);
+                    return;
+
+                }
+                reader.Close();
+                this.Connection.CloseConnection();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Đã xảy ra lỗi, vui lòng liên hệ đội ngũ phát triển!");
+
+            }
+            finally
+            {
+                this.Connection.CloseConnection();
+            }
+
             try
             {
                 string sql = "delete from NGUYENLIEU where MaNL = '"+this.MaNL+"'";

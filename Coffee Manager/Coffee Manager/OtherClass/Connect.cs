@@ -12,10 +12,12 @@ namespace Coffee_Manager
     public class Connect
     {
         SqlConnection Connection;
+        //Đăt string connect ở đây đừng di chuyển đâu hết.
+        // String connString = ConfigurationManager.ConnectionStrings["SQLServer"].ConnectionString;
+        //public String connString = @"Server=DANH\SQLEXPRESS;Database=COFFEE_MANAGEMENT;User Id=sa;Password=c0ngdanh";
+        //public  string connString = @"Server=LAPTOP-DKIC94F6\SQLEXPRESS;Database=COFFEE_MANAGEMENT;User ID=sa;Password=123456";
         public Connect()
         {
-           // String connString = ConfigurationManager.ConnectionStrings["SQLServer"].ConnectionString;
-           String connString = @"Server=DANH\SQLEXPRESS;Database=COFFEE_MANAGEMENT1;User Id=sa;Password=c0ngdanh";
             this.Connection = new SqlConnection(connString);
         }
         public void OpenConnection()
@@ -26,7 +28,7 @@ namespace Coffee_Manager
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Đã xảy ra lỗi, vui lòng liên hệ đội ngũ phát triển!");
+               
             }
         }
 
