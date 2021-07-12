@@ -24,7 +24,7 @@ namespace Coffee_Manager
             NgSinh = NgVaoLam = DateTime.Now;
         }
 
-        public NhanVien(string MaNV, string TenNV, string SoDT, string DiaChi, string MaCV, string MaTK,
+        public  NhanVien(string MaNV, string TenNV, string SoDT, string DiaChi, string MaCV, string MaTK,
             DateTime NgSinh, DateTime NgVaoLam)
         {
             this.MaNV = MaNV;
@@ -36,6 +36,7 @@ namespace Coffee_Manager
             this.NgSinh = NgSinh;
             this.NgVaoLam = NgVaoLam;
         }
+
         public NhanVien(string TenNV, string SoDT, string MaCV, string MaTK, string DiaChi, DateTime NgSinh, DateTime NgVaoLam)
         {
             CreateMaNV();
@@ -178,45 +179,23 @@ namespace Coffee_Manager
 
         public void Remove()
         {
-            //using (SqlConnection connection = new SqlConnection(this.Connection.connString))
-            //{
-            //    using (SqlCommand command = new SqlCommand())
-            //    {
-            //        command.Connection = connection;
-            //        command.CommandType = CommandType.Text;
-            //        command.CommandText = "DELETE * FROM NHANVIEN WHERE  MaNV = @id ";
-
-            //        command.Parameters.AddWithValue("@id", this.MaNV);
-
-            //        try
-            //        {
-            //            connection.Open();
-            //            int recordsAffected = command.ExecuteNonQuery();
-            //        }
-            //        catch (SqlException)
-            //        {
-
-            //        }
-            //        finally
-            //        {
-            //            connection.Close();
-            //        }
-            //    }
-            //}
+            string a = this.Connection.connString;
+            SqlConnection connection = new SqlConnection(a);
+            connection.Open();
+            string strQuery;
             try
             {
-                string sql = "delete NHANVIEN where MaNV = '" + this.MaNV + "'";
-                this.Connection.OpenConnection();
-                SqlCommand command = this.Connection.CreateSQLCmd(sql);
-                command.ExecuteNonQuery();
+                strQuery = $"DELETE NHANVIEN WHERE MaNV = '{this.MaNV}'";
+                using (SqlCommand command = new SqlCommand(strQuery, connection))
+                    command.ExecuteNonQuery();
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-               
+
             }
             finally
             {
-                this.Connection.CloseConnection();
+                connection.Close();
             }
         }
 
@@ -246,7 +225,7 @@ namespace Coffee_Manager
                 this.Connection.CloseConnection();
             }
         }
-        //public void Save(){};
+       
 
 
     }

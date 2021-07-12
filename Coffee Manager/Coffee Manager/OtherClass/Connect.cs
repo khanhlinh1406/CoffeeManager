@@ -27,7 +27,7 @@ namespace Coffee_Manager
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Đã xảy ra lỗi, vui lòng liên hệ đội ngũ phát triển!");
+               
             }
         }
 

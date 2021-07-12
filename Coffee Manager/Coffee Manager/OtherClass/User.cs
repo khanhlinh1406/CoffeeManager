@@ -207,23 +207,23 @@ namespace Coffee_Manager
 
         public void DeleteUser()
         {
+            string a = this.Connection.connString;
+            SqlConnection connection = new SqlConnection(a);
+            connection.Open();
+            string strQuery;
             try
             {
-                string Query = "delete from TAIKHOAN where MaTK = '" + this.MaTK + "'";
-
-
-                Connection.OpenConnection();
-                SqlCommand command = this.Connection.CreateSQLCmd(Query);
-                command.ExecuteNonQuery();
+                strQuery = $"DELETE TAIKHOAN WHERE MaTK = '{this.MaTK}'";
+                using (SqlCommand command = new SqlCommand(strQuery, connection))
+                    command.ExecuteNonQuery();
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-                MessageBox.Show("Đã xảy ra lỗi, vui lòng liên hệ đội ngũ phát triển!");
-               
+              
             }
             finally
             {
-                Connection.CloseConnection();
+                connection.Close();
             }
         }
     }

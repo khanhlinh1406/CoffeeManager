@@ -91,11 +91,13 @@ namespace Coffee_Manager
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            NhanVien nv = new NhanVien(txtName.Text, txtPhone.Text, ComboBoxChucVu.SelectedValue.ToString(), matktxt.Text, diachi_txt.Text, dob.Value, startingDate.Value);
+            //NhanVien nv = new NhanVien(txtName.Text, txtPhone.Text, ComboBoxChucVu.SelectedValue.ToString(), matktxt.Text, diachi_txt.Text, dob.Value, startingDate.Value);
+            NhanVien nv = new NhanVien();
+            nv.MA_NV = gridview.SelectedRows[0].Cells[0].Value.ToString();
             nv.Remove();
-
             User user = new User(matktxt.Text, passtxt.Text);
             user.DeleteUser();
+           
             MessageBox.Show("Xóa nhân viên thành công");
             LoadData();
         }

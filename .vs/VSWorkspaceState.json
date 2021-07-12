@@ -1,8 +1,11 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Coffee Manager"
+    "\\Coffee Manager",
+    "\\Coffee Manager\\Coffee Manager",
+    "\\Coffee Manager\\Coffee Manager\\AIUserControl",
+    "\\Coffee Manager\\Coffee Manager\\MainClass"
   ],
-  "SelectedNode": "\\Coffee Manager\\Coffee Manager.sln",
+  "SelectedNode": "\\Coffee Manager\\Coffee Manager\\AIUserControl\\UC_StaffManager.cs",
   "PreviewInSolutionExplorer": false
 }
