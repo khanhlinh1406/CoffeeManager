@@ -84,6 +84,8 @@ namespace Coffee_Manager
             {
                 NguyenLieu nguyenLieu = new NguyenLieu(tbItemName.Text, new DonViTinh(cbCalculationUnit.SelectedValue.ToString(), cbCalculationUnit.Text.ToString()));
                 nguyenLieu.Add();
+
+                tbItemName.Text = "";
                 LoadData();
             }
         }
@@ -97,6 +99,8 @@ namespace Coffee_Manager
                 NguyenLieu nguyenLieu = new NguyenLieu(gridview.SelectedRows[0].Cells[0].Value.ToString(),
                     tbItemName.Text, new DonViTinh(cbCalculationUnit.SelectedValue.ToString(), cbCalculationUnit.Text.ToString()));
                 nguyenLieu.Update();
+
+                btnExit_Click(sender, e);
                 LoadData();
             }
         }
@@ -119,6 +123,8 @@ namespace Coffee_Manager
                 NguyenLieu nguyenLieu = new NguyenLieu(gridview.SelectedRows[0].Cells[0].Value.ToString(),
                     tbItemName.Text, new DonViTinh(cbCalculationUnit.SelectedValue.ToString(), cbCalculationUnit.Text.ToString()));
                 nguyenLieu.Remove();
+
+                btnExit_Click(sender, e);
                 LoadData();
             }
         }
