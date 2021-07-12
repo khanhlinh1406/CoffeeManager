@@ -1,6 +1,7 @@
 ﻿using Coffee_Manager.MainClass;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -23,24 +24,27 @@ namespace Coffee_Manager
             NgSinh = NgVaoLam = DateTime.Now;
         }
 
-        public NhanVien(string MaNV, string TenNV, string SoDT, string MaCV, string MaTK,
+        public NhanVien(string MaNV, string TenNV, string SoDT, string DiaChi, string MaCV, string MaTK,
             DateTime NgSinh, DateTime NgVaoLam)
         {
             this.MaNV = MaNV;
             this.HoTen = TenNV;
             this.SoDT = SoDT;
+            this.DiaChi = DiaChi;
             this.MaCV = MaCV;
             this.MaTK = MaTK;
             this.NgSinh = NgSinh;
             this.NgVaoLam = NgVaoLam;
         }
-        public NhanVien( string TenNV, string SoDT, string MaCV, string MaTK, DateTime NgSinh, DateTime NgVaoLam)
+
+        public NhanVien(string TenNV, string SoDT, string MaCV, string MaTK, string DiaChi, DateTime NgSinh, DateTime NgVaoLam)
         {
             CreateMaNV();
             this.HoTen = TenNV;
             this.SoDT = SoDT;
             this.MaCV = MaCV;
             this.MaTK = MaTK;
+            this.DiaChi = DiaChi;
             this.NgSinh = NgSinh;
             this.NgVaoLam = NgVaoLam;
         }
@@ -60,7 +64,6 @@ namespace Coffee_Manager
             get { return this.MaTK; }
             set { this.MaTK = value; }
         }
-
         public DateTime NG_VAOLAM
         {
             get { return this.NgVaoLam; }
@@ -71,9 +74,9 @@ namespace Coffee_Manager
             try
             {
                 Random random = new Random();
-                string tmp = random.Next(0, 999999999).ToString();
+                string tmp = "NV" + random.Next(0, 9999).ToString();
 
-                string find = "SELECT MaNV FROM NHANVIEN where MaNV = '" + tmp + "'";
+                string find = "SELECT MaNv FROM NHANVIEN where MaNV = '" + tmp + "'";
 
                 this.Connection.OpenConnection();
                 SqlCommand command = this.Connection.CreateSQLCmd(find);
@@ -83,7 +86,7 @@ namespace Coffee_Manager
                     if (reader.Read() == false) break;
                     while (reader.GetString(0) == tmp)
                     {
-                        tmp = random.Next(0, 999999999).ToString();
+                        tmp = random.Next(0, 9999).ToString();
                     }
 
                 }
@@ -94,78 +97,105 @@ namespace Coffee_Manager
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Đã xảy ra lỗi, vui lòng liên hệ đội ngũ phát triển!");
 
             }
             finally
             {
                 this.Connection.CloseConnection();
             }
+
         }
         public void Add()
         {
-            try
+            using (SqlConnection connection = new SqlConnection(this.Connection.connString))
             {
-                string sql = "insert into NHANVIEN values " +
-                    "('" + this.MaNV + "', N'" + this.HoTen + "', '" + this.NgSinh + "', '" + this.SoDT + "', N'" + this.DiaChi + "', '" + this.NgVaoLam + "', '" + this.MaCV + "', '" + this.MaTK +  "') ";
-                this.Connection.OpenConnection();
-                SqlCommand command = this.Connection.CreateSQLCmd(sql);
-                command.ExecuteNonQuery();
+                using (SqlCommand command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandType = CommandType.Text;
+                    command.CommandText = "INSERT into NHANVIEN (MaNV, TenNV, NgSinh, SDT, DiaChi, NgVaoLam, MaCV, MaTK) " +
+                                          "VALUES (@id, @name, @born, @phone, @addr, @datein, @jobid, @accid)";
+                    command.Parameters.AddWithValue("@id", this.MaNV);
+                    command.Parameters.AddWithValue("@name", this.HoTen);
+                    command.Parameters.AddWithValue("@born", this.NgSinh);
+                    command.Parameters.AddWithValue("@phone", this.SoDT);
+                    command.Parameters.AddWithValue("@addr", this.DiaChi);
+                    command.Parameters.AddWithValue("@datein", this.NgVaoLam);
+                    command.Parameters.AddWithValue("@jobid", this.MaCV);
+                    command.Parameters.AddWithValue("@accid", this.MaTK);
 
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Đã xảy ra lỗi, vui lòng liên hệ đội ngũ phát triển!");
+                    try
+                    {
+                        connection.Open();
+                        int recordsAffected = command.ExecuteNonQuery();
+                    }
+                    catch (SqlException)
+                    {
 
-            }
-            finally
-            {
-                this.Connection.CloseConnection();
+                    }
+                    finally
+                    {
+                        connection.Close();
+                    }
+                }
             }
         }
 
         public void Update()
         {
-            try
+            using (SqlConnection connection = new SqlConnection(this.Connection.connString))
             {
-                string sql = "update NHANVIEN set TenNV = N'" + this.HoTen + "', NgSinh = '" + this.NgSinh + "', " +
-                    "SoDT = '" + this.SoDT + "' , DiaChi = N'" + this.DiaChi + "', NgVaoLam ='" + this.NgVaoLam + "', " +
-                    "MaCV = '" + this.MaCV + "' where MaNV = '" + this.MaNV + "'";
+                using (SqlCommand command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandType = CommandType.Text;
+                    command.CommandText = "UPDATE NHANVIEN SET TenNV = @name, NgSinh = @born , SDT = @phone, DiaChi = @addr, NgVaoLam = @datein, MaCV = @jobid, MaTK = @accid WHERE MaNV = @id ";
 
-                this.Connection.OpenConnection();
-                SqlCommand command = this.Connection.CreateSQLCmd(sql);
-                command.ExecuteNonQuery();
+                    command.Parameters.AddWithValue("@id", this.MaNV);
+                    command.Parameters.AddWithValue("@name", this.HoTen);
+                    command.Parameters.AddWithValue("@born", this.NgSinh);
+                    command.Parameters.AddWithValue("@phone", this.SoDT);
+                    command.Parameters.AddWithValue("@addr", this.DiaChi);
+                    command.Parameters.AddWithValue("@datein", this.NgVaoLam);
+                    command.Parameters.AddWithValue("@jobid", this.MaCV);
+                    command.Parameters.AddWithValue("@accid", this.MaTK);
 
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Đã xảy ra lỗi, vui lòng liên hệ đội ngũ phát triển!");
+                    try
+                    {
+                        connection.Open();
+                        int recordsAffected = command.ExecuteNonQuery();
+                    }
+                    catch (SqlException)
+                    {
 
-            }
-            finally
-            {
-                this.Connection.CloseConnection();
+                    }
+                    finally
+                    {
+                        connection.Close();
+                    }
+                }
             }
         }
 
         public void Remove()
         {
+            string a = this.Connection.connString;
+            SqlConnection connection = new SqlConnection(a);
+            connection.Open();
+            string strQuery;
             try
             {
-                string sql = "delete NHANVIEN where MaNV = '" + this.MaNV + "'";
-                this.Connection.OpenConnection();
-                SqlCommand command = this.Connection.CreateSQLCmd(sql);
-                command.ExecuteNonQuery();
-
+                strQuery = $"DELETE NHANVIEN WHERE MaNV = '{this.MaNV}'";
+                using (SqlCommand command = new SqlCommand(strQuery, connection))
+                    command.ExecuteNonQuery();
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-                MessageBox.Show("Đã xảy ra lỗi, vui lòng liên hệ đội ngũ phát triển!");
 
             }
             finally
             {
-                this.Connection.CloseConnection();
+                connection.Close();
             }
         }
 
@@ -181,21 +211,21 @@ namespace Coffee_Manager
                 {
                     if (reader.Read() == false) break;
                     this.MaNV = reader.GetString(0);
-                    this.HO_TEN = reader.GetString(1);
+                    this.HoTen = reader.GetString(1);
                     this.SoDT = reader.GetString(3);
                 }
                 reader.Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Đã xảy ra lỗi, vui lòng liên hệ đội ngũ phát triển!");
+
             }
             finally
             {
                 this.Connection.CloseConnection();
             }
         }
-        //public void Save(){};
+
 
 
     }

@@ -27,8 +27,11 @@ namespace Coffee_Manager
 
         private void UC_StaffManager_Load(object sender, EventArgs e)
         {
-           // LoadData();
-           // LoadCBChucVu();
+            LoadData();
+            LoadCBChucVu();
+            guna2Button1.Enabled = false;
+            update_savebtn.Enabled = false;
+            btnExit.Enabled = false;
         }
 
         private void LoadData()
@@ -104,6 +107,10 @@ namespace Coffee_Manager
 
         private void gridview_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            btnExit.Enabled = true;
+            btnAdd.Enabled = false;
+            guna2Button1.Enabled = true;
+            update_savebtn.Enabled = true;
             txtName.Text = gridview.SelectedRows[0].Cells[1].Value.ToString();
             dob.Value = DateTime.Parse(gridview.SelectedRows[0].Cells[2].Value.ToString());
             txtPhone.Text = gridview.SelectedRows[0].Cells[4].Value.ToString();
@@ -164,6 +171,24 @@ namespace Coffee_Manager
                 MessageBox.Show("Cập nhật nhân viên thành công");
             }
 
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            btnAdd.Enabled = true;
+            btnExit.Enabled = false;
+            txtName.Text = "";
+            dob.Value = DateTime.Now;
+            txtPhone.Text = "";
+            startingDate.Value = DateTime.Now;
+            diachi_txt.Text = "";
+
+            matktxt.Text = "";
+            // matktxt.ReadOnly = true;
+            passtxt.Text = "";
+            guna2Button1.Enabled = false;
+            update_savebtn.Enabled = false;
+            matktxt.Enabled = true;
         }
     }
 }
