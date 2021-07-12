@@ -79,8 +79,8 @@ namespace Coffee_Manager
                     this.PhTramHd = reader.GetDouble(1);
                     this.PhTramGiam = reader.GetDouble(2);
                     this.DiemLH = reader.GetInt32(3);
-                    reader.Close();
                 }
+                reader.Close();
             }
             catch (Exception ex)
             {

@@ -106,7 +106,7 @@ namespace Coffee_Manager
                         reader.GetDateTime(2), reader.GetString(3), reader.GetString(4), reader.GetDateTime(5),
                         reader.GetInt32(6), LoaiKh);
                     danhSachKhachHang.Add(tmp);
-                    cbxCustomer.Items.Add(tmp.TEN_KH + " - " + tmp.SO_DT);
+                    cbxCustomer.Items.Add(tmp.HO_TEN + " - " + tmp.SO_DT);
                 }
                 reader.Close();
             }
@@ -226,11 +226,14 @@ namespace Coffee_Manager
         {
             if (orderGridView.SelectedRows.Count > 0)
             {
+                int rowIndex = 0;
                 foreach (DataGridViewRow row in orderGridView.SelectedRows)
                 {
                     totalCost -= int.Parse(row.Cells[3].Value.ToString());
                     lbTotalCost.Text = totalCost.ToString() + " VND";
                     orderGridView.Rows.Remove(row);
+                    danhSachMaMon.Remove(danhSachMaMon[rowIndex]);
+                    rowIndex++;
                 }
             }
         }
@@ -366,7 +369,7 @@ namespace Coffee_Manager
 
                         people.AddCell(new Phrase(DateTime.Now.ToString(), bodyFont));
                         people.AddCell(new Phrase("Khách hàng: " + cbxCustomer.Text + " " + khachHang.LOAI_KH.TEN_LKH, bodyFont));
-                        people.AddCell(new Phrase("Nhân viên: " + nhanVien.TEN_KH, bodyFont));
+                        people.AddCell(new Phrase("Nhân viên: " + nhanVien.HO_TEN, bodyFont));
                         
                         document.Add(people);
                         document.Add(new Paragraph("\n", boldTableFont));
