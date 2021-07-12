@@ -22,7 +22,7 @@ namespace Coffee_Manager
             InitializeComponent();
             date.Value = DateTime.Now;
             btnSeen.Visible = false;
-            btnRemoveDetail.Enabled = btnUpdate.Enabled = false;
+            btnDone.Enabled = btnRemoveDetail.Enabled = btnUpdate.Enabled = false;
         }
 
         public void UC_ReceivedNote_Load(object sender, EventArgs e)
@@ -58,7 +58,7 @@ namespace Coffee_Manager
 
         private void gridviewGeneral_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+            btnDone.Enabled = true;
             LoadDataDetail(gridviewGeneral.SelectedRows[0].Cells[0].Value.ToString());
             date.Value = DateTime.Parse(gridviewGeneral.SelectedRows[0].Cells[1].Value.ToString());
             cbNCC.Text = gridviewGeneral.SelectedRows[0].Cells[3].Value.ToString();
@@ -131,6 +131,7 @@ namespace Coffee_Manager
         void LoadListNL()
         {
             cbMaterial.Items.Clear();
+            listNL.Clear();
             try
             {
                 this.Connection.OpenConnection();
@@ -165,8 +166,13 @@ namespace Coffee_Manager
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (IsValidData()&& CheckValidNumber())
-                gridviewDetails.Rows.Add(listNL[indexMaterial].MA_NL,listNL[indexMaterial].TEN_NL, listNL[indexMaterial].DVT.TEN_DVT, numeric.Value, int.Parse(tbPrice.Text), numeric.Value * int.Parse(tbPrice.Text));
+            if (numeric.Value == 0)
+                MessageBox.Show("Dữ liệu không hợp lệ, số lượng phải khác 0", "Sai dữ liệu", MessageBoxButtons.OK);
+            else if (IsValidData() && CheckValidNumber())
+            {
+                gridviewDetails.Rows.Add(listNL[indexMaterial].MA_NL, listNL[indexMaterial].TEN_NL, listNL[indexMaterial].DVT.TEN_DVT, numeric.Value, int.Parse(tbPrice.Text), numeric.Value * int.Parse(tbPrice.Text));
+                btnDone.Enabled = true;
+            }
         }
 
 
@@ -189,6 +195,7 @@ namespace Coffee_Manager
                 gridviewDetails.SelectedRows[0].Cells[5].Value = numeric.Value * int.Parse(tbPrice.Text);
 
                 btnUpdate.Enabled = btnRemoveDetail.Enabled = false;
+                btnDone.Enabled = true;
             }
         }
 
@@ -200,7 +207,7 @@ namespace Coffee_Manager
             {
                 gridviewDetails.Rows.RemoveAt(indexDetail);
                 btnUpdate.Enabled = btnRemoveDetail.Enabled = false;
-
+                btnDone.Enabled = true;
             }
 
         }
@@ -316,10 +323,16 @@ namespace Coffee_Manager
             for (int rows = 0; rows < gridviewDetails.Rows.Count; rows++)
                 total += int.Parse(gridviewDetails.Rows[rows].Cells[5].Value.ToString());
 
+            if (gridviewDetails.Rows.Count == 0 )
+            {
+                MessageBox.Show("Dữ liệu không hợp lệ, phiếu nhập phải có ít nhất 1 nguyên liệu", "Sai dữ liệu", MessageBoxButtons.OK);
+                return;
+            }
+
             if (isSeenDetail == false)
             {
-
                 //add new
+                
                 AddNewReceivedNote(total);
 
             }
@@ -333,9 +346,10 @@ namespace Coffee_Manager
             btnSeen.Visible = false;
             isSeenDetail = false;
 
-            btnRemoveDetail.Enabled = btnUpdate.Enabled = false;
+            btnRemoveDetail.Enabled = btnUpdate.Enabled = btnDone.Enabled = false;
             cbMaterial.Text = tbPrice.Text =null;
             numeric.Value = 0;
+            date.Value = DateTime.Now;
 
             gridviewDetails.Rows.Clear();
 
@@ -346,6 +360,8 @@ namespace Coffee_Manager
         private void gridviewDetails_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             btnRemoveDetail.Enabled = btnUpdate.Enabled = true;
+            btnDone.Enabled = false;
+
             cbMaterial.Text = gridviewDetails.SelectedRows[0].Cells[1].Value.ToString() + " (" +
                 gridviewDetails.SelectedRows[0].Cells[2].Value.ToString() +")";
             numeric.Value = int.Parse(gridviewDetails.SelectedRows[0].Cells[3].Value.ToString());
@@ -362,7 +378,7 @@ namespace Coffee_Manager
                 btnSeen.Visible = false;
                 PhieuNhap phieuNhap = new PhieuNhap();
                 phieuNhap.MA_PN = gridviewGeneral.SelectedRows[0].Cells[0].Value.ToString();
-
+                phieuNhap.Remove();
                 LoadDataGeneral();
                 gridviewDetails.Rows.Clear();
             }

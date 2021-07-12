@@ -172,6 +172,32 @@ namespace Coffee_Manager
         {
             try
             {
+                string sql = "select * from HOADON where MaKH = '" + this.MaKH + "'";
+                this.Connection.OpenConnection();
+                SqlCommand command = this.Connection.CreateSQLCmd(sql);
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.HasRows)
+                {
+                    if (reader.Read() == false) break;
+                    MessageBox.Show("Khách hàng này không thể xoá được vì đã tồn tại trong hoá đơn", "Xoá khách hàng", MessageBoxButtons.OK);
+                    return;
+
+                }
+                reader.Close();
+                this.Connection.CloseConnection();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Đã xảy ra lỗi, vui lòng liên hệ đội ngũ phát triển!");
+
+            }
+            finally
+            {
+                this.Connection.CloseConnection();
+            }
+
+            try
+            {
                 string sql = "delete KHACHHANG where MaKH = '" + this.MaKH + "'";
                 this.Connection.OpenConnection();
                 SqlCommand command = this.Connection.CreateSQLCmd(sql);

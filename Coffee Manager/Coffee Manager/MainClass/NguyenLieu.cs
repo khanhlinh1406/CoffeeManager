@@ -142,6 +142,32 @@ namespace Coffee_Manager
         {
             try
             {
+                string sql = "select * from CT_PHIEUNHAP where MaNL = '" + this.MaNL + "'";
+                this.Connection.OpenConnection();
+                SqlCommand command = this.Connection.CreateSQLCmd(sql);
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.HasRows)
+                {
+                    if (reader.Read() == false) break;
+                    MessageBox.Show("Nguyên liệu này không thể xoá được vì đã tồn tại trong phiếu nhập", "Xoá nguyên liệu", MessageBoxButtons.OK);
+                    return;
+
+                }
+                reader.Close();
+                this.Connection.CloseConnection();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Đã xảy ra lỗi, vui lòng liên hệ đội ngũ phát triển!");
+
+            }
+            finally
+            {
+                this.Connection.CloseConnection();
+            }
+
+            try
+            {
                 string sql = "delete from NGUYENLIEU where MaNL = '"+this.MaNL+"'";
                 this.Connection.OpenConnection();
                 SqlCommand command = this.Connection.CreateSQLCmd(sql);
