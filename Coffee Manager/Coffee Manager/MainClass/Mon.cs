@@ -17,7 +17,7 @@ namespace Coffee_Manager
         TinhTrang tinhTrang;
 
         Connect Connection = new Connect();
-        
+
         public Mon()
         {
             MaMon = TenMon = "";
@@ -82,7 +82,7 @@ namespace Coffee_Manager
                 Random random = new Random();
                 string tmp = random.Next(0, 999999999).ToString();
 
-                string find = "SELECT MaMon FROM MON where MaMon = '"+tmp+"'";
+                string find = "SELECT MaMon FROM MON where MaMon = '" + tmp + "'";
 
                 this.Connection.OpenConnection();
                 SqlCommand command = this.Connection.CreateSQLCmd(find);
@@ -90,11 +90,11 @@ namespace Coffee_Manager
                 while (reader.HasRows)
                 {
                     if (reader.Read() == false) break;
-                    while (reader.GetString(0) == tmp )
+                    while (reader.GetString(0) == tmp)
                     {
                         tmp = random.Next(0, 999999999).ToString();
                     }
-                    
+
                 }
                 this.MaMon = tmp;
                 reader.Close();
@@ -110,7 +110,7 @@ namespace Coffee_Manager
             {
                 this.Connection.CloseConnection();
             }
-           
+
         }
 
         public void Add()
@@ -119,6 +119,7 @@ namespace Coffee_Manager
             {
                 string sql = "insert into MON(MaMon, TenMon, MaDVTM, Gia, MaTT) values " +
                     "('" + this.MaMon + "', N'" + this.TenMon + "', '" + this.dvt.MA_DVT + "', '" + this.Gia + "', '"+ this.tinhTrang.MA_TT+"') ";
+
                 this.Connection.OpenConnection();
                 SqlCommand command = this.Connection.CreateSQLCmd(sql);
                 command.ExecuteNonQuery();
@@ -140,7 +141,8 @@ namespace Coffee_Manager
         {
             try
             {
-                string sql = "update MON set TenMon = N'" + this.TenMon + "', MaDVTM = '" + this.dvt.MA_DVT + "', Gia = '" + this.Gia + "', MaTT = '"+ this.TINH_TRANG.MA_TT+"' where MaMon = '" + this.MaMon + "'";
+                string sql = "update MON set TenMon = N'" + this.TenMon + "', MaDVTM = '" + this.dvt.MA_DVT + "', Gia = '" + this.Gia + "', MaTT = '" + this.TINH_TRANG.MA_TT + "' where MaMon = '" + this.MaMon + "'";
+
                 this.Connection.OpenConnection();
                 SqlCommand command = this.Connection.CreateSQLCmd(sql);
                 command.ExecuteNonQuery();
@@ -238,5 +240,5 @@ namespace Coffee_Manager
 
 }
 
-    //public void Remove() { }
+//public void Remove() { }
 

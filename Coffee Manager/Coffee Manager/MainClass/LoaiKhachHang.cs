@@ -17,9 +17,9 @@ namespace Coffee_Manager
         int DiemLH;
         Connect connect = new Connect();
 
-        public LoaiKhachHang() { }
+        public LoaiKhachHang() {}
 
-        public LoaiKhachHang(string MaLkh)
+        public LoaiKhachHang(string MaLkh) 
         {
             this.MaLKH = MaLkh;
             LoadLoaiKHFromMaLKH();
@@ -75,10 +75,10 @@ namespace Coffee_Manager
                 while (reader.HasRows)
                 {
                     if (reader.Read() == false) break;
-                    this.TenLoaiKh = reader.GetString(1);
-                    this.PhTramHd = reader.GetDouble(2);
-                    this.PhTramGiam = reader.GetDouble(3);
-                    this.DiemLH = reader.GetInt32(4);
+                    this.TenLoaiKh = reader.GetString(0);
+                    this.PhTramHd = reader.GetDouble(1);
+                    this.PhTramGiam = reader.GetDouble(2);
+                    this.DiemLH = reader.GetInt32(3);
                     reader.Close();
                 }
             }

@@ -16,6 +16,7 @@ namespace Coffee_Manager
         List<string> DSMon = new List<string>();
         List<int> SoLuong = new List<int>();
         int TriGia;
+        int KhuyenMai;
         string MaKH;
         Connect connect = new Connect();
 
@@ -74,7 +75,13 @@ namespace Coffee_Manager
             set { this.MaKH = value; }
         }
 
-        public void CreateMaKH()
+        public int KHUYEN_MAI
+        {
+            get { return this.KhuyenMai; }
+            set { this.KhuyenMai = value; }
+        }
+
+        public void CreateMaHD()
         {
             try
             {
@@ -115,8 +122,8 @@ namespace Coffee_Manager
             try
             {
                 string sql = "insert into HOADON values " +
-                    "('" + this.MaHD + "', '" + this.MaNVLap + "', '" + this.NgLap  + "', '" +
-                    this.TriGia + "', '" + this.MaKH +  "')";
+                    "('" + this.MaHD + "', '" + this.MaNVLap + "', '" + this.MaKH  + "', '" +
+                    this.NgLap + "', " + this.KhuyenMai +  ", " + this.TriGia + ")";
                 this.connect.OpenConnection();
                 SqlCommand command = this.connect.CreateSQLCmd(sql);
                 command.ExecuteNonQuery();

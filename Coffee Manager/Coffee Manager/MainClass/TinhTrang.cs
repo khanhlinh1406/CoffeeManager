@@ -10,12 +10,18 @@ namespace Coffee_Manager
 {
     public class TinhTrang
     {
-
         string MaTT, TenTT;
         Connect Connection = new Connect();
+      
         public TinhTrang()
         {
 
+        }
+      
+        public TinhTrang(string Ma)
+        {
+            MaTT = Ma;
+            TenTT = FindTenTTFromMaTT();
         }
 
         public TinhTrang(string MaTT, string TenTT)
@@ -34,6 +40,35 @@ namespace Coffee_Manager
         {
             get { return this.TenTT; }
             set { this.TenTT = value; }
+        }
+
+        public string FindTenTTFromMaTT()
+        {
+            try
+            {
+                string sCheckLogin = "SELECT TenTT FROM TINHTRANGMON WHERE MaTT = '" + this.MaTT + "'";
+                this.Connection.OpenConnection();
+                SqlCommand command = this.Connection.CreateSQLCmd(sCheckLogin);
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.HasRows)
+                {
+
+                    if (reader.Read() == false) break;
+                    String s = reader.GetString(0);
+                    reader.Close();
+                    this.Connection.CloseConnection();
+                    return s;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Đã xảy ra lỗi, vui lòng liên hệ đội ngũ phát triển!");
+            }
+            finally
+            {
+                this.Connection.CloseConnection();
+            }
+            return "";
         }
 
         public void Add()
@@ -89,7 +124,6 @@ namespace Coffee_Manager
                 this.Connection.OpenConnection();
                 SqlCommand command = this.Connection.CreateSQLCmd(sql);
                 command.ExecuteNonQuery();
-
             }
             catch (Exception ex)
             {
