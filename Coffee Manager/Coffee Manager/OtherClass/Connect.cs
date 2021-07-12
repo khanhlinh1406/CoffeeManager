@@ -13,7 +13,7 @@ namespace Coffee_Manager
     {
         SqlConnection Connection;
         // String connString = ConfigurationManager.ConnectionStrings["SQLServer"].ConnectionString;
-        public String connString = @"Server=DANH\SQLEXPRESS;Database=COFFEE_MANAGEMENT;User Id=sa;Password=c0ngdanh";
+        //public String connString = @"Server=DANH\SQLEXPRESS;Database=COFFEE_MANAGEMENT;User Id=sa;Password=c0ngdanh";
         //public  string connString = @"Server=LAPTOP-DKIC94F6\SQLEXPRESS;Database=COFFEE_MANAGEMENT;User ID=sa;Password=123456";
         public Connect()
         {
