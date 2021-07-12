@@ -60,6 +60,7 @@ namespace Coffee_Manager
             get { return this.MaTK; }
             set { this.MaTK = value; }
         }
+
         public DateTime NG_VAOLAM
         {
             get { return this.NgVaoLam; }
@@ -180,7 +181,7 @@ namespace Coffee_Manager
                 {
                     if (reader.Read() == false) break;
                     this.MaNV = reader.GetString(0);
-                    this.TenNV = reader.GetString(1);
+                    this.HO_TEN = reader.GetString(1);
                     this.SoDT = reader.GetString(3);
                 }
                 reader.Close();

@@ -102,6 +102,7 @@ namespace Coffee_Manager
         {
             uC_AddItems1.Visible = true;
             uC_AddItems1.BringToFront();
+            uC_AddItems1.UC_AddItems_Load(sender, e);
         }
 
         private void Dashboard_Load(object sender, EventArgs e)
@@ -143,14 +144,14 @@ namespace Coffee_Manager
         {
             uC_Material1.Visible = true;
             uC_Material1.BringToFront();
-            uC_Material1.UC_Material_Load(sender, e);
+           // uC_Material1.UC_Material_Load(sender, e);
         }
 
         private void btnReceivedNote_Click(object sender, EventArgs e)
         {
             uC_ReceivedNote1.Visible = true;
             uC_ReceivedNote1.BringToFront();
-            uC_ReceivedNote1.UC_ReceivedNote_Load(sender, e);
+           // uC_ReceivedNote1.UC_ReceivedNote_Load(sender, e);
         }
 
         private void btnMonthly_Click(object sender, EventArgs e)

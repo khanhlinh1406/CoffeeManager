@@ -44,8 +44,8 @@ namespace Coffee_Manager
                 {
                     if (reader.Read() == false) break;
                     DonViTinh dvt = new DonViTinh(reader.GetString(2));
-                    Mon mon = new Mon(reader.GetString(0), reader.GetString(1), reader.GetInt32(3), dvt);
-                    danhSachMon.Add(mon);
+                   // Mon mon = new Mon(reader.GetString(0), reader.GetString(1), reader.GetInt32(3), dvt);
+                    //danhSachMon.Add(mon);
                 }
                 reader.Close();
             }
@@ -102,7 +102,7 @@ namespace Coffee_Manager
                         reader.GetDateTime(2), reader.GetString(3), reader.GetString(4), reader.GetDateTime(5),
                         reader.GetInt32(6));
                     danhSachKhachHang.Add(tmp);
-                    cbxCustomer.Items.Add(tmp.TEN_KH + "-" + tmp.SO_DT);
+                    cbxCustomer.Items.Add(tmp.HO_TEN + "-" + tmp.SO_DT);
                 }
                 reader.Close();
             }
@@ -344,7 +344,7 @@ namespace Coffee_Manager
 
                         people.AddCell(new Phrase(DateTime.Now.ToString(), bodyFont));
                         people.AddCell(new Phrase("Khách hàng: " + cbxCustomer.Text, bodyFont));
-                        people.AddCell(new Phrase("Nhân viên: " + nhanVien.TEN_NV, bodyFont));
+                        people.AddCell(new Phrase("Nhân viên: " + nhanVien.HO_TEN, bodyFont));
                         document.Add(people);
                         document.Add(new Paragraph("\n", boldTableFont));
 

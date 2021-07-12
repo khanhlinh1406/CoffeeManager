@@ -14,6 +14,8 @@ namespace Coffee_Manager
         string TenMon;
         int Gia;
         DonViTinh dvt;
+        TinhTrang tinhTrang;
+
         Connect Connection = new Connect();
         
         public Mon()
@@ -21,22 +23,25 @@ namespace Coffee_Manager
             MaMon = TenMon = "";
             Gia = 0;
             dvt = new DonViTinh();
+            tinhTrang = new TinhTrang();
         }
 
-        public Mon(string MaMon, string TenMon, int Gia, DonViTinh dvt)
+        public Mon(string MaMon, string TenMon, int Gia, DonViTinh dvt, TinhTrang tinhTrang)
         {
             this.MaMon = MaMon;
             this.TenMon = TenMon;
             this.Gia = Gia;
             this.dvt = dvt;
+            this.tinhTrang = tinhTrang;
         }
 
-        public Mon(string TenMon, int Gia, DonViTinh dvt)
+        public Mon(string TenMon, int Gia, DonViTinh dvt, TinhTrang tinhTrang)
         {
             CreateMaMon();
             this.TenMon = TenMon;
             this.dvt = dvt;
             this.Gia = Gia;
+            this.tinhTrang = tinhTrang;
         }
 
         public string MA_MON
@@ -61,6 +66,12 @@ namespace Coffee_Manager
         {
             get { return this.dvt; }
             set { this.dvt = value; }
+        }
+
+        public TinhTrang TINH_TRANG
+        {
+            get { return this.tinhTrang; }
+            set { this.tinhTrang = value; }
         }
 
 
@@ -106,8 +117,8 @@ namespace Coffee_Manager
         {
             try
             {
-                string sql = "insert into MON(MaMon, TenMon, MaDVT, Gia) values " +
-                    "('" + this.MaMon + "', N'" + this.TenMon + "', '" + this.dvt.MA_DVT + "', '" + this.Gia + "') ";
+                string sql = "insert into MON(MaMon, TenMon, MaDVTM, Gia, MaTT) values " +
+                    "('" + this.MaMon + "', N'" + this.TenMon + "', '" + this.dvt.MA_DVT + "', '" + this.Gia + "', '"+ this.tinhTrang.MA_TT+"') ";
                 this.Connection.OpenConnection();
                 SqlCommand command = this.Connection.CreateSQLCmd(sql);
                 command.ExecuteNonQuery();
@@ -129,7 +140,7 @@ namespace Coffee_Manager
         {
             try
             {
-                string sql = "update MON set TenMon = N'" + this.TenMon + "', MaDVT = '" + this.dvt.MA_DVT + "', Gia = '" + this.Gia + "' where MaMon = '" + this.MaMon + "'";
+                string sql = "update MON set TenMon = N'" + this.TenMon + "', MaDVTM = '" + this.dvt.MA_DVT + "', Gia = '" + this.Gia + "', MaTT = '"+ this.TINH_TRANG.MA_TT+"' where MaMon = '" + this.MaMon + "'";
                 this.Connection.OpenConnection();
                 SqlCommand command = this.Connection.CreateSQLCmd(sql);
                 command.ExecuteNonQuery();

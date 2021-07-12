@@ -102,7 +102,7 @@ namespace Coffee_Manager
         public void Add() {
             try
             {
-                string sql = "insert into NGUYENLIEU(MaNL, TenNL, MaDVT) values " +
+                string sql = "insert into NGUYENLIEU(MaNL, TenNL, MaDVTNL) values " +
                     "('" + this.MaNL + "', N'" + this.TenNL + "', '" + this.dvt.MA_DVT + "') ";
                 this.Connection.OpenConnection();
                 SqlCommand command = this.Connection.CreateSQLCmd(sql);
@@ -122,7 +122,7 @@ namespace Coffee_Manager
         public void Update() {
             try
             {
-                string sql = "update NGUYENLIEU set TenNL = N'" + this.TenNL + "', MaDVT = '" + this.dvt.MA_DVT + "' where MaNL = '" + this.MaNL + "'";
+                string sql = "update NGUYENLIEU set TenNL = N'" + this.TenNL + "', MaDVTNL = '" + this.dvt.MA_DVT + "' where MaNL = '" + this.MaNL + "'";
                 this.Connection.OpenConnection();
                 SqlCommand command = this.Connection.CreateSQLCmd(sql);
                 command.ExecuteNonQuery();
