@@ -30,12 +30,11 @@ namespace Coffee_Manager
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series15 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series16 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.monthlyStatistic = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.label1 = new System.Windows.Forms.Label();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.lb_Total_Status = new System.Windows.Forms.Label();
             this.cb_byQuanity = new System.Windows.Forms.CheckBox();
@@ -45,39 +44,33 @@ namespace Coffee_Manager
             this.label2 = new System.Windows.Forms.Label();
             this.lb_Count_Status = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.buttonFind = new Guna.UI2.WinForms.Guna2Button();
+            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.findTextbox = new Guna.UI2.WinForms.Guna2TextBox();
+            this.dropdownSort = new Guna.UI2.WinForms.Guna2ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.monthlyStatistic)).BeginInit();
             this.SuspendLayout();
             // 
             // monthlyStatistic
             // 
-            chartArea1.Name = "ChartArea1";
-            this.monthlyStatistic.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.monthlyStatistic.Legends.Add(legend1);
+            chartArea8.Name = "ChartArea1";
+            this.monthlyStatistic.ChartAreas.Add(chartArea8);
+            legend8.Name = "Legend1";
+            this.monthlyStatistic.Legends.Add(legend8);
             this.monthlyStatistic.Location = new System.Drawing.Point(0, 90);
             this.monthlyStatistic.Name = "monthlyStatistic";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Tổng giá trị các hóa đơn (VNĐ)";
-            series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Số lượng hóa đơn";
-            this.monthlyStatistic.Series.Add(series1);
-            this.monthlyStatistic.Series.Add(series2);
+            series15.ChartArea = "ChartArea1";
+            series15.Legend = "Legend1";
+            series15.Name = "Tổng giá trị các hóa đơn (VNĐ)";
+            series15.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
+            series16.ChartArea = "ChartArea1";
+            series16.Legend = "Legend1";
+            series16.Name = "Số lượng hóa đơn";
+            this.monthlyStatistic.Series.Add(series15);
+            this.monthlyStatistic.Series.Add(series16);
             this.monthlyStatistic.Size = new System.Drawing.Size(778, 369);
             this.monthlyStatistic.TabIndex = 0;
             this.monthlyStatistic.Text = "chart1";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(61, 31);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(141, 26);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "THỐNG KÊ";
             // 
             // guna2Elipse1
             // 
@@ -87,7 +80,7 @@ namespace Coffee_Manager
             // 
             this.lb_Total_Status.AutoSize = true;
             this.lb_Total_Status.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_Total_Status.Location = new System.Drawing.Point(465, 462);
+            this.lb_Total_Status.Location = new System.Drawing.Point(61, 462);
             this.lb_Total_Status.Name = "lb_Total_Status";
             this.lb_Total_Status.Size = new System.Drawing.Size(216, 23);
             this.lb_Total_Status.TabIndex = 6;
@@ -165,7 +158,7 @@ namespace Coffee_Manager
             // 
             this.lb_Count_Status.AutoSize = true;
             this.lb_Count_Status.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_Count_Status.Location = new System.Drawing.Point(465, 505);
+            this.lb_Count_Status.Location = new System.Drawing.Point(61, 498);
             this.lb_Count_Status.Name = "lb_Count_Status";
             this.lb_Count_Status.Size = new System.Drawing.Size(204, 23);
             this.lb_Count_Status.TabIndex = 36;
@@ -181,11 +174,94 @@ namespace Coffee_Manager
             this.label3.TabIndex = 37;
             this.label3.Text = "Từ";
             // 
+            // buttonFind
+            // 
+            this.buttonFind.BorderRadius = 15;
+            this.buttonFind.CheckedState.Parent = this.buttonFind;
+            this.buttonFind.CustomImages.Parent = this.buttonFind;
+            this.buttonFind.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonFind.ForeColor = System.Drawing.Color.White;
+            this.buttonFind.HoverState.Parent = this.buttonFind;
+            this.buttonFind.Location = new System.Drawing.Point(435, 33);
+            this.buttonFind.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.buttonFind.Name = "buttonFind";
+            this.buttonFind.ShadowDecoration.Parent = this.buttonFind;
+            this.buttonFind.Size = new System.Drawing.Size(71, 34);
+            this.buttonFind.TabIndex = 49;
+            this.buttonFind.Text = "Tìm";
+            this.buttonFind.Click += new System.EventHandler(this.buttonFind_Click);
+            // 
+            // metroLabel2
+            // 
+            this.metroLabel2.AutoSize = true;
+            this.metroLabel2.Location = new System.Drawing.Point(59, 44);
+            this.metroLabel2.Name = "metroLabel2";
+            this.metroLabel2.Size = new System.Drawing.Size(122, 19);
+            this.metroLabel2.TabIndex = 48;
+            this.metroLabel2.Text = "Tìm kiếm nhân viên";
+            // 
+            // findTextbox
+            // 
+            this.findTextbox.BorderRadius = 20;
+            this.findTextbox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.findTextbox.DefaultText = "";
+            this.findTextbox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.findTextbox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.findTextbox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.findTextbox.DisabledState.Parent = this.findTextbox;
+            this.findTextbox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.findTextbox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.findTextbox.FocusedState.Parent = this.findTextbox;
+            this.findTextbox.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.findTextbox.ForeColor = System.Drawing.Color.Black;
+            this.findTextbox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.findTextbox.HoverState.Parent = this.findTextbox;
+            this.findTextbox.Location = new System.Drawing.Point(191, 33);
+            this.findTextbox.Margin = new System.Windows.Forms.Padding(5);
+            this.findTextbox.Name = "findTextbox";
+            this.findTextbox.PasswordChar = '\0';
+            this.findTextbox.PlaceholderText = "";
+            this.findTextbox.SelectedText = "";
+            this.findTextbox.ShadowDecoration.Parent = this.findTextbox;
+            this.findTextbox.Size = new System.Drawing.Size(226, 30);
+            this.findTextbox.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.findTextbox.TabIndex = 47;
+            this.findTextbox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.findTextbox_KeyDown);
+            // 
+            // dropdownSort
+            // 
+            this.dropdownSort.BackColor = System.Drawing.Color.Transparent;
+            this.dropdownSort.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.dropdownSort.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.dropdownSort.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.dropdownSort.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.dropdownSort.FocusedState.Parent = this.dropdownSort;
+            this.dropdownSort.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dropdownSort.ForeColor = System.Drawing.Color.Black;
+            this.dropdownSort.HoverState.Parent = this.dropdownSort;
+            this.dropdownSort.ItemHeight = 30;
+            this.dropdownSort.Items.AddRange(new object[] {
+            "Doanh số tăng dần",
+            "Doanh số giảm dần"});
+            this.dropdownSort.ItemsAppearance.Parent = this.dropdownSort;
+            this.dropdownSort.Location = new System.Drawing.Point(591, 475);
+            this.dropdownSort.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.dropdownSort.Name = "dropdownSort";
+            this.dropdownSort.ShadowDecoration.Parent = this.dropdownSort;
+            this.dropdownSort.Size = new System.Drawing.Size(187, 36);
+            this.dropdownSort.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.dropdownSort.TabIndex = 50;
+            this.dropdownSort.SelectedIndexChanged += new System.EventHandler(this.dropdownSort_onItemSelected);
+            // 
             // UC_MonthlyStatistics
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.dropdownSort);
+            this.Controls.Add(this.buttonFind);
+            this.Controls.Add(this.metroLabel2);
+            this.Controls.Add(this.findTextbox);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lb_Count_Status);
             this.Controls.Add(this.label2);
@@ -194,7 +270,6 @@ namespace Coffee_Manager
             this.Controls.Add(this.cb_byValue);
             this.Controls.Add(this.cb_byQuanity);
             this.Controls.Add(this.lb_Total_Status);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.monthlyStatistic);
             this.Name = "UC_MonthlyStatistics";
             this.Size = new System.Drawing.Size(781, 540);
@@ -208,7 +283,6 @@ namespace Coffee_Manager
         #endregion
 
         private System.Windows.Forms.DataVisualization.Charting.Chart monthlyStatistic;
-        private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private System.Windows.Forms.Label lb_Total_Status;
         private System.Windows.Forms.CheckBox cb_byValue;
@@ -218,5 +292,9 @@ namespace Coffee_Manager
         private Guna.UI2.WinForms.Guna2DateTimePicker picker2;
         private System.Windows.Forms.Label lb_Count_Status;
         private System.Windows.Forms.Label label3;
+        private Guna.UI2.WinForms.Guna2Button buttonFind;
+        private MetroFramework.Controls.MetroLabel metroLabel2;
+        private Guna.UI2.WinForms.Guna2TextBox findTextbox;
+        private Guna.UI2.WinForms.Guna2ComboBox dropdownSort;
     }
 }

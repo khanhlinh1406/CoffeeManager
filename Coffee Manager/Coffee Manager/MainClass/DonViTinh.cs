@@ -12,6 +12,7 @@ namespace Coffee_Manager
     {
         string MaDVT;
         string TenDVT;
+        string LoaiDVT;
 
         Connect Connection = new Connect();
 
@@ -30,6 +31,14 @@ namespace Coffee_Manager
         {
             this.MaDVT = MaDVT;
             this.TenDVT = TenDVT;
+            this.LoaiDVT = "";
+        }
+
+        public DonViTinh(string MaDVT, string TenDVT, string LoaiDVT)
+        {
+            this.MaDVT = MaDVT;
+            this.TenDVT = TenDVT;
+            this.LoaiDVT = LoaiDVT;
         }
 
         public string MA_DVT
@@ -43,9 +52,82 @@ namespace Coffee_Manager
             get { return this.TenDVT; }
             set { this.TenDVT = value; }
         }
-        //public void Add() { };
-        //public void Update() { };
-        //public void Remove() { };
+
+        public string LOAI_DVT
+        {
+            get { return this.LoaiDVT; }
+            set { this.LoaiDVT = value; }
+        }
+        public void Add(string table)
+        {
+            if (table == "Mon")
+                table = "DVT_MON";
+            else
+                table = "DVT_NGUYENLIEU";
+            try
+            {
+                string sQuery = "insert into " + table + " values('" +
+                        MaDVT + "', N'" + TEN_DVT + "')";
+                this.Connection.OpenConnection();
+                SqlCommand command = this.Connection.CreateSQLCmd(sQuery);
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Đã xảy ra lỗi, vui lòng liên hệ đội ngũ phát triển!");
+            }
+            finally
+            {
+                this.Connection.CloseConnection();
+            }
+        }
+        public void Update(string table)
+        {
+            if (table == "Mon")
+                table = "DVT_MON";
+            else
+                table = "DVT_NGUYENLIEU";
+            try
+            {
+                string column = (table == "DVT_MON" ? "TenDVTM" : "TenDVTNL");
+                string column2 = (table == "DVT_MON" ? "MaDVTM" : "MaDVTNL");
+                string sQuery = "update " + table + " set " + column + " = N'" + TenDVT + "' where " + column2 + " = '" + MaDVT + "'";
+                this.Connection.OpenConnection();
+                SqlCommand command = this.Connection.CreateSQLCmd(sQuery);
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Đã xảy ra lỗi, vui lòng liên hệ đội ngũ phát triển!");
+            }
+            finally
+            {
+                this.Connection.CloseConnection();
+            }
+        }
+        public void Delete(string table)
+        {
+            if (table == "Mon")
+                table = "DVT_MON";
+            else
+                table = "DVT_NGUYENLIEU";
+            try
+            {
+                string column2 = (table == "DVT_MON" ? "MaDVTM" : "MaDVTNL");
+                string sQuery = "delete " + table + " where " + column2 + " = '" + MaDVT + "'";
+                this.Connection.OpenConnection();
+                SqlCommand command = this.Connection.CreateSQLCmd(sQuery);
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Đã xảy ra lỗi, vui lòng liên hệ đội ngũ phát triển!");
+            }
+            finally
+            {
+                this.Connection.CloseConnection();
+            }
+        }
 
         public string FindMaDVT()
         {

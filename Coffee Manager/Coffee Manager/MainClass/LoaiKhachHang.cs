@@ -92,5 +92,66 @@ namespace Coffee_Manager
                 this.connect.CloseConnection();
             }
         }
+
+        public void Add()
+        {
+            try
+            {
+                string sQuery = "insert into LOAIKHACHHANG values('" +
+                        MaLKH + "', N'" + TenLoaiKh + "', " + PTRAM_HD +
+                        ", " + PhTramHd + ", " + DiemLH + ")";
+                this.connect.OpenConnection();
+                SqlCommand command = this.connect.CreateSQLCmd(sQuery);
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Đã xảy ra lỗi, vui lòng liên hệ đội ngũ phát triển!");
+            }
+            finally
+            {
+                this.connect.CloseConnection();
+            }
+        }
+
+        public void Update()
+        {
+            try
+            {
+                string sQuery = "update LOAIKHACHHANG set LoaiKH = N'" + TenLoaiKh + "', PTramHD = "
+                    + PhTramGiam + ", PTgiam = " + PhTramHd + ", DiemLH" + DiemLH + " where MaLKH = '"
+                    + MaLKH + "'";
+                this.connect.OpenConnection();
+                SqlCommand command = this.connect.CreateSQLCmd(sQuery);
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Đã xảy ra lỗi, vui lòng liên hệ đội ngũ phát triển!");
+            }
+            finally
+            {
+                this.connect.CloseConnection();
+            }
+
+        }
+        public void Delete()
+        {
+            try
+            {
+                string sQuery = "delete LOAIKHACHHANG where MaLKH = '" + MaLKH + "'";
+                this.connect.OpenConnection();
+                SqlCommand command = this.connect.CreateSQLCmd(sQuery);
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Đã xảy ra lỗi, vui lòng liên hệ đội ngũ phát triển!");
+            }
+            finally
+            {
+                this.connect.CloseConnection();
+            }
+        }
     }
 }

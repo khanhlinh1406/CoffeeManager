@@ -40,11 +40,23 @@
     <Reference Include="BouncyCastle.Crypto, Version=1.8.6.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
       <HintPath>..\packages\BouncyCastle.1.8.6.1\lib\BouncyCastle.Crypto.dll</HintPath>
     </Reference>
+    <Reference Include="Bunifu_UI_v1.52 %281%29">
+      <HintPath>..\..\..\..\..\Downloads\Bunifu_UI_v1.52 (1).dll</HintPath>
+    </Reference>
     <Reference Include="Guna.UI2">
       <HintPath>C:\Users\User\Downloads\Guna.UI2.dll</HintPath>
     </Reference>
     <Reference Include="itextsharp, Version=5.5.13.2, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
       <HintPath>..\packages\iTextSharp.5.5.13.2\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
@@ -69,6 +81,12 @@
     </Compile>
     <Compile Include="AIUserControl\UC_CustomerManager.Designer.cs">
       <DependentUpon>UC_CustomerManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AIUserControl\UC_Setting.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AIUserControl\UC_Setting.Designer.cs">
+      <DependentUpon>UC_Setting.cs</DependentUpon>
     </Compile>
     <Compile Include="AIUserControl\UC_StaffManager.cs">
       <SubType>UserControl</SubType>
@@ -163,6 +181,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AIUserControl\UC_CustomerManager.resx">
       <DependentUpon>UC_CustomerManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AIUserControl\UC_Setting.resx">
+      <DependentUpon>UC_Setting.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AIUserControl\UC_StaffManager.resx">
       <DependentUpon>UC_StaffManager.cs</DependentUpon>

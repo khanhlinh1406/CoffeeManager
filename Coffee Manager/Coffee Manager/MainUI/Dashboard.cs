@@ -114,10 +114,11 @@ namespace Coffee_Manager
             uC_RemoveItem1.Visible = false;
             uC_Material1.Visible = false;
             uC_ReceivedNote1.Visible = false;
-            uC_MonthlyStatistics1.Visible = false;
-            uC_BeverageStatistics1.Visible = false;
+            uC_MonthlyStatistics2.Visible = false;
+            uC_BeverageStatistics2.Visible = false;
             uC_StaffManager1.Visible = false;
             uC_CustomerManager1.Visible = false;
+            uC_Setting1.Visible = false;
         }
 
         private void btnPlaceOrder_Click(object sender, EventArgs e)
@@ -156,14 +157,14 @@ namespace Coffee_Manager
 
         private void btnMonthly_Click(object sender, EventArgs e)
         {
-            uC_MonthlyStatistics1.Visible = true;
-            uC_MonthlyStatistics1.BringToFront();
+            uC_MonthlyStatistics2.Visible = true;
+            uC_MonthlyStatistics2.BringToFront();
         }
 
         private void btnBeverage_Click(object sender, EventArgs e)
         {
-            uC_BeverageStatistics1.Visible = true;
-            uC_BeverageStatistics1.BringToFront();
+            uC_BeverageStatistics2.Visible = true;
+            uC_BeverageStatistics2.BringToFront();
         }
 
         private void btnStaff_Click(object sender, EventArgs e)
@@ -200,6 +201,18 @@ namespace Coffee_Manager
             Login lg = new Login();
             this.Hide();
             lg.Show();
+        }
+
+        private void btnSetting_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void guna2GradientButton1_Click(object sender, EventArgs e)
+        {
+            uC_Setting1.Visible = true;
+            uC_Setting1.BringToFront();
+            uC_Setting1.UC_Setting_Load(sender, e);
         }
     }
 }
