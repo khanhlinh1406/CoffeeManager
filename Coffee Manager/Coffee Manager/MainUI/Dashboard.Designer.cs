@@ -51,6 +51,17 @@ namespace Coffee_Manager
             this.btnUpdateItem = new Guna.UI2.WinForms.Guna2Button();
             this.btnAddItem = new Guna.UI2.WinForms.Guna2Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.uC_PlaceOrder1 = new Coffee_Manager.UC_PlaceOrder();
+            this.uC_CustomerManager1 = new Coffee_Manager.UC_CustomerManager();
+            this.uC_StaffManager1 = new Coffee_Manager.UC_StaffManager();
+            this.uC_BeverageStatistics1 = new Coffee_Manager.UC_BeverageStatistics();
+            this.uC_MonthlyStatistics1 = new Coffee_Manager.UC_MonthlyStatistics();
+            this.uC_ReceivedNote1 = new Coffee_Manager.UC_ReceivedNote();
+            this.uC_Material1 = new Coffee_Manager.UC_Material();
+            this.uC_RemoveItem1 = new Coffee_Manager.UC_RemoveItem();
+            this.uC_UpdateItems1 = new Coffee_Manager.UC_UpdateItems();
+            this.uC_AddItems1 = new Coffee_Manager.UC_AddItems();
+            this.uC_Welcome1 = new Coffee_Manager.UC_Welcome();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse3 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
@@ -76,17 +87,6 @@ namespace Coffee_Manager
             this.guna2CustomGradientPanel4 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.label7 = new System.Windows.Forms.Label();
             this.btnLogOutStaff = new System.Windows.Forms.LinkLabel();
-            this.uC_PlaceOrder1 = new Coffee_Manager.UC_PlaceOrder();
-            this.uC_CustomerManager1 = new Coffee_Manager.UC_CustomerManager();
-            this.uC_StaffManager1 = new Coffee_Manager.UC_StaffManager();
-            this.uC_BeverageStatistics1 = new Coffee_Manager.UC_BeverageStatistics();
-            this.uC_MonthlyStatistics1 = new Coffee_Manager.UC_MonthlyStatistics();
-            this.uC_ReceivedNote1 = new Coffee_Manager.UC_ReceivedNote();
-            this.uC_Material1 = new Coffee_Manager.UC_Material();
-            this.uC_RemoveItem1 = new Coffee_Manager.UC_RemoveItem();
-            this.uC_UpdateItems1 = new Coffee_Manager.UC_UpdateItems();
-            this.uC_AddItems1 = new Coffee_Manager.UC_AddItems();
-            this.uC_Welcome1 = new Coffee_Manager.UC_Welcome();
             this.panel1.SuspendLayout();
             this.panelShop.SuspendLayout();
             this.panelManager.SuspendLayout();
@@ -453,6 +453,109 @@ namespace Coffee_Manager
             this.panel2.Size = new System.Drawing.Size(783, 548);
             this.panel2.TabIndex = 1;
             // 
+            // uC_PlaceOrder1
+            // 
+            this.uC_PlaceOrder1.BackColor = System.Drawing.Color.White;
+            this.uC_PlaceOrder1.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uC_PlaceOrder1.Location = new System.Drawing.Point(0, 0);
+            this.uC_PlaceOrder1.Margin = new System.Windows.Forms.Padding(4);
+            this.uC_PlaceOrder1.Name = "uC_PlaceOrder1";
+            this.uC_PlaceOrder1.Size = new System.Drawing.Size(781, 562);
+            this.uC_PlaceOrder1.TabIndex = 4;
+            this.uC_PlaceOrder1.Visible = false;
+            // 
+            // uC_CustomerManager1
+            // 
+            this.uC_CustomerManager1.BackColor = System.Drawing.Color.White;
+            this.uC_CustomerManager1.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uC_CustomerManager1.Location = new System.Drawing.Point(-2, 4);
+            this.uC_CustomerManager1.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
+            this.uC_CustomerManager1.Name = "uC_CustomerManager1";
+            this.uC_CustomerManager1.Size = new System.Drawing.Size(783, 548);
+            this.uC_CustomerManager1.TabIndex = 12;
+            // 
+            // uC_StaffManager1
+            // 
+            this.uC_StaffManager1.BackColor = System.Drawing.Color.White;
+            this.uC_StaffManager1.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uC_StaffManager1.Location = new System.Drawing.Point(-1, 0);
+            this.uC_StaffManager1.Name = "uC_StaffManager1";
+            this.uC_StaffManager1.Size = new System.Drawing.Size(783, 548);
+            this.uC_StaffManager1.TabIndex = 11;
+            // 
+            // uC_BeverageStatistics1
+            // 
+            this.uC_BeverageStatistics1.BackColor = System.Drawing.Color.White;
+            this.uC_BeverageStatistics1.Location = new System.Drawing.Point(-1, -3);
+            this.uC_BeverageStatistics1.Name = "uC_BeverageStatistics1";
+            this.uC_BeverageStatistics1.Size = new System.Drawing.Size(795, 551);
+            this.uC_BeverageStatistics1.TabIndex = 10;
+            // 
+            // uC_MonthlyStatistics1
+            // 
+            this.uC_MonthlyStatistics1.BackColor = System.Drawing.Color.White;
+            this.uC_MonthlyStatistics1.Location = new System.Drawing.Point(-1, -3);
+            this.uC_MonthlyStatistics1.Name = "uC_MonthlyStatistics1";
+            this.uC_MonthlyStatistics1.Size = new System.Drawing.Size(781, 553);
+            this.uC_MonthlyStatistics1.TabIndex = 9;
+            // 
+            // uC_ReceivedNote1
+            // 
+            this.uC_ReceivedNote1.BackColor = System.Drawing.Color.White;
+            this.uC_ReceivedNote1.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uC_ReceivedNote1.Location = new System.Drawing.Point(-6, -2);
+            this.uC_ReceivedNote1.Name = "uC_ReceivedNote1";
+            this.uC_ReceivedNote1.Size = new System.Drawing.Size(795, 552);
+            this.uC_ReceivedNote1.TabIndex = 8;
+            // 
+            // uC_Material1
+            // 
+            this.uC_Material1.BackColor = System.Drawing.Color.White;
+            this.uC_Material1.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uC_Material1.Location = new System.Drawing.Point(-12, -3);
+            this.uC_Material1.Name = "uC_Material1";
+            this.uC_Material1.Size = new System.Drawing.Size(792, 553);
+            this.uC_Material1.TabIndex = 7;
+            // 
+            // uC_RemoveItem1
+            // 
+            this.uC_RemoveItem1.BackColor = System.Drawing.Color.White;
+            this.uC_RemoveItem1.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uC_RemoveItem1.Location = new System.Drawing.Point(2, 4);
+            this.uC_RemoveItem1.Margin = new System.Windows.Forms.Padding(2);
+            this.uC_RemoveItem1.Name = "uC_RemoveItem1";
+            this.uC_RemoveItem1.Size = new System.Drawing.Size(778, 543);
+            this.uC_RemoveItem1.TabIndex = 6;
+            // 
+            // uC_UpdateItems1
+            // 
+            this.uC_UpdateItems1.BackColor = System.Drawing.Color.White;
+            this.uC_UpdateItems1.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uC_UpdateItems1.Location = new System.Drawing.Point(0, -2);
+            this.uC_UpdateItems1.Margin = new System.Windows.Forms.Padding(4);
+            this.uC_UpdateItems1.Name = "uC_UpdateItems1";
+            this.uC_UpdateItems1.Size = new System.Drawing.Size(783, 552);
+            this.uC_UpdateItems1.TabIndex = 5;
+            this.uC_UpdateItems1.Visible = false;
+            // 
+            // uC_AddItems1
+            // 
+            this.uC_AddItems1.Location = new System.Drawing.Point(0, -3);
+            this.uC_AddItems1.Margin = new System.Windows.Forms.Padding(4);
+            this.uC_AddItems1.Name = "uC_AddItems1";
+            this.uC_AddItems1.Size = new System.Drawing.Size(934, 550);
+            this.uC_AddItems1.TabIndex = 3;
+            this.uC_AddItems1.Visible = false;
+            // 
+            // uC_Welcome1
+            // 
+            this.uC_Welcome1.BackColor = System.Drawing.Color.White;
+            this.uC_Welcome1.Location = new System.Drawing.Point(3, -3);
+            this.uC_Welcome1.Margin = new System.Windows.Forms.Padding(2);
+            this.uC_Welcome1.Name = "uC_Welcome1";
+            this.uC_Welcome1.Size = new System.Drawing.Size(766, 498);
+            this.uC_Welcome1.TabIndex = 0;
+            // 
             // guna2Elipse1
             // 
             this.guna2Elipse1.BorderRadius = 30;
@@ -687,101 +790,6 @@ namespace Coffee_Manager
             this.btnLogOutStaff.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnLogOutStaff.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.btnLogOutStaff_LinkClicked);
             // 
-            // uC_PlaceOrder1
-            // 
-            this.uC_PlaceOrder1.BackColor = System.Drawing.Color.White;
-            this.uC_PlaceOrder1.Location = new System.Drawing.Point(0, 0);
-            this.uC_PlaceOrder1.Margin = new System.Windows.Forms.Padding(4);
-            this.uC_PlaceOrder1.Name = "uC_PlaceOrder1";
-            this.uC_PlaceOrder1.Size = new System.Drawing.Size(781, 562);
-            this.uC_PlaceOrder1.TabIndex = 4;
-            this.uC_PlaceOrder1.Visible = false;
-            // 
-            // uC_CustomerManager1
-            // 
-            this.uC_CustomerManager1.BackColor = System.Drawing.Color.White;
-            this.uC_CustomerManager1.Location = new System.Drawing.Point(-2, 4);
-            this.uC_CustomerManager1.Name = "uC_CustomerManager1";
-            this.uC_CustomerManager1.Size = new System.Drawing.Size(783, 548);
-            this.uC_CustomerManager1.TabIndex = 12;
-            // 
-            // uC_StaffManager1
-            // 
-            this.uC_StaffManager1.BackColor = System.Drawing.Color.White;
-            this.uC_StaffManager1.Location = new System.Drawing.Point(-1, 0);
-            this.uC_StaffManager1.Name = "uC_StaffManager1";
-            this.uC_StaffManager1.Size = new System.Drawing.Size(783, 548);
-            this.uC_StaffManager1.TabIndex = 11;
-            // 
-            // uC_BeverageStatistics1
-            // 
-            this.uC_BeverageStatistics1.BackColor = System.Drawing.Color.White;
-            this.uC_BeverageStatistics1.Location = new System.Drawing.Point(-1, -3);
-            this.uC_BeverageStatistics1.Name = "uC_BeverageStatistics1";
-            this.uC_BeverageStatistics1.Size = new System.Drawing.Size(795, 551);
-            this.uC_BeverageStatistics1.TabIndex = 10;
-            // 
-            // uC_MonthlyStatistics1
-            // 
-            this.uC_MonthlyStatistics1.BackColor = System.Drawing.Color.White;
-            this.uC_MonthlyStatistics1.Location = new System.Drawing.Point(-1, -3);
-            this.uC_MonthlyStatistics1.Name = "uC_MonthlyStatistics1";
-            this.uC_MonthlyStatistics1.Size = new System.Drawing.Size(781, 553);
-            this.uC_MonthlyStatistics1.TabIndex = 9;
-            // 
-            // uC_ReceivedNote1
-            // 
-            this.uC_ReceivedNote1.BackColor = System.Drawing.Color.White;
-            this.uC_ReceivedNote1.Location = new System.Drawing.Point(-6, -2);
-            this.uC_ReceivedNote1.Name = "uC_ReceivedNote1";
-            this.uC_ReceivedNote1.Size = new System.Drawing.Size(795, 552);
-            this.uC_ReceivedNote1.TabIndex = 8;
-            // 
-            // uC_Material1
-            // 
-            this.uC_Material1.BackColor = System.Drawing.Color.White;
-            this.uC_Material1.Location = new System.Drawing.Point(-12, -3);
-            this.uC_Material1.Name = "uC_Material1";
-            this.uC_Material1.Size = new System.Drawing.Size(792, 553);
-            this.uC_Material1.TabIndex = 7;
-            // 
-            // uC_RemoveItem1
-            // 
-            this.uC_RemoveItem1.BackColor = System.Drawing.Color.White;
-            this.uC_RemoveItem1.Location = new System.Drawing.Point(2, 4);
-            this.uC_RemoveItem1.Margin = new System.Windows.Forms.Padding(2);
-            this.uC_RemoveItem1.Name = "uC_RemoveItem1";
-            this.uC_RemoveItem1.Size = new System.Drawing.Size(778, 543);
-            this.uC_RemoveItem1.TabIndex = 6;
-            // 
-            // uC_UpdateItems1
-            // 
-            this.uC_UpdateItems1.BackColor = System.Drawing.Color.White;
-            this.uC_UpdateItems1.Location = new System.Drawing.Point(0, -2);
-            this.uC_UpdateItems1.Margin = new System.Windows.Forms.Padding(4);
-            this.uC_UpdateItems1.Name = "uC_UpdateItems1";
-            this.uC_UpdateItems1.Size = new System.Drawing.Size(783, 552);
-            this.uC_UpdateItems1.TabIndex = 5;
-            this.uC_UpdateItems1.Visible = false;
-            // 
-            // uC_AddItems1
-            // 
-            this.uC_AddItems1.Location = new System.Drawing.Point(0, -3);
-            this.uC_AddItems1.Margin = new System.Windows.Forms.Padding(4);
-            this.uC_AddItems1.Name = "uC_AddItems1";
-            this.uC_AddItems1.Size = new System.Drawing.Size(934, 550);
-            this.uC_AddItems1.TabIndex = 3;
-            this.uC_AddItems1.Visible = false;
-            // 
-            // uC_Welcome1
-            // 
-            this.uC_Welcome1.BackColor = System.Drawing.Color.White;
-            this.uC_Welcome1.Location = new System.Drawing.Point(3, -3);
-            this.uC_Welcome1.Margin = new System.Windows.Forms.Padding(2);
-            this.uC_Welcome1.Name = "uC_Welcome1";
-            this.uC_Welcome1.Size = new System.Drawing.Size(766, 498);
-            this.uC_Welcome1.TabIndex = 0;
-            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -795,7 +803,7 @@ namespace Coffee_Manager
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Dashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form2";
+            this.Text = "Dashboard";
             this.Load += new System.EventHandler(this.Dashboard_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Dashboard_MouseDown);
             this.panel1.ResumeLayout(false);

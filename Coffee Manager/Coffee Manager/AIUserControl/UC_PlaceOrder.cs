@@ -23,6 +23,7 @@ namespace Coffee_Manager
         List<KhachHang> danhSachKhachHang = new List<KhachHang>();
         List<string> danhSachMaMon = new List<string>();
         List<int> danhSachSoLuong = new List<int>();
+        List<int> danhSachDonGia = new List<int>();
         NhanVien nhanVien = new NhanVien();
         KhachHang khachHang = new KhachHang();
         int totalCost = 0, discount = 0, indexMon = 0, bonusPoint = 0;
@@ -284,6 +285,7 @@ namespace Coffee_Manager
                 bonusPoint = int.Parse(Math.Round(khachHang.LOAI_KH.PTRAM_HD * ((totalCost + discount) / 1000)).ToString());
                 khachHang.DIEM += bonusPoint;
                 khachHang.Update();
+                khachHang.UpdateType();
 
                 getSoLuongMoiMon();
                 HoaDon hoaDon = new HoaDon();
@@ -296,6 +298,7 @@ namespace Coffee_Manager
                 hoaDon.TRI_GIA = totalCost;
                 hoaDon.DS_MON = danhSachMaMon;
                 hoaDon.SO_LUONG = danhSachSoLuong;
+                hoaDon.DON_GIA = danhSachDonGia;
                 hoaDon.MA_KH = khachHang.MA_KH;
                 hoaDon.SaveHoaDon();
                 hoaDon.SaveChiTietHoaDon();
@@ -313,6 +316,7 @@ namespace Coffee_Manager
             foreach (DataGridViewRow row in orderGridView.Rows)
             {
                 danhSachSoLuong.Add(int.Parse(row.Cells[2].Value.ToString()));
+                danhSachDonGia.Add(int.Parse(row.Cells[3].Value.ToString()) / int.Parse(row.Cells[2].Value.ToString()));
             }
         }
 

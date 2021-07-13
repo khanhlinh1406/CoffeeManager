@@ -34,6 +34,7 @@ namespace Coffee_Manager
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_CustomerManager));
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.btnRemove = new Guna.UI2.WinForms.Guna2Button();
             this.btnUpdate = new Guna.UI2.WinForms.Guna2Button();
@@ -54,6 +55,7 @@ namespace Coffee_Manager
             this.btnExit = new Guna.UI2.WinForms.Guna2Button();
             this.point = new System.Windows.Forms.Label();
             this.membership = new System.Windows.Forms.Label();
+            this.btnRefreshData = new Guna.UI2.WinForms.Guna2CircleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gridview)).BeginInit();
             this.SuspendLayout();
             // 
@@ -377,7 +379,7 @@ namespace Coffee_Manager
             this.tbSearch.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbSearch.HoverState.Parent = this.tbSearch;
-            this.tbSearch.Location = new System.Drawing.Point(470, 11);
+            this.tbSearch.Location = new System.Drawing.Point(470, 19);
             this.tbSearch.Margin = new System.Windows.Forms.Padding(5);
             this.tbSearch.Name = "tbSearch";
             this.tbSearch.PasswordChar = '\0';
@@ -435,11 +437,29 @@ namespace Coffee_Manager
             this.membership.Text = "Thành viên";
             this.membership.UseMnemonic = false;
             // 
+            // btnRefreshData
+            // 
+            this.btnRefreshData.CheckedState.Parent = this.btnRefreshData;
+            this.btnRefreshData.CustomImages.Parent = this.btnRefreshData;
+            this.btnRefreshData.FillColor = System.Drawing.Color.White;
+            this.btnRefreshData.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnRefreshData.ForeColor = System.Drawing.Color.White;
+            this.btnRefreshData.HoverState.Parent = this.btnRefreshData;
+            this.btnRefreshData.Image = ((System.Drawing.Image)(resources.GetObject("btnRefreshData.Image")));
+            this.btnRefreshData.Location = new System.Drawing.Point(416, 27);
+            this.btnRefreshData.Name = "btnRefreshData";
+            this.btnRefreshData.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.btnRefreshData.ShadowDecoration.Parent = this.btnRefreshData;
+            this.btnRefreshData.Size = new System.Drawing.Size(33, 32);
+            this.btnRefreshData.TabIndex = 62;
+            this.btnRefreshData.Click += new System.EventHandler(this.btnRefreshData_Click);
+            // 
             // UC_CustomerManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.btnRefreshData);
             this.Controls.Add(this.membership);
             this.Controls.Add(this.point);
             this.Controls.Add(this.btnExit);
@@ -492,5 +512,6 @@ namespace Coffee_Manager
         private Guna.UI2.WinForms.Guna2Button btnExit;
         private System.Windows.Forms.Label point;
         private System.Windows.Forms.Label membership;
+        private Guna.UI2.WinForms.Guna2CircleButton btnRefreshData;
     }
 }

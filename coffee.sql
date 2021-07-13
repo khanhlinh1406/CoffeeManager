@@ -96,8 +96,9 @@ CREATE TABLE HOADON
 CREATE TABLE CT_HOADON
 (
 	MaHD varchar(10), 
-	MaMon varchar(10), 
-	SoLuong int
+	MaMon varchar(10),
+	SoLuong int,
+	DonGia int,
 	PRIMARY KEY(MaHD, MaMon),
 	CONSTRAINT fk_cthd_hd FOREIGN KEY (MaHD) REFERENCES HOADON (MaHD),
 	CONSTRAINT fk_cthd_mon FOREIGN KEY (MaMon) REFERENCES MON (MaMon)

@@ -32,7 +32,6 @@ namespace Coffee_Manager
         {
             try
             {
-
                 string find = "SELECT MaKH, TenKH, NgSinh, SoDT, DiaChi, NgDK, diem, LoaiKH FROM KHACHHANG KH join LOAIKHACHHANG L on KH.MaLKH = L.MaLKH";
                 this.Connection.OpenConnection();
                 SqlCommand command = this.Connection.CreateSQLCmd(find);
@@ -202,6 +201,12 @@ namespace Coffee_Manager
                 return true;
             MessageBox.Show("Dữ liệu không hợp lệ, ngày sinh phải trước ngày đăng kí", "Sai dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Error);
             return false;
+        }
+
+        private void btnRefreshData_Click(object sender, EventArgs e)
+        {
+            //gridview.Update();
+            LoadData();
         }
     }
 }

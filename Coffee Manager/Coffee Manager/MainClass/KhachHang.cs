@@ -213,5 +213,86 @@ namespace Coffee_Manager
                 this.Connection.CloseConnection();
             }
         }
+
+        public bool CheckPointToUpType()
+        {
+            try
+            {
+                bool isAbleToUpType = false;
+                string nextType = GetNextCustomerType(this.loaiKH.Ma_LKH);
+                string sql = "select DiemLH " +
+                                "from LOAIKHACHHANG " +
+                                "where MaLKH = '" + nextType + "'";
+                this.Connection.OpenConnection();
+                SqlCommand command = this.Connection.CreateSQLCmd(sql);
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.HasRows)
+                {
+                    if (reader.Read() == false) break;
+                    int diemLh = reader.GetInt32(0);
+                    if (this.Diem >= diemLh)
+                    {
+                        isAbleToUpType = true;
+                    }
+                }
+                reader.Close();
+                if (isAbleToUpType)
+                {
+                    this.loaiKH.Ma_LKH = GetNextCustomerType(this.loaiKH.Ma_LKH);
+                    return true;
+                }
+                return false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Đã xảy ra lỗi, vui lòng liên hệ đội ngũ phát triển!");
+                return false;
+            }
+            finally
+            {
+                this.Connection.CloseConnection();
+            }
+        }
+
+        public void UpdateType()
+        {
+            if (CheckPointToUpType())
+            {
+                try
+                {
+                    string sql = "update KHACHHANG set MaLKH = '" + this.LOAI_KH.Ma_LKH + "' where MaKH = '" + this.MaKH + "'";
+
+                    this.Connection.OpenConnection();
+                    SqlCommand command = this.Connection.CreateSQLCmd(sql);
+                    command.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Đã xảy ra lỗi, vui lòng liên hệ đội ngũ phát triển!");
+
+                }
+                finally
+                {
+                    this.Connection.CloseConnection();
+                }
+            }
+        }
+
+        private string GetNextCustomerType(string type)
+        {
+            if (type.Equals("bronze"))
+            {
+                return "silver";
+            }
+            if (type.Equals("silver"))
+            {
+                return "gold";
+            }
+            if (type.Equals("gold"))
+            {
+                return "platinum";
+            }
+            return "platinum";
+        }
     }
 }
