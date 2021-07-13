@@ -792,7 +792,7 @@ namespace Coffee_Manager.AIUserControl
             tbxIdStore.Text = "";
             tbxNameStore.Enabled = true;
             tbxNameStore.Text = "";
-            tbxType.Enabled = false;
+            tbxType.Enabled = true;
             tbxType.Text = "";
 
             btnAddCV.Visible = false;
