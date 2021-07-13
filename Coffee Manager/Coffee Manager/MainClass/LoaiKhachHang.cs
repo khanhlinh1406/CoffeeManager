@@ -99,8 +99,8 @@ namespace Coffee_Manager
             try
             {
                 string sQuery = "insert into LOAIKHACHHANG values('" +
-                        MaLKH + "', N'" + TenLoaiKh + "', " + PTRAM_HD +
-                        ", " + PhTramHd + ", " + DiemLH + ")";
+                        MaLKH + "', N'" + TenLoaiKh + "', " + PhTramHd +
+                        ", " + PhTramGiam + ", " + DiemLH + ")";
                 this.connect.OpenConnection();
                 SqlCommand command = this.connect.CreateSQLCmd(sQuery);
                 command.ExecuteNonQuery();
@@ -159,7 +159,7 @@ namespace Coffee_Manager
         {
             try
             {
-                string sQuery = "select MaLKH from LOAIKHACHHANG where MaCV = '" +
+                string sQuery = "select MaLKH from LOAIKHACHHANG where MaLKH = '" +
                                 MaLKH + "'";
                 this.connect.OpenConnection();
                 SqlCommand command = this.connect.CreateSQLCmd(sQuery);

@@ -66,11 +66,11 @@ namespace Coffee_Manager.AIUserControl
                 string sQuery = "select l.MaLKH, l.LoaiKH, l.PTgiam, l.PTramHD, l.DiemLH, count(MaKH) as sl " +
                                 "from LOAIKHACHHANG l, KHACHHANG kh " +
                                 "where l.MaLKH = kh.MaLKH " +
-                                "group by l.MaLKH, l.LoaiKH, l.DiemLH, l.PTgiam, l.PTramHD union " +
-                                "select l.MaLKH, l.LoaiKH, l.DiemLH, l.PTgiam, l.PTramHD, '0' as sl " +
+                                "group by l.MaLKH, l.LoaiKH, l.PTgiam, l.PTramHD, l.DiemLH union " +
+                                "select l.MaLKH, l.LoaiKH, l.PTgiam, l.PTramHD, l.DiemLH, '0' as sl " +
                                 "from LOAIKHACHHANG l " +
                                 "where l.MaLKH not in (select MaLKH from KHACHHANG) " +
-                                "group by l.MaLKH, l.LoaiKH, l.DiemLH, l.PTgiam, l.PTramHD";
+                                "group by l.MaLKH, l.LoaiKH, l.PTgiam, l.PTramHD, l.DiemLH";
                 this.Connection.OpenConnection();
                 SqlCommand command = this.Connection.CreateSQLCmd(sQuery);
                 SqlDataReader reader = command.ExecuteReader();
@@ -79,6 +79,12 @@ namespace Coffee_Manager.AIUserControl
                 {
                     if (reader.Read() == false) break;
 
+                    reader.GetString(0);
+                    reader.GetString(1);
+                    reader.GetDouble(2).ToString();
+                    reader.GetDouble(3).ToString();
+                    reader.GetInt32(4).ToString();
+                    reader.GetInt32(5).ToString();
 
                     listViewLoaiKH.Rows.Add(
                         count.ToString(),
@@ -86,7 +92,7 @@ namespace Coffee_Manager.AIUserControl
                         reader.GetString(1),
                         reader.GetDouble(2).ToString(),
                         reader.GetDouble(3).ToString(),
-                        reader.GetDouble(4).ToString(),
+                        reader.GetInt32(4).ToString(),
                         reader.GetInt32(5).ToString()
                         );
 
@@ -95,7 +101,7 @@ namespace Coffee_Manager.AIUserControl
                         reader.GetString(1),
                         reader.GetDouble(2),
                         reader.GetDouble(3),
-                        (int) reader.GetDouble(4)
+                        reader.GetInt32(4)
                         ));
                     listCountLoaiKH.Add(reader.GetInt32(5));
 
@@ -162,9 +168,15 @@ namespace Coffee_Manager.AIUserControl
                     else
                         loaiKH.Update();
                 }
-                catch (InvalidCastException ex)
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Định dạng không đúng, vui lòng nhập lại!");
+                    if (ex is FormatException || ex is InvalidCastException)
+                    {
+                        MessageBox.Show("Định dạng không đúng, vui lòng nhập lại!");
+                        return;
+                    }
+
+                    throw;
                 }
             }
             if (IsAddingCustomer)
@@ -175,7 +187,7 @@ namespace Coffee_Manager.AIUserControl
                     LoaiKhachHang loaiKH = new LoaiKhachHang(
                         tbxRankId.Text,
                         tbx_RankName.Text,
-                        double.Parse(tbxRankPoint.Text),
+                        double.Parse(tbxBonusPer.Text),
                         double.Parse(tbxRankDiscountPer.Text),
                         int.Parse(tbxRankPoint.Text));
                     if (loaiKH.CheckMaLKH())
@@ -188,11 +200,24 @@ namespace Coffee_Manager.AIUserControl
                     else
                         loaiKH.Add();
                 }
-                catch (InvalidCastException ex)
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Định dạng không đúng, vui lòng nhập lại!");
+                    if (ex is FormatException || ex is InvalidCastException)
+                    {
+                        MessageBox.Show("Định dạng không đúng, vui lòng nhập lại!");
+                        return;
+                    }
+
+                    throw;
                 }
             }
+
+            btnCustomerAdd.Visible = true;
+            btnCustomerEdit.Visible = true;
+            btnCustomerDelete.Visible = true;
+            btnCustomerSave.Visible = false;
+            btnCustomerCancel.Visible = false;
+            
 
             tbxRankId.Enabled = false;
             tbxRankId.Text = "";
@@ -255,15 +280,23 @@ namespace Coffee_Manager.AIUserControl
                         LoaiKhachHang loaiKH = new LoaiKhachHang(
                             tbxRankId.Text,
                             tbx_RankName.Text,
-                            double.Parse(tbxRankPoint.Text),
+                            double.Parse(tbxBonusPer.Text),
                             double.Parse(tbxRankDiscountPer.Text),
                             int.Parse(tbxRankPoint.Text));
                         loaiKH.Delete();
                     }
-                    catch (InvalidCastException ex)
+                    catch (Exception ex)
                     {
-                        MessageBox.Show("Định dạng không đúng, vui lòng nhập lại!");
+                        if (ex is FormatException || ex is InvalidCastException)
+                        {
+                            MessageBox.Show("Đã có lỗi xảy ra!");
+                            return;
+                        }
+
+                        throw;
                     }
+
+                    LoadCustomer();
                 }
             }
         }
@@ -324,6 +357,7 @@ namespace Coffee_Manager.AIUserControl
             tbxRankId.Focus();
         }
 
+        private void tbxBonusPer_KeyDown(object sender, EventArgs e) { }
         #endregion
 
         #region Store
@@ -441,9 +475,15 @@ namespace Coffee_Manager.AIUserControl
                         } else 
                             dvt.Update(tbxType.Text);
                     }
-                    catch (InvalidCastException ex)
+                    catch (Exception ex)
                     {
-                        MessageBox.Show("Định dạng không đúng, vui lòng nhập lại!");
+                        if (ex is FormatException || ex is InvalidCastException)
+                        {
+                            MessageBox.Show("Định dạng không đúng, vui lòng nhập lại!");
+                            return;
+                        }
+
+                        throw;
                     }
                 }
                 else if (lbIdStore.Text == "Mã chức vụ")
@@ -467,9 +507,15 @@ namespace Coffee_Manager.AIUserControl
                         else
                             cv.Update();
                     }
-                    catch (InvalidCastException ex)
+                    catch (Exception ex)
                     {
-                        MessageBox.Show("Định dạng không đúng, vui lòng nhập lại!");
+                        if (ex is FormatException || ex is InvalidCastException)
+                        {
+                            MessageBox.Show("Định dạng không đúng, vui lòng nhập lại!");
+                            return;
+                        }
+
+                        throw;
                     }
                 }
             }
@@ -493,9 +539,15 @@ namespace Coffee_Manager.AIUserControl
                         else
                             dvt.Add(tbxType.Text);
                     }
-                    catch (InvalidCastException ex)
+                    catch(Exception ex)
                     {
-                        MessageBox.Show("Định dạng không đúng, vui lòng nhập lại!");
+                        if (ex is FormatException || ex is InvalidCastException)
+                        {
+                            MessageBox.Show("Định dạng không đúng, vui lòng nhập lại!");
+                            return;
+                        }
+
+                        throw;
                     }
                 }
                 else if (lbIdStore.Text == "Mã chức vụ")
@@ -516,9 +568,15 @@ namespace Coffee_Manager.AIUserControl
                         else
                             cv.Add();
                     }
-                    catch (InvalidCastException ex)
+                    catch (Exception ex)
                     {
-                        MessageBox.Show("Định dạng không đúng, vui lòng nhập lại!");
+                        if (ex is FormatException || ex is InvalidCastException)
+                        {
+                            MessageBox.Show("Định dạng không đúng, vui lòng nhập lại!");
+                            return;
+                        }
+
+                        throw;
                     }
                 }
             }
@@ -620,9 +678,15 @@ namespace Coffee_Manager.AIUserControl
                                tbxNameStore.Text);
                             cv.Delete();
                         }
-                        catch (InvalidCastException ex)
+                        catch (Exception ex)
                         {
-                            MessageBox.Show("Định dạng không đúng, vui lòng nhập lại!");
+                            if (ex is FormatException || ex is InvalidCastException)
+                            {
+                                MessageBox.Show("Định dạng không đúng, vui lòng nhập lại!");
+                                return;
+                            }
+
+                            throw;
                         }
 
                         LoadRoll();
@@ -641,9 +705,15 @@ namespace Coffee_Manager.AIUserControl
                             } else 
                                 dvt.Delete(listViewDVT.SelectedRows[0].Cells[3].Value.ToString());
                         }
-                        catch (InvalidCastException ex)
+                        catch (Exception ex)
                         {
-                            MessageBox.Show("Định dạng không đúng, vui lòng nhập lại!");
+                            if (ex is FormatException || ex is InvalidCastException)
+                            {
+                                MessageBox.Show("Định dạng không đúng, vui lòng nhập lại!");
+                                return;
+                            }
+
+                            throw;
                         }
 
                         LoadUnit();

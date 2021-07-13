@@ -478,7 +478,7 @@ namespace Coffee_Manager
             // uC_MonthlyStatistics2
             // 
             this.uC_MonthlyStatistics2.BackColor = System.Drawing.Color.White;
-            this.uC_MonthlyStatistics2.Location = new System.Drawing.Point(0, 0);
+            this.uC_MonthlyStatistics2.Location = new System.Drawing.Point(-1, -1);
             this.uC_MonthlyStatistics2.Name = "uC_MonthlyStatistics2";
             this.uC_MonthlyStatistics2.Size = new System.Drawing.Size(781, 540);
             this.uC_MonthlyStatistics2.TabIndex = 15;
@@ -486,7 +486,7 @@ namespace Coffee_Manager
             // uC_BeverageStatistics2
             // 
             this.uC_BeverageStatistics2.BackColor = System.Drawing.Color.White;
-            this.uC_BeverageStatistics2.Location = new System.Drawing.Point(1, 0);
+            this.uC_BeverageStatistics2.Location = new System.Drawing.Point(-2, -2);
             this.uC_BeverageStatistics2.Name = "uC_BeverageStatistics2";
             this.uC_BeverageStatistics2.Size = new System.Drawing.Size(781, 540);
             this.uC_BeverageStatistics2.TabIndex = 14;
@@ -495,7 +495,7 @@ namespace Coffee_Manager
             // 
             this.uC_Setting1.Location = new System.Drawing.Point(-1, -3);
             this.uC_Setting1.Name = "uC_Setting1";
-            this.uC_Setting1.Size = new System.Drawing.Size(781, 540);
+            this.uC_Setting1.Size = new System.Drawing.Size(781, 555);
             this.uC_Setting1.TabIndex = 13;
             // 
             // uC_PlaceOrder1
