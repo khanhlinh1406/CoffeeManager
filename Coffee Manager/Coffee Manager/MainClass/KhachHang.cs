@@ -280,19 +280,50 @@ namespace Coffee_Manager
 
         private string GetNextCustomerType(string type)
         {
-            if (type.Equals("bronze"))
+            //if (type.Equals("bronze"))
+            //{
+            //    return "silver";
+            //}
+            //if (type.Equals("silver"))
+            //{
+            //    return "gold";
+            //}
+            //if (type.Equals("gold"))
+            //{
+            //    return "platinum";
+            //}
+            //return "platinum";
+            try
             {
-                return "silver";
+                Connect connect = new Connect();
+                List<string> listMaLkh = new List<string>();
+                string sql = "select MaLKH " +
+                                "from LOAIKHACHHANG " +
+                                "order by DiemLH ASC";
+                connect.OpenConnection();
+                SqlCommand command = connect.CreateSQLCmd(sql);
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.HasRows)
+                {
+                    if (reader.Read() == false) break;
+                    listMaLkh.Add(reader.GetString(0));
+                }
+                reader.Close();
+                if (listMaLkh.IndexOf(this.loaiKH.Ma_LKH) < listMaLkh.Count - 1)
+                {
+                    return listMaLkh[listMaLkh.IndexOf(this.loaiKH.Ma_LKH) + 1];
+                }
+                else
+                {
+                    return listMaLkh[listMaLkh.Count - 1];
+                }
+                connect.CloseConnection();
             }
-            if (type.Equals("silver"))
+            catch (Exception ex)
             {
-                return "gold";
+                MessageBox.Show("Đã xảy ra lỗi, vui lòng liên hệ đội ngũ phát triển!");
+                return "";
             }
-            if (type.Equals("gold"))
-            {
-                return "platinum";
-            }
-            return "platinum";
         }
     }
 }

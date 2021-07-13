@@ -443,6 +443,11 @@ namespace Coffee_Manager
                         stream.Close();
                     }
                     MessageBox.Show("Xuất hóa đơn thành công!", "Xuất hóa đơn");
+                    this.danhSachDonGia.Clear();
+                    this.danhSachMaMon.Clear();
+                    this.danhSachSoLuong.Clear();
+                    orderGridView.Rows.Clear();
+                    totalCost = discount = indexMon = bonusPoint = 0;
                 }
             }
         }

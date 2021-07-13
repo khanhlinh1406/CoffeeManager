@@ -66,12 +66,12 @@ namespace Coffee_Manager
             this.label9 = new System.Windows.Forms.Label();
             this.cbxCustomer = new Guna.UI2.WinForms.Guna2ComboBox();
             this.menuGridView = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.lbLoaiKh = new System.Windows.Forms.Label();
-            this.tbxCustomerType = new Guna.UI2.WinForms.Guna2TextBox();
-            this.lbDiscount = new System.Windows.Forms.Label();
             this.NameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PriceColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StatusColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lbLoaiKh = new System.Windows.Forms.Label();
+            this.tbxCustomerType = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lbDiscount = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.tbxOrderItemQuantity)).BeginInit();
             this.guna2GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.orderGridView)).BeginInit();
@@ -362,7 +362,7 @@ namespace Coffee_Manager
             this.orderGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -500,7 +500,7 @@ namespace Coffee_Manager
             this.lbTotalCost.AutoSize = true;
             this.lbTotalCost.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTotalCost.ForeColor = System.Drawing.Color.Maroon;
-            this.lbTotalCost.Location = new System.Drawing.Point(502, 496);
+            this.lbTotalCost.Location = new System.Drawing.Point(491, 496);
             this.lbTotalCost.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbTotalCost.Name = "lbTotalCost";
             this.lbTotalCost.Size = new System.Drawing.Size(71, 24);
@@ -553,7 +553,7 @@ namespace Coffee_Manager
             this.menuGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -617,6 +617,28 @@ namespace Coffee_Manager
             this.menuGridView.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.menuGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.menuGridView_CellClick);
             // 
+            // NameColumn
+            // 
+            this.NameColumn.FillWeight = 200F;
+            this.NameColumn.HeaderText = "Tên món";
+            this.NameColumn.Name = "NameColumn";
+            this.NameColumn.ReadOnly = true;
+            this.NameColumn.Width = 83;
+            // 
+            // PriceColumn
+            // 
+            this.PriceColumn.HeaderText = "Giá";
+            this.PriceColumn.Name = "PriceColumn";
+            this.PriceColumn.ReadOnly = true;
+            this.PriceColumn.Width = 51;
+            // 
+            // StatusColumn
+            // 
+            this.StatusColumn.HeaderText = "Tình Trạng";
+            this.StatusColumn.Name = "StatusColumn";
+            this.StatusColumn.ReadOnly = true;
+            this.StatusColumn.Width = 95;
+            // 
             // lbLoaiKh
             // 
             this.lbLoaiKh.AutoSize = true;
@@ -660,34 +682,12 @@ namespace Coffee_Manager
             this.lbDiscount.AutoSize = true;
             this.lbDiscount.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbDiscount.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.lbDiscount.Location = new System.Drawing.Point(502, 459);
+            this.lbDiscount.Location = new System.Drawing.Point(492, 459);
             this.lbDiscount.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbDiscount.Name = "lbDiscount";
             this.lbDiscount.Size = new System.Drawing.Size(71, 24);
             this.lbDiscount.TabIndex = 27;
             this.lbDiscount.Text = "0 VNĐ";
-            // 
-            // NameColumn
-            // 
-            this.NameColumn.FillWeight = 200F;
-            this.NameColumn.HeaderText = "Tên món";
-            this.NameColumn.Name = "NameColumn";
-            this.NameColumn.ReadOnly = true;
-            this.NameColumn.Width = 73;
-            // 
-            // PriceColumn
-            // 
-            this.PriceColumn.HeaderText = "Giá";
-            this.PriceColumn.Name = "PriceColumn";
-            this.PriceColumn.ReadOnly = true;
-            this.PriceColumn.Width = 45;
-            // 
-            // StatusColumn
-            // 
-            this.StatusColumn.HeaderText = "Tình Trạng";
-            this.StatusColumn.Name = "StatusColumn";
-            this.StatusColumn.ReadOnly = true;
-            this.StatusColumn.Width = 84;
             // 
             // UC_PlaceOrder
             // 

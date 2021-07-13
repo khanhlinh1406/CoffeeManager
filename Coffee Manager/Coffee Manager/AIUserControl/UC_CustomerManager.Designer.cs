@@ -34,7 +34,6 @@ namespace Coffee_Manager
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_CustomerManager));
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.btnRemove = new Guna.UI2.WinForms.Guna2Button();
             this.btnUpdate = new Guna.UI2.WinForms.Guna2Button();
@@ -445,7 +444,7 @@ namespace Coffee_Manager
             this.btnRefreshData.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnRefreshData.ForeColor = System.Drawing.Color.White;
             this.btnRefreshData.HoverState.Parent = this.btnRefreshData;
-            this.btnRefreshData.Image = ((System.Drawing.Image)(resources.GetObject("btnRefreshData.Image")));
+            this.btnRefreshData.Image = global::Coffee_Manager.Properties.Resources.ic_refresh;
             this.btnRefreshData.Location = new System.Drawing.Point(416, 27);
             this.btnRefreshData.Name = "btnRefreshData";
             this.btnRefreshData.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;

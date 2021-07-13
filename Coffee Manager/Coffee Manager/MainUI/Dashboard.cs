@@ -181,8 +181,8 @@ namespace Coffee_Manager
 
         private void btnBeverageStaff_Click(object sender, EventArgs e)
         {
-            uC_BeverageStatistics1.Visible = true;
-            uC_BeverageStatistics1.BringToFront();
+            uC_BeverageStatistics2.Visible = true;
+            uC_BeverageStatistics2.BringToFront();
         }
 
         private void btnCustomerStaff_Click(object sender, EventArgs e)
