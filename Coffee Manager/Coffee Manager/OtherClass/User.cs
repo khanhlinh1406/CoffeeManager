@@ -78,8 +78,7 @@ namespace Coffee_Manager
                         reader.Close();
                         return true;
                     }
-                    reader.Close();
-                    this.Connection.CloseConnection();
+                   
                 }
             }
             catch (Exception ex)

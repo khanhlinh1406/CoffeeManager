@@ -15,6 +15,7 @@ namespace Coffee_Manager
         DateTime NgLap;
         List<string> DSMon = new List<string>();
         List<int> SoLuong = new List<int>();
+        List<int> DonGia = new List<int>();
         int TriGia;
         int KhuyenMai;
         string MaKH;
@@ -52,6 +53,11 @@ namespace Coffee_Manager
         {
             get { return this.DSMon; }
             set { this.DSMon = value; }
+        }
+        public List<int> DON_GIA
+        {
+            get { return this.DonGia; }
+            set { this.DonGia = value; }
         }
         public DateTime NG_LAP
         {
@@ -146,7 +152,7 @@ namespace Coffee_Manager
                 for (int i = 0; i < DSMon.Count; i++)
                 {
                     string sql = "insert into CT_HOADON values " +
-                    "('" + this.MaHD + "', '" + DSMon[i] + "', '" + SoLuong[i] + "')";
+                    "('" + this.MaHD + "', '" + DSMon[i] + "', " + SoLuong[i] + ", " + DonGia[i] + ")";
                     SqlCommand command = this.connect.CreateSQLCmd(sql);
                     command.ExecuteNonQuery();
                 }
