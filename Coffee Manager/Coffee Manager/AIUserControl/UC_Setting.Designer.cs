@@ -30,18 +30,18 @@ namespace Coffee_Manager.AIUserControl
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.metroLabel9 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
@@ -51,6 +51,13 @@ namespace Coffee_Manager.AIUserControl
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.tabStore = new MetroFramework.Controls.MetroTabPage();
+            this.tbxType = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.metroLabel10 = new MetroFramework.Controls.MetroLabel();
+            this.listViewDVT = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnCancelStore = new Guna.UI2.WinForms.Guna2Button();
             this.btnSaveStore = new Guna.UI2.WinForms.Guna2Button();
             this.btnDeleteStore = new Guna.UI2.WinForms.Guna2Button();
@@ -65,6 +72,14 @@ namespace Coffee_Manager.AIUserControl
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.tabSetting = new MetroFramework.Controls.MetroTabControl();
             this.tabCustomer = new MetroFramework.Controls.MetroTabPage();
+            this.listViewLoaiKH = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.c = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tbxRankDiscountPer = new Guna.UI2.WinForms.Guna2TextBox();
             this.tbxBonusPer = new Guna.UI2.WinForms.Guna2TextBox();
             this.tbxRankPoint = new Guna.UI2.WinForms.Guna2TextBox();
@@ -75,31 +90,15 @@ namespace Coffee_Manager.AIUserControl
             this.btnCustomerSave = new Guna.UI2.WinForms.Guna2Button();
             this.btnCustomerCancel = new Guna.UI2.WinForms.Guna2Button();
             this.btnCustomerAdd = new Guna.UI2.WinForms.Guna2Button();
-            this.listViewLoaiKH = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.listViewDVT = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.listViewRoll = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.metroLabel10 = new MetroFramework.Controls.MetroLabel();
-            this.tbxType = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.c = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabStore.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.listViewDVT)).BeginInit();
             this.tabSetting.SuspendLayout();
             this.tabCustomer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listViewLoaiKH)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listViewDVT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listViewRoll)).BeginInit();
             this.SuspendLayout();
             // 
@@ -171,9 +170,9 @@ namespace Coffee_Manager.AIUserControl
             // 
             // tabStore
             // 
+            this.tabStore.Controls.Add(this.listViewRoll);
             this.tabStore.Controls.Add(this.tbxType);
             this.tabStore.Controls.Add(this.metroLabel10);
-            this.tabStore.Controls.Add(this.listViewRoll);
             this.tabStore.Controls.Add(this.listViewDVT);
             this.tabStore.Controls.Add(this.btnCancelStore);
             this.tabStore.Controls.Add(this.btnSaveStore);
@@ -188,6 +187,7 @@ namespace Coffee_Manager.AIUserControl
             this.tabStore.Controls.Add(this.metroLabel2);
             this.tabStore.Controls.Add(this.metroLabel1);
             this.tabStore.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabStore.ForeColor = System.Drawing.Color.Transparent;
             this.tabStore.HorizontalScrollbarBarColor = true;
             this.tabStore.HorizontalScrollbarHighlightOnWheel = false;
             this.tabStore.HorizontalScrollbarSize = 10;
@@ -199,6 +199,145 @@ namespace Coffee_Manager.AIUserControl
             this.tabStore.VerticalScrollbarBarColor = true;
             this.tabStore.VerticalScrollbarHighlightOnWheel = false;
             this.tabStore.VerticalScrollbarSize = 10;
+            // 
+            // tbxType
+            // 
+            this.tbxType.BackColor = System.Drawing.Color.Transparent;
+            this.tbxType.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.tbxType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.tbxType.Enabled = false;
+            this.tbxType.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbxType.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbxType.FocusedState.Parent = this.tbxType;
+            this.tbxType.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxType.ForeColor = System.Drawing.Color.Black;
+            this.tbxType.HoverState.Parent = this.tbxType;
+            this.tbxType.ItemHeight = 30;
+            this.tbxType.Items.AddRange(new object[] {
+            "Mon",
+            "Nguyen Lieu"});
+            this.tbxType.ItemsAppearance.Parent = this.tbxType;
+            this.tbxType.Location = new System.Drawing.Point(515, 349);
+            this.tbxType.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.tbxType.Name = "tbxType";
+            this.tbxType.ShadowDecoration.Parent = this.tbxType;
+            this.tbxType.Size = new System.Drawing.Size(237, 36);
+            this.tbxType.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.tbxType.TabIndex = 55;
+            // 
+            // metroLabel10
+            // 
+            this.metroLabel10.AutoSize = true;
+            this.metroLabel10.Location = new System.Drawing.Point(517, 310);
+            this.metroLabel10.Name = "metroLabel10";
+            this.metroLabel10.Size = new System.Drawing.Size(63, 19);
+            this.metroLabel10.TabIndex = 54;
+            this.metroLabel10.Text = "Phân loại";
+            // 
+            // listViewDVT
+            // 
+            this.listViewDVT.AllowUserToAddRows = false;
+            this.listViewDVT.AllowUserToOrderColumns = true;
+            this.listViewDVT.AllowUserToResizeColumns = false;
+            this.listViewDVT.AllowUserToResizeRows = false;
+            dataGridViewCellStyle29.BackColor = System.Drawing.Color.White;
+            this.listViewDVT.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle29;
+            this.listViewDVT.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.listViewDVT.BackgroundColor = System.Drawing.Color.White;
+            this.listViewDVT.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.listViewDVT.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.listViewDVT.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle30.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle30.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle30.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle30.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle30.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.listViewDVT.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle30;
+            this.listViewDVT.ColumnHeadersHeight = 20;
+            this.listViewDVT.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7});
+            dataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle31.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle31.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle31.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle31.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle31.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle31.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.listViewDVT.DefaultCellStyle = dataGridViewCellStyle31;
+            this.listViewDVT.EnableHeadersVisualStyles = false;
+            this.listViewDVT.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.listViewDVT.Location = new System.Drawing.Point(16, 56);
+            this.listViewDVT.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.listViewDVT.Name = "listViewDVT";
+            this.listViewDVT.ReadOnly = true;
+            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle32.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle32.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle32.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle32.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle32.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle32.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.listViewDVT.RowHeadersDefaultCellStyle = dataGridViewCellStyle32;
+            this.listViewDVT.RowHeadersVisible = false;
+            this.listViewDVT.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.listViewDVT.Size = new System.Drawing.Size(476, 159);
+            this.listViewDVT.TabIndex = 52;
+            this.listViewDVT.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
+            this.listViewDVT.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.listViewDVT.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.listViewDVT.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.listViewDVT.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.listViewDVT.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.listViewDVT.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.listViewDVT.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.listViewDVT.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.listViewDVT.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.listViewDVT.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listViewDVT.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.listViewDVT.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.listViewDVT.ThemeStyle.HeaderStyle.Height = 20;
+            this.listViewDVT.ThemeStyle.ReadOnly = true;
+            this.listViewDVT.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.listViewDVT.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.listViewDVT.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listViewDVT.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.listViewDVT.ThemeStyle.RowsStyle.Height = 22;
+            this.listViewDVT.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.listViewDVT.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.listViewDVT.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.listViewDVT_CellClick);
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.FillWeight = 50F;
+            this.dataGridViewTextBoxColumn4.HeaderText = "STT";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.FillWeight = 99.49239F;
+            this.dataGridViewTextBoxColumn5.HeaderText = "Mã đơn vị tính";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.FillWeight = 99.49239F;
+            this.dataGridViewTextBoxColumn6.HeaderText = "Tên Đơn vị tính";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.FillWeight = 99.49239F;
+            this.dataGridViewTextBoxColumn7.HeaderText = "Loại Đơn vị tính";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
             // 
             // btnCancelStore
             // 
@@ -448,6 +587,135 @@ namespace Coffee_Manager.AIUserControl
             this.tabCustomer.VerticalScrollbarHighlightOnWheel = false;
             this.tabCustomer.VerticalScrollbarSize = 10;
             // 
+            // listViewLoaiKH
+            // 
+            this.listViewLoaiKH.AllowUserToAddRows = false;
+            this.listViewLoaiKH.AllowUserToOrderColumns = true;
+            this.listViewLoaiKH.AllowUserToResizeColumns = false;
+            this.listViewLoaiKH.AllowUserToResizeRows = false;
+            dataGridViewCellStyle25.BackColor = System.Drawing.Color.White;
+            this.listViewLoaiKH.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle25;
+            this.listViewLoaiKH.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.listViewLoaiKH.BackgroundColor = System.Drawing.Color.White;
+            this.listViewLoaiKH.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.listViewLoaiKH.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.listViewLoaiKH.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle26.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle26.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle26.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.listViewLoaiKH.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle26;
+            this.listViewLoaiKH.ColumnHeadersHeight = 20;
+            this.listViewLoaiKH.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column5,
+            this.Column6,
+            this.Column4,
+            this.c});
+            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle27.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle27.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle27.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.listViewLoaiKH.DefaultCellStyle = dataGridViewCellStyle27;
+            this.listViewLoaiKH.EnableHeadersVisualStyles = false;
+            this.listViewLoaiKH.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.listViewLoaiKH.Location = new System.Drawing.Point(24, 64);
+            this.listViewLoaiKH.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.listViewLoaiKH.Name = "listViewLoaiKH";
+            this.listViewLoaiKH.ReadOnly = true;
+            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle28.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle28.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle28.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle28.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle28.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.listViewLoaiKH.RowHeadersDefaultCellStyle = dataGridViewCellStyle28;
+            this.listViewLoaiKH.RowHeadersVisible = false;
+            this.listViewLoaiKH.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.listViewLoaiKH.Size = new System.Drawing.Size(734, 159);
+            this.listViewLoaiKH.TabIndex = 56;
+            this.listViewLoaiKH.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
+            this.listViewLoaiKH.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.listViewLoaiKH.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.listViewLoaiKH.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.listViewLoaiKH.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.listViewLoaiKH.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.listViewLoaiKH.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.listViewLoaiKH.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.listViewLoaiKH.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.listViewLoaiKH.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.listViewLoaiKH.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listViewLoaiKH.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.listViewLoaiKH.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.listViewLoaiKH.ThemeStyle.HeaderStyle.Height = 20;
+            this.listViewLoaiKH.ThemeStyle.ReadOnly = true;
+            this.listViewLoaiKH.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.listViewLoaiKH.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.listViewLoaiKH.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listViewLoaiKH.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.listViewLoaiKH.ThemeStyle.RowsStyle.Height = 22;
+            this.listViewLoaiKH.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.listViewLoaiKH.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.listViewLoaiKH.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.listViewLoaiKH_CellContentClick);
+            // 
+            // Column1
+            // 
+            this.Column1.FillWeight = 30F;
+            this.Column1.HeaderText = "STT";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.FillWeight = 50F;
+            this.Column2.HeaderText = "Mã hạng";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.FillWeight = 87.05584F;
+            this.Column3.HeaderText = "Tên hạng";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.FillWeight = 87.05584F;
+            this.Column5.HeaderText = "Tỉ lệ khuyến mãi";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            this.Column6.FillWeight = 87.05584F;
+            this.Column6.HeaderText = "Tỉ lệ tích điểm";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.FillWeight = 87.05584F;
+            this.Column4.HeaderText = "Điểm lên hạng";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // c
+            // 
+            this.c.FillWeight = 87.05584F;
+            this.c.HeaderText = "Số lượng khách hàng";
+            this.c.Name = "c";
+            this.c.ReadOnly = true;
+            // 
             // tbxRankDiscountPer
             // 
             this.tbxRankDiscountPer.BorderRadius = 20;
@@ -503,6 +771,7 @@ namespace Coffee_Manager.AIUserControl
             this.tbxBonusPer.Size = new System.Drawing.Size(196, 30);
             this.tbxBonusPer.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.tbxBonusPer.TabIndex = 53;
+            this.tbxBonusPer.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbxBonusPer_KeyDown);
             // 
             // tbxRankPoint
             // 
@@ -680,244 +949,58 @@ namespace Coffee_Manager.AIUserControl
             this.btnCustomerAdd.Text = "Thêm";
             this.btnCustomerAdd.Click += new System.EventHandler(this.btnCustomerAdd_Click);
             // 
-            // listViewLoaiKH
-            // 
-            this.listViewLoaiKH.AllowUserToAddRows = false;
-            this.listViewLoaiKH.AllowUserToOrderColumns = true;
-            this.listViewLoaiKH.AllowUserToResizeColumns = false;
-            this.listViewLoaiKH.AllowUserToResizeRows = false;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            this.listViewLoaiKH.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
-            this.listViewLoaiKH.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.listViewLoaiKH.BackgroundColor = System.Drawing.Color.White;
-            this.listViewLoaiKH.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.listViewLoaiKH.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.listViewLoaiKH.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.listViewLoaiKH.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
-            this.listViewLoaiKH.ColumnHeadersHeight = 20;
-            this.listViewLoaiKH.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column5,
-            this.Column6,
-            this.Column4,
-            this.c});
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.listViewLoaiKH.DefaultCellStyle = dataGridViewCellStyle11;
-            this.listViewLoaiKH.EnableHeadersVisualStyles = false;
-            this.listViewLoaiKH.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.listViewLoaiKH.Location = new System.Drawing.Point(24, 64);
-            this.listViewLoaiKH.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.listViewLoaiKH.Name = "listViewLoaiKH";
-            this.listViewLoaiKH.ReadOnly = true;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.listViewLoaiKH.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
-            this.listViewLoaiKH.RowHeadersVisible = false;
-            this.listViewLoaiKH.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.listViewLoaiKH.Size = new System.Drawing.Size(734, 159);
-            this.listViewLoaiKH.TabIndex = 56;
-            this.listViewLoaiKH.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
-            this.listViewLoaiKH.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.listViewLoaiKH.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.listViewLoaiKH.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.listViewLoaiKH.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.listViewLoaiKH.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.listViewLoaiKH.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.listViewLoaiKH.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.listViewLoaiKH.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.listViewLoaiKH.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.listViewLoaiKH.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listViewLoaiKH.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.listViewLoaiKH.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.listViewLoaiKH.ThemeStyle.HeaderStyle.Height = 20;
-            this.listViewLoaiKH.ThemeStyle.ReadOnly = true;
-            this.listViewLoaiKH.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.listViewLoaiKH.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.listViewLoaiKH.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listViewLoaiKH.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.listViewLoaiKH.ThemeStyle.RowsStyle.Height = 22;
-            this.listViewLoaiKH.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.listViewLoaiKH.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.listViewLoaiKH.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.listViewLoaiKH_CellContentClick);
-            // 
-            // listViewDVT
-            // 
-            this.listViewDVT.AllowUserToAddRows = false;
-            this.listViewDVT.AllowUserToOrderColumns = true;
-            this.listViewDVT.AllowUserToResizeColumns = false;
-            this.listViewDVT.AllowUserToResizeRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            this.listViewDVT.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.listViewDVT.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.listViewDVT.BackgroundColor = System.Drawing.Color.White;
-            this.listViewDVT.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.listViewDVT.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.listViewDVT.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.listViewDVT.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            this.listViewDVT.ColumnHeadersHeight = 20;
-            this.listViewDVT.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7});
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.listViewDVT.DefaultCellStyle = dataGridViewCellStyle7;
-            this.listViewDVT.EnableHeadersVisualStyles = false;
-            this.listViewDVT.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.listViewDVT.Location = new System.Drawing.Point(16, 56);
-            this.listViewDVT.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.listViewDVT.Name = "listViewDVT";
-            this.listViewDVT.ReadOnly = true;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.listViewDVT.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
-            this.listViewDVT.RowHeadersVisible = false;
-            this.listViewDVT.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.listViewDVT.Size = new System.Drawing.Size(476, 159);
-            this.listViewDVT.TabIndex = 52;
-            this.listViewDVT.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
-            this.listViewDVT.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.listViewDVT.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.listViewDVT.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.listViewDVT.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.listViewDVT.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.listViewDVT.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.listViewDVT.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.listViewDVT.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.listViewDVT.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.listViewDVT.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listViewDVT.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.listViewDVT.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.listViewDVT.ThemeStyle.HeaderStyle.Height = 20;
-            this.listViewDVT.ThemeStyle.ReadOnly = true;
-            this.listViewDVT.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.listViewDVT.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.listViewDVT.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listViewDVT.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.listViewDVT.ThemeStyle.RowsStyle.Height = 22;
-            this.listViewDVT.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.listViewDVT.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.listViewDVT.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.listViewDVT_CellContentClick);
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.FillWeight = 50F;
-            this.dataGridViewTextBoxColumn4.HeaderText = "STT";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.FillWeight = 99.49239F;
-            this.dataGridViewTextBoxColumn5.HeaderText = "Mã đơn vị tính";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.FillWeight = 99.49239F;
-            this.dataGridViewTextBoxColumn6.HeaderText = "Tên Đơn vị tính";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.FillWeight = 99.49239F;
-            this.dataGridViewTextBoxColumn7.HeaderText = "Loại Đơn vị tính";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            // 
             // listViewRoll
             // 
             this.listViewRoll.AllowUserToAddRows = false;
             this.listViewRoll.AllowUserToOrderColumns = true;
             this.listViewRoll.AllowUserToResizeColumns = false;
             this.listViewRoll.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.listViewRoll.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle33.BackColor = System.Drawing.Color.White;
+            this.listViewRoll.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle33;
             this.listViewRoll.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.listViewRoll.BackgroundColor = System.Drawing.Color.White;
             this.listViewRoll.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.listViewRoll.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.listViewRoll.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.listViewRoll.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle34.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle34.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle34.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle34.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle34.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle34.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.listViewRoll.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle34;
             this.listViewRoll.ColumnHeadersHeight = 20;
             this.listViewRoll.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn8,
-            this.dataGridViewTextBoxColumn9,
-            this.dataGridViewTextBoxColumn10,
-            this.dataGridViewTextBoxColumn11});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.listViewRoll.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3});
+            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle35.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle35.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle35.ForeColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle35.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle35.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle35.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.listViewRoll.DefaultCellStyle = dataGridViewCellStyle35;
             this.listViewRoll.EnableHeadersVisualStyles = false;
             this.listViewRoll.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.listViewRoll.Location = new System.Drawing.Point(16, 292);
             this.listViewRoll.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.listViewRoll.Name = "listViewRoll";
             this.listViewRoll.ReadOnly = true;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.listViewRoll.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle36.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle36.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle36.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle36.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle36.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle36.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.listViewRoll.RowHeadersDefaultCellStyle = dataGridViewCellStyle36;
             this.listViewRoll.RowHeadersVisible = false;
             this.listViewRoll.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.listViewRoll.Size = new System.Drawing.Size(476, 159);
-            this.listViewRoll.TabIndex = 53;
+            this.listViewRoll.TabIndex = 56;
             this.listViewRoll.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.listViewRoll.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.listViewRoll.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -936,122 +1019,32 @@ namespace Coffee_Manager.AIUserControl
             this.listViewRoll.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.listViewRoll.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.listViewRoll.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listViewRoll.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.listViewRoll.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.Transparent;
             this.listViewRoll.ThemeStyle.RowsStyle.Height = 22;
             this.listViewRoll.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.listViewRoll.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.listViewRoll.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.listViewRoll_CellContentClick);
+            this.listViewRoll.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.listViewRoll_CellClick);
             // 
-            // dataGridViewTextBoxColumn8
+            // dataGridViewTextBoxColumn1
             // 
-            this.dataGridViewTextBoxColumn8.FillWeight = 50F;
-            this.dataGridViewTextBoxColumn8.HeaderText = "STT";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.FillWeight = 30F;
+            this.dataGridViewTextBoxColumn1.HeaderText = "STT";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn9
+            // dataGridViewTextBoxColumn2
             // 
-            this.dataGridViewTextBoxColumn9.FillWeight = 99.49239F;
-            this.dataGridViewTextBoxColumn9.HeaderText = "Mã chức vụ";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.FillWeight = 92.89535F;
+            this.dataGridViewTextBoxColumn2.HeaderText = "Mã chức vụ";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn10
+            // dataGridViewTextBoxColumn3
             // 
-            this.dataGridViewTextBoxColumn10.FillWeight = 99.49239F;
-            this.dataGridViewTextBoxColumn10.HeaderText = "Tên chức vụ";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn11
-            // 
-            this.dataGridViewTextBoxColumn11.FillWeight = 99.49239F;
-            this.dataGridViewTextBoxColumn11.HeaderText = "Số lượng nhân viên";
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            this.dataGridViewTextBoxColumn11.ReadOnly = true;
-            // 
-            // metroLabel10
-            // 
-            this.metroLabel10.AutoSize = true;
-            this.metroLabel10.Location = new System.Drawing.Point(517, 310);
-            this.metroLabel10.Name = "metroLabel10";
-            this.metroLabel10.Size = new System.Drawing.Size(63, 19);
-            this.metroLabel10.TabIndex = 54;
-            this.metroLabel10.Text = "Phân loại";
-            // 
-            // tbxType
-            // 
-            this.tbxType.BackColor = System.Drawing.Color.Transparent;
-            this.tbxType.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.tbxType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.tbxType.Enabled = false;
-            this.tbxType.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbxType.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbxType.FocusedState.Parent = this.tbxType;
-            this.tbxType.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxType.ForeColor = System.Drawing.Color.Black;
-            this.tbxType.HoverState.Parent = this.tbxType;
-            this.tbxType.ItemHeight = 30;
-            this.tbxType.Items.AddRange(new object[] {
-            "Mon",
-            "Nguyen Lieu"});
-            this.tbxType.ItemsAppearance.Parent = this.tbxType;
-            this.tbxType.Location = new System.Drawing.Point(515, 349);
-            this.tbxType.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.tbxType.Name = "tbxType";
-            this.tbxType.ShadowDecoration.Parent = this.tbxType;
-            this.tbxType.Size = new System.Drawing.Size(237, 36);
-            this.tbxType.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.tbxType.TabIndex = 55;
-            // 
-            // Column1
-            // 
-            this.Column1.FillWeight = 30F;
-            this.Column1.HeaderText = "STT";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.FillWeight = 50F;
-            this.Column2.HeaderText = "Mã hạng";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.FillWeight = 87.05584F;
-            this.Column3.HeaderText = "Tên hạng";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            this.Column5.FillWeight = 87.05584F;
-            this.Column5.HeaderText = "Tỉ lệ khuyến mãi";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            // 
-            // Column6
-            // 
-            this.Column6.FillWeight = 87.05584F;
-            this.Column6.HeaderText = "Tỉ lệ tích điểm";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.FillWeight = 87.05584F;
-            this.Column4.HeaderText = "Điểm lên hạng";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
-            // c
-            // 
-            this.c.FillWeight = 87.05584F;
-            this.c.HeaderText = "Số lượng khách hàng";
-            this.c.Name = "c";
-            this.c.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.FillWeight = 92.89535F;
+            this.dataGridViewTextBoxColumn3.HeaderText = "Tên chức vụ";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
             // UC_Setting
             // 
@@ -1062,11 +1055,11 @@ namespace Coffee_Manager.AIUserControl
             this.Size = new System.Drawing.Size(781, 540);
             this.tabStore.ResumeLayout(false);
             this.tabStore.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.listViewDVT)).EndInit();
             this.tabSetting.ResumeLayout(false);
             this.tabCustomer.ResumeLayout(false);
             this.tabCustomer.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listViewLoaiKH)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listViewDVT)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.listViewRoll)).EndInit();
             this.ResumeLayout(false);
 
@@ -1107,11 +1100,6 @@ namespace Coffee_Manager.AIUserControl
         private Guna.UI2.WinForms.Guna2TextBox tbx_RankName;
         private Guna.UI2.WinForms.Guna2TextBox tbxRankId;
         private Guna.UI2.WinForms.Guna2DataGridView listViewLoaiKH;
-        private Guna.UI2.WinForms.Guna2DataGridView listViewRoll;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
         private Guna.UI2.WinForms.Guna2DataGridView listViewDVT;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
@@ -1126,5 +1114,9 @@ namespace Coffee_Manager.AIUserControl
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn c;
+        private Guna.UI2.WinForms.Guna2DataGridView listViewRoll;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
     }
 }

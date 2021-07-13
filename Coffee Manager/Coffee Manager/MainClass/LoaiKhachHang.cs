@@ -120,7 +120,7 @@ namespace Coffee_Manager
             try
             {
                 string sQuery = "update LOAIKHACHHANG set LoaiKH = N'" + TenLoaiKh + "', PTramHD = "
-                    + PhTramGiam + ", PTgiam = " + PhTramHd + ", DiemLH" + DiemLH + " where MaLKH = '"
+                    + PhTramGiam + ", PTgiam = " + PhTramHd + ", DiemLH = " + DiemLH + " where MaLKH = '"
                     + MaLKH + "'";
                 this.connect.OpenConnection();
                 SqlCommand command = this.connect.CreateSQLCmd(sQuery);

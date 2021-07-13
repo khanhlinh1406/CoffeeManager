@@ -221,5 +221,35 @@ namespace Coffee_Manager
                 this.Connection.CloseConnection();
             }
         }
+
+        public bool CheckDelete()
+        {
+            try
+            {
+                string sQuery = "select MaDVTNL as Ma from NGUYENLIEU where MaDVTNL = '" + MaDVT + "'" +
+                                " union " +
+                                "select MaDVTM as Ma from MON where MaDVTM = '" + MaDVT + "'";
+                this.Connection.OpenConnection();
+                SqlCommand command = this.Connection.CreateSQLCmd(sQuery);
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.HasRows)
+                {
+                    if (reader.Read() == false) break;
+                    reader.Close();
+                    return true;
+                }
+                reader.Close();
+                return false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Đã xảy ra lỗi, vui lòng liên hệ đội ngũ phát triển!");
+                return true;
+            }
+            finally
+            {
+                this.Connection.CloseConnection();
+            }
+        }
     }
 }

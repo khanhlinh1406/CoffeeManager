@@ -69,7 +69,8 @@ namespace Coffee_Manager.AIUserControl
                                 "group by l.MaLKH, l.LoaiKH, l.DiemLH, l.PTgiam, l.PTramHD union " +
                                 "select l.MaLKH, l.LoaiKH, l.DiemLH, l.PTgiam, l.PTramHD, '0' as sl " +
                                 "from LOAIKHACHHANG l " +
-                                "where l.MaLKH not in (select MaLKH from KHACHHANG) ";
+                                "where l.MaLKH not in (select MaLKH from KHACHHANG) " +
+                                "group by l.MaLKH, l.LoaiKH, l.DiemLH, l.PTgiam, l.PTramHD";
                 this.Connection.OpenConnection();
                 SqlCommand command = this.Connection.CreateSQLCmd(sQuery);
                 SqlDataReader reader = command.ExecuteReader();
@@ -145,17 +146,20 @@ namespace Coffee_Manager.AIUserControl
                     LoaiKhachHang loaiKH = new LoaiKhachHang(
                         tbxRankId.Text,
                         tbx_RankName.Text,
-                        double.Parse(tbxRankPoint.Text),
+                        double.Parse(tbxBonusPer.Text),
                         double.Parse(tbxRankDiscountPer.Text),
                         int.Parse(tbxRankPoint.Text));
-                    if (loaiKH.CheckMaLKH())
+                    if (!(loaiKH.Ma_LKH == listViewLoaiKH.SelectedRows[0].Cells[1].Value.ToString()))
                     {
-                        IsEditingCustomer = true;
-                        MessageBox.Show("Mã loại đã tồn tại!");
-                        tbxRankId.Focus();
-                        return;
+                        if (loaiKH.CheckMaLKH())
+                        {
+                            IsEditingCustomer = true;
+                            MessageBox.Show("Mã loại đã tồn tại!");
+                            tbxRankId.Focus();
+                            return;
+                        }
                     }
-                    else 
+                    else
                         loaiKH.Update();
                 }
                 catch (InvalidCastException ex)
@@ -200,6 +204,8 @@ namespace Coffee_Manager.AIUserControl
             tbxRankDiscountPer.Text = "";
             tbxRankPoint.Enabled = false;
             tbxRankPoint.Text = "";
+            tbxBonusPer.Enabled = false;
+            tbxBonusPer.Text = "";
 
             LoadCustomer();
         }
@@ -218,6 +224,7 @@ namespace Coffee_Manager.AIUserControl
                 tbxRankPoint.Enabled = true;
                 tbxRankDiscountPer.Enabled = true;
                 tbxRankPoint.Enabled = true;
+                tbxBonusPer.Enabled = true;
                 btnCustomerSave.Visible = true;
                 btnCustomerCancel.Visible = true;
                 btnCustomerEdit.Visible = false;
@@ -277,6 +284,8 @@ namespace Coffee_Manager.AIUserControl
                     tbxRankPoint.Text = "";
                     tbxRankDiscountPer.Enabled = false;
                     tbxRankDiscountPer.Text = "";
+                    tbxBonusPer.Enabled = false;
+                    tbxBonusPer.Text = "";
                     tbxRankPoint.Enabled = false;
                     tbxRankPoint.Text = "";
                     btnCustomerSave.Visible = false;
@@ -420,12 +429,15 @@ namespace Coffee_Manager.AIUserControl
                         DonViTinh dvt = new DonViTinh(
                             tbxIdStore.Text,
                             tbxNameStore.Text);
-                        if (dvt.CheckMaDVT(tbxType.Text))
+                        if (!(dvt.MA_DVT == listViewDVT.SelectedRows[0].Cells[1].Value.ToString()))
                         {
-                            IsEditingStore = true;
-                            MessageBox.Show("Mã đơn vị tính đã tồn tại!");
-                            tbxIdStore.Focus();
-                            return;
+                            if (dvt.CheckMaDVT(tbxType.Text))
+                            {
+                                IsEditingStore = true;
+                                MessageBox.Show("Mã đơn vị tính đã tồn tại!");
+                                tbxIdStore.Focus();
+                                return;
+                            }
                         } else 
                             dvt.Update(tbxType.Text);
                     }
@@ -442,12 +454,15 @@ namespace Coffee_Manager.AIUserControl
                         ChucVu cv = new ChucVu(
                             tbxIdStore.Text,
                             tbxNameStore.Text);
-                        if (cv.CheckMaCV())
+                        if (!(cv.MA_CV == listViewRoll.SelectedRows[0].Cells[1].Value.ToString()))
                         {
-                            IsEditingStore = true;
-                            MessageBox.Show("Mã chức vụ đã tồn tại!");
-                            tbxIdStore.Focus();
-                            return;
+                            if (cv.CheckMaCV())
+                            {
+                                IsEditingStore = true;
+                                MessageBox.Show("Mã chức vụ đã tồn tại!");
+                                tbxIdStore.Focus();
+                                return;
+                            }
                         }
                         else
                             cv.Update();
@@ -567,7 +582,7 @@ namespace Coffee_Manager.AIUserControl
 
                 tbxIdStore.Enabled = true;
                 tbxNameStore.Enabled = true;
-                tbxType.Enabled = true;
+                tbxType.Enabled = false;
 
                 btnAddCV.Visible = false;
                 btnAddDVT.Visible = false;
@@ -616,10 +631,15 @@ namespace Coffee_Manager.AIUserControl
                     {
                         try
                         {
+                            
                             DonViTinh dvt = new DonViTinh(
                                tbxIdStore.Text,
                                tbxNameStore.Text);
-                            dvt.Delete(listViewDVT.SelectedRows[0].Cells[3].Value.ToString());
+                            if (dvt.CheckDelete())
+                            {
+                                MessageBox.Show("Không thể xóa đơn vị tính vì đã có món hoặc nguyên liệu sử dụng đơn vị tính này!");
+                            } else 
+                                dvt.Delete(listViewDVT.SelectedRows[0].Cells[3].Value.ToString());
                         }
                         catch (InvalidCastException ex)
                         {
@@ -633,22 +653,7 @@ namespace Coffee_Manager.AIUserControl
             }
         }
 
-        private void listViewDVT_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (listViewDVT.SelectedRows.Count > 2)
-                return;
-            if (listViewDVT.Rows.Count < 2)
-                return;
-            DataGridViewRow item = listViewDVT.SelectedRows[0];
-
-            lbIdStore.Text = "Mã đơn vị tính";
-            lbNameStore.Text = "Tên đơn vị tính";
-
-            tbxIdStore.Text = item.Cells[1].Value.ToString();
-            tbxNameStore.Text = item.Cells[2].Value.ToString();
-        }
-
-        private void listViewRoll_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void listViewRoll_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (listViewRoll.SelectedRows.Count > 2)
                 return;
@@ -661,6 +666,27 @@ namespace Coffee_Manager.AIUserControl
 
             tbxIdStore.Text = item.Cells[1].Value.ToString();
             tbxNameStore.Text = item.Cells[2].Value.ToString();
+            tbxType.SelectedIndex  = -1;
+        }
+
+        private void listViewDVT_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (listViewDVT.SelectedRows.Count > 2)
+                return;
+            if (listViewDVT.Rows.Count < 2)
+                return;
+            DataGridViewRow item = listViewDVT.SelectedRows[0];
+
+            lbIdStore.Text = "Mã đơn vị tính";
+            lbNameStore.Text = "Tên đơn vị tính";
+
+            tbxIdStore.Text = item.Cells[1].Value.ToString();
+            tbxNameStore.Text = item.Cells[2].Value.ToString();
+            if (item.Cells[3].Value.ToString() == "Mon")
+            {
+                tbxType.SelectedIndex = 0;
+            }
+            else tbxType.SelectedIndex = 1;
         }
 
         private void btnAddCV_Click(object sender, EventArgs e)
@@ -696,7 +722,7 @@ namespace Coffee_Manager.AIUserControl
             tbxIdStore.Text = "";
             tbxNameStore.Enabled = true;
             tbxNameStore.Text = "";
-            tbxType.Enabled = true;
+            tbxType.Enabled = false;
             tbxType.Text = "";
 
             btnAddCV.Visible = false;
