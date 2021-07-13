@@ -64,6 +64,7 @@ namespace Coffee_Manager
             set { this.DiemLH = value; }
         }
 
+
         public void LoadLoaiKHFromMaLKH()
         {
             try
@@ -147,6 +148,35 @@ namespace Coffee_Manager
             catch (Exception ex)
             {
                 MessageBox.Show("Đã xảy ra lỗi, vui lòng liên hệ đội ngũ phát triển!");
+            }
+            finally
+            {
+                this.connect.CloseConnection();
+            }
+        }
+
+        public bool CheckMaLKH()
+        {
+            try
+            {
+                string sQuery = "select MaLKH from LOAIKHACHHANG where MaCV = '" +
+                                MaLKH + "'";
+                this.connect.OpenConnection();
+                SqlCommand command = this.connect.CreateSQLCmd(sQuery);
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.HasRows)
+                {
+                    if (reader.Read() == false) break;
+                    reader.Close();
+                    return true;
+                }
+                reader.Close();
+                return false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Đã xảy ra lỗi, vui lòng liên hệ đội ngũ phát triển!");
+                return true;
             }
             finally
             {

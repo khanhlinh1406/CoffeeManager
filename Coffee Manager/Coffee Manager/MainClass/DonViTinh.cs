@@ -187,5 +187,39 @@ namespace Coffee_Manager
 
             return this.TenDVT;
         }
+
+        public bool CheckMaDVT(string table)
+        {
+            if (table == "Mon")
+                table = "DVT_MON";
+            else
+                table = "DVT_NGUYENLIEU";
+            try
+            {
+                string column = (table == "DVT_MON" ? "MaDVTM" : "MaDVTNL");
+                string sQuery = "select " + column + " from " + table + " where " +
+                                column + "= '" + MaDVT + "'";
+                this.Connection.OpenConnection();
+                SqlCommand command = this.Connection.CreateSQLCmd(sQuery);
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.HasRows)
+                {
+                    if (reader.Read() == false) break;
+                    reader.Close();
+                    return true;
+                }
+                reader.Close();
+                return false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Đã xảy ra lỗi, vui lòng liên hệ đội ngũ phát triển!");
+                return true;
+            }
+            finally
+            {
+                this.Connection.CloseConnection();
+            }
+        }
     }
 }

@@ -97,6 +97,8 @@ namespace Coffee_Manager.AIUserControl
                         (int) reader.GetDouble(4)
                         ));
                     listCountLoaiKH.Add(reader.GetInt32(5));
+
+                    count++;
                 }
                 reader.Close();
             }
@@ -126,6 +128,15 @@ namespace Coffee_Manager.AIUserControl
 
         private void btnCustomerSave_Click(object sender, EventArgs e)
         {
+            if (tbxRankId.Text == "" ||
+                tbx_RankName.Text == "" ||
+                tbxBonusPer.Text == "" ||
+                tbxRankDiscountPer.Text == "" ||
+                tbxRankPoint.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập đủ thông tin!");
+                return;
+            } 
             if (IsEditingCustomer)
             {
                 try
@@ -137,7 +148,15 @@ namespace Coffee_Manager.AIUserControl
                         double.Parse(tbxRankPoint.Text),
                         double.Parse(tbxRankDiscountPer.Text),
                         int.Parse(tbxRankPoint.Text));
-                    loaiKH.Update();
+                    if (loaiKH.CheckMaLKH())
+                    {
+                        IsEditingCustomer = true;
+                        MessageBox.Show("Mã loại đã tồn tại!");
+                        tbxRankId.Focus();
+                        return;
+                    }
+                    else 
+                        loaiKH.Update();
                 }
                 catch (InvalidCastException ex)
                 {
@@ -155,7 +174,15 @@ namespace Coffee_Manager.AIUserControl
                         double.Parse(tbxRankPoint.Text),
                         double.Parse(tbxRankDiscountPer.Text),
                         int.Parse(tbxRankPoint.Text));
-                    loaiKH.Add();
+                    if (loaiKH.CheckMaLKH())
+                    {
+                        IsAddingCustomer = true;
+                        MessageBox.Show("Mã loại đã tồn tại!");
+                        tbxRankId.Focus();
+                        return;
+                    }
+                    else
+                        loaiKH.Add();
                 }
                 catch (InvalidCastException ex)
                 {
@@ -173,6 +200,8 @@ namespace Coffee_Manager.AIUserControl
             tbxRankDiscountPer.Text = "";
             tbxRankPoint.Enabled = false;
             tbxRankPoint.Text = "";
+
+            LoadCustomer();
         }
 
         private void btnCustomerEdit_Click(object sender, EventArgs e)
@@ -211,6 +240,11 @@ namespace Coffee_Manager.AIUserControl
                 {
                     try
                     {
+                        if (listViewLoaiKH.SelectedRows[0].Cells[6].Value.ToString() != "0")
+                        {
+                            MessageBox.Show("Không thể xóa loại khách hàng khi đang có khách hàng thuộc loại khách hàng này!");
+                            return;
+                        }
                         LoaiKhachHang loaiKH = new LoaiKhachHang(
                             tbxRankId.Text,
                             tbx_RankName.Text,
@@ -258,10 +292,19 @@ namespace Coffee_Manager.AIUserControl
             IsAddingCustomer = true;
 
             tbxRankId.Enabled = true;
+            tbxRankId.Text = "";
+
             tbx_RankName.Enabled = true;
-            tbxRankPoint.Enabled = true;
+            tbx_RankName.Text = "";
+
+            tbxBonusPer.Enabled = true;
+            tbxBonusPer.Text = "";
+
             tbxRankDiscountPer.Enabled = true;
+            tbxRankDiscountPer.Text = "";
+
             tbxRankPoint.Enabled = true;
+            tbxRankPoint.Text = "";
 
             btnCustomerSave.Visible = true;
             btnCustomerCancel.Visible = true;
@@ -361,6 +404,12 @@ namespace Coffee_Manager.AIUserControl
 
         private void btnSaveStore_Click(object sender, EventArgs e)
         {
+            if (tbxIdStore.Text == "" ||
+                tbxNameStore.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập đủ thông tin!");
+                return;
+            }
             if (IsEditingStore)
             {
                 if (lbIdStore.Text == "Mã đơn vị tính")
@@ -371,7 +420,14 @@ namespace Coffee_Manager.AIUserControl
                         DonViTinh dvt = new DonViTinh(
                             tbxIdStore.Text,
                             tbxNameStore.Text);
-                        dvt.Update(tbxType.Text);
+                        if (dvt.CheckMaDVT(tbxType.Text))
+                        {
+                            IsEditingStore = true;
+                            MessageBox.Show("Mã đơn vị tính đã tồn tại!");
+                            tbxIdStore.Focus();
+                            return;
+                        } else 
+                            dvt.Update(tbxType.Text);
                     }
                     catch (InvalidCastException ex)
                     {
@@ -386,7 +442,15 @@ namespace Coffee_Manager.AIUserControl
                         ChucVu cv = new ChucVu(
                             tbxIdStore.Text,
                             tbxNameStore.Text);
-                        cv.Update();
+                        if (cv.CheckMaCV())
+                        {
+                            IsEditingStore = true;
+                            MessageBox.Show("Mã chức vụ đã tồn tại!");
+                            tbxIdStore.Focus();
+                            return;
+                        }
+                        else
+                            cv.Update();
                     }
                     catch (InvalidCastException ex)
                     {
@@ -404,7 +468,15 @@ namespace Coffee_Manager.AIUserControl
                         DonViTinh dvt = new DonViTinh(
                             tbxIdStore.Text,
                             tbxNameStore.Text);
-                        dvt.Add(tbxType.Text);
+                        if (dvt.CheckMaDVT(tbxType.Text))
+                        {
+                            IsAddingStore = true;
+                            MessageBox.Show("Mã đơn vị tính đã tồn tại!");
+                            tbxIdStore.Focus();
+                            return;
+                        }
+                        else
+                            dvt.Add(tbxType.Text);
                     }
                     catch (InvalidCastException ex)
                     {
@@ -415,11 +487,19 @@ namespace Coffee_Manager.AIUserControl
                 {
                     try
                     {
-                        IsEditingStore = false;
+                        IsAddingStore = false;
                         ChucVu cv = new ChucVu(
                             tbxIdStore.Text,
                             tbxNameStore.Text);
-                        cv.Update();
+                        if (cv.CheckMaCV())
+                        {
+                            IsAddingStore = true;
+                            MessageBox.Show("Mã chức vụ đã tồn tại!");
+                            tbxIdStore.Focus();
+                            return;
+                        }
+                        else
+                            cv.Add();
                     }
                     catch (InvalidCastException ex)
                     {
@@ -444,7 +524,8 @@ namespace Coffee_Manager.AIUserControl
             btnSaveStore.Visible = false;
             btnCancelStore.Visible = false;
 
-            LoadCustomer();
+            LoadRoll();
+            LoadUnit();
         }
 
         private void btnCancelStore_Click(object sender, EventArgs e)
@@ -511,9 +592,15 @@ namespace Coffee_Manager.AIUserControl
                 {
                     if (lbIdStore.Text == "Mã chức vụ")
                     {
+                        
                         try
                         {
-                            ChucVu cv = new ChucVu(
+                            if (int.Parse(listViewRoll.SelectedRows[0].Cells[3].Value.ToString()) != 0)
+                            {
+                                MessageBox.Show("Không thể xóa chức vụ khi đang có nhân việc thuộc chức vụ này!");
+                                return;
+                            }    
+                                ChucVu cv = new ChucVu(
                                tbxIdStore.Text,
                                tbxNameStore.Text);
                             cv.Delete();
