@@ -16,6 +16,9 @@ namespace Coffee_Manager
         Connect Connection;
         string[] Queries = new string[2];
         string TimeCondition;
+        string OrderCondition;
+        string OrderCondition2;
+        string FindCondition;
         int TongDoanhThu = 0;
         int TongDonHang = 0;
         public UC_MonthlyStatistics()
@@ -24,8 +27,8 @@ namespace Coffee_Manager
             try
             {
                 Connection = new Connect();
-                TimeCondition = "";
-                UpdateTimeCondition();
+                TimeCondition = OrderCondition = OrderCondition2 = FindCondition = "";
+                UpdateCondition();
                 monthlyStatistic.Titles.Add("THỐNG KÊ DOANH THU THEO THÁNG");
                 //MonthlyStatisticByNV(Queries[0], "Số lượng hóa đơn");
                 MonthlyStatisticByNV(Queries[1], "Tổng giá trị các hóa đơn (VNĐ)");
@@ -36,7 +39,7 @@ namespace Coffee_Manager
             }
             finally
             {
-                
+
             }
         }
 
@@ -60,11 +63,11 @@ namespace Coffee_Manager
                     else
                     {
                         TongDoanhThu += reader.GetInt32(1);
-                    }    
+                    }
                 }
-                lb_Total_Status.Text = "Tổng doanh thu: " + TongDoanhThu.ToString() + " VNĐ"; 
+                lb_Total_Status.Text = "Tổng doanh thu: " + TongDoanhThu.ToString() + " VNĐ";
                 lb_Count_Status.Text = "Tổng đơn hàng: " + TongDonHang.ToString();
-                
+
             }
             catch (Exception ex)
             {
@@ -76,10 +79,10 @@ namespace Coffee_Manager
             }
         }
 
-        private void UpdateTimeCondition()
+        private void UpdateCondition()
         {
-            Queries[0] = "select TenNV, count(MaHD) sl from NHANVIEN nv, HOADON hd where nv.MaNV = hd.MaNV_Lap " + TimeCondition + " group by TenNV";
-            Queries[1] = "select TenNV, sum(TriGia) sum from NHANVIEN nv, HOADON hd where nv.MaNV = hd.MaNV_Lap " + TimeCondition + " group by TenNV";
+            Queries[0] = "select TenNV, count(MaHD) sl from NHANVIEN nv, HOADON hd where nv.MaNV = hd.MaNV_Lap " + TimeCondition + FindCondition + " group by TenNV " + OrderCondition;
+            Queries[1] = "select TenNV, sum(TriGia) sum from NHANVIEN nv, HOADON hd where nv.MaNV = hd.MaNV_Lap " + TimeCondition + FindCondition + " group by TenNV " + OrderCondition2;
         }
 
         private void UC_MonthlyStatistics_Load(object sender, EventArgs e)
@@ -116,14 +119,14 @@ namespace Coffee_Manager
         private void picker1_ValueChanged(object sender, EventArgs e)
         {
             TimeCondition = "and hd.NgLap between'" + picker1.Value.ToString("MM/dd/yyyy") + "' and '" + picker2.Value.ToString("MM/dd/yyyy") + "'";
-            UpdateTimeCondition();
+            UpdateCondition();
             ReLoad();
         }
 
         private void picker2_ValueChanged(object sender, EventArgs e)
         {
             TimeCondition = "and hd.NgLap between'" + picker1.Value.ToString("MM/dd/yyyy") + "' and '" + picker2.Value.ToString("MM/dd/yyyy") + "'";
-            UpdateTimeCondition();
+            UpdateCondition();
             ReLoad();
         }
 
@@ -136,5 +139,39 @@ namespace Coffee_Manager
             if (cb_byValue.Checked)
                 MonthlyStatisticByNV(Queries[1], "Tổng giá trị các hóa đơn (VNĐ)");
         }
+
+        private void findTextbox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                FindCondition = " and TenNV like '%" + findTextbox.Text + "%' ";
+                UpdateCondition();
+                ReLoad();
+            }
+        }
+
+        private void buttonFind_Click(object sender, EventArgs e)
+        {
+            FindCondition = " and TenNV like '%" + findTextbox.Text + "%' ";
+            UpdateCondition();
+            ReLoad();
+        }
+
+        private void dropdownSort_onItemSelected(object sender, EventArgs e)
+        {
+            if (dropdownSort.Text == "Doanh số tăng dần")
+            {
+                OrderCondition = "order by sl asc";
+                OrderCondition2 = "order by sum asc";
+            }
+            else
+            {
+                OrderCondition = "order by sl desc";
+                OrderCondition2 = "order by sum desc";
+            }
+            UpdateCondition();
+            ReLoad();
+        }
+
     }
 }

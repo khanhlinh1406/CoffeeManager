@@ -51,3 +51,34 @@ C:\GITHUB\QLQuanCaPhe\Coffee Manager\Coffee Manager\bin\Debug\BouncyCastle.Crypt
 C:\GITHUB\QLQuanCaPhe\Coffee Manager\Coffee Manager\bin\Debug\itextsharp.dll
 C:\GITHUB\QLQuanCaPhe\Coffee Manager\Coffee Manager\bin\Debug\itextsharp.xml
 C:\GITHUB\QLQuanCaPhe\Coffee Manager\Coffee Manager\obj\Debug\Coffee Manager.csproj.CopyComplete
+C:\Users\Duc Dung\Desktop\CM\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.UC_CustomerManager.resources
+C:\Users\Duc Dung\Desktop\CM\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.UC_StaffManager.resources
+C:\Users\Duc Dung\Desktop\CM\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.UC_AddItems.resources
+C:\Users\Duc Dung\Desktop\CM\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.UC_BeverageStatistics.resources
+C:\Users\Duc Dung\Desktop\CM\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.UC_Material.resources
+C:\Users\Duc Dung\Desktop\CM\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.UC_MonthlyStatistics.resources
+C:\Users\Duc Dung\Desktop\CM\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.UC_PlaceOrder.resources
+C:\Users\Duc Dung\Desktop\CM\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.UC_ReceivedNote.resources
+C:\Users\Duc Dung\Desktop\CM\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.UC_RemoveItem.resources
+C:\Users\Duc Dung\Desktop\CM\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.UC_Welcome.resources
+C:\Users\Duc Dung\Desktop\CM\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.UC_UpdateItems.resources
+C:\Users\Duc Dung\Desktop\CM\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.Dashboard.resources
+C:\Users\Duc Dung\Desktop\CM\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.Login.resources
+C:\Users\Duc Dung\Desktop\CM\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.Properties.Resources.resources
+C:\Users\Duc Dung\Desktop\CM\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee Manager.csproj.GenerateResource.cache
+C:\Users\Duc Dung\Desktop\CM\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee Manager.csproj.CoreCompileInputs.cache
+C:\Users\Duc Dung\Desktop\CM\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee Manager.exe
+C:\Users\Duc Dung\Desktop\CM\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee Manager.pdb
+C:\Users\Duc Dung\Desktop\CM\CoffeeManager\Coffee Manager\Coffee Manager\bin\Debug\Coffee Manager.exe.config
+C:\Users\Duc Dung\Desktop\CM\CoffeeManager\Coffee Manager\Coffee Manager\bin\Debug\Coffee Manager.exe
+C:\Users\Duc Dung\Desktop\CM\CoffeeManager\Coffee Manager\Coffee Manager\bin\Debug\Coffee Manager.pdb
+C:\Users\Duc Dung\Desktop\CM\CoffeeManager\Coffee Manager\Coffee Manager\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\Duc Dung\Desktop\CM\CoffeeManager\Coffee Manager\Coffee Manager\bin\Debug\itextsharp.dll
+C:\Users\Duc Dung\Desktop\CM\CoffeeManager\Coffee Manager\Coffee Manager\bin\Debug\itextsharp.xml
+C:\Users\Duc Dung\Desktop\CM\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee Manager.csproj.CopyComplete
+C:\Users\Duc Dung\Desktop\CM\CoffeeManager\Coffee Manager\Coffee Manager\bin\Debug\Bunifu_UI_v1.52 (1).dll
+C:\Users\Duc Dung\Desktop\CM\CoffeeManager\Coffee Manager\Coffee Manager\bin\Debug\MetroFramework.Design.dll
+C:\Users\Duc Dung\Desktop\CM\CoffeeManager\Coffee Manager\Coffee Manager\bin\Debug\MetroFramework.dll
+C:\Users\Duc Dung\Desktop\CM\CoffeeManager\Coffee Manager\Coffee Manager\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\Duc Dung\Desktop\CM\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee_Manager.AIUserControl.UC_Setting.resources
+C:\Users\Duc Dung\Desktop\CM\CoffeeManager\Coffee Manager\Coffee Manager\obj\Debug\Coffee Manager.csprojAssemblyReference.cache

@@ -16,6 +16,7 @@ namespace Coffee_Manager
         // String connString = ConfigurationManager.ConnectionStrings["SQLServer"].ConnectionString;
         //public String connString = @"Server=DANH\SQLEXPRESS;Database=COFFEE_MANAGEMENT;User Id=sa;Password=c0ngdanh";
         //public  string connString = @"Server=LAPTOP-DKIC94F6\SQLEXPRESS;Database=COFFEE_MANAGEMENT;User ID=sa;Password=123456";
+        public string connString = @"Server=TNGDCDNG;Database=COFFEE_MANAGEMENT;User ID=sa;Password=Dung24006";
         public Connect()
         {
             this.Connection = new SqlConnection(connString);

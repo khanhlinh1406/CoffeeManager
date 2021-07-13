@@ -16,6 +16,8 @@ namespace Coffee_Manager
         Connect Connection;
         string Queries = "";
         string TimeCondition;
+        string OrderCondition;
+        string FindCondition;
         int TongSoLuong = 0;
         public UC_BeverageStatistics()
         {
@@ -24,10 +26,11 @@ namespace Coffee_Manager
             {
                 Connection = new Connect();
                 TimeCondition = "";
-                UpdateTimeCondition();
+                OrderCondition = "";
+                FindCondition = "";
+                UpdateCondition();
                 beverageStatistic.Titles.Add("THỐNG KÊ DOANH THU SẢN PHẨM BÁN RA");
-                //MonthlyStatisticByNV(Queries[0], "Số lượng hóa đơn");
-                MonthlyStatisticByNV(Queries, "Số lượng bán ra");
+                BeverageStatistic(Queries, "Số lượng bán ra");
             }
             catch (Exception ex)
             {
@@ -35,7 +38,7 @@ namespace Coffee_Manager
             }
         }
 
-        private void MonthlyStatisticByNV(string Query, string Series)
+        private void BeverageStatistic(string Query, string Series)
         {
             try
             {
@@ -63,28 +66,59 @@ namespace Coffee_Manager
             }
         }
 
-        private void UpdateTimeCondition()
+        private void UpdateCondition()
         {
-            Queries = "select TenMon, sum(SoLuong) sl from MON m, HOADON hd, CT_HOADON ct where m.MaMon = ct.MaMon and ct.MaHD = hd.MaHD " + TimeCondition +  " group by TenMon";
+            Queries = "select TenMon, sum(SoLuong) sl from MON m, HOADON hd, CT_HOADON ct where m.MaMon = ct.MaMon and ct.MaHD = hd.MaHD " + TimeCondition + FindCondition + " group by TenMon " + OrderCondition;
         }
         private void picker1_ValueChanged(object sender, EventArgs e)
         {
             TimeCondition = "and hd.NgLap between'" + picker1.Value.ToString("MM/dd/yyyy") + "' and '" + picker2.Value.ToString("MM/dd/yyyy") + "'";
-            UpdateTimeCondition();
+            UpdateCondition();
             ReLoad();
         }
 
         private void picker2_ValueChanged(object sender, EventArgs e)
         {
             TimeCondition = "and hd.NgLap between'" + picker1.Value.ToString("MM/dd/yyyy") + "' and '" + picker2.Value.ToString("MM/dd/yyyy") + "'";
-            UpdateTimeCondition();
+            UpdateCondition();
             ReLoad();
         }
 
         private void ReLoad()
         {
             beverageStatistic.Series["Số lượng bán ra"].Points.Clear();
-            MonthlyStatisticByNV(Queries, "Số lượng bán ra");
+            BeverageStatistic(Queries, "Số lượng bán ra");
+        }
+
+        private void dropdownSort_onItemSelected(object sender, EventArgs e)
+        {
+            if (dropdownSort.Text == "Doanh số tăng dần")
+            {
+                OrderCondition = "order by sl asc";
+            }
+            else
+            {
+                OrderCondition = "order by sl desc";
+            }
+            UpdateCondition();
+            ReLoad();
+        }
+
+        private void buttonFind_Click(object sender, EventArgs e)
+        {
+            FindCondition = " and TenMon like '%" + findTextbox.Text + "%' ";
+            UpdateCondition();
+            ReLoad();
+        }
+
+        private void findTextbox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                FindCondition = " and TenMon like '%" + findTextbox.Text + "%' ";
+                UpdateCondition();
+                ReLoad();
+            }
         }
     }
 }

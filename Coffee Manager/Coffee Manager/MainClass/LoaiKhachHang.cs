@@ -64,6 +64,7 @@ namespace Coffee_Manager
             set { this.DiemLH = value; }
         }
 
+
         public void LoadLoaiKHFromMaLKH()
         {
             try
@@ -86,6 +87,96 @@ namespace Coffee_Manager
             {
                 MessageBox.Show("Đã xảy ra lỗi, vui lòng liên hệ đội ngũ phát triển!");
 
+            }
+            finally
+            {
+                this.connect.CloseConnection();
+            }
+        }
+
+        public void Add()
+        {
+            try
+            {
+                string sQuery = "insert into LOAIKHACHHANG values('" +
+                        MaLKH + "', N'" + TenLoaiKh + "', " + PTRAM_HD +
+                        ", " + PhTramHd + ", " + DiemLH + ")";
+                this.connect.OpenConnection();
+                SqlCommand command = this.connect.CreateSQLCmd(sQuery);
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Đã xảy ra lỗi, vui lòng liên hệ đội ngũ phát triển!");
+            }
+            finally
+            {
+                this.connect.CloseConnection();
+            }
+        }
+
+        public void Update()
+        {
+            try
+            {
+                string sQuery = "update LOAIKHACHHANG set LoaiKH = N'" + TenLoaiKh + "', PTramHD = "
+                    + PhTramGiam + ", PTgiam = " + PhTramHd + ", DiemLH" + DiemLH + " where MaLKH = '"
+                    + MaLKH + "'";
+                this.connect.OpenConnection();
+                SqlCommand command = this.connect.CreateSQLCmd(sQuery);
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Đã xảy ra lỗi, vui lòng liên hệ đội ngũ phát triển!");
+            }
+            finally
+            {
+                this.connect.CloseConnection();
+            }
+
+        }
+        public void Delete()
+        {
+            try
+            {
+                string sQuery = "delete LOAIKHACHHANG where MaLKH = '" + MaLKH + "'";
+                this.connect.OpenConnection();
+                SqlCommand command = this.connect.CreateSQLCmd(sQuery);
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Đã xảy ra lỗi, vui lòng liên hệ đội ngũ phát triển!");
+            }
+            finally
+            {
+                this.connect.CloseConnection();
+            }
+        }
+
+        public bool CheckMaLKH()
+        {
+            try
+            {
+                string sQuery = "select MaLKH from LOAIKHACHHANG where MaCV = '" +
+                                MaLKH + "'";
+                this.connect.OpenConnection();
+                SqlCommand command = this.connect.CreateSQLCmd(sQuery);
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.HasRows)
+                {
+                    if (reader.Read() == false) break;
+                    reader.Close();
+                    return true;
+                }
+                reader.Close();
+                return false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Đã xảy ra lỗi, vui lòng liên hệ đội ngũ phát triển!");
+                return true;
             }
             finally
             {
