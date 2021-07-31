@@ -24,7 +24,7 @@ namespace Coffee_Manager
         public DonViTinh(string ma)
         {
             this.MaDVT = ma;
-            this.TenDVT = "null";
+            this.TenDVT = FindTenDVT();
         }
 
         public DonViTinh(string MaDVT, string TenDVT)
@@ -163,7 +163,7 @@ namespace Coffee_Manager
         {
             try
             {
-                string sCheckLogin = "SELECT TenDVT FROM DONVITINH WHERE MaDVT = '" + this.MaDVT + "'";
+                string sCheckLogin = "SELECT TenDVTM FROM DVT_MON WHERE MaDVTM = '" + this.MaDVT + "'";
                 this.Connection.OpenConnection();
                 SqlCommand command = this.Connection.CreateSQLCmd(sCheckLogin);
                 SqlDataReader reader = command.ExecuteReader();
@@ -171,9 +171,9 @@ namespace Coffee_Manager
                 {
                     if (reader.Read() == false) break;
                     this.TenDVT = reader.GetString(0);
-                    reader.Close();
                 }
-
+                reader.Close();
+                return this.TEN_DVT;
             }
             catch (Exception ex)
             {
@@ -184,8 +184,7 @@ namespace Coffee_Manager
             {
                 this.Connection.CloseConnection();
             }
-
-            return this.TenDVT;
+            return this.TEN_DVT;
         }
 
         public bool CheckMaDVT(string table)

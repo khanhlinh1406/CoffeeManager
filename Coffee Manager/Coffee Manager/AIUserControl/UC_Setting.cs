@@ -128,8 +128,8 @@ namespace Coffee_Manager.AIUserControl
             DataGridViewRow item = listViewLoaiKH.SelectedRows[0];
             tbxRankId.Text = item.Cells[1].Value.ToString();
             tbx_RankName.Text = item.Cells[2].Value.ToString();
-            tbxBonusPer.Text = item.Cells[3].Value.ToString();
-            tbxRankDiscountPer.Text = item.Cells[4].Value.ToString();
+            tbxBonusPer.Text = item.Cells[4].Value.ToString();
+            tbxRankDiscountPer.Text = item.Cells[3].Value.ToString();
             tbxRankPoint.Text = item.Cells[5].Value.ToString();
         }
 

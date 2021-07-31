@@ -93,6 +93,7 @@ namespace Coffee_Manager
 
         void LoadListKhachHang()
         {
+            danhSachKhachHang.Clear();
             try
             {
                 string find = "SELECT * FROM KHACHHANG";
@@ -158,14 +159,14 @@ namespace Coffee_Manager
         private void btnAddToCart_Click(object sender, EventArgs e)
         {
             bool isDuplicated = false;
-            if (danhSachMon[indexMon].TINH_TRANG.MA_TT.Equals("stock"))
+            if (menuGridView.SelectedRows[0].Cells[2].Value.Equals("Có sẵn"))
             {
                 if (orderGridView.Rows.Count > 0)
                 {
                     foreach (DataGridViewRow row in orderGridView.Rows)
                     {
                         if (row.Cells[0].Value.ToString() == tbxOrderItemName.Text
-                        && row.Cells[1].Value.ToString() == findTenDVTFromMaDVT(danhSachMon[menuGridView.CurrentRow.Index].DVT.MA_DVT))
+                        && row.Cells[1].Value.ToString() == GetTenDVTFromTenMon(tbxOrderItemName.Text))
                         {
                             row.Cells[2].Value = (int.Parse(tbxOrderItemQuantity.Value.ToString())
                                 + int.Parse(row.Cells[2].Value.ToString())).ToString();
@@ -177,14 +178,14 @@ namespace Coffee_Manager
                     }
                     if (!isDuplicated)
                     {
-                        orderGridView.Rows.Add(tbxOrderItemName.Text, findTenDVTFromMaDVT(danhSachMon[menuGridView.CurrentRow.Index].DVT.MA_DVT),
+                        orderGridView.Rows.Add(tbxOrderItemName.Text, GetTenDVTFromTenMon(tbxOrderItemName.Text),
                            tbxOrderItemQuantity.Value.ToString(), tbxOrderItemCost.Text);
                         danhSachMaMon.Add(danhSachMon[menuGridView.CurrentRow.Index].MA_MON);
                     }
                 }
                 else
                 {
-                    orderGridView.Rows.Add(tbxOrderItemName.Text, findTenDVTFromMaDVT(danhSachMon[menuGridView.CurrentRow.Index].DVT.MA_DVT),
+                    orderGridView.Rows.Add(tbxOrderItemName.Text, GetTenDVTFromTenMon(tbxOrderItemName.Text),
                     tbxOrderItemQuantity.Value.ToString(), tbxOrderItemCost.Text);
                     danhSachMaMon.Add(danhSachMon[menuGridView.CurrentRow.Index].MA_MON);
                 }
@@ -452,6 +453,12 @@ namespace Coffee_Manager
             }
         }
 
+        private void btnRefreshCL_Click(object sender, EventArgs e)
+        {
+            cbxCustomer.Items.Clear();
+            LoadListKhachHang();
+        }
+
         private void tbxOrderItemQuantity_KeyPress(object sender, KeyPressEventArgs e)
         {
             {
@@ -471,6 +478,18 @@ namespace Coffee_Manager
             discount = int.Parse(Math.Round(totalCost * khachHang.LOAI_KH.PTRAM_GIAM).ToString());
             totalCost = totalCost - discount;
             lbTotalCost.Text = totalCost.ToString() + " VNĐ";
+        }
+
+        private string GetTenDVTFromTenMon(string tenMon)
+        {
+            foreach (Mon mon in danhSachMon)
+            {
+                if (mon.TEN_MON.Equals(tenMon))
+                {
+                    return mon.DVT.TEN_DVT;
+                }
+            }
+            return "";
         }
     }
 }

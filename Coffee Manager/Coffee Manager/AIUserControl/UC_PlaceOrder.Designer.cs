@@ -72,6 +72,7 @@ namespace Coffee_Manager
             this.lbLoaiKh = new System.Windows.Forms.Label();
             this.tbxCustomerType = new Guna.UI2.WinForms.Guna2TextBox();
             this.lbDiscount = new System.Windows.Forms.Label();
+            this.btnRefreshCL = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.tbxOrderItemQuantity)).BeginInit();
             this.guna2GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.orderGridView)).BeginInit();
@@ -362,7 +363,7 @@ namespace Coffee_Manager
             this.orderGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -457,7 +458,7 @@ namespace Coffee_Manager
             this.btnRemoveItem.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRemoveItem.ForeColor = System.Drawing.Color.White;
             this.btnRemoveItem.HoverState.Parent = this.btnRemoveItem;
-            this.btnRemoveItem.Location = new System.Drawing.Point(651, 420);
+            this.btnRemoveItem.Location = new System.Drawing.Point(662, 420);
             this.btnRemoveItem.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnRemoveItem.Name = "btnRemoveItem";
             this.btnRemoveItem.ShadowDecoration.Parent = this.btnRemoveItem;
@@ -535,7 +536,7 @@ namespace Coffee_Manager
             this.cbxCustomer.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.cbxCustomer.Name = "cbxCustomer";
             this.cbxCustomer.ShadowDecoration.Parent = this.cbxCustomer;
-            this.cbxCustomer.Size = new System.Drawing.Size(243, 36);
+            this.cbxCustomer.Size = new System.Drawing.Size(236, 36);
             this.cbxCustomer.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.cbxCustomer.TabIndex = 23;
             this.cbxCustomer.SelectedIndexChanged += new System.EventHandler(this.cbxCustomer_SelectedIndexChanged);
@@ -553,7 +554,7 @@ namespace Coffee_Manager
             this.menuGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -623,21 +624,21 @@ namespace Coffee_Manager
             this.NameColumn.HeaderText = "Tên món";
             this.NameColumn.Name = "NameColumn";
             this.NameColumn.ReadOnly = true;
-            this.NameColumn.Width = 83;
+            this.NameColumn.Width = 73;
             // 
             // PriceColumn
             // 
             this.PriceColumn.HeaderText = "Giá";
             this.PriceColumn.Name = "PriceColumn";
             this.PriceColumn.ReadOnly = true;
-            this.PriceColumn.Width = 51;
+            this.PriceColumn.Width = 45;
             // 
             // StatusColumn
             // 
             this.StatusColumn.HeaderText = "Tình Trạng";
             this.StatusColumn.Name = "StatusColumn";
             this.StatusColumn.ReadOnly = true;
-            this.StatusColumn.Width = 95;
+            this.StatusColumn.Width = 84;
             // 
             // lbLoaiKh
             // 
@@ -689,11 +690,28 @@ namespace Coffee_Manager
             this.lbDiscount.TabIndex = 27;
             this.lbDiscount.Text = "0 VNĐ";
             // 
+            // btnRefreshCL
+            // 
+            this.btnRefreshCL.CheckedState.Parent = this.btnRefreshCL;
+            this.btnRefreshCL.CustomImages.Parent = this.btnRefreshCL;
+            this.btnRefreshCL.FillColor = System.Drawing.Color.Transparent;
+            this.btnRefreshCL.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnRefreshCL.ForeColor = System.Drawing.Color.White;
+            this.btnRefreshCL.HoverState.Parent = this.btnRefreshCL;
+            this.btnRefreshCL.Image = global::Coffee_Manager.Properties.Resources.ic_refresh;
+            this.btnRefreshCL.Location = new System.Drawing.Point(611, 414);
+            this.btnRefreshCL.Name = "btnRefreshCL";
+            this.btnRefreshCL.ShadowDecoration.Parent = this.btnRefreshCL;
+            this.btnRefreshCL.Size = new System.Drawing.Size(33, 33);
+            this.btnRefreshCL.TabIndex = 28;
+            this.btnRefreshCL.Click += new System.EventHandler(this.btnRefreshCL_Click);
+            // 
             // UC_PlaceOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.btnRefreshCL);
             this.Controls.Add(this.lbDiscount);
             this.Controls.Add(this.tbxCustomerType);
             this.Controls.Add(this.lbLoaiKh);
@@ -760,5 +778,6 @@ namespace Coffee_Manager
         private System.Windows.Forms.DataGridViewTextBoxColumn NameColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn PriceColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn StatusColumn;
+        private Guna.UI2.WinForms.Guna2Button btnRefreshCL;
     }
 }
